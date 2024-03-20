@@ -1,0 +1,16 @@
+.beasier1Icon {
+  position: absolute;
+  top: 343px;
+  left: 860px;
+  width: 200px;
+  height: 234px;
+  object-fit: cover;
+}
+.desktop1 {
+  width: 100%;
+  position: relative;
+  background-color: #03045e;
+  height: 920px;
+  overflow: hidden;
+}
+  
