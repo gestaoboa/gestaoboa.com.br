@@ -1,7 +1,5 @@
 {
     "rewrites":  [
-        {"source": "/", "destination": "/"},
-        {"source": "/privacy", "destination": "/privacy"},
-        {"source": "/terms", "destination": "/terms"}
+        {"source": "/(.*)", "destination": "/"}
     ]
-  }
+}
