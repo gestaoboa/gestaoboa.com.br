@@ -1,10 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 const Home: FunctionComponent = () => {
-  const navigate = useNavigate();
-
   const onGroupContainerClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='entreEmContato']");
     if (anchor) {
@@ -39,14 +36,6 @@ const Home: FunctionComponent = () => {
       anchor.scrollIntoView({ block: "start", behavior: "smooth" });
     }
   }, []);
-
-  const onTermosECondiesClick = useCallback(() => {
-    navigate("/desktop-3");
-  }, [navigate]);
-
-  const onPolticaDePrivacidadeClick = useCallback(() => {
-    navigate("/desktop-4");
-  }, [navigate]);
 
   return (
     <div className="desktop-2">
@@ -110,8 +99,12 @@ const Home: FunctionComponent = () => {
           As ferramentas para gerir o seu negócio em um único lugar
         </b>
       </div>
-      <b className="beasieroficial">@BEasierOficial</b>
-      <b className="b">(53) 99946-1551</b>
+      <a href="https://www.instagram.com/beasieroficial?igsh=OXpsOXI4Mnc2cGpt" target="_blank">
+        <b className="beasieroficial">@BEasierOficial</b>
+      </a>
+      <a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21" target="_blank">
+        <b className="b">(53) 99946-1551</b>
+      </a>
       <b className="beasieriggmailcom">BEasier.IG@gmail.com</b>
       <div className="adaptar-se-pra-economia-40-parent">
         <b className="adaptar-se-pra-economia">Adaptar-se pra economia 4.0</b>
@@ -133,25 +126,29 @@ const Home: FunctionComponent = () => {
       <div className="silvio-quintana-parent">
         <b className="silvio-quintana">Silvio Quintana</b>
         <i className="ceouxdesenvolvedor">CEO/UX/Desenvolvedor</i>
-        <img className="mask-group-icon" alt="" src="/mask-group@2x.png" />
+        <img className="mask-group-icon" alt="" src="/silvio.png" />
       </div>
       <div className="karine-quintana-parent">
         <b className="karine-quintana">Karine Quintana</b>
         <i className="criao-de-contedo">Criação de Conteúdo</i>
-        <img className="mask-group-icon" alt="" src="/mask-group@2x.png" />
+        <img className="mask-group-icon" alt="" src="/karine.png" />
       </div>
       <div className="victor-amaral-parent">
         <b className="victor-amaral">Victor Amaral</b>
         <i className="uxdesenvolvedor">UX/Desenvolvedor</i>
-        <img className="mask-group-icon" alt="" src="/mask-group@2x.png" />
+        <img className="mask-group-icon" alt="" src="/victor.png" />
       </div>
       <div className="bruno-nascimento-parent">
         <b className="bruno-nascimento">Bruno Nascimento</b>
         <i className="uxdesenvolvedor">Desenvolvedor</i>
-        <img className="mask-group-icon" alt="" src="/mask-group@2x.png" />
+        <img className="mask-group-icon" alt="" src="/bruno.png" />
       </div>
-      <img className="instagram-1-icon" alt="" src="/instagram-1@2x.png" />
-      <img className="whatsapp-1-icon" alt="" src="/whatsapp-1@2x.png" />
+      <a href="https://www.instagram.com/beasieroficial?igsh=OXpsOXI4Mnc2cGpt" target="_blank">
+        <img className="instagram-1-icon" alt="" src="/instagram-1@2x.png" />
+      </a>
+      <a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21" target="_blank">
+        <img className="whatsapp-1-icon" alt="" src="/whatsapp-1@2x.png" />
+      </a>
       <img className="envelope-1-icon" alt="" src="/envelope-1@2x.png" />
       <img className="profits-1-icon" alt="" src="/profits-1@2x.png" />
       <b className="como-a-podemos">Como a podemos te ajudar?</b>
@@ -173,14 +170,11 @@ const Home: FunctionComponent = () => {
       <b className="uma-ia-ir">
         Uma IA irá oferecer insights baseado nas suas vendas
       </b>
-      <div className="termos-e-condies" onClick={onTermosECondiesClick}>
-        Termos e Condições de Uso
+      <div className="termos-e-condies" /* onClick={onTermosECondiesClick} */>
+        <a href="/terms">Termos e Condições de Uso</a>
       </div>
-      <div
-        className="poltica-de-privacidade"
-        onClick={onPolticaDePrivacidadeClick}
-      >
-        Política de privacidade
+      <div className="poltica-de-privacidade"  /* onClick={onPolticaDePrivacidadeClick} */>
+        <a href="/privacy">Política de privacidade</a>
       </div>
     </div>
   );

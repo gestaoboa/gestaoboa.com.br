@@ -1,16 +1,173 @@
-.beasier1Icon {
-  position: absolute;
-  top: 343px;
-  left: 860px;
-  width: 200px;
-  height: 234px;
+.beasier-1-1-12 {
+  width: 59px;
+  height: 37px;
   object-fit: cover;
 }
-.desktop1 {
+.beasier-1-1-12,
+.beasier2 {
+  position: relative;
+}
+.beasier-1-1-1-container {
+  position: absolute;
+  top: 27px;
+  left: 107px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 17px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #03045e;
+  font-family: Montserrat;
+}
+.cookies,
+.termos-e-condies1 {
+  position: absolute;
+  top: 139px;
+  left: 107px;
+  font-size: 51px;
+  display: inline-block;
+  width: 688px;
+}
+.cookies {
+  top: 339px;
+  font-size: 30px;
+}
+.seja-bem-vindo-ao {
+  margin: 0;
+}
+.seja-bem-vindo-ao-container {
+  top: 237px;
+  font-weight: 500;
+  width: 1706px;
+  height: 68px;
+}
+.licena,
+.o-site-usa-container,
+.seja-bem-vindo-ao-container {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+}
+.o-site-usa-container {
+  top: 411px;
+  font-weight: 500;
+  width: 1706px;
+  height: 221px;
+}
+.licena {
+  top: 666px;
+  font-size: 30px;
+  width: 688px;
+}
+.copiar-ou-republicar {
+  margin-bottom: 0;
+}
+.copiar-ou-republicar-materiais {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 24px;
+}
+.criao-de-links,
+.exceto-em-casos-container {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+}
+.exceto-em-casos-container {
+  top: 738px;
+  font-weight: 500;
+  width: 1706px;
+  height: 583px;
+}
+.criao-de-links {
+  top: 1355px;
+  font-size: 30px;
+  width: 688px;
+}
+.as-seguintes-organizaes-container {
+  position: absolute;
+  top: 1427px;
+  left: 107px;
+  font-weight: 500;
+  display: inline-block;
+  width: 1706px;
+  height: 889px;
+}
+.responsabilizao-pelo-conted {
+  position: absolute;
+  top: 2350px;
+  left: 107px;
+  font-size: 30px;
+  display: inline-block;
+  width: 688px;
+}
+.no-seremos-responsabilizados {
+  position: absolute;
+  top: 2422px;
+  left: 107px;
+  font-weight: 500;
+  display: inline-block;
+  width: 1706px;
+  height: 55px;
+}
+.reserva-de-direitos {
+  top: 2511px;
+  font-size: 30px;
+  width: 688px;
+}
+.remoo-de-links,
+.reserva-de-direitos,
+.reservamos-nosso-direito {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+}
+.reservamos-nosso-direito {
+  top: 2583px;
+  font-weight: 500;
+  width: 1706px;
+  height: 76px;
+}
+.remoo-de-links {
+  top: 2693px;
+  font-size: 30px;
+  width: 688px;
+}
+.se-voc-encontrar-container {
+  top: 2765px;
+  font-weight: 500;
+  width: 1706px;
+  height: 114px;
+}
+.declarao-de-iseno,
+.no-mximo-possvel-container,
+.se-voc-encontrar-container {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+}
+.declarao-de-iseno {
+  top: 2913px;
+  font-size: 30px;
+  width: 688px;
+}
+.no-mximo-possvel-container {
+  top: 2985px;
+  font-weight: 500;
+  width: 1706px;
+  height: 237px;
+}
+.desktop-3 {
   width: 100%;
   position: relative;
-  background-color: #03045e;
-  height: 920px;
+  background-color: #fff;
+  height: 3293px;
   overflow: hidden;
+  text-align: left;
+  font-size: 18px;
+  color: #000;
+  font-family: Mulish;
 }
-  

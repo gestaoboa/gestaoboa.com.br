@@ -337,6 +337,7 @@
   width: 300px;
   height: 300px;
   object-fit: cover;
+  border-radius: 500px;
 }
 .silvio-quintana-parent {
   position: absolute;
@@ -423,7 +424,7 @@
   left: 115px;
   width: 32px;
   height: 32px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .envelope-1-icon,
 .profits-1-icon,
@@ -556,6 +557,11 @@
   height: 30px;
   cursor: pointer;
 }
+.poltica-de-privacidade a,
+.termos-e-condies a {
+  color: #000;
+}
+
 .poltica-de-privacidade {
   left: 452px;
   width: 268px;
