@@ -1,0 +1,579 @@
+.desktop-2-child,
+.desktop-2-child1,
+.desktop-2-inner,
+.desktop-2-item,
+.rectangle-div {
+  position: absolute;
+  top: 2080px;
+  left: 107px;
+  border-radius: 20px;
+  background-color: #90e0ef;
+  box-shadow: 12px 22px 29px rgba(0, 0, 0, 0.25);
+  width: 325px;
+  height: 245px;
+}
+.desktop-2-child1,
+.desktop-2-inner,
+.desktop-2-item,
+.rectangle-div {
+  left: 452px;
+  background-color: #00b4d8;
+}
+.desktop-2-child1,
+.desktop-2-inner,
+.rectangle-div {
+  left: 798px;
+  background-color: #0077b6;
+}
+.desktop-2-child1,
+.rectangle-div {
+  left: 1144px;
+  background-color: #03045e;
+}
+.desktop-2-child1 {
+  left: 1490px;
+  background-color: #fdc500;
+}
+.desktop-2-child2,
+.desktop-2-child3 {
+  position: absolute;
+  top: 923px;
+  left: 0;
+  background-color: #03045e;
+  width: 1920px;
+  height: 923px;
+}
+.desktop-2-child3 {
+  top: 2769px;
+}
+.beasier-1-1-1 {
+  width: 59px;
+  height: 37px;
+  object-fit: cover;
+}
+.beasier,
+.beasier-1-1-1 {
+  position: relative;
+}
+.beasier-1-1-1-parent {
+  position: absolute;
+  top: 27px;
+  left: 107px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 17px;
+  color: #03045e;
+  font-family: Montserrat;
+}
+.para-melhor-gesto {
+  position: absolute;
+  bottom: 4086px;
+  left: calc(50% - 853px);
+  font-size: 51px;
+  display: inline-block;
+  color: #000;
+  width: 688px;
+}
+.desktop-2-child4 {
+  position: absolute;
+  top: 0;
+  right: 865px;
+  background-color: transparent;
+  width: 110px;
+  height: 87px;
+}
+.incio {
+  position: absolute;
+  top: 33px;
+  right: 890px;
+  color: #03045e;
+}
+.desktop-2-child5 {
+  position: absolute;
+  top: 0;
+  right: 640px;
+  background-color: transparent;
+  width: 218px;
+  height: 87px;
+}
+.nossa-soluo {
+  position: absolute;
+  top: 33px;
+  right: 663px;
+  color: #03045e;
+}
+.desktop-2-child6 {
+  position: absolute;
+  top: 0;
+  right: 547px;
+  background-color: transparent;
+  width: 86px;
+  height: 87px;
+}
+.time {
+  position: absolute;
+  top: 33px;
+  right: 566px;
+  color: #03045e;
+}
+.desktop-2-child7 {
+  position: absolute;
+  top: 0;
+  right: 406px;
+  background-color: transparent;
+  width: 134px;
+  height: 87px;
+}
+.contato {
+  position: absolute;
+  top: 33px;
+  right: 425px;
+  color: #03045e;
+}
+.group-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50px;
+  background-color: #90e0ef;
+  width: 272px;
+  height: 50px;
+}
+.testar-agora {
+  position: absolute;
+  top: 12px;
+  right: 58px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 20px;
+  right: 107px;
+  width: 272px;
+  height: 50px;
+  cursor: pointer;
+  color: #000;
+}
+.contato1,
+.nossa-soluo1,
+.time1 {
+  position: absolute;
+  top: 33px;
+  right: 663px;
+  color: #03045e;
+  cursor: pointer;
+}
+.contato1,
+.time1 {
+  right: 566px;
+}
+.contato1 {
+  right: 425px;
+}
+.conhea-o-nosso,
+.entre-em-contato,
+.mas-e-como {
+  position: absolute;
+  font-size: 42px;
+  display: inline-block;
+}
+.mas-e-como {
+  top: 1939px;
+  left: 738px;
+  color: #000;
+  width: 444px;
+}
+.conhea-o-nosso,
+.entre-em-contato {
+  top: 2895px;
+  left: 733px;
+  width: 454px;
+}
+.entre-em-contato {
+  top: 3777px;
+  left: 115px;
+  font-size: 59px;
+  color: #000;
+  width: 476px;
+}
+.bar-chart-1-1,
+.growth-1-icon {
+  position: absolute;
+  object-fit: cover;
+}
+.growth-1-icon {
+  top: 209px;
+  left: calc(50% + 91px);
+  width: 512px;
+  height: 512px;
+}
+.bar-chart-1-1 {
+  top: 0;
+  left: 31px;
+  width: 288px;
+  height: 297px;
+}
+.as-ferramentas-para {
+  position: absolute;
+  top: 322px;
+  left: 0;
+  display: inline-block;
+  width: 378px;
+  height: 54px;
+}
+.bar-chart-1-1-parent {
+  position: absolute;
+  top: 1236px;
+  left: 95px;
+  width: 378px;
+  height: 376px;
+  text-align: center;
+  font-size: 24px;
+}
+.b,
+.beasieriggmailcom,
+.beasieroficial {
+  position: absolute;
+  top: 3998px;
+  left: 166px;
+  font-size: 26px;
+  display: inline-block;
+  color: #000;
+  width: 204px;
+  height: 32px;
+}
+.b,
+.beasieriggmailcom {
+  top: 4056px;
+  width: 216px;
+}
+.beasieriggmailcom {
+  top: 4114px;
+  width: 280px;
+}
+.adaptar-se-pra-economia {
+  position: absolute;
+  top: 332px;
+  left: 0;
+  display: inline-block;
+  width: 350px;
+  height: 39px;
+}
+.store-1-icon {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: 306px;
+  height: 318px;
+  object-fit: cover;
+}
+.adaptar-se-pra-economia-40-parent {
+  position: absolute;
+  top: 1226px;
+  left: 1015px;
+  width: 350px;
+  height: 371px;
+  text-align: center;
+  font-size: 24px;
+}
+.conhecimento-financeiro-de {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 350px;
+}
+.check-list-1-icon {
+  position: absolute;
+  top: 75px;
+  left: 22px;
+  width: 306px;
+  height: 318px;
+  object-fit: cover;
+}
+.conhecimento-financeiro-de-man-parent,
+.mostrar-formas-de-captar-clien-parent {
+  position: absolute;
+  top: 1151px;
+  left: 564px;
+  width: 350px;
+  height: 393px;
+  text-align: center;
+  font-size: 24px;
+}
+.mostrar-formas-de-captar-clien-parent {
+  left: 1465px;
+}
+.partnership-1-icon {
+  position: absolute;
+  top: 2297px;
+  left: 651px;
+  width: 617px;
+  height: 517px;
+  object-fit: cover;
+}
+.ceouxdesenvolvedor,
+.silvio-quintana {
+  position: absolute;
+  top: 321px;
+  left: 47px;
+  display: inline-block;
+  width: 205px;
+  height: 32px;
+}
+.ceouxdesenvolvedor {
+  top: 363px;
+  left: 0;
+  font-size: 24px;
+  font-weight: 300;
+  width: 300px;
+  height: 54px;
+}
+.mask-group-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 500px;
+}
+.silvio-quintana-parent {
+  position: absolute;
+  top: 3051px;
+  left: 272px;
+  width: 300px;
+  height: 417px;
+  text-align: center;
+  font-size: 26px;
+}
+.criao-de-contedo,
+.karine-quintana {
+  position: absolute;
+  top: 321px;
+  left: 43px;
+  display: inline-block;
+  width: 213px;
+  height: 32px;
+}
+.criao-de-contedo {
+  top: 363px;
+  left: 0;
+  font-size: 24px;
+  font-weight: 300;
+  width: 300px;
+}
+.karine-quintana-parent {
+  position: absolute;
+  top: 3051px;
+  left: 631px;
+  width: 300px;
+  height: 395px;
+  text-align: center;
+  font-size: 26px;
+}
+.uxdesenvolvedor,
+.victor-amaral {
+  position: absolute;
+  top: 321px;
+  left: 60px;
+  display: inline-block;
+  width: 180px;
+  height: 32px;
+}
+.uxdesenvolvedor {
+  top: 363px;
+  left: 8px;
+  font-size: 24px;
+  font-weight: 300;
+  width: 292px;
+}
+.victor-amaral-parent {
+  position: absolute;
+  top: 3051px;
+  left: 990px;
+  width: 300px;
+  height: 395px;
+  text-align: center;
+  font-size: 26px;
+}
+.bruno-nascimento {
+  position: absolute;
+  top: 321px;
+  left: 37px;
+  display: inline-block;
+  width: 234px;
+  height: 32px;
+}
+.bruno-nascimento-parent {
+  position: absolute;
+  top: 3051px;
+  left: 1349px;
+  width: 300px;
+  height: 395px;
+  text-align: center;
+  font-size: 26px;
+}
+.envelope-1-icon,
+.instagram-1-icon,
+.profits-1-icon,
+.whatsapp-1-icon {
+  position: absolute;
+  top: 3998px;
+  left: 115px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.envelope-1-icon,
+.profits-1-icon,
+.whatsapp-1-icon {
+  top: 4056px;
+}
+.envelope-1-icon,
+.profits-1-icon {
+  top: 4114px;
+}
+.profits-1-icon {
+  top: 3998px;
+  left: 940px;
+  width: 785px;
+  height: 760px;
+}
+.como-a-podemos {
+  position: absolute;
+  top: 1010px;
+  left: 673px;
+  font-size: 42px;
+  display: inline-block;
+  width: 573px;
+}
+.desktop-2-child8,
+.ellipse-div {
+  position: absolute;
+  top: 465px;
+  left: 1000px;
+  border-radius: 50%;
+  background-color: #fdc500;
+  width: 150px;
+  height: 150px;
+}
+.desktop-2-child8 {
+  top: 244px;
+  left: 1495px;
+  width: 100px;
+  height: 100px;
+}
+.desktop-2-child10,
+.desktop-2-child11,
+.desktop-2-child9 {
+  position: absolute;
+  top: 696px;
+  left: 1487px;
+  border-radius: 50%;
+  background-color: #03045e;
+  width: 50px;
+  height: 50px;
+}
+.desktop-2-child10,
+.desktop-2-child11 {
+  top: 209px;
+  left: 1598px;
+  width: 20px;
+  height: 20px;
+}
+.desktop-2-child11 {
+  top: 764px;
+  left: 1477px;
+  background-color: #fdc500;
+}
+.desktop-2-child12,
+.desktop-2-child13 {
+  position: absolute;
+  top: 305px;
+  left: 1143px;
+  border-radius: 50%;
+  background-color: #03045e;
+  width: 50px;
+  height: 50px;
+}
+.desktop-2-child13 {
+  top: 660px;
+  left: 1140px;
+}
+.cadastre-a-sua {
+  position: absolute;
+  top: 2158px;
+  left: 137px;
+  font-size: 24px;
+  display: inline-block;
+  text-align: center;
+  width: 267px;
+  height: 90px;
+}
+.agora-voc-pode,
+.ao-realizar-uma,
+.poltica-de-privacidade,
+.registre-os-seus,
+.termos-e-condies,
+.uma-ia-ir {
+  position: absolute;
+  top: 2173px;
+  left: 484px;
+  font-size: 24px;
+  display: inline-block;
+  text-align: center;
+  width: 267px;
+  height: 60px;
+}
+.agora-voc-pode,
+.ao-realizar-uma,
+.poltica-de-privacidade,
+.termos-e-condies,
+.uma-ia-ir {
+  left: 827px;
+}
+.agora-voc-pode,
+.poltica-de-privacidade,
+.termos-e-condies,
+.uma-ia-ir {
+  top: 2158px;
+  left: 1173px;
+  height: 90px;
+}
+.poltica-de-privacidade,
+.termos-e-condies,
+.uma-ia-ir {
+  left: 1519px;
+}
+.poltica-de-privacidade,
+.termos-e-condies {
+  top: 4544px;
+  left: 107px;
+  font-weight: 500;
+  color: #000;
+  width: 325px;
+  height: 30px;
+  cursor: pointer;
+}
+.poltica-de-privacidade a,
+.termos-e-condies a {
+  color: #000;
+}
+
+.poltica-de-privacidade {
+  left: 452px;
+  width: 268px;
+}
+.desktop-2 {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 4615px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 20px;
+  color: #fff;
+  font-family: Mulish;
+}
