@@ -295,6 +295,7 @@ export const Contact = styled.div`
 	padding-bottom: 230px;
 	grid-column: span 12;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	position: relative;
 
 	.info, .form {
 		display: flex;
@@ -330,10 +331,68 @@ export const Contact = styled.div`
 		align-items: center;
 		gap: 18px;
 		color: #000;
+		width: fit-content;
 	}
 
+	.profits {
+		position: absolute;
+		left: 100px;
+		bottom: -5px;
+	}
+
+	.profits img {
+		width: 500px;
+	}
+
+	.form, .form form .input, .form form .textarea {
+		display: flex;
+		flex-direction: column;
+	}
 
 	.form {
-		
+		grid-column: span 5;
+		align-items: end;
+		gap: 12px;
+	}
+
+	.form form {
+		display: grid;
+		width: 703px;
+		grid-template-columns: 1fr 1fr;
+		gap: 26px;
+		background-color: #03045e;
+		border-radius: 10px;
+		padding: 40px;
+	}
+
+	.form form .input, .form form .textarea {
+		gap: 7px;
+		color: #fff;
+	}
+
+	.input input {
+		height: 52px;
+	}
+
+	.input input, .textarea textarea {
+		border-radius: 10px;
+		padding-left: 10px;
+		border: none;
+	}
+
+	.label { font-weight: bold; }
+
+	.double, .textarea {
+		grid-column: span 2;
+	}
+
+	textarea {
+		font-family: "Mulish";
+	}
+
+	.form .button {
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
 	}
 `

@@ -17,7 +17,9 @@ export default function Header () {
             </Links>
 
             <TestNow>
-                <Button text="TESTAR AGORA" method={() => {}} type="focused"  />
+                <a href="https://beasier.vercel.app" style={{ textDecoration: "none" }}>
+                    <Button text="TESTAR AGORA" method={() => {}} type="focused"  />
+                </a>
             </TestNow>
         </Container>
     )
