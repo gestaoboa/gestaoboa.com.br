@@ -5,6 +5,13 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     grid-column: span 12;
+    padding: 12px;
+    padding-left: 100px;
+	padding-right: 100px;
+
+    @media (max-width: 750px){
+		justify-content: center;
+	}
 `
 
 export const Logo = styled.div`
@@ -25,14 +32,21 @@ export const Title = styled.div`
 
 export const Links = styled.div`
     display: flex;
-    /* align-items: flex-end; */
     gap: 30px;
+
+    @media (max-width: 1030px){
+        display: none;
+    }
 `
 
 export const LinkItem = styled.div`
-
+    cursor: pointer;
 `
 
 export const TestNow = styled.div`
     display: flex;
+
+    @media (max-width: 750px){
+        display: none;
+    }
 `

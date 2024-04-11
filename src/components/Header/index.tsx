@@ -1,6 +1,7 @@
+import Button from "../Button";
 import { Container, LinkItem, Links, Logo, LogoImg, TestNow, Title } from "./styles";
 
-export default function Header (/* xPosition: number */) {
+export default function Header () {
     return (
         <Container>
             <Logo>
@@ -16,7 +17,7 @@ export default function Header (/* xPosition: number */) {
             </Links>
 
             <TestNow>
-
+                <Button text="TESTAR AGORA" method={() => {}} type="focused"  />
             </TestNow>
         </Container>
     )
