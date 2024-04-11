@@ -140,11 +140,13 @@ export const Solutions = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-column: span 12;
+	padding: 206px;
 	padding-top: 192px;
 	padding-left: 100px;
 	padding-right: 100px;
 	grid-column-gap: 24px;
 	grid-row-gap: 207px;
+	position: relative;
 
 	.text {
 		display: flex;
@@ -195,6 +197,13 @@ export const Solutions = styled.div`
 	.buying {
 		display: flex;
 		grid-column: span 6;
+		position: absolute;
+		bottom: -45px;
+		left: 100px;
+	}
+
+	.block {
+		grid-column: span 6;
 	}
 
 	.works {
@@ -216,6 +225,7 @@ export const Solutions = styled.div`
 		align-items: center;
 		color: #fff;
 		padding: 24px;
+		font-weight: bold;
 	}
 
 	.blue {
@@ -224,5 +234,106 @@ export const Solutions = styled.div`
 
 	.yellow {
 		background-color: #FDC500;
+	}
+`
+
+export const Team = styled.div`
+	display: flex;
+	flex-direction: column;
+	grid-column: span 12;
+	padding: 89px;
+	padding-bottom: 193px;
+	padding-left: 100px;
+	padding-right: 100px;
+	background-color: #03045e;
+	color: #fff;
+	gap: 134px;
+	justify-content: center;
+
+
+	.title {
+		display: flex;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 72px;
+	}
+
+	.items {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		gap: 93px;
+	}
+
+	.items .member {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.items .member img {
+		border-radius: 500px;
+	}
+
+	.items .member .name {
+		font-size: 26px;
+		font-weight: bold;
+	}
+
+	.items .member .subtitle {
+		font-size: 24px;
+		font-weight: lighter;
+		font-style: italic;
+	}
+`
+
+export const Contact = styled.div`
+	display: grid;
+	padding: 170px;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-bottom: 230px;
+	grid-column: span 12;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+	.info, .form {
+		display: flex;
+		flex-direction: column;
+		grid-column: span 5;
+	}
+
+	.space {
+		grid-column: span 2;
+	}
+
+	.info {
+		display: flex;
+		gap: 81px;
+		flex-direction: column;
+	}
+
+	.info .title {
+		font-weight: bold;
+		font-size: 72px;
+	}
+
+	.info .links {
+		display: flex;
+		flex-direction: column;
+		font-weight: bold;
+		font-size: 26px;
+		gap: 26px;
+	}
+
+	.info .links a {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		color: #000;
+	}
+
+
+	.form {
+		
 	}
 `

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import Header from "../../components/Header";
-import { Awards, Banner, Container, Grid, Solutions } from "./styles";
+import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
 import Button from "../../components/Button";
 
 const Home: FunctionComponent = () => {
@@ -39,7 +39,7 @@ const Home: FunctionComponent = () => {
 
 				<Solutions>
 					<div className="text">
-						<img src="/public/text-decoration.png" alt="" />
+						<img src="/text-decoration.png" alt="" />
 						<div className="title">Como a BEasier pode te ajudar?</div>
 						<div className="subtitle">Veja nassa variedade de benefícios</div>
 					</div>
@@ -62,7 +62,7 @@ const Home: FunctionComponent = () => {
 						<div className="subtitle">Registres seus produtos, ou serviços junto do valor de custo, e obtenha uma gestão simplificada de estoque e lucro.</div>
 					</div>
 
-					<div></div>
+					<div className="block"></div>
 
 					<div className="buying">
 						<img src="/partnership-1@2x.png" alt="" />
@@ -76,6 +76,59 @@ const Home: FunctionComponent = () => {
 						<div className="rectangle yellow">Uma IA irá fornecer insights</div>
 					</div>
 				</Solutions>
+				<Team>
+					<div className="title">Conheça o nosso time!</div>
+					<div className="items">
+						<div className="member">
+							<img src="/bruno.png" alt="" />
+							<div className="name">Bruno Nascimento</div>
+							<div className="subtitle">Desenvolvedor back-end</div>
+						</div>
+						<div className="member">
+							<img src="/silvio.png" alt="" />
+							<div className="name">Silvio Quintana</div>
+							<div className="subtitle">CEO/COO</div>
+						</div>
+						<div className="member">
+							<img src="/karine.png" alt="" />
+							<div className="name">Karine Quintana</div>
+							<div className="subtitle">CMO/CFO</div>
+						</div>
+						<div className="member">
+							<img src="/victor.png" alt="" />
+							<div className="name">Victor Amaral</div>
+							<div className="subtitle">CTO</div>
+						</div>
+					</div>
+				</Team>
+				<Contact>
+					<div className="info">
+						<div className="title">Entre em contato conosco!</div>
+						<div className="links">
+							<a href="https://www.instagram.com/beasieroficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+								<img src="/public/instagram-1@2x.png" alt="" />
+								@BEasierOficial
+							</a>
+							<a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21">
+								<img src="/public/whatsapp-1@2x.png" alt="" />
+								(53) 99946-1551
+							</a>
+							<a href="mailto:BEasier.IG@gmail.com">
+								<img src="/public/envelope-1@2x.png" alt="" />
+								BEasier.IG@gmail.com
+							</a>
+						</div>
+					</div>
+					<div className="space"></div>
+					<div className="form">
+						<form>
+							<input type="text" name="name" id="" />
+							<input type="text" name="last-name" id="" />
+							<input type="email" name="email" id="" />
+							<textarea name="message" id="" cols={30} rows={10}></textarea>
+						</form>
+					</div>
+				</Contact>
 			</Grid>
 		</Container>
 	);
