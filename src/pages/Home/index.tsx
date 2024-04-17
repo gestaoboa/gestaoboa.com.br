@@ -1,79 +1,77 @@
+import { FormHandles } from "@unform/core";
 import { FunctionComponent, useRef } from "react";
-import Header from "../../components/Header";
-import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
-import { FormHandles, SubmitHandler } from "@unform/core";
-import yup from "yup"
+import Header from "../../components/Header";
+import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
+// import * as yup from "yup"
 import { Form } from "@unform/web";
-import emailjs from "@emailjs/browser"
-import { UnformErrors } from "../../interfaces/interfaces";
 
 const Home: FunctionComponent = () => {
 	const formRef = useRef<FormHandles>(null);
 
-    const handleSubmit : SubmitHandler<FormData> = async (data) => {
-        formRef.current
-            ?.setErrors({});
-        try {
-            const schemaLogin = yup
-                .object()
-                .shape({
-                    name: yup
-                        .string()
-                        .required("Write your name"),
-                    email: yup
-                        .string()
-                        .email("Invalid email")
-                        .required("Write your email"),
-                    phone: yup
-                        .string()
-                        .required("Write your phone number"),
-					message: yup
-                        .string()
-                        .required("Write a message"),                  
-                })
-                .required();
+    // const handleSubmit : SubmitHandler<FormData> = async (data) => {
+    //     formRef.current
+    //         ?.setErrors({});
+    //     try {
+    //         const schemaLogin = yup
+    //             .object()
+    //             .shape({
+    //                 name: yup
+    //                     .string()
+    //                     .required("Write your name"),
+    //                 email: yup
+    //                     .string()
+    //                     .email("Invalid email")
+    //                     .required("Write your email"),
+    //                 phone: yup
+    //                     .string()
+    //                     .required("Write your phone number"),
+	// 				message: yup
+    //                     .string()
+    //                     .required("Write a message"),                  
+    //             })
+    //             .required();
 
-            await schemaLogin.validate(data, {abortEarly: false});
+    //         await schemaLogin.validate(data, {abortEarly: false});
 
-            const emailBody = {
-                from_name: formRef.current?.getFieldValue("name"),
-                email: formRef.current?.getFieldValue("email"),
-                phone: formRef.current?.getFieldValue("phone"),
-                message: formRef.current?.getFieldValue("message"),
-            }
+    //         const emailBody = {
+    //             from_name: formRef.current?.getFieldValue("name"),
+    //             email: formRef.current?.getFieldValue("email"),
+    //             phone: formRef.current?.getFieldValue("phone"),
+    //             message: formRef.current?.getFieldValue("message"),
+    //         }
             
-            emailjs.send(
-                import.meta.env.VITE_EMAIL_JS_SERVICE_ID, 
-                import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
-                emailBody, 
-                import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
-            ).then((res) => {
-                if(res && res.status == 200) {
-                    // setSuccess("success");
-                    formRef.current?.clearField("name")
-                    formRef.current?.clearField("email")
-                    formRef.current?.clearField("phone")
-                    formRef.current?.clearField("message")
-                }
-                // else setSuccess("error")
-            })
-        } catch (err) {
-            const validationErrors: UnformErrors = {};
-            if (err instanceof yup.ValidationError) {
-                err
-                    .inner
-                    .forEach((error) => {
-                        if (error.path) 
-                            validationErrors[error.path] = error.message;
-                        }
-                    );
-                formRef.current
-                    ?.setErrors(validationErrors);
-            }
-        }
-    };
+    //         emailjs.send(
+    //             import.meta.env.VITE_EMAIL_JS_SERVICE_ID, 
+    //             import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+    //             emailBody, 
+    //             import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+    //         ).then((res) => {
+    //             if(res && res.status == 200) {
+    //                 // setSuccess("success");
+    //                 formRef.current?.clearField("name")
+    //                 formRef.current?.clearField("email")
+    //                 formRef.current?.clearField("phone")
+    //                 formRef.current?.clearField("message")
+    //             }
+    //             // else setSuccess("error")
+    //         })
+    //     } catch (err) {
+    //         const validationErrors: UnformErrors = {};
+    //         if (err instanceof yup.ValidationError) {
+    //             err
+    //                 .inner
+    //                 .forEach((error) => {
+    //                     if (error.path) 
+    //                         validationErrors[error.path] = error.message;
+    //                     }
+    //                 );
+    //             formRef.current
+    //                 ?.setErrors(validationErrors);
+    //         }
+    //     }
+    // };
 	
 	return (
 		<Container>
@@ -201,7 +199,7 @@ const Home: FunctionComponent = () => {
 					<div className="space"></div>
 
 					<div className="form">
-						<Form ref={formRef} onSubmit={handleSubmit}>
+						<Form ref={formRef} onSubmit={() => {}}>
 							<div className="input">
 								<div className="label">Nome</div>
 								<input type="text" name="name" id="" placeholder="Nome" />
