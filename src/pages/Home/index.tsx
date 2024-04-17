@@ -1,77 +1,83 @@
-import { FormHandles } from "@unform/core";
+import { FormHandles, SubmitHandler } from "@unform/core";
 import { FunctionComponent, useRef } from "react";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
-// import * as yup from "yup"
+import * as yup from "yup"
 import { Form } from "@unform/web";
+import { UnformErrors } from "../../interfaces/interfaces";
+import CustomInput from "../../components/CustomInput";
+import CustomTextarea from "../../components/CustomTextArea";
+import emailjs from "@emailjs/browser"
 
 const Home: FunctionComponent = () => {
 	const formRef = useRef<FormHandles>(null);
 
-    // const handleSubmit : SubmitHandler<FormData> = async (data) => {
-    //     formRef.current
-    //         ?.setErrors({});
-    //     try {
-    //         const schemaLogin = yup
-    //             .object()
-    //             .shape({
-    //                 name: yup
-    //                     .string()
-    //                     .required("Write your name"),
-    //                 email: yup
-    //                     .string()
-    //                     .email("Invalid email")
-    //                     .required("Write your email"),
-    //                 phone: yup
-    //                     .string()
-    //                     .required("Write your phone number"),
-	// 				message: yup
-    //                     .string()
-    //                     .required("Write a message"),                  
-    //             })
-    //             .required();
+    const handleSubmit : SubmitHandler<FormData> = async (data) => {
+        formRef.current
+            ?.setErrors({});
+        try {
+            const schemaLogin = yup
+                .object()
+                .shape({
+                    name: yup
+                        .string()
+                        .required("Informe o seu nome"),
+                    email: yup
+                        .string()
+                        .email("Email inválido")
+                        .required("Informe o seu email"),
+                    phone: yup
+                        .string()
+                        .required("Informe o seu número de celular"),
+					message: yup
+                        .string(),
+                })
+                .required();
 
-    //         await schemaLogin.validate(data, {abortEarly: false});
+            await schemaLogin.validate(data, {abortEarly: false});
 
-    //         const emailBody = {
-    //             from_name: formRef.current?.getFieldValue("name"),
-    //             email: formRef.current?.getFieldValue("email"),
-    //             phone: formRef.current?.getFieldValue("phone"),
-    //             message: formRef.current?.getFieldValue("message"),
-    //         }
+			console.log("Passou tudo")
+
+            const emailBody = {
+                from_name: formRef.current?.getFieldValue("name"),
+                email: formRef.current?.getFieldValue("email"),
+                phone: formRef.current?.getFieldValue("phone"),
+                message: formRef.current?.getFieldValue("message"),
+            }
             
-    //         emailjs.send(
-    //             import.meta.env.VITE_EMAIL_JS_SERVICE_ID, 
-    //             import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
-    //             emailBody, 
-    //             import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
-    //         ).then((res) => {
-    //             if(res && res.status == 200) {
-    //                 // setSuccess("success");
-    //                 formRef.current?.clearField("name")
-    //                 formRef.current?.clearField("email")
-    //                 formRef.current?.clearField("phone")
-    //                 formRef.current?.clearField("message")
-    //             }
-    //             // else setSuccess("error")
-    //         })
-    //     } catch (err) {
-    //         const validationErrors: UnformErrors = {};
-    //         if (err instanceof yup.ValidationError) {
-    //             err
-    //                 .inner
-    //                 .forEach((error) => {
-    //                     if (error.path) 
-    //                         validationErrors[error.path] = error.message;
-    //                     }
-    //                 );
-    //             formRef.current
-    //                 ?.setErrors(validationErrors);
-    //         }
-    //     }
-    // };
+            emailjs.send(
+                import.meta.env.VITE_EMAIL_JS_SERVICE_ID, 
+                import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+                emailBody, 
+                import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+            ).then((res) => {
+                if(res && res.status == 200) {
+                    // setSuccess("success");
+                    formRef.current?.clearField("name")
+                    formRef.current?.clearField("email")
+                    formRef.current?.clearField("phone")
+                    formRef.current?.clearField("message")
+                }
+                // else setSuccess("error")
+            })
+        } catch (err) {
+            const validationErrors: UnformErrors = {};
+            if (err instanceof yup.ValidationError) {
+                err
+                    .inner
+                    .forEach((error) => {
+                        if (error.path) 
+                            validationErrors[error.path] = error.message;
+                        }
+                    );
+                formRef.current
+                    ?.setErrors(validationErrors);
+				console.log("validationErrors ",validationErrors)
+            }
+        }
+    };
 	
 	return (
 		<Container>
@@ -87,12 +93,12 @@ const Home: FunctionComponent = () => {
 							Para alavancar o seu empreendimento, com tecnologia e simplicidade. Vem ser Beasier!
 						</div>
 						<div className="buttons">
-							<a href="https://beasier.vercel.app" style={{ textDecoration: "none" }}>
-								<Button width="308px" text="COMEÇAR" method={() => {}} type={"focused"} />								
+							<a className="button" href="https://beasier.vercel.app" style={{ textDecoration: "none" }}>
+								<Button width="100%" text="COMEÇAR" method={() => {}} type={"focused"} />								
 							</a>
 							OU
-							<a href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" style={{ textDecoration: "none" }}>
-								<Button width="308px" text="INSTALE O APP" method={() => {}} type={"unfocused"} />
+							<a className="button" href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" style={{ textDecoration: "none" }}>
+								<Button width="100%" text="INSTALE O APP" method={() => {}} type={"unfocused"} />
 							</a>
 						</div>
 					</div>
@@ -187,7 +193,7 @@ const Home: FunctionComponent = () => {
 								<img src="/whatsapp-1@2x.png" alt="" />
 								(53) 99946-1551
 							</a>
-							<a href="mailto:BEasier.IG@gmail.com">
+							<a href="BEasier.IG@gmail.com">
 								<img src="/envelope-1@2x.png" alt="" />
 								BEasier.IG@gmail.com
 							</a>
@@ -199,31 +205,31 @@ const Home: FunctionComponent = () => {
 					<div className="space"></div>
 
 					<div className="form">
-						<Form ref={formRef} onSubmit={() => {}}>
-							<div className="input">
-								<div className="label">Nome</div>
-								<input type="text" name="name" id="" placeholder="Nome" />
+						<Form ref={formRef} onSubmit={handleSubmit}>
+							<div className="input-wrapper double">
+								<div className="label">Nome completo</div>
+								<CustomInput width="100%" name="name" placeholder="Nome" />
 							</div>
-							<div className="input">
-								<div className="label">Sobrenome</div>
-								<input type="text" name="last-name" id="" placeholder="Sobrenome" />
-							</div>
-							<div className="input double">
+							<div className="input-wrapper">
 								<div className="label">Email</div>
-								<input type="email" name="email" id="" placeholder="Email" />
+								<CustomInput width="100%" name="email" placeholder="seumelhoremail@mail.com" />
+							</div>
+							<div className="input-wrapper">
+								<div className="label">Telefone</div>
+								<CustomInput width="100%" name="phone" placeholder="(00) 00000-0000" />
 							</div>
 							<div className="textarea">
 								<div className="label">Mensagem</div>
-								<textarea name="message" placeholder="Mensagem" id="" cols={30} rows={10}></textarea>
+								<CustomTextarea width="100%" name="message" placeholder="Olá, tudo bem?" />
 							</div>
 						</Form>
 						<div className="button">
-							<Button width={"169px"} text="Enviar" method={() => {}} type="focused" />
+							<Button width={"169px"} text="Enviar" method={() => formRef.current?.submitForm()} type="focused" />
 						</div>
 					</div>
 				</Contact>
 
-				<Footer />
+				{/* <Footer /> */}
 			</Grid>
 		</Container>
 	);

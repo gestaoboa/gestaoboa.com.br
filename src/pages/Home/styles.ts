@@ -47,6 +47,10 @@ export const Banner = styled.div`
 		margin-top: 55px;
 	}
 
+	.content .buttons .button {
+		width: 308px;
+	}
+
 	.images {
 		grid-column: span 5;
 		position: relative;
@@ -93,19 +97,21 @@ export const Banner = styled.div`
 
 	@media (max-width: 800px){
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		padding-left: 41px;
-		padding-right: 41px;
+		padding: 41px;
 
 		.content .title {
 			font-size: 36px;
+			text-align: center;
 		}
 
 		.content .subtitle {
-			font-size: 16px;
+			font-size: 18px;
+			text-align: center;
 		}
 
 		.content .buttons {
 			flex-direction: column;
+			gap: 10px;
 		}
 	}
 `;
@@ -133,6 +139,16 @@ export const Awards = styled.div`
 	.item .text {
 		font-size: 24px;
 		max-width: 313px;
+	}
+
+	@media (max-width: 800px){
+		.item .number {
+			font-size: 36px;
+		}
+
+		.item .text {
+			font-size: 18px;
+		}
 	}
 `
 
@@ -235,6 +251,40 @@ export const Solutions = styled.div`
 	.yellow {
 		background-color: #FDC500;
 	}
+
+	@media (max-width: 800px){
+		display: flex;
+		flex-direction: column;
+		padding: 41px;
+		padding-bottom: 250px;
+		grid-row-gap: 30px;
+
+		.block {
+			display: none;
+		}
+
+		.text .title {
+			font-size: 36px;
+		}
+
+		.text img {
+			top: -20px;
+			left: -25px;
+		}
+
+		.buying {
+			bottom: -22px;
+			left: 60px;
+		}
+
+		.buying img {
+			width: 300px;
+		}
+
+		.works .title {
+			font-size: 36px;
+		}
+	}
 `
 
 export const Team = styled.div`
@@ -284,6 +334,25 @@ export const Team = styled.div`
 		font-size: 24px;
 		font-weight: lighter;
 		font-style: italic;
+	}
+
+	@media (max-width: 800px){
+		padding: 41px;
+		gap: 60px;
+
+		.title {
+			font-size: 36px;
+		}
+
+		.items, .items .member {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		.items .member img {
+			width: 200px;
+		}
 	}
 `
 
@@ -365,22 +434,16 @@ export const Contact = styled.div`
 		padding: 40px;
 	}
 
-	.form form .input, .form form .textarea {
-		gap: 7px;
-		color: #fff;
+	.input-wrapper, .textarea {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
-
-	.input input {
-		height: 52px;
+	
+	.label { 
+		color	: #fff;
+		font-weight: bold; 
 	}
-
-	.input input, .textarea textarea {
-		border-radius: 10px;
-		padding-left: 10px;
-		border: none;
-	}
-
-	.label { font-weight: bold; }
 
 	.double, .textarea {
 		grid-column: span 2;
@@ -394,5 +457,11 @@ export const Contact = styled.div`
 		width: 50%;
 		display: flex;
 		justify-content: flex-end;
+	}
+
+	@media (max-width: 800px){
+		.space {
+			display: none;
+		}
 	}
 `

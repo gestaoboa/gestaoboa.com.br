@@ -11,9 +11,10 @@ export const Container = styled.div<ContainerType>`
     align-items: center;
     border-radius: 50px;
     cursor: pointer;
-    padding: 13px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    // padding-left: 50px;
+    // padding-right: 50px;
     font-weight: bold;
     ${props => props.width ? `width: ${props.width};` : ""}
     
