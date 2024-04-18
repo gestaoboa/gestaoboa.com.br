@@ -13,8 +13,12 @@ export const Container = styled.div`
     z-index: 200;
     background-color: #ffff;
 
-    @media (max-width: 750px){
+    @media (max-width: 800px){
 		justify-content: center;
+        position: relative;
+        width: 100%;
+        padding-left: 0%;
+        padding-right: 0%;
 	}
 `
 
