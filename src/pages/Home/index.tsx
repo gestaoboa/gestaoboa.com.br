@@ -1,183 +1,242 @@
-import { FunctionComponent, useCallback } from "react";
-import "./styles.css";
+import { FormHandles, SubmitHandler } from "@unform/core";
+import { FunctionComponent, useRef } from "react";
+import Button from "../../components/Button";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
+import * as yup from "yup"
+import { Form } from "@unform/web";
+import { UnformErrors } from "../../interfaces/interfaces";
+import CustomInput from "../../components/CustomInput";
+import CustomTextarea from "../../components/CustomTextArea";
+import emailjs from "@emailjs/browser"
+import ScrollSpy from "react-ui-scrollspy";
 
 const Home: FunctionComponent = () => {
-  const onGroupContainerClick = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='entreEmContato']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
+	const formRef = useRef<FormHandles>(null);
 
-  const onNOSSASOLUOText1Click = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='masEComo']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
+    const handleSubmit : SubmitHandler<FormData> = async (data) => {
+        formRef.current
+            ?.setErrors({});
+        try {
+            const schemaLogin = yup
+                .object()
+                .shape({
+                    name: yup
+                        .string()
+                        .required("Informe o seu nome"),
+                    email: yup
+                        .string()
+                        .email("Email inválido")
+                        .required("Informe o seu email"),
+                    phone: yup
+                        .string()
+                        .required("Informe o seu número de celular"),
+					message: yup
+                        .string(),
+                })
+                .required();
 
-  const onTIMEText1Click = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='conheaONosso']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
+            await schemaLogin.validate(data, {abortEarly: false});
 
-  const onCONTATOText1Click = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='entreEmContato']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
+			console.log("Passou tudo")
 
-  const onGroupContainer1Click = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='entreEmContato']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
+            const emailBody = {
+                from_name: formRef.current?.getFieldValue("name"),
+                email: formRef.current?.getFieldValue("email"),
+                phone: formRef.current?.getFieldValue("phone"),
+                message: formRef.current?.getFieldValue("message"),
+            }
+            
+            emailjs.send(
+                import.meta.env.VITE_EMAIL_JS_SERVICE_ID, 
+                import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+                emailBody, 
+                import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+            ).then((res) => {
+                if(res && res.status == 200) {
+                    // setSuccess("success");
+                    formRef.current?.clearField("name")
+                    formRef.current?.clearField("email")
+                    formRef.current?.clearField("phone")
+                    formRef.current?.clearField("message")
+                }
+                // else setSuccess("error")
+            })
+        } catch (err) {
+            const validationErrors: UnformErrors = {};
+            if (err instanceof yup.ValidationError) {
+                err
+                    .inner
+                    .forEach((error) => {
+                        if (error.path) 
+                            validationErrors[error.path] = error.message;
+                        }
+                    );
+                formRef.current
+                    ?.setErrors(validationErrors);
+				console.log("validationErrors ",validationErrors)
+            }
+        }
+    };
+	
+	return (
+		<ScrollSpy>
+			<Container>
+				<Grid>
+					<Header />
 
-  return (
-    <div className="desktop-2">
-      <div className="desktop-2-child" />
-      <div className="desktop-2-item" />
-      <div className="desktop-2-inner" />
-      <div className="rectangle-div" />
-      <div className="desktop-2-child1" />
-      <div className="desktop-2-child2" />
-      <div className="desktop-2-child3" />
-      <div className="beasier-1-1-1-parent">
-        <img className="beasier-1-1-1" alt="" src="/beasier-1-1-1@2x.png" />
-        <b className="beasier">BEasier</b>
-      </div>
-      <b className="para-melhor-gesto">
-        Para melhor gestão, BEasier é a solução!
-      </b>
-      <div className="desktop-2-child4" />
-      <div className="incio">INÍCIO</div>
-      <div className="desktop-2-child5" />
-      <div className="nossa-soluo">NOSSA SOLUÇÃO</div>
-      <div className="desktop-2-child6" />
-      <div className="time">TIME</div>
-      <div className="desktop-2-child7" />
-      <div className="contato">CONTATO</div>
-      <div className="rectangle-parent" onClick={onGroupContainerClick}>
-        <div className="group-child" />
-        <b className="testar-agora">TESTAR AGORA</b>
-      </div>
-      <div className="beasier-1-1-1-parent">
-        <img className="beasier-1-1-1" alt="" src="/beasier-1-1-1@2x.png" />
-        <b className="beasier">BEasier</b>
-      </div>
-      <div className="incio">INÍCIO</div>
-      <div className="nossa-soluo1" onClick={onNOSSASOLUOText1Click}>
-        NOSSA SOLUÇÃO
-      </div>
-      <div className="time1" onClick={onTIMEText1Click}>
-        TIME
-      </div>
-      <div className="contato1" onClick={onCONTATOText1Click}>
-        CONTATO
-      </div>
-      <div className="rectangle-parent" onClick={onGroupContainer1Click}>
-        <div className="group-child" />
-        <b className="testar-agora">TESTAR AGORA</b>
-      </div>
-      <b className="mas-e-como" data-scroll-to="masEComo">
-        Mas e como funciona?
-      </b>
-      <b className="conhea-o-nosso" data-scroll-to="conheaONosso">
-        Conheça o nosso time!
-      </b>
-      <b className="entre-em-contato" data-scroll-to="entreEmContato">
-        Entre em contato conosco!
-      </b>
-      <img className="growth-1-icon" alt="" src="/growth-1@2x.png" />
-      <div className="bar-chart-1-1-parent">
-        <img className="bar-chart-1-1" alt="" src="/barchart-1-1@2x.png" />
-        <b className="as-ferramentas-para">
-          As ferramentas para gerir o seu negócio em um único lugar
-        </b>
-      </div>
-      <a href="https://www.instagram.com/beasieroficial?igsh=OXpsOXI4Mnc2cGpt" target="_blank">
-        <b className="beasieroficial">@BEasierOficial</b>
-      </a>
-      <a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21" target="_blank">
-        <b className="b">(53) 99946-1551</b>
-      </a>
-      <b className="beasieriggmailcom">BEasier.IG@gmail.com</b>
-      <div className="adaptar-se-pra-economia-40-parent">
-        <b className="adaptar-se-pra-economia">Adaptar-se pra economia 4.0</b>
-        <img className="store-1-icon" alt="" src="/store-1@2x.png" />
-      </div>
-      <div className="conhecimento-financeiro-de-man-parent">
-        <b className="conhecimento-financeiro-de">
-          Conhecimento financeiro de maneira simplificada
-        </b>
-        <img className="check-list-1-icon" alt="" src="/checklist-1@2x.png" />
-      </div>
-      <div className="mostrar-formas-de-captar-clien-parent">
-        <b className="conhecimento-financeiro-de">
-          Mostrar formas de captar clientes
-        </b>
-        <img className="check-list-1-icon" alt="" src="/monitoring-1@2x.png" />
-      </div>
-      <img className="partnership-1-icon" alt="" src="/partnership-1@2x.png" />
-      <div className="silvio-quintana-parent">
-        <b className="silvio-quintana">Silvio Quintana</b>
-        <i className="ceouxdesenvolvedor">CEO/UX/Desenvolvedor</i>
-        <img className="mask-group-icon" alt="" src="/silvio.png" />
-      </div>
-      <div className="karine-quintana-parent">
-        <b className="karine-quintana">Karine Quintana</b>
-        <i className="criao-de-contedo">Criação de Conteúdo</i>
-        <img className="mask-group-icon" alt="" src="/karine.png" />
-      </div>
-      <div className="victor-amaral-parent">
-        <b className="victor-amaral">Victor Amaral</b>
-        <i className="uxdesenvolvedor">UX/Desenvolvedor</i>
-        <img className="mask-group-icon" alt="" src="/victor.png" />
-      </div>
-      <div className="bruno-nascimento-parent">
-        <b className="bruno-nascimento">Bruno Nascimento</b>
-        <i className="uxdesenvolvedor">Desenvolvedor</i>
-        <img className="mask-group-icon" alt="" src="/bruno.png" />
-      </div>
-      <a href="https://www.instagram.com/beasieroficial?igsh=OXpsOXI4Mnc2cGpt" target="_blank">
-        <img className="instagram-1-icon" alt="" src="/instagram-1@2x.png" />
-      </a>
-      <a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21" target="_blank">
-        <img className="whatsapp-1-icon" alt="" src="/whatsapp-1@2x.png" />
-      </a>
-      <img className="envelope-1-icon" alt="" src="/envelope-1@2x.png" />
-      <img className="profits-1-icon" alt="" src="/profits-1@2x.png" />
-      <b className="como-a-podemos">Como a podemos te ajudar?</b>
-      <div className="ellipse-div" />
-      <div className="desktop-2-child8" />
-      <div className="desktop-2-child9" />
-      <div className="desktop-2-child10" />
-      <div className="desktop-2-child11" />
-      <div className="desktop-2-child12" />
-      <div className="desktop-2-child13" />
-      <b className="cadastre-a-sua">Cadastre a sua empresa pelo nosso app</b>
-      <b className="registre-os-seus">Registre os seus produtos e clientes</b>
-      <b className="ao-realizar-uma">
-        Ao realizar uma venda, informe no aplicativo
-      </b>
-      <b className="agora-voc-pode">
-        Agora você pode ver estatísticas do seu negócio!
-      </b>
-      <b className="uma-ia-ir">
-        Uma IA irá oferecer insights baseado nas suas vendas
-      </b>
-      <div className="termos-e-condies" /* onClick={onTermosECondiesClick} */>
-        <a href="/terms">Termos e Condições de Uso</a>
-      </div>
-      <div className="poltica-de-privacidade"  /* onClick={onPolticaDePrivacidadeClick} */>
-        <a href="/privacy">Política de privacidade</a>
-      </div>
-    </div>
-  );
+					<Banner id="start">
+						<div className="content">
+							<div className="title">
+								Gestão financeira simplificada para o seu negócio
+							</div>
+							<div className="subtitle">
+								Para alavancar o seu empreendimento, com tecnologia e simplicidade. Vem ser Beasier!
+							</div>
+							<div className="buttons">
+								<a className="button" href="https://beasier.vercel.app" style={{ textDecoration: "none" }}>
+									<Button width="100%" text="COMEÇAR" method={() => {}} type={"focused"} />								
+								</a>
+								OU
+								<a className="button" href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" style={{ textDecoration: "none" }}>
+									<Button width="100%" text="INSTALE O APP" method={() => {}} type={"unfocused"} />
+								</a>
+							</div>
+						</div>
+						<div className="images">
+							<img className="cellphone" src="/cellphone.svg" alt="" />
+							<img className="elipse" src="/Ellipse.svg" alt="" />
+						</div>
+					</Banner>
+
+					<Awards>
+						<div className="item">
+							<div className="number">1°</div>
+							<div className="text">Colocada na pré-incubação de Rio Grande</div>
+						</div>
+					</Awards>
+
+					<Solutions id="solution">
+						<div className="text">
+							<img src="/text-decoration.png" alt="" />
+							<div className="title">Como a BEasier pode te ajudar?</div>
+							<div className="subtitle">Veja nassa variedade de benefícios</div>
+						</div>
+						
+						<div className="benefits">
+							<img src="/checklist-1@2x.png" alt="" />
+							<div className="title">Vendas</div>
+							<div className="subtitle">Através da plataforma você pode fazer o registro das suas vendas, e ter controle do lucro que você tem no mês</div>
+						</div>
+
+						<div className="benefits">
+							<img src="/store-1@2x.png" alt="" />
+							<div className="title">Clientes</div>
+							<div className="subtitle">Registre seus clientes com email e telefone, e oferecemos diversas soluções para vocês automatizar seu relacionamento, e ter mais conexões</div>
+						</div>
+
+						<div className="benefits">
+							<img src="/monitoring-1@2x.png" alt="" />
+							<div className="title">Produtos e serviços</div>
+							<div className="subtitle">Registres seus produtos, ou serviços junto do valor de custo, e obtenha uma gestão simplificada de estoque e lucro.</div>
+						</div>
+
+						<div className="block"></div>
+
+						<div className="buying">
+							<img src="/partnership-1@2x.png" alt="" />
+						</div>
+
+						<div className="works">
+							<div className="title">Como funciona?</div>
+							<div className="rectangle blue">Resgistre produtos e clientes</div>
+							<div className="rectangle blue">Resgistre cada venda</div>
+							<div className="rectangle blue">Veja os seus resultados</div>
+							<div className="rectangle yellow">Uma IA irá fornecer insights</div>
+						</div>
+					</Solutions>
+
+					<Team id="team">
+						<div className="title">Conheça o nosso time!</div>
+						<div className="items">
+							<div className="member">
+								<img src="/bruno.png" alt="" />
+								<div className="name">Bruno Nascimento</div>
+								<div className="subtitle">Desenvolvedor back-end</div>
+							</div>
+							<div className="member">
+								<img src="/silvio.png" alt="" />
+								<div className="name">Silvio Quintana</div>
+								<div className="subtitle">CEO/COO</div>
+							</div>
+							<div className="member">
+								<img src="/karine.png" alt="" />
+								<div className="name">Karine Quintana</div>
+								<div className="subtitle">CMO/CFO</div>
+							</div>
+							<div className="member">
+								<img src="/victor.png" alt="" />
+								<div className="name">Victor Amaral</div>
+								<div className="subtitle">CTO</div>
+							</div>
+						</div>
+					</Team>
+
+					<Contact id="contact">
+						<div className="info">
+							<div className="title">Entre em contato conosco!</div>
+							<div className="links">
+								<a href="https://www.instagram.com/beasieroficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+									<img src="/instagram-1@2x.png" alt="" />
+									@BEasierOficial
+								</a>
+								<a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21">
+									<img src="/whatsapp-1@2x.png" alt="" />
+									(53) 99946-1551
+								</a>
+								<a href="BEasier.IG@gmail.com">
+									<img src="/envelope-1@2x.png" alt="" />
+									BEasier.IG@gmail.com
+								</a>
+							</div>
+						</div>
+
+						<div className="profits">
+							<img src="/profits-1@2x.png" alt="" />
+						</div>
+						<div className="space"></div>
+
+						<div className="form">
+							<Form ref={formRef} onSubmit={handleSubmit}>
+								<div className="input-wrapper double">
+									<div className="label">Nome completo</div>
+									<CustomInput width="100%" name="name" placeholder="Nome" />
+								</div>
+								<div className="input-wrapper">
+									<div className="label">Email</div>
+									<CustomInput width="100%" name="email" placeholder="seumelhoremail@mail.com" />
+								</div>
+								<div className="input-wrapper">
+									<div className="label">Telefone</div>
+									<CustomInput width="100%" name="phone" placeholder="(00) 00000-0000" />
+								</div>
+								<div className="textarea">
+									<div className="label">Mensagem</div>
+									<CustomTextarea width="100%" name="message" placeholder="Olá, tudo bem?" />
+								</div>
+							</Form>
+							<div className="button">
+								<Button width={"100%"} text="Enviar" method={() => formRef.current?.submitForm()} type="focused" />
+							</div>
+						</div>
+					</Contact>
+
+					<Footer />
+				</Grid>
+			</Container>
+		</ScrollSpy>
+	);
 };
 
 export default Home;
