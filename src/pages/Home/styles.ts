@@ -17,7 +17,7 @@ export const Banner = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	grid-column: span 12;
-	padding-top: 40px;
+	padding-top: 150px;
 	padding-left: 100px;
 	padding-right: 100px;
 
@@ -361,7 +361,7 @@ export const Contact = styled.div`
 	padding: 170px;
 	padding-left: 100px;
 	padding-right: 100px;
-	padding-bottom: 230px;
+	padding-bottom: 300px;
 	grid-column: span 12;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	position: relative;
@@ -421,7 +421,7 @@ export const Contact = styled.div`
 	.form {
 		grid-column: span 5;
 		align-items: end;
-		gap: 12px;
+		gap: 30px;
 	}
 
 	.form form {
@@ -454,14 +454,51 @@ export const Contact = styled.div`
 	}
 
 	.form .button {
-		width: 50%;
+		width: 169px;
 		display: flex;
 		justify-content: flex-end;
 	}
 
 	@media (max-width: 800px){
-		.space {
+		display: flex;
+		flex-direction: column;
+		padding: 41px;
+		gap: 30px;
+
+		.space, .profits {
 			display: none;
+		}
+
+		.info {
+			gap: 30px;
+		}
+
+		.info .title {
+			font-size: 36px;
+		}
+
+		.info .links {
+			font-size: 18px;
+		}
+
+		.info .links img {
+			width: 27px;
+		}
+
+		.form {
+			justify-content: center;
+			align-items: center;
+		}
+
+		.form form {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+			padding: 10%;
+		}
+
+		.form .button {
+			width: 100%;
 		}
 	}
 `

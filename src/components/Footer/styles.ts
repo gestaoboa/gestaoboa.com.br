@@ -13,12 +13,16 @@ export const Container = styled.div`
 
     a { color: #fff; font-weight: bold; text-decoration: none; }
 
-    .link {
+    .link, .link-mobile {
         display: flex;
         flex-direction: column;
         gap: 12px;
         justify-content: center;
         font-size: 16px;
+    }
+
+    .link-mobile {
+        display: none;
     }
 
     .logo {
@@ -40,5 +44,27 @@ export const Container = styled.div`
         justify-content: end;
         font-weight: lighter;
         font-size: 16px;
+    }
+
+    @media (max-width: 800px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        .link {
+            display: none;
+        }
+
+        .link-mobile {
+            display: flex;
+        }
+
+        .link-mobile, .copyright {
+            align-items: center;
+            text-align: center;
+        }
     }
 `

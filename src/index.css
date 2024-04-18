@@ -7,3 +7,9 @@ body {
     line-height: normal;
     font-family: "Mulish";
 }
+
+.active-scroll-spy {
+    font-weight: bold;
+    border-bottom: 1px solid #03045E;
+    background-color: #000;
+}
