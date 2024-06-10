@@ -1,85 +1,93 @@
+import emailjs from "@emailjs/browser";
 import { FormHandles, SubmitHandler } from "@unform/core";
-import { FunctionComponent, useRef } from "react";
-import Button from "../../components/Button";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
-import * as yup from "yup"
 import { Form } from "@unform/web";
-import { UnformErrors } from "../../interfaces/interfaces";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
+import ReactPlayer from "react-player";
+import ScrollSpy from "react-ui-scrollspy";
+import * as yup from "yup";
+import Button from "../../components/Button";
 import CustomInput from "../../components/CustomInput";
 import CustomTextarea from "../../components/CustomTextArea";
-import emailjs from "@emailjs/browser"
-import ScrollSpy from "react-ui-scrollspy";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import { UnformErrors } from "../../interfaces/interfaces";
+import { Awards, Banner, Contact, Container, Grid, Solutions, Team } from "./styles";
 
 const Home: FunctionComponent = () => {
+	const [width, setWidth] = useState(window.innerWidth);
+	const updateDimensions = () => {
+		setWidth(window.innerWidth);
+	}
+	useEffect(() => {
+		window.addEventListener("resize", updateDimensions);
+		return () => window.removeEventListener("resize", updateDimensions);
+	}, []);
 	const formRef = useRef<FormHandles>(null);
 
-    const handleSubmit : SubmitHandler<FormData> = async (data) => {
-        formRef.current
-            ?.setErrors({});
-        try {
-            const schemaLogin = yup
-                .object()
-                .shape({
-                    name: yup
-                        .string()
-                        .required("Informe o seu nome"),
-                    email: yup
-                        .string()
-                        .email("Email inválido")
-                        .required("Informe o seu email"),
-                    phone: yup
-                        .string()
-                        .required("Informe o seu número de celular"),
+	const handleSubmit: SubmitHandler<FormData> = async (data) => {
+		formRef.current
+			?.setErrors({});
+		try {
+			const schemaLogin = yup
+				.object()
+				.shape({
+					name: yup
+						.string()
+						.required("Informe o seu nome"),
+					email: yup
+						.string()
+						.email("Email inválido")
+						.required("Informe o seu email"),
+					phone: yup
+						.string()
+						.required("Informe o seu número de celular"),
 					message: yup
-                        .string(),
-                })
-                .required();
+						.string(),
+				})
+				.required();
 
-            await schemaLogin.validate(data, {abortEarly: false});
+			await schemaLogin.validate(data, { abortEarly: false });
 
 			console.log("Passou tudo")
 
-            const emailBody = {
-                from_name: formRef.current?.getFieldValue("name"),
-                email: formRef.current?.getFieldValue("email"),
-                phone: formRef.current?.getFieldValue("phone"),
-                message: formRef.current?.getFieldValue("message"),
-            }
-            
-            emailjs.send(
-                import.meta.env.VITE_EMAIL_JS_SERVICE_ID, 
-                import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
-                emailBody, 
-                import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
-            ).then((res) => {
-                if(res && res.status == 200) {
-                    // setSuccess("success");
-                    formRef.current?.clearField("name")
-                    formRef.current?.clearField("email")
-                    formRef.current?.clearField("phone")
-                    formRef.current?.clearField("message")
-                }
-                // else setSuccess("error")
-            })
-        } catch (err) {
-            const validationErrors: UnformErrors = {};
-            if (err instanceof yup.ValidationError) {
-                err
-                    .inner
-                    .forEach((error) => {
-                        if (error.path) 
-                            validationErrors[error.path] = error.message;
-                        }
-                    );
-                formRef.current
-                    ?.setErrors(validationErrors);
-				console.log("validationErrors ",validationErrors)
-            }
-        }
-    };
-	
+			const emailBody = {
+				from_name: formRef.current?.getFieldValue("name"),
+				email: formRef.current?.getFieldValue("email"),
+				phone: formRef.current?.getFieldValue("phone"),
+				message: formRef.current?.getFieldValue("message"),
+			}
+
+			emailjs.send(
+				import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+				import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+				emailBody,
+				import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+			).then((res) => {
+				if (res && res.status == 200) {
+					// setSuccess("success");
+					formRef.current?.clearField("name")
+					formRef.current?.clearField("email")
+					formRef.current?.clearField("phone")
+					formRef.current?.clearField("message")
+				}
+				// else setSuccess("error")
+			})
+		} catch (err) {
+			const validationErrors: UnformErrors = {};
+			if (err instanceof yup.ValidationError) {
+				err
+					.inner
+					.forEach((error) => {
+						if (error.path)
+							validationErrors[error.path] = error.message;
+					}
+					);
+				formRef.current
+					?.setErrors(validationErrors);
+				console.log("validationErrors ", validationErrors)
+			}
+		}
+	};
 	return (
 		<ScrollSpy>
 			<Container>
@@ -96,11 +104,11 @@ const Home: FunctionComponent = () => {
 							</div>
 							<div className="buttons">
 								<a className="button" href="https://beasier.vercel.app" style={{ textDecoration: "none" }}>
-									<Button width="100%" text="COMEÇAR" method={() => {}} type={"focused"} />								
+									<Button width="100%" text="COMEÇAR" method={() => { }} type={"focused"} />
 								</a>
 								OU
 								<a className="button" href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" style={{ textDecoration: "none" }}>
-									<Button width="100%" text="INSTALE O APP" method={() => {}} type={"unfocused"} />
+									<Button width="100%" text="INSTALE O APP" method={() => { }} type={"unfocused"} />
 								</a>
 							</div>
 						</div>
@@ -113,7 +121,7 @@ const Home: FunctionComponent = () => {
 					<Awards>
 						<div className="item">
 							<div className="number">1°</div>
-							<div className="text">Colocada na pré-incubação de Rio Grande</div>
+							<div className="text">Colocada na pré-incubação de Rio Grande (2023)</div>
 						</div>
 					</Awards>
 
@@ -123,37 +131,46 @@ const Home: FunctionComponent = () => {
 							<div className="title">Como a BEasier pode te ajudar?</div>
 							<div className="subtitle">Veja nassa variedade de benefícios</div>
 						</div>
-						
+
 						<div className="benefits">
 							<img src="/checklist-1@2x.png" alt="" />
-							<div className="title">Vendas</div>
-							<div className="subtitle">Através da plataforma você pode fazer o registro das suas vendas, e ter controle do lucro que você tem no mês</div>
+							<div className="title">Vendas de serviços</div>
+							<div className="subtitle">Através da plataforma você pode fazer o registro dos seus serviços, e de cada venda, assim você terá mais controle de quantas horas você trabalha por dia, e de quanto você ganha.</div>
 						</div>
 
 						<div className="benefits">
 							<img src="/store-1@2x.png" alt="" />
-							<div className="title">Clientes</div>
-							<div className="subtitle">Registre seus clientes com email e telefone, e oferecemos diversas soluções para vocês automatizar seu relacionamento, e ter mais conexões</div>
+							<div className="title">Gestão financeira</div>
+							<div className="subtitle">Adicione seus custos, vendas, e o dinheiro do seu bolso que tu coloca no negócio. Dessa forma você terá controle do que é dinheiro da empresa, e o que é seu dinheiro pessoal, além de poder acaompanhar seus resultados de faturamento, e lucro mensalmente.</div>
 						</div>
 
 						<div className="benefits">
 							<img src="/monitoring-1@2x.png" alt="" />
-							<div className="title">Produtos e serviços</div>
-							<div className="subtitle">Registres seus produtos, ou serviços junto do valor de custo, e obtenha uma gestão simplificada de estoque e lucro.</div>
+							<div className="title">Clientes e agendamentos</div>
+							<div className="subtitle">Registre seus clientes com nome, email e telefone, e trazemos diversas soluções para vocês automatizar seu relacionamento, e ter mais conexões. Além disso possibilitamos que você agenda seus encontros com clientes.</div>
 						</div>
 
 						<div className="block"></div>
+						{width > 810 && (
+							<ReactPlayer
+								className='buying'
+								url='/demonstracao.mp4'
+								width='30vw'
+								height='85vh'
+								controls={true}
+								loop={true}
+								playing={true}
 
-						<div className="buying">
-							<img src="/partnership-1@2x.png" alt="" />
-						</div>
+							/>
+						)}
 
 						<div className="works">
 							<div className="title">Como funciona?</div>
-							<div className="rectangle blue">Resgistre produtos e clientes</div>
-							<div className="rectangle blue">Resgistre cada venda</div>
-							<div className="rectangle blue">Veja os seus resultados</div>
-							<div className="rectangle yellow">Uma IA irá fornecer insights</div>
+							<div className="rectangle blue">Resgistre seus serviços e atuais clientes</div>
+							<div className="rectangle blue">Se organize utilizando nossa agenda</div>
+							<div className="rectangle blue">Faça gestão financeira adicionando cada venda e custo</div>
+							<div className="rectangle blue">Descubra seu lucro mensal, e os melhores clientes</div>
+							<div className="rectangle yellow">Cresça o seu negócio</div>
 						</div>
 					</Solutions>
 
@@ -193,7 +210,7 @@ const Home: FunctionComponent = () => {
 								</a>
 								<a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+BEasier%21">
 									<img src="/whatsapp-1@2x.png" alt="" />
-									(53) 99946-1551
+									(53) 99946-1550
 								</a>
 								<a href="BEasier.IG@gmail.com">
 									<img src="/envelope-1@2x.png" alt="" />
@@ -202,9 +219,9 @@ const Home: FunctionComponent = () => {
 							</div>
 						</div>
 
-						<div className="profits">
+						{/* <div className="profits">
 							<img src="/profits-1@2x.png" alt="" />
-						</div>
+						</div> */}
 						<div className="space"></div>
 
 						<div className="form">

@@ -91,14 +91,68 @@ export const Banner = styled.div`
 		}
 
 		.images {
-			display: none;
+			width: 175%;
+			align-self: center;
+			justify-content: center;
+			display: 600px;
+		}
+		.cellphone {
+			height: 600px;
+		}
+		.elipse {
+			height: 580px;
 		}
 	}
 
 	@media (max-width: 800px){
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
+		.images {
+			height: 600px;
+			width: 80%;
+			align-self: center;
+			justify-content: center;
+			/* grid-column: span 4; */
+		}
+		.cellphone {
+			height: 550px;
+			margin-right: -70px;
+		}
+		.elipse {
+			height: 420px;
+		}
+		.content .title {
+			font-size: 36px;
+			text-align: center;
+		}
 
+		.content .subtitle {
+			font-size: 18px;
+			text-align: center;
+		}
+
+		.content .buttons {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+	@media (max-width: 600px){
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		padding: 41px;
+		.images {
+			height: 600px;
+			/* grid-column: span 4; */
+			width: 120%;
+			align-self: center;
+			justify-content: center;
+		}
+		.cellphone {
+			margin-right: -70px;
+			height: 550px;
+		}
+		.elipse {
+			height: 0;
+		}
 		.content .title {
 			font-size: 36px;
 			text-align: center;
@@ -214,7 +268,7 @@ export const Solutions = styled.div`
 		display: flex;
 		grid-column: span 6;
 		position: absolute;
-		bottom: -45px;
+		bottom: 20px;
 		left: 100px;
 	}
 
@@ -256,7 +310,7 @@ export const Solutions = styled.div`
 		display: flex;
 		flex-direction: column;
 		padding: 41px;
-		padding-bottom: 250px;
+		padding-bottom: 25px;
 		grid-row-gap: 30px;
 
 		.block {
@@ -272,14 +326,10 @@ export const Solutions = styled.div`
 			left: -25px;
 		}
 
-		.buying {
-			bottom: -22px;
-			left: 60px;
-		}
-
-		.buying img {
-			width: 300px;
-		}
+		/* .buying {
+			bottom: 10px;
+			align-self: center;
+		} */
 
 		.works .title {
 			font-size: 36px;
@@ -358,10 +408,10 @@ export const Team = styled.div`
 
 export const Contact = styled.div`
 	display: grid;
-	padding: 170px;
+	padding: 100px;
 	padding-left: 100px;
 	padding-right: 100px;
-	padding-bottom: 300px;
+	padding-bottom: 100px;
 	grid-column: span 12;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	position: relative;
