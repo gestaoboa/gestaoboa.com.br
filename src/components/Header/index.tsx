@@ -9,7 +9,7 @@ export default function Header () {
         <Container>
             <Logo onClick={() => navigate("/")}>
                 <LogoImg src="/beasier-1-1-1@2x.png" alt="logo beasier"  />
-                <Title>BEasier</Title>
+                <Title>Gestão Boa</Title>
             </Logo>
 
             <Links>

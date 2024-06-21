@@ -59,9 +59,10 @@ export const Banner = styled.div`
 
 	.images .cellphone {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		/* bottom: 0; */
+		right: 170px;
 		z-index: 100;
+		width: 350px;
 	}
 
 	.images .elipse {
