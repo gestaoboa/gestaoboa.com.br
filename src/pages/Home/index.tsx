@@ -96,11 +96,10 @@ const Home: FunctionComponent = () => {
           <Banner id="start">
             <div className="content">
               <div className="title">
-                Gestão financeira simplificada para o seu negócio
+                Gestão inteligente para o seu negócio
               </div>
               <div className="subtitle">
-                Para alavancar o seu empreendimento, com tecnologia e
-                simplicidade. Vem ser Gestão Boa!
+                Com o app Gestão Boa para serviços, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
               </div>
               <div className="buttons">
                 <a
@@ -195,6 +194,7 @@ const Home: FunctionComponent = () => {
                 controls={true}
                 loop={true}
                 playing={true}
+                muted
               />
             )}
 
@@ -261,9 +261,6 @@ const Home: FunctionComponent = () => {
               </div>
             </div>
 
-            {/* <div className="profits">
-							<img src="/profits-1@2x.png" alt="" />
-						</div> */}
             <div className="space"></div>
 
             <div className="form">

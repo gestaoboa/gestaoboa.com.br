@@ -59,7 +59,6 @@ export const Banner = styled.div`
 
 	.images .cellphone {
 		position: absolute;
-		/* bottom: 0; */
 		right: 170px;
 		z-index: 100;
 		width: 350px;
@@ -92,34 +91,37 @@ export const Banner = styled.div`
 		}
 
 		.images {
-			width: 175%;
+			// width: 175%;
 			align-self: center;
 			justify-content: center;
-			display: 600px;
+			display: flex;
+			grid-column: span 12;
 		}
-		.cellphone {
+		.images .cellphone {
 			height: 600px;
 		}
-		.elipse {
+		.images .elipse {
 			height: 580px;
+			right: 0px;
+			left: 0px;
 		}
 	}
 
 	@media (max-width: 800px){
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
+
 		.images {
 			height: 600px;
 			width: 80%;
 			align-self: center;
 			justify-content: center;
-			/* grid-column: span 4; */
 		}
-		.cellphone {
+		.images .cellphone {
 			height: 550px;
 			margin-right: -70px;
 		}
-		.elipse {
+		images .elipse {
 			height: 420px;
 		}
 		.content .title {
@@ -141,18 +143,22 @@ export const Banner = styled.div`
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
 		.images {
-			height: 600px;
-			/* grid-column: span 4; */
-			width: 120%;
+			display: flex !important;
+			height: fit-content;
+			width: 100%;
 			align-self: center;
 			justify-content: center;
+			align-items: center;
+			padding-top: 20px;
 		}
-		.cellphone {
-			margin-right: -70px;
-			height: 550px;
+		.images .cellphone {
+			height: unset;
+			width: 300px;
+			position: unset !important;
+			margin-right: 0px;
 		}
-		.elipse {
-			height: 0;
+		.images .elipse {
+			display: none;
 		}
 		.content .title {
 			font-size: 36px;
@@ -327,10 +333,10 @@ export const Solutions = styled.div`
 			left: -25px;
 		}
 
-		/* .buying {
-			bottom: 10px;
-			align-self: center;
-		} */
+		// .buying {
+		// 	bottom: 10px;
+		// 	align-self: center;
+		// }
 
 		.works .title {
 			font-size: 36px;
