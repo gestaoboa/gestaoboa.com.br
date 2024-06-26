@@ -91,19 +91,33 @@ export const Banner = styled.div`
 		}
 
 		.images {
-			// width: 175%;
+			width: 100%;
+			height: 600px;
 			align-self: center;
 			justify-content: center;
 			display: flex;
-			grid-column: span 12;
+			grid-column: span 12 !important;
+			margin-bottom: 20px;
+			margin-top: 20px;
 		}
+
 		.images .cellphone {
 			height: 600px;
-		}
-		.images .elipse {
-			height: 580px;
+			width: unset;
 			right: 0px;
 			left: 0px;
+			top: 0px;
+			bottom: 0px;
+			margin: 0 auto;
+		}
+
+		.images .elipse {
+			height: 600px;
+			right: 0px;
+			left: 0px;
+			top: 0px;
+			bottom: 0px;
+			margin: 0 auto;
 		}
 	}
 
@@ -111,37 +125,38 @@ export const Banner = styled.div`
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
 
-		.images {
-			height: 600px;
-			width: 80%;
-			align-self: center;
-			justify-content: center;
-		}
-		.images .cellphone {
-			height: 550px;
-			margin-right: -70px;
-		}
-		images .elipse {
-			height: 420px;
-		}
-		.content .title {
-			font-size: 36px;
-			text-align: center;
-		}
+		// .images {
+		// 	height: 600px;
+		// 	width: 80%;
+		// 	align-self: center;
+		// 	justify-content: center;
+		// }
+		// .images .cellphone {
+		// 	height: 550px;
+		// 	margin-right: -70px;
+		// }
+		// images .elipse {
+		// 	height: 420px;
+		// }
+		// .content .title {
+		// 	font-size: 36px;
+		// 	text-align: center;
+		// }
 
-		.content .subtitle {
-			font-size: 18px;
-			text-align: center;
-		}
+		// .content .subtitle {
+		// 	font-size: 18px;
+		// 	text-align: center;
+		// }
 
-		.content .buttons {
-			flex-direction: column;
-			gap: 10px;
-		}
+		// .content .buttons {
+		// 	flex-direction: column;
+		// 	gap: 10px;
+		// }
 	}
 	@media (max-width: 600px){
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
+		
 		.images {
 			display: flex !important;
 			height: fit-content;
@@ -155,7 +170,7 @@ export const Banner = styled.div`
 			height: unset;
 			width: 300px;
 			position: unset !important;
-			margin-right: 0px;
+			// margin-right: 0px;
 		}
 		.images .elipse {
 			display: none;

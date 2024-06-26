@@ -14,12 +14,19 @@ export const Container = styled.div`
     background-color: #ffff;
 
     @media (max-width: 800px){
-		justify-content: center;
         position: relative;
-        width: 100%;
-        padding-left: 0%;
-        padding-right: 0%;
+        width: calc(100% - 100px);
+        padding-left: 50px;
+        padding-right: 50px;
+
 	}
+
+    @media (max-width: 750px){
+        width: 100%;
+        justify-content: center;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 `
 
 export const Logo = styled.div`
