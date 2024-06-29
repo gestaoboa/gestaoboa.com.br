@@ -25,7 +25,7 @@ export const Banner = styled.div`
 		display: flex;
 		flex-direction: column;
 		grid-column: span 7;
-		gap: 14px;
+		gap: 57px;
 	}
 
 	.content .title {
@@ -38,13 +38,20 @@ export const Banner = styled.div`
 		font-weight: lighter;
 		font-size: 32px;
 		text-align: start;
+		width: 850px;
+	}
+
+	.content .subtitle span {
+		font-weight: bold;
+		color: #03045E;
 	}
 
 	.content .buttons {
 		display: flex;
+		width: 850px;
 		gap: 35px;
 		align-items: center;
-		margin-top: 55px;
+		justify-content: center;
 	}
 
 	.content .buttons .button {
@@ -124,35 +131,8 @@ export const Banner = styled.div`
 	@media (max-width: 800px){
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
-
-		// .images {
-		// 	height: 600px;
-		// 	width: 80%;
-		// 	align-self: center;
-		// 	justify-content: center;
-		// }
-		// .images .cellphone {
-		// 	height: 550px;
-		// 	margin-right: -70px;
-		// }
-		// images .elipse {
-		// 	height: 420px;
-		// }
-		// .content .title {
-		// 	font-size: 36px;
-		// 	text-align: center;
-		// }
-
-		// .content .subtitle {
-		// 	font-size: 18px;
-		// 	text-align: center;
-		// }
-
-		// .content .buttons {
-		// 	flex-direction: column;
-		// 	gap: 10px;
-		// }
 	}
+
 	@media (max-width: 600px){
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		padding: 41px;
@@ -229,133 +209,69 @@ export const Awards = styled.div`
 `
 
 export const Solutions = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	display: flex;
+	// grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-column: span 12;
-	padding: 206px;
-	padding-top: 192px;
-	padding-left: 100px;
-	padding-right: 100px;
-	grid-column-gap: 24px;
-	grid-row-gap: 207px;
+	// padding: 206px;
+	// padding-top: 192px;
+	// padding-left: 100px;
+	// padding-right: 100px;
+	// grid-column-gap: 24px;
+	// grid-row-gap: 207px;
 	position: relative;
 
-	.text {
+	.solutionBanner {
+		width: 100%;
 		display: flex;
-		flex-direction: column;
-		gap: 33px;
-		grid-column: span 5;
+		height: 500px;
+		background-image: url(/entrepreneur.png);
+		background-position: center;
+		background-size: cover;
 		position: relative;
+		justify-content: center;
+		align-items: end;
 	}
 
-	.text img {
+	.solutionBanner .vignette {
+		display: flex;
+		width: 100%;
 		position: absolute;
-		top: -10px;
-		left: -20px;
+		height: 500px;
+		background: linear-gradient(rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.8));
 	}
 
-	.text .title {
+	.solutionBanner .title {
 		font-size: 72px;
 		font-weight: bold;
-	}
-
-	.text .subtitle {
-		font-size: 24px;
-		font-weight: lighter;
+		margin-bottom: 100px;
+		color: #fff;
+		z-index: 100;
 	}
 
 	.benefits {
+		display: grid;
+		grid-template-column: 1fr 1fr 1fr;
+	}
+
+	.benefits .benefit {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		gap: 20px;
-		grid-column: span 2;
 	}
 
-	.benefits img {
-		width: 100px;
+	.benefits .benefit img {
+	
 	}
 
-	.benefits .title {
-		font-weight: bold;
-		font-size: 28px;
+	.benefits .benefit .title {
+	
 	}
 
-	.benefits .subtitle {
-		font-weight: lighter;
-		font-size: 16px;
-	}
-
-	.buying {
-		display: flex;
-		grid-column: span 6;
-		position: absolute;
-		bottom: 20px;
-		left: 100px;
-	}
-
-	.block {
-		grid-column: span 6;
-	}
-
-	.works {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		grid-column: span 6;
-		gap: 30px;
-	}
-
-	.works .title {
-		font-weight: bold;
-		font-size: 72px;
-	}
-
-	.works .rectangle {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: #fff;
-		padding: 24px;
-		font-weight: bold;
-	}
-
-	.blue {
-		background-color: #03045E;
-	}
-
-	.yellow {
-		background-color: #FDC500;
+	.benefits .benefit .subtitle {
+	
 	}
 
 	@media (max-width: 800px){
-		display: flex;
-		flex-direction: column;
-		padding: 41px;
-		padding-bottom: 25px;
-		grid-row-gap: 30px;
 
-		.block {
-			display: none;
-		}
-
-		.text .title {
-			font-size: 36px;
-		}
-
-		.text img {
-			top: -20px;
-			left: -25px;
-		}
-
-		// .buying {
-		// 	bottom: 10px;
-		// 	align-self: center;
-		// }
-
-		.works .title {
-			font-size: 36px;
-		}
 	}
 `
 

@@ -11,6 +11,7 @@ import CustomTextarea from "../../components/CustomTextArea";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { UnformErrors } from "../../interfaces/interfaces";
+
 import {
   Awards,
   Banner,
@@ -99,7 +100,7 @@ const Home: FunctionComponent = () => {
                 Gestão inteligente para o seu negócio
               </div>
               <div className="subtitle">
-                Com o app Gestão Boa para serviços, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
+                Com o app <span>Gestão Boa para serviços</span>, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
               </div>
               <div className="buttons">
                 <a
@@ -109,22 +110,9 @@ const Home: FunctionComponent = () => {
                 >
                   <Button
                     width="100%"
-                    text="COMEÇAR"
+                    text="COMEÇAR AGORA!"
                     method={() => {}}
                     type={"focused"}
-                  />
-                </a>
-                OU
-                <a
-                  className="button"
-                  href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share"
-                  style={{ textDecoration: "none" }}
-                >
-                  <Button
-                    width="100%"
-                    text="INSTALE O APP"
-                    method={() => {}}
-                    type={"unfocused"}
                   />
                 </a>
               </div>
@@ -145,46 +133,34 @@ const Home: FunctionComponent = () => {
           </Awards>
 
           <Solutions id="solution">
-            <div className="text">
-              <img src="/text-decoration.png" alt="" />
-              <div className="title">Como a Gestão Boa pode te ajudar?</div>
-              <div className="subtitle">Veja nassa variedade de benefícios</div>
-            </div>
+				<div className="solutionBanner">
+					<div className="vignette"></div>
+					<div className="title">
+						Como a Gestão Boa pode te ajudar?
+					</div>
+				</div>
 
-            <div className="benefits">
-              <img src="/checklist-1@2x.png" alt="" />
-              <div className="title">Vendas de serviços</div>
-              <div className="subtitle">
-                Através da plataforma você pode fazer o registro dos seus
-                serviços, e de cada venda, assim você terá mais controle de
-                quantas horas você trabalha por dia, e de quanto você ganha.
-              </div>
-            </div>
+				<div className="benefits">
+					<div className="benefit">
+						<img src="" alt="" />
+						<div className="title"></div>
+						<div className="subtitle"></div>
+					</div>
+					<div className="benefit">
+						<img src="" alt="" />
+						<div className="title"></div>
+						<div className="subtitle"></div>
+					</div>
+					<div className="benefit">
+						
+					</div>
+					<div className="benefit"></div>
+					<div className="benefit"></div>
+					<div className="benefit"></div>
+				</div>
 
-            <div className="benefits">
-              <img src="/store-1@2x.png" alt="" />
-              <div className="title">Gestão financeira</div>
-              <div className="subtitle">
-                Adicione seus custos, vendas, e o dinheiro do seu bolso que tu
-                coloca no negócio. Dessa forma você terá controle do que é
-                dinheiro da empresa, e o que é seu dinheiro pessoal, além de
-                poder acaompanhar seus resultados de faturamento, e lucro
-                mensalmente.
-              </div>
-            </div>
 
-            <div className="benefits">
-              <img src="/monitoring-1@2x.png" alt="" />
-              <div className="title">Clientes e agendamentos</div>
-              <div className="subtitle">
-                Registre seus clientes com nome, email e telefone, e trazemos
-                diversas soluções para vocês automatizar seu relacionamento, e
-                ter mais conexões. Além disso possibilitamos que você agenda
-                seus encontros com clientes.
-              </div>
-            </div>
-
-            <div className="block"></div>
+            {/* <div className="block"></div>
             {width > 810 && (
               <ReactPlayer
                 className="buying"
@@ -196,24 +172,7 @@ const Home: FunctionComponent = () => {
                 playing={true}
                 muted
               />
-            )}
-
-            <div className="works">
-              <div className="title">Como funciona?</div>
-              <div className="rectangle blue">
-                Resgistre seus serviços e atuais clientes
-              </div>
-              <div className="rectangle blue">
-                Se organize utilizando nossa agenda
-              </div>
-              <div className="rectangle blue">
-                Faça gestão financeira adicionando cada venda e custo
-              </div>
-              <div className="rectangle blue">
-                Descubra seu lucro mensal, e os melhores clientes
-              </div>
-              <div className="rectangle yellow">Cresça o seu negócio</div>
-            </div>
+            )} */}
           </Solutions>
 
           <Team id="team">
