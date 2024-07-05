@@ -2,7 +2,6 @@ import emailjs from "@emailjs/browser";
 import { FormHandles, SubmitHandler } from "@unform/core";
 import { Form } from "@unform/web";
 import { FunctionComponent, useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player";
 import ScrollSpy from "react-ui-scrollspy";
 import * as yup from "yup";
 import Button from "../../components/Button";
@@ -21,6 +20,7 @@ import {
   Solutions,
   Team,
 } from "./styles";
+import ReactPlayer from "react-player";
 
 const Home: FunctionComponent = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -142,37 +142,79 @@ const Home: FunctionComponent = () => {
 
 				<div className="benefits">
 					<div className="benefit">
-						<img src="" alt="" />
-						<div className="title"></div>
-						<div className="subtitle"></div>
+						<img src="/check-list.png" alt="" />
+						<div className="title">Mais fácil que papel e a caneta</div>
+						<div className="subtitle">No nosso app você pode registrar facilmente cada serviço concluído. Além disso, é possível ver cada venda e estatísticas mensais e diárias!</div>
 					</div>
 					<div className="benefit">
-						<img src="" alt="" />
-						<div className="title"></div>
-						<div className="subtitle"></div>
+						<img src="calendar (1) 1 (1).svg" alt="" />
+						<div className="title">Fique por dentro da sua agenda</div>
+						<div className="subtitle">Contamos com uma agenda integrada para você marcar seus serviços e com facilidade registrar a venda.</div>
 					</div>
 					<div className="benefit">
-						
+						<img src="calendar (1) 1.svg" alt="" />
+						<div className="title">Anote os custos do seu negócio</div>
+						<div className="subtitle">Lidar com contas para pagar é uma tarefa complicada. No nosso app você pode já registrar quanto e quando vai pagar seus boletos.</div>
 					</div>
-					<div className="benefit"></div>
-					<div className="benefit"></div>
-					<div className="benefit"></div>
+					<div className="benefit">
+						<img src="calendar (1) 2.svg" alt="" />
+						<div className="title">Saiba quanto entrou e saiu da carteira</div>
+						<div className="subtitle">É possível ver quanto faturou em dinheiro, pix e cartão de crédito. Isso ajuda muito caso você use a conta pessoal como a conta de recebimentos do seu negócio.</div>
+					</div>
+					<div className="benefit">
+						<img src="calendar (1) 3.svg" alt="" />
+						<div className="title">Balanço geral e melhores clientes</div>
+						<div className="subtitle">Além de todos os outros benefícios, você poderá ver quais clientes são mais recorrentes e qual é o seu balanço diário/mensal.</div>
+					</div>
+					<div className="benefit">
+						<img src="calendar (1) 3 (1).svg" alt="" />
+						<div className="title">Melhore a conexão com seus clientes</div>
+						<div className="subtitle">Além de cadastrar os seus clientes, você poderá enviar mensagens automáticas para eles, aumentando a chance de retê-lo.</div>
+					</div>
 				</div>
 
+				<div className="tutorial">
+					<div className="callout">
+						<div className="title">
+							Gestão financeira e vendas <span>na palma da sua mão</span>
+						</div>
+						<div className="description">
+							Veja nossa demonstração, onde mostramos o passo a passo para adicionar serviço, registrar vendas e custos, agendar serviços, adicionar clientes. Além de ver relatórios que te ajudam a entender seus lucros, melhores clientes e gráficos de vendas.
+						</div>
+						<span>Controle seu negócio a qualquer hora e lugar!</span>
 
-            {/* <div className="block"></div>
-            {width > 810 && (
-              <ReactPlayer
-                className="buying"
-                url="/demonstracao.mp4"
-                width="30vw"
-                height="85vh"
-                controls={true}
-                loop={true}
-                playing={true}
-                muted
-              />
-            )} */}
+						<div className="buttons">
+							<div className="top">
+								<a href="#" className="unfocused">
+									ANDROID
+								</a>
+
+								ou
+
+								<a href="#" className="unfocused">
+									IOS
+								</a>
+							</div>
+							<a href="#" className="focused">
+								Desktop
+							</a>
+						</div>
+					</div>
+
+					<div className="player">
+						<ReactPlayer
+							className="buying"
+							url="/demonstracao.mp4"
+							width="30vw"
+							height="85vh"
+							controls={true}
+							loop={true}
+							playing={true}
+							muted
+						/>
+					</div>
+				</div>
+
           </Solutions>
 
           <Team id="team">

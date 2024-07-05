@@ -210,6 +210,7 @@ export const Awards = styled.div`
 
 export const Solutions = styled.div`
 	display: flex;
+	flex-direction: column;
 	// grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-column: span 12;
 	// padding: 206px;
@@ -249,25 +250,100 @@ export const Solutions = styled.div`
 	}
 
 	.benefits {
+		padding: 100px;
 		display: grid;
-		grid-template-column: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-row-gap: 100px;
+		align-items: center;
+		width: calc(100% - 200px);
 	}
 
 	.benefits .benefit {
 		display: flex;
 		flex-direction: column;
+		gap: 24px;
+		align-items: center;
+		height: 517px;
 	}
 
 	.benefits .benefit img {
-	
+		width: 295px;
+		height: 295px;
 	}
 
 	.benefits .benefit .title {
-	
+		width: 295px;
+		font-weight: bold;
+		font-size: 32px;
 	}
 
 	.benefits .benefit .subtitle {
-	
+		width: 295px;
+		font-weight: lighter;
+		font-size: 18px;
+	}
+
+	.tutorial {
+		display: flex;
+		padding: 100px;
+		align-items: center;
+		justify-content: space-between;
+		width: calc(100% - 200px);
+	}
+
+	.tutorial .callout {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		width: 831px;
+	}
+
+	.tutorial .callout .title {
+		font-size: 48px;
+	}
+
+	.tutorial .callout .description {
+		font-size: 24px;
+	}
+
+	.tutorial .callout span {
+		font-weight: bold;
+	}
+
+	.tutorial .callout .buttons {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;	
+		align-items: center;
+		gap: 44px;
+	}
+
+	.tutorial .callout .buttons .top {
+		display: flex;
+		gap: 72px;
+		align-items: center;
+	}
+
+	.tutorial .callout .buttons a {
+		width: 276px;
+		height: 50px;
+		text-align: center;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		font-weight: bold;
+	}
+
+	a.unfocused {
+		border: 1px solid #03045E;
+		color: #03045E;
+	}
+
+	a.focused {
+		background-color: #03045E;
+		color: #fff;
 	}
 
 	@media (max-width: 800px){
