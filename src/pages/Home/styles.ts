@@ -284,18 +284,20 @@ export const Solutions = styled.div`
 	}
 
 	.tutorial {
-		display: flex;
-		padding: 100px;
+		display: grid;
+		padding: 200px;
 		align-items: center;
-		justify-content: space-between;
-		width: calc(100% - 200px);
+		justify-content: center;
+		width: calc(100% - 400px);
+		grid-template-columns: 3fr 1fr;
+		grid-column-gap: 50px;
 	}
 
 	.tutorial .callout {
 		display: flex;
 		flex-direction: column;
 		gap: 50px;
-		width: 831px;
+		justify-content: center;
 	}
 
 	.tutorial .callout .title {
@@ -334,6 +336,7 @@ export const Solutions = styled.div`
 		justify-content: center;
 		border-radius: 10px;
 		font-weight: bold;
+		gap: 10px;
 	}
 
 	a.unfocused {
@@ -346,6 +349,65 @@ export const Solutions = styled.div`
 		color: #fff;
 	}
 
+	.player { 
+		display: flex;
+		justify-content: center;
+	}
+
+	.testimonies {
+		display: flex;
+		flex-direction: column;
+		padding: 100px;
+		width: calc(100% - 200px);
+		gap: 60px;
+		align-items: center;
+	}
+
+	.testimonies .heading {
+		font-size: 48px;
+		width: 80%;
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 100px;
+	}
+
+	.testimonies .card {
+		display: flex;
+		width: 80%;
+		border-radius: 20px;
+		box-shadow: 20px 10px 20px rgba(0,0,0,0.1);
+		background-color: #fff;
+	}
+
+	.testimonies .card img {
+		width: 500px;
+		border-radius: 20px 0px 0px 20px;
+	}
+
+	.testimonies .card .texts {
+		width: calc(100% - 80px);
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 100px;
+	}
+
+	.testimonies .card .texts .title {
+		font-size: 48px;
+		font-weight: bold;
+	}
+
+	.testimonies .card .texts .desc {
+		font-size: 18px;
+	}
+
+	.testimonies .card .texts .person {
+		display: flex;
+		font-style: italic;
+	}
+
+	
 	@media (max-width: 800px){
 
 	}

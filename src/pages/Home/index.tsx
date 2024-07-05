@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import emailjs from "@emailjs/browser";
 import { FormHandles, SubmitHandler } from "@unform/core";
 import { Form } from "@unform/web";
@@ -173,6 +174,30 @@ const Home: FunctionComponent = () => {
 					</div>
 				</div>
 
+				<div className="testimonies">
+					<div className="heading">
+						Conheça algumas pessoas que já estão desfrutando da nossa solução!
+					</div>
+
+					<div className="card">
+						<img src="/image 19.svg" alt="" />
+						<div className="texts">
+							<div className="title">Mudou o rumo do meu negócio!</div>
+							<div className="desc">Desde que implementei o sistema, aumentei minhas vendas e fiz novos clientes, gestão e organização é tudo para o crescimento de negócios.</div>
+							<div className="person">- Douglas Santos, proprietário da DgBarbearia</div>
+						</div>
+					</div>
+
+					<div className="card">
+						<img src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg" alt="" />
+						<div className="texts">
+							<div className="title">Mudou o rumo do meu negócio!</div>
+							<div className="desc">Desde que implementei o sistema, aumentei minhas vendas e fiz novos clientes, gestão e organização é tudo para o crescimento de negócios.</div>
+							<div className="person">-  Douglas Santos, proprietário da DgBarbearia</div>
+						</div>
+					</div>
+				</div>
+
 				<div className="tutorial">
 					<div className="callout">
 						<div className="title">
@@ -186,12 +211,14 @@ const Home: FunctionComponent = () => {
 						<div className="buttons">
 							<div className="top">
 								<a href="#" className="unfocused">
+                  					<img src="/Vector.svg" alt="" />
 									ANDROID
 								</a>
 
 								ou
 
 								<a href="#" className="unfocused">
+									<img src="/mage_playstore.svg" alt="" style={{ marginTop: "-6px" }} />
 									IOS
 								</a>
 							</div>
@@ -205,7 +232,7 @@ const Home: FunctionComponent = () => {
 						<ReactPlayer
 							className="buying"
 							url="/demonstracao.mp4"
-							width="30vw"
+							width="fit-content"
 							height="85vh"
 							controls={true}
 							loop={true}
