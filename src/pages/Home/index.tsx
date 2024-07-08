@@ -96,10 +96,10 @@ const Home: FunctionComponent = () => {
 					<Banner id="start">
 						<div className="content">
 							<div className="title">
-								Gestão inteligente para o seu negócio
+								<h1>Gestão inteligente para o seu negócio</h1>
 							</div>
 							<div className="subtitle">
-								Com o app Gestão Boa para serviços, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
+								<p>Com o app Gestão Boa para serviços, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!</p>
 							</div>
 							<div className="buttons">
 								<a

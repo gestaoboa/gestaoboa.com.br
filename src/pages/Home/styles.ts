@@ -30,7 +30,7 @@ export const Banner = styled.div`
 
 	.content .title {
 		font-weight: bold;
-		font-size: 92px;
+		font-size: 36px;
 		text-align: start;
 	}
 
@@ -72,7 +72,7 @@ export const Banner = styled.div`
 
 	@media (max-width: 1700px){
 		.content .title {
-			font-size: 72px;
+			font-size: 36px;
 		}
 
 		.images {
@@ -85,7 +85,10 @@ export const Banner = styled.div`
 			grid-column: span 12;
 			gap: 39px;
 		}
-
+		.content .title {
+			font-size: 32px;
+			text-align: center;
+		}
 		.content .buttons {
 			justify-content: center;
 		}
@@ -138,10 +141,10 @@ export const Banner = styled.div`
 		// images .elipse {
 		// 	height: 420px;
 		// }
-		// .content .title {
-		// 	font-size: 36px;
-		// 	text-align: center;
-		// }
+		 .content .title {
+		 	font-size: 24px;
+		 	text-align: center;
+		 }
 
 		// .content .subtitle {
 		// 	font-size: 18px;
@@ -176,7 +179,7 @@ export const Banner = styled.div`
 			display: none;
 		}
 		.content .title {
-			font-size: 36px;
+			font-size: 24px;
 			text-align: center;
 		}
 
