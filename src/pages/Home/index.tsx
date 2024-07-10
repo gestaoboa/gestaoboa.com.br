@@ -2,7 +2,7 @@
 import emailjs from "@emailjs/browser";
 import { FormHandles, SubmitHandler } from "@unform/core";
 import { Form } from "@unform/web";
-import { FunctionComponent, useEffect, useRef, useState } from "react";
+import { FunctionComponent, useRef } from "react";
 import ScrollSpy from "react-ui-scrollspy";
 import * as yup from "yup";
 import Button from "../../components/Button";
