@@ -12,16 +12,16 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { UnformErrors } from "../../interfaces/interfaces";
 
-import {
-  Awards,
-  Banner,
-  Contact,
-  Container,
-  Grid,
-  Solutions,
-  Team,
-} from "./styles";
 import ReactPlayer from "react-player";
+import {
+	Awards,
+	Banner,
+	Contact,
+	Container,
+	Grid,
+	Solutions,
+	Team,
+} from "./styles";
 
 const Home: FunctionComponent = () => {
 	// const [width, setWidth] = useState(window.innerWidth);
