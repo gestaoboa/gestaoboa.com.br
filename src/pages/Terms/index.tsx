@@ -15,7 +15,7 @@ const Terms: FunctionComponent = () => {
           <p className="seja-bem-vindo-ao">
             Estes termos e condições descrevem as regras de uso do site da
             empresa Gestão Boa, localizado no endereço
-            https://beasier-landing-page.vercel.app/.
+            https://www.gestaoboa.com.br/.
           </p>
           <p className="seja-bem-vindo-ao">
             Ao acessar este site, consideramos que você está de acordo com os

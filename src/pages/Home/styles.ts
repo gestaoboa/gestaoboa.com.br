@@ -77,98 +77,86 @@ export const Banner = styled.div`
 		right: 0px;
 	}
 
-	@media (max-width: 1700px){
-		.content .title {
-			font-size: 72px;
-		}
-
-		.images {
-			width: 700px;
-		}
-	}
-
-	@media (max-width: 1550px){
-		.content {
-			grid-column: span 12;
-			gap: 39px;
-		}
-
-		.content .buttons {
-			justify-content: center;
-		}
-
-		.images {
-			width: 100%;
-			height: 600px;
-			align-self: center;
-			justify-content: center;
-			display: flex;
-			grid-column: span 12 !important;
-			margin-bottom: 20px;
-			margin-top: 20px;
-		}
-
-		.images .cellphone {
-			height: 600px;
-			width: unset;
-			right: 0px;
-			left: 0px;
-			top: 0px;
-			bottom: 0px;
-			margin: 0 auto;
-		}
-
-		.images .elipse {
-			height: 600px;
-			right: 0px;
-			left: 0px;
-			top: 0px;
-			bottom: 0px;
-			margin: 0 auto;
-		}
-	}
-
 	@media (max-width: 800px){
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		padding: 41px;
-	}
+		display: flex;
+		flex-direction: column;
+		padding: 30px 10px;
+		gap: 50px;
 
-	@media (max-width: 600px){
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		padding: 41px;
-		
-		.images {
-			display: flex !important;
-			height: fit-content;
-			width: 100%;
-			align-self: center;
-			justify-content: center;
-			align-items: center;
-			padding-top: 20px;
-		}
-		.images .cellphone {
-			height: unset;
-			width: 300px;
-			position: unset !important;
-			// margin-right: 0px;
-		}
-		.images .elipse {
-			display: none;
-		}
 		.content .title {
-			font-size: 36px;
+			font-size: 32px;
 			text-align: center;
+			width: 100%;
 		}
 
 		.content .subtitle {
-			font-size: 18px;
+			font-size: 20px;
+			font-weight: normal;
 			text-align: center;
+			width: 100%;
 		}
 
 		.content .buttons {
 			flex-direction: column;
 			gap: 10px;
+			width: 100%;
 		}
+
+		.images {
+			width: 100%;
+		}
+
+		.images .cellphone, .images .elipse {
+			right: 0px;
+			left: 0px;
+			top: 0px;
+			bottom: 0px;
+			margin: 0 auto;
+		}
+
+		.images .elipse {
+			width: 90%;
+		}
+	}
+
+	@media (max-width: 600px){	
+		.images {
+			display: flex !important;
+			height: fit-content;
+			width: 100%;
+			height: fit-content;
+			align-self: center;
+			justify-content: center;
+			align-items: center;
+			// padding-top: 20px;
+		}
+
+		.images .cellphone {
+			height: unset;
+			width: 90%;
+			position: unset !important;
+		}
+
+		.images .elipse {
+			display: none;
+		}
+
+		.content {
+			width: calc(100% - 20px);
+		}
+
+		.content .title {
+			font-size: 32px;
+		}
+
+		.content .subtitle {
+			font-size: 20px;
+		}
+
+		.content .buttons .button {
+			width: 100%;
+		}
+
 	}
 `;
 
@@ -197,9 +185,9 @@ export const Awards = styled.div`
 		max-width: 313px;
 	}
 
-	@media (max-width: 800px){
+	@media (max-width: 600px){
 		.item .number {
-			font-size: 36px;
+			font-size: 32px;
 		}
 
 		.item .text {
@@ -211,14 +199,7 @@ export const Awards = styled.div`
 export const Solutions = styled.div`
 	display: flex;
 	flex-direction: column;
-	// grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-column: span 12;
-	// padding: 206px;
-	// padding-top: 192px;
-	// padding-left: 100px;
-	// padding-right: 100px;
-	// grid-column-gap: 24px;
-	// grid-row-gap: 207px;
 	position: relative;
 
 	.solutionBanner {
@@ -408,7 +389,135 @@ export const Solutions = styled.div`
 	}
 
 	
-	@media (max-width: 800px){
+	@media (max-width: 600px){
+		gap: 60px;
+
+		.solutionBanner {
+			height: 350px;
+			background-image: url(/unsplash_-sRVfY0f2d8.png);
+		}
+
+		.solutionBanner .vignette {
+			height: 350px;
+			background: linear-gradient(rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.8));
+			background-position: left;
+		}
+
+		.solutionBanner .title {
+			font-size: 32px;
+			margin-bottom: 60px;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.benefits {
+			padding: 10px;
+			display: flex;
+			width: calc(100% - 20px);
+			flex-direction: column;
+			padding-top: 30px;
+			gap: 50px;
+		}
+
+		.benefits .benefit {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			align-items: center;
+			height: fit-content;
+		}
+
+		.benefits .benefit img {
+			width: 250px;
+			height: 250px;
+		}
+
+		.benefits .benefit .title {
+			width: calc(100% - 20px);
+			font-size: 26px;
+		}
+
+		.benefits .benefit .subtitle {
+			width: calc(100% - 20px);
+			font-weight: normal;
+			font-size: 16px;
+		}
+
+		.testimonies {
+			padding: 10px;
+			width: calc(100% - 20px);
+			gap: 60px;	
+		}
+
+		.testimonies .heading {
+			font-size: 32px;
+			width: calc(100% - 20px);
+			margin-bottom: 0px;
+		}
+
+		.testimonies .card {
+			width: calc(100% - 20px);
+			flex-direction: column;
+		}
+
+		.testimonies .card img {
+			width: 100%;
+			border-radius: 20px 20px 0px 0px;
+		}
+
+		.testimonies .card .texts .title {
+			font-size: 26px;
+			font-weight: bold;
+		}
+
+		.testimonies .card .texts {
+			width: calc(100% - 60px);
+			padding: 30px;
+			gap: 30px;
+		}
+
+		.testimonies .card .texts .desc {
+			font-size: 18px;
+		}
+
+		.tutorial {
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			width: calc(100% - 20px);
+			margin-bottom: 50px;
+		}
+
+		.tutorial .callout {
+			width: calc(100% - 20px);
+			margin-bottom: 50px;
+		}
+
+		.tutorial .callout .title {
+			font-size: 32px;
+		}
+
+		.tutorial .callout .description {
+			font-size: 20px;
+		}
+
+		.tutorial .callout .buttons {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;	
+			align-items: center;
+			gap: 30px;
+		}
+
+		.tutorial .callout .buttons .or {
+			display: none;
+		}
+
+		.tutorial .callout .buttons .top {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
 
 	}
 `
