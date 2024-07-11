@@ -18,7 +18,6 @@ export const Container = styled.div`
         width: calc(100% - 100px);
         padding-left: 50px;
         padding-right: 50px;
-
 	}
 
     @media (max-width: 750px){
@@ -38,11 +37,19 @@ export const Logo = styled.div`
 
 export const LogoImg = styled.img`
     width: 79.73px;
+
+    @media (max-width: 800px){
+        width: 50px;
+    }
 `
 
 export const Title = styled.div`
     font-size: 32px;
     color: #03045E;
+
+    @media (max-width: 800px){
+        font-size: 26px;
+    }
 `
 
 export const Links = styled.div`

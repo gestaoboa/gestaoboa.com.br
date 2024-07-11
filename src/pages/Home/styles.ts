@@ -25,7 +25,7 @@ export const Banner = styled.div`
 		display: flex;
 		flex-direction: column;
 		grid-column: span 7;
-		gap: 14px;
+		gap: 57px;
 	}
 
 	.content .title {
@@ -38,13 +38,20 @@ export const Banner = styled.div`
 		font-weight: lighter;
 		font-size: 32px;
 		text-align: start;
+		width: 850px;
+	}
+
+	.content .subtitle span {
+		font-weight: bold;
+		color: #03045E;
 	}
 
 	.content .buttons {
 		display: flex;
+		width: 850px;
 		gap: 35px;
 		align-items: center;
-		margin-top: 55px;
+		justify-content: center;
 	}
 
 	.content .buttons .button {
@@ -70,43 +77,39 @@ export const Banner = styled.div`
 		right: 0px;
 	}
 
-	@media (max-width: 1700px){
+	@media (max-width: 800px){
+		display: flex;
+		flex-direction: column;
+		padding: 30px 10px;
+		gap: 50px;
+
 		.content .title {
-			font-size: 36px;
+			font-size: 32px;
+			text-align: center;
+			width: 100%;
 		}
 
-		.images {
-			width: 700px;
-		}
-	}
-
-	@media (max-width: 1550px){
-		.content {
-			grid-column: span 12;
-			gap: 39px;
+		.content .subtitle {
+			font-size: 20px;
+			font-weight: normal;
+			text-align: center;
+			width: 100%;
 		}
 		.content .title {
 			font-size: 32px;
 			text-align: center;
 		}
 		.content .buttons {
-			justify-content: center;
+			flex-direction: column;
+			gap: 10px;
+			width: 100%;
 		}
 
 		.images {
 			width: 100%;
-			height: 600px;
-			align-self: center;
-			justify-content: center;
-			display: flex;
-			grid-column: span 12 !important;
-			margin-bottom: 20px;
-			margin-top: 20px;
 		}
 
-		.images .cellphone {
-			height: 600px;
-			width: unset;
+		.images .cellphone, .images .elipse {
 			right: 0px;
 			left: 0px;
 			top: 0px;
@@ -115,83 +118,49 @@ export const Banner = styled.div`
 		}
 
 		.images .elipse {
-			height: 600px;
-			right: 0px;
-			left: 0px;
-			top: 0px;
-			bottom: 0px;
-			margin: 0 auto;
+			width: 90%;
 		}
 	}
 
-	@media (max-width: 800px){
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		padding: 41px;
 
-		// .images {
-		// 	height: 600px;
-		// 	width: 80%;
-		// 	align-self: center;
-		// 	justify-content: center;
-		// }
-		// .images .cellphone {
-		// 	height: 550px;
-		// 	margin-right: -70px;
-		// }
-		// images .elipse {
-		// 	height: 420px;
-		// }
-		 .content .title {
-		 	font-size: 24px;
-		 	text-align: center;
-		 }
-
-		// .content .subtitle {
-		// 	font-size: 18px;
-		// 	text-align: center;
-		// }
-
-		// .content .buttons {
-		// 	flex-direction: column;
-		// 	gap: 10px;
-		// }
-	}
-	@media (max-width: 600px){
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		padding: 41px;
-		
+	@media (max-width: 600px){	
 		.images {
 			display: flex !important;
 			height: fit-content;
 			width: 100%;
+			height: fit-content;
 			align-self: center;
 			justify-content: center;
 			align-items: center;
-			padding-top: 20px;
+			// padding-top: 20px;
 		}
+
 		.images .cellphone {
 			height: unset;
-			width: 300px;
+			width: 90%;
 			position: unset !important;
-			// margin-right: 0px;
 		}
+
 		.images .elipse {
 			display: none;
 		}
+
+		.content {
+			width: calc(100% - 20px);
+		}
+
 		.content .title {
-			font-size: 24px;
-			text-align: center;
+			font-size: 32px;
 		}
 
 		.content .subtitle {
-			font-size: 18px;
-			text-align: center;
+			font-size: 20px;
 		}
 
-		.content .buttons {
-			flex-direction: column;
-			gap: 10px;
+		.content .buttons .button {
+			width: 100%;
 		}
+
 	}
 `;
 
@@ -220,9 +189,9 @@ export const Awards = styled.div`
 		max-width: 313px;
 	}
 
-	@media (max-width: 800px){
+	@media (max-width: 600px){
 		.item .number {
-			font-size: 36px;
+			font-size: 32px;
 		}
 
 		.item .text {
@@ -232,133 +201,328 @@ export const Awards = styled.div`
 `
 
 export const Solutions = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: column;
 	grid-column: span 12;
-	padding: 206px;
-	padding-top: 192px;
-	padding-left: 100px;
-	padding-right: 100px;
-	grid-column-gap: 24px;
-	grid-row-gap: 207px;
 	position: relative;
 
-	.text {
+	.solutionBanner {
+		width: 100%;
 		display: flex;
-		flex-direction: column;
-		gap: 33px;
-		grid-column: span 5;
+		height: 500px;
+		background-image: url(/entrepreneur.png);
+		background-position: center;
+		background-size: cover;
 		position: relative;
+		justify-content: center;
+		align-items: end;
 	}
 
-	.text img {
+	.solutionBanner .vignette {
+		display: flex;
+		width: 100%;
 		position: absolute;
-		top: -10px;
-		left: -20px;
+		height: 500px;
+		background: linear-gradient(rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.8));
 	}
 
-	.text .title {
+	.solutionBanner .title {
 		font-size: 72px;
 		font-weight: bold;
-	}
-
-	.text .subtitle {
-		font-size: 24px;
-		font-weight: lighter;
+		margin-bottom: 100px;
+		color: #fff;
+		z-index: 100;
 	}
 
 	.benefits {
+		padding: 100px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-row-gap: 100px;
+		align-items: center;
+		width: calc(100% - 200px);
+	}
+
+	.benefits .benefit {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		gap: 20px;
-		grid-column: span 2;
+		gap: 24px;
+		align-items: center;
+		height: 517px;
 	}
 
-	.benefits img {
-		width: 100px;
+	.benefits .benefit img {
+		width: 295px;
+		height: 295px;
 	}
 
-	.benefits .title {
+	.benefits .benefit .title {
+		width: 295px;
 		font-weight: bold;
-		font-size: 28px;
+		font-size: 32px;
 	}
 
-	.benefits .subtitle {
+	.benefits .benefit .subtitle {
+		width: 295px;
 		font-weight: lighter;
-		font-size: 16px;
+		font-size: 18px;
 	}
 
-	.buying {
-		display: flex;
-		grid-column: span 6;
-		position: absolute;
-		bottom: 20px;
-		left: 100px;
+	.tutorial {
+		display: grid;
+		padding: 200px;
+		align-items: center;
+		justify-content: center;
+		width: calc(100% - 400px);
+		grid-template-columns: 3fr 1fr;
+		grid-column-gap: 50px;
 	}
 
-	.block {
-		grid-column: span 6;
-	}
-
-	.works {
+	.tutorial .callout {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		grid-column: span 6;
-		gap: 30px;
+		gap: 50px;
+		justify-content: center;
 	}
 
-	.works .title {
+	.tutorial .callout .title {
+		font-size: 48px;
+	}
+
+	.tutorial .callout .description {
+		font-size: 24px;
+	}
+
+	.tutorial .callout span {
 		font-weight: bold;
-		font-size: 72px;
 	}
 
-	.works .rectangle {
+	.tutorial .callout .buttons {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;	
+		align-items: center;
+		gap: 44px;
+	}
+
+	.tutorial .callout .buttons .top {
+		display: flex;
+		gap: 72px;
+		align-items: center;
+	}
+
+	.tutorial .callout .buttons a {
+		width: 276px;
+		height: 50px;
+		text-align: center;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		font-weight: bold;
+		gap: 10px;
+	}
+
+	a.unfocused {
+		border: 1px solid #03045E;
+		color: #03045E;
+	}
+
+	a.focused {
+		background-color: #03045E;
+		color: #fff;
+	}
+
+	.player { 
 		display: flex;
 		justify-content: center;
+	}
+
+	.testimonies {
+		display: flex;
+		flex-direction: column;
+		padding: 100px;
+		width: calc(100% - 200px);
+		gap: 60px;
 		align-items: center;
-		color: #fff;
-		padding: 24px;
+	}
+
+	.testimonies .heading {
+		font-size: 48px;
+		width: 80%;
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 100px;
+	}
+
+	.testimonies .card {
+		display: flex;
+		width: 80%;
+		border-radius: 20px;
+		box-shadow: 20px 10px 20px rgba(0,0,0,0.1);
+		background-color: #fff;
+	}
+
+	.testimonies .card img {
+		width: 500px;
+		border-radius: 20px 0px 0px 20px;
+	}
+
+	.testimonies .card .texts {
+		width: calc(100% - 80px);
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 100px;
+	}
+
+	.testimonies .card .texts .title {
+		font-size: 48px;
 		font-weight: bold;
 	}
 
-	.blue {
-		background-color: #03045E;
+	.testimonies .card .texts .desc {
+		font-size: 18px;
 	}
 
-	.yellow {
-		background-color: #FDC500;
-	}
-
-	@media (max-width: 800px){
+	.testimonies .card .texts .person {
 		display: flex;
-		flex-direction: column;
-		padding: 41px;
-		padding-bottom: 25px;
-		grid-row-gap: 30px;
+		font-style: italic;
+	}
 
-		.block {
+	
+	@media (max-width: 600px){
+		gap: 60px;
+
+		.solutionBanner {
+			height: 350px;
+			background-image: url(/unsplash_-sRVfY0f2d8.png);
+		}
+
+		.solutionBanner .vignette {
+			height: 350px;
+			background: linear-gradient(rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.8));
+			background-position: left;
+		}
+
+		.solutionBanner .title {
+			font-size: 32px;
+			margin-bottom: 60px;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.benefits {
+			padding: 10px;
+			display: flex;
+			width: calc(100% - 20px);
+			flex-direction: column;
+			padding-top: 30px;
+			gap: 50px;
+		}
+
+		.benefits .benefit {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			align-items: center;
+			height: fit-content;
+		}
+
+		.benefits .benefit img {
+			width: 250px;
+			height: 250px;
+		}
+
+		.benefits .benefit .title {
+			width: calc(100% - 20px);
+			font-size: 26px;
+		}
+
+		.benefits .benefit .subtitle {
+			width: calc(100% - 20px);
+			font-weight: normal;
+			font-size: 16px;
+		}
+
+		.testimonies {
+			padding: 10px;
+			width: calc(100% - 20px);
+			gap: 60px;	
+		}
+
+		.testimonies .heading {
+			font-size: 32px;
+			width: calc(100% - 20px);
+			margin-bottom: 0px;
+		}
+
+		.testimonies .card {
+			width: calc(100% - 20px);
+			flex-direction: column;
+		}
+
+		.testimonies .card img {
+			width: 100%;
+			border-radius: 20px 20px 0px 0px;
+		}
+
+		.testimonies .card .texts .title {
+			font-size: 26px;
+			font-weight: bold;
+		}
+
+		.testimonies .card .texts {
+			width: calc(100% - 60px);
+			padding: 30px;
+			gap: 30px;
+		}
+
+		.testimonies .card .texts .desc {
+			font-size: 18px;
+		}
+
+		.tutorial {
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			width: calc(100% - 20px);
+			margin-bottom: 50px;
+		}
+
+		.tutorial .callout {
+			width: calc(100% - 20px);
+			margin-bottom: 50px;
+		}
+
+		.tutorial .callout .title {
+			font-size: 32px;
+		}
+
+		.tutorial .callout .description {
+			font-size: 20px;
+		}
+
+		.tutorial .callout .buttons {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;	
+			align-items: center;
+			gap: 30px;
+		}
+
+		.tutorial .callout .buttons .or {
 			display: none;
 		}
 
-		.text .title {
-			font-size: 36px;
+		.tutorial .callout .buttons .top {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
 		}
 
-		.text img {
-			top: -20px;
-			left: -25px;
-		}
-
-		// .buying {
-		// 	bottom: 10px;
-		// 	align-self: center;
-		// }
-
-		.works .title {
-			font-size: 36px;
-		}
 	}
 `
 
