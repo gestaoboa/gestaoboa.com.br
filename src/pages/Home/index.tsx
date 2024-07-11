@@ -183,15 +183,6 @@ const Home: FunctionComponent = () => {
 								</div>
 
 								<div className="card">
-									<img src="/image 19.png" alt="" />
-									<div className="texts">
-										<div className="title">Mudou o rumo do meu negócio!</div>
-										<div className="desc">Desde que implementei o sistema, aumentei minhas vendas e fiz novos clientes, gestão e organização é tudo para o crescimento de negócios.</div>
-										<div className="person">- Douglas Santos, proprietário da DgBarbearia</div>
-									</div>
-								</div>
-
-								<div className="card">
 									<img src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg" alt="" />
 									<div className="texts">
 										<div className="title">Ficou mais fácil organizar minhas finanças</div>
