@@ -30,7 +30,7 @@ export const Banner = styled.div`
 
 	.content .title {
 		font-weight: bold;
-		font-size: 36px;
+		font-size: 92px;
 		text-align: start;
 	}
 
