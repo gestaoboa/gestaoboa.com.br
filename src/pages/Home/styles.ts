@@ -30,7 +30,7 @@ export const Banner = styled.div`
 
 	.content .title {
 		font-weight: bold;
-		font-size: 92px;
+		font-size: 36px;
 		text-align: start;
 	}
 
@@ -95,7 +95,10 @@ export const Banner = styled.div`
 			text-align: center;
 			width: 100%;
 		}
-
+		.content .title {
+			font-size: 32px;
+			text-align: center;
+		}
 		.content .buttons {
 			flex-direction: column;
 			gap: 10px;
@@ -118,6 +121,7 @@ export const Banner = styled.div`
 			width: 90%;
 		}
 	}
+
 
 	@media (max-width: 600px){	
 		.images {
