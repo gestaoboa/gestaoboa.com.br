@@ -18,6 +18,7 @@ export const Banner = styled.div`
 	align-items: center;
 	grid-column: span 12;
 	padding-top: 150px;
+	padding-bottom: 100px;
 	padding-left: 100px;
 	padding-right: 100px;
 
@@ -26,12 +27,14 @@ export const Banner = styled.div`
 		flex-direction: column;
 		grid-column: span 7;
 		gap: 57px;
+		justify-self: center;
 	}
 
 	.content .title {
 		font-weight: bold;
 		font-size: 92px;
 		text-align: start;
+		width: 850px;
 	}
 
 	.content .subtitle {
@@ -59,28 +62,113 @@ export const Banner = styled.div`
 	}
 
 	.images {
+		display: flex;
 		grid-column: span 5;
 		position: relative;
-		height: 766px;
+		width: fit-content;
+		height: 700px;
+		align-items: center;
+		justify-self: center;
 	}
 
 	.images .cellphone {
 		position: absolute;
-		right: 170px;
 		z-index: 100;
-		width: 350px;
+		height: 700px;
 	}
 
 	.images .elipse {
-		position: absolute;
-		bottom: 70px;
+		height: 100%;
+	}
+
+	.images .cellphone {
 		right: 0px;
+		left: 0px;
+		top: 0px;
+		bottom: 0px;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 1780px){
+		.content .title {
+			font-size: 64px;
+			width: 600px;
+		}
+
+		.content .subtitle {
+			width: 600px;
+			font-size: 28px;
+		}
+
+		.content .buttons {
+			width: 600px;
+		}
+
+		.images{
+			height: 550px;
+		}
+
+		.images .cellphone {
+			height: 550px;
+		}
+	}
+
+	@media (max-width: 1300px){
+		.content .title {
+			font-size: 54px;
+			width: 450px;
+		}
+
+		.content .subtitle {
+			width: 450px;
+			font-size: 24px;
+		}
+
+		.content .buttons {
+			width: 450px;
+		}
+
+		.images{
+			height: 450px;
+		}
+
+		.images .cellphone {
+			height: 450px;
+		}
+	}
+
+	@media (max-width: 1080px){
+		.images {
+			justify-self: center;
+			height: 500px;
+		}
+
+		.images .elipse {
+			display: none;
+		}
+
+		.images .cellphone {
+			position: unset;
+			height: 500px;
+		}
+	}
+
+	@media (max-width: 960px){
+		.images {
+			height: 450px;
+			justify-self: flex-end;
+		}
+
+
+		.images .cellphone {
+			height: 450px;
+		}
 	}
 
 	@media (max-width: 800px){
 		display: flex;
 		flex-direction: column;
-		padding: 30px 10px;
+		padding: 30px 30px;
 		gap: 50px;
 
 		.content .title {
@@ -108,18 +196,6 @@ export const Banner = styled.div`
 		.images {
 			width: 100%;
 		}
-
-		.images .cellphone, .images .elipse {
-			right: 0px;
-			left: 0px;
-			top: 0px;
-			bottom: 0px;
-			margin: 0 auto;
-		}
-
-		.images .elipse {
-			width: 90%;
-		}
 	}
 
 
@@ -132,7 +208,6 @@ export const Banner = styled.div`
 			align-self: center;
 			justify-content: center;
 			align-items: center;
-			// padding-top: 20px;
 		}
 
 		.images .cellphone {
@@ -160,7 +235,6 @@ export const Banner = styled.div`
 		.content .buttons .button {
 			width: 100%;
 		}
-
 	}
 `;
 
@@ -271,6 +345,8 @@ export const Solutions = styled.div`
 	.tutorial {
 		display: grid;
 		padding: 200px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 		align-items: center;
 		justify-content: center;
 		width: calc(100% - 400px);
@@ -365,7 +441,8 @@ export const Solutions = styled.div`
 	}
 
 	.testimonies .card img {
-		width: 500px;
+		width: 450px;
+		object-fit: cover;
 		border-radius: 20px 0px 0px 20px;
 	}
 
@@ -392,7 +469,123 @@ export const Solutions = styled.div`
 		font-style: italic;
 	}
 
+	@media (max-width: 1780px){
+		.solutionBanner .title {
+			font-size: 64px;
+			width: calc(100% - 200px);
+		}
+
+		.benefits {
+			align-items: center;
+			width: calc(100% - 200px);
+		}
+
+		.testimonies .card img {
+			width: 400px;
+		}
+
+		.tutorial {
+			padding: 100px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			width: calc(100% - 200px);
+			grid-template-columns: 2fr 2fr;
+		}
+
+		.tutorial .callout .buttons {
+			gap: 30px;
+		}
+
+		.tutorial .callout .buttons .top {
+			gap: 30px;
+		}
+	}
+
+	@media (max-width: 1280px){
+		.benefits {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.testimonies {
+			justify-content: center;
+			padding: 0px;
+			padding-bottom: 100px;
+			width: 100%;
+			gap: 10px;
+		}
+
+		.testimonies .card {
+			width: 90%;
+		}
+
+		.testimonies .card img {
+			width: 400px;
+		}
+
+		.tutorial {
+			display: flex;
+			flex-direction: column;
+			gap: 70px;
+		}
+	}	
+
 	
+	@media (max-width: 1024px){
+		.testimonies .card .texts .title {
+			font-size: 36px;
+		}
+	}
+
+	@media (max-width: 800px){
+		.benefits {
+			align-items: center;
+			width: calc(100%);
+			padding: 0px;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			grid-column-gap: 50px;
+		}
+
+		.benefits .benefit img {
+			width: 250px;
+			height: 250px;
+		}
+
+		.benefits .benefit .title {
+			width: 250px;
+		}
+
+		.benefits .benefit .subtitle {
+			width: 250px;
+		}
+
+		.testimonies .card {
+			width: calc(100% - 200px);
+			flex-direction: column;
+		}
+
+		.testimonies .card img {
+			width: 100%;
+			border-radius: 20px 20px 0px 0px;
+		}
+
+		.testimonies .card .texts {
+			gap: 35px;
+		}
+	}	
+
+	@media (max-width: 800px){
+		.tutorial .callout .buttons .top {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+
+		.tutorial .callout .buttons .or {
+			display: none;
+		}
+	}
+
 	@media (max-width: 600px){
 		gap: 60px;
 
@@ -464,11 +657,6 @@ export const Solutions = styled.div`
 			flex-direction: column;
 		}
 
-		.testimonies .card img {
-			width: 100%;
-			border-radius: 20px 20px 0px 0px;
-		}
-
 		.testimonies .card .texts .title {
 			font-size: 26px;
 			font-weight: bold;
@@ -512,17 +700,6 @@ export const Solutions = styled.div`
 			align-items: center;
 			gap: 30px;
 		}
-
-		.tutorial .callout .buttons .or {
-			display: none;
-		}
-
-		.tutorial .callout .buttons .top {
-			display: flex;
-			flex-direction: column;
-			gap: 30px;
-		}
-
 	}
 `
 
@@ -550,14 +727,18 @@ export const Team = styled.div`
 	.items {
 		display: flex;
 		justify-content: center;
+		align-items: flex-start;
 		text-align: center;
 		gap: 93px;
+		flex-wrap: wrap;
 	}
 
 	.items .member {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.items .member img {
@@ -573,6 +754,12 @@ export const Team = styled.div`
 		font-size: 24px;
 		font-weight: lighter;
 		font-style: italic;
+	}
+
+	@media (max-width: 1600px){
+		.items .member img {
+			width: 200px;
+		}
 	}
 
 	@media (max-width: 800px){
@@ -698,9 +885,26 @@ export const Contact = styled.div`
 		justify-content: flex-end;
 	}
 
+	@media (max-width: 1370px){
+		.info {
+			grid-column: span 7;
+		}
+
+		.form form {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+			padding: 30px;
+		}
+
+		.space {
+			display: none;
+		}
+	}
+
 	@media (max-width: 800px){
-		display: flex;
 		flex-direction: column;
+		display: flex;
 		padding: 41px;
 		gap: 30px;
 

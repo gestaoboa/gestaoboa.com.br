@@ -24,15 +24,6 @@ import {
 } from "./styles";
 
 const Home: FunctionComponent = () => {
-	// const [width, setWidth] = useState(window.innerWidth);
-	// const updateDimensions = () => {
-	// 	setWidth(window.innerWidth);
-	// };
-	// useEffect(() => {
-	// 	window.addEventListener("resize", updateDimensions);
-	// 	return () => window.removeEventListener("resize", updateDimensions);
-	// }, []);
-
 	const formRef = useRef<FormHandles>(null);
 
 	const handleSubmit: SubmitHandler<FormData> = async (data) => {
@@ -70,14 +61,12 @@ const Home: FunctionComponent = () => {
 			import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
 			)
 			.then((res) => {
-			if (res && res.status == 200) {
-				// setSuccess("success");
-				formRef.current?.clearField("name");
-				formRef.current?.clearField("email");
-				formRef.current?.clearField("phone");
-				formRef.current?.clearField("message");
-			}
-			// else setSuccess("error")
+				if (res && res.status == 200) {
+					formRef.current?.clearField("name");
+					formRef.current?.clearField("email");
+					formRef.current?.clearField("phone");
+					formRef.current?.clearField("message");
+				}
 			});
 		} catch (err) {
 		const validationErrors: UnformErrors = {};
@@ -137,106 +126,106 @@ const Home: FunctionComponent = () => {
 					</Awards>
 
 					<Solutions id="solution">
-							<div className="solutionBanner">
-								<div className="vignette"></div>
+						<div className="solutionBanner">
+							<div className="vignette"></div>
+							<div className="title">
+								Como a Gestão Boa pode te ajudar?
+							</div>
+						</div>
+
+						<div className="benefits">
+							<div className="benefit">
+								<img src="/check-list.png" alt="" />
+								<div className="title">Mais fácil que papel e a caneta</div>
+								<div className="subtitle">No nosso app você pode registrar facilmente cada serviço concluído. Além disso, é possível ver cada venda e estatísticas mensais e diárias!</div>
+							</div>
+							<div className="benefit">
+								<img src="calendar (1) 1 (1).svg" alt="" />
+								<div className="title">Fique por dentro da sua agenda</div>
+								<div className="subtitle">Contamos com uma agenda integrada para você marcar seus serviços e com facilidade registrar a venda.</div>
+							</div>
+							<div className="benefit">
+								<img src="calendar (1) 1.svg" alt="" />
+								<div className="title">Anote os custos do seu negócio</div>
+								<div className="subtitle">Lidar com contas para pagar é uma tarefa complicada. No nosso app você pode já registrar quanto e quando vai pagar seus boletos.</div>
+							</div>
+							<div className="benefit">
+								<img src="calendar (1) 2.svg" alt="" />
+								<div className="title">Saiba quanto entrou e saiu da carteira</div>
+								<div className="subtitle">É possível ver quanto faturou em dinheiro, pix e cartão de crédito. Isso ajuda muito caso você use a conta pessoal como a conta de recebimentos do seu negócio.</div>
+							</div>
+							<div className="benefit">
+								<img src="calendar (1) 3.svg" alt="" />
+								<div className="title">Balanço geral e melhores clientes</div>
+								<div className="subtitle">Além de todos os outros benefícios, você poderá ver quais clientes são mais recorrentes e qual é o seu balanço diário/mensal.</div>
+							</div>
+							<div className="benefit">
+								<img src="calendar (1) 3 (1).svg" alt="" />
+								<div className="title">Melhore a conexão com seus clientes</div>
+								<div className="subtitle">Além de cadastrar os seus clientes, você poderá enviar mensagens automáticas para eles, aumentando a chance de retê-lo.</div>
+							</div>
+						</div>
+
+						<div className="testimonies">
+							<div className="heading">
+								Conheça algumas pessoas que já estão desfrutando da nossa solução!
+							</div>
+
+							<div className="card">
+								<img src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg" alt="" />
+								<div className="texts">
+									<div className="title">Ficou mais fácil organizar minhas finanças</div>
+									<div className="desc">O aplicativo ajudou muito a organizar os meus recebimentos e entender quais são os lucros e despesas de forma muito clara e objetiva. Além de conseguir abranger vários objetivos em um só APP como organizar agendamentos que antes usava o Google agenda e também organizar os recebimentos que antes usava o Excel. Assim se torna muito mais prático e organizado as minhas finanças.</div>
+									<div className="person">-  Janaina Christello, Psicóloga</div>
+								</div>
+							</div>
+						</div>
+
+						<div className="tutorial">
+							<div className="callout">
 								<div className="title">
-									Como a Gestão Boa pode te ajudar?
+									Gestão financeira e vendas <span>na palma da sua mão</span>
 								</div>
-							</div>
+								<div className="description">
+									Veja nossa demonstração, onde mostramos o passo a passo para adicionar serviço, registrar vendas e custos, agendar serviços, adicionar clientes. Além de ver relatórios que te ajudam a entender seus lucros, melhores clientes e gráficos de vendas.
+								</div>
+								<span>Controle seu negócio a qualquer hora e lugar!</span>
 
-							<div className="benefits">
-								<div className="benefit">
-									<img src="/check-list.png" alt="" />
-									<div className="title">Mais fácil que papel e a caneta</div>
-									<div className="subtitle">No nosso app você pode registrar facilmente cada serviço concluído. Além disso, é possível ver cada venda e estatísticas mensais e diárias!</div>
-								</div>
-								<div className="benefit">
-									<img src="calendar (1) 1 (1).svg" alt="" />
-									<div className="title">Fique por dentro da sua agenda</div>
-									<div className="subtitle">Contamos com uma agenda integrada para você marcar seus serviços e com facilidade registrar a venda.</div>
-								</div>
-								<div className="benefit">
-									<img src="calendar (1) 1.svg" alt="" />
-									<div className="title">Anote os custos do seu negócio</div>
-									<div className="subtitle">Lidar com contas para pagar é uma tarefa complicada. No nosso app você pode já registrar quanto e quando vai pagar seus boletos.</div>
-								</div>
-								<div className="benefit">
-									<img src="calendar (1) 2.svg" alt="" />
-									<div className="title">Saiba quanto entrou e saiu da carteira</div>
-									<div className="subtitle">É possível ver quanto faturou em dinheiro, pix e cartão de crédito. Isso ajuda muito caso você use a conta pessoal como a conta de recebimentos do seu negócio.</div>
-								</div>
-								<div className="benefit">
-									<img src="calendar (1) 3.svg" alt="" />
-									<div className="title">Balanço geral e melhores clientes</div>
-									<div className="subtitle">Além de todos os outros benefícios, você poderá ver quais clientes são mais recorrentes e qual é o seu balanço diário/mensal.</div>
-								</div>
-								<div className="benefit">
-									<img src="calendar (1) 3 (1).svg" alt="" />
-									<div className="title">Melhore a conexão com seus clientes</div>
-									<div className="subtitle">Além de cadastrar os seus clientes, você poderá enviar mensagens automáticas para eles, aumentando a chance de retê-lo.</div>
-								</div>
-							</div>
+								<div className="buttons">
+									<div className="top">
+										<a href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" className="unfocused">
+											<img src="/Vector.svg" alt="" />
+											ANDROID
+										</a>
 
-							<div className="testimonies">
-								<div className="heading">
-									Conheça algumas pessoas que já estão desfrutando da nossa solução!
-								</div>
-
-								<div className="card">
-									<img src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg" alt="" />
-									<div className="texts">
-										<div className="title">Ficou mais fácil organizar minhas finanças</div>
-										<div className="desc">O aplicativo ajudou muito a organizar os meus recebimentos e entender quais são os lucros e despesas de forma muito clara e objetiva. Além de conseguir abranger vários objetivos em um só APP como organizar agendamentos que antes usava o Google agenda e também organizar os recebimentos que antes usava o Excel. Assim se torna muito mais prático e organizado as minhas finanças.</div>
-										<div className="person">-  Janaina Christello, Psicóloga</div>
-									</div>
-								</div>
-							</div>
-
-							<div className="tutorial">
-								<div className="callout">
-									<div className="title">
-										Gestão financeira e vendas <span>na palma da sua mão</span>
-									</div>
-									<div className="description">
-										Veja nossa demonstração, onde mostramos o passo a passo para adicionar serviço, registrar vendas e custos, agendar serviços, adicionar clientes. Além de ver relatórios que te ajudam a entender seus lucros, melhores clientes e gráficos de vendas.
-									</div>
-									<span>Controle seu negócio a qualquer hora e lugar!</span>
-
-									<div className="buttons">
-										<div className="top">
-											<a href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" className="unfocused">
-												<img src="/Vector.svg" alt="" />
-												ANDROID
-											</a>
-
-											<div className="or">
-												ou
-											</div>
-
-											<a href="https://www.app.gestaoboa.com.br" className="unfocused">
-												<img src="/mage_playstore.svg" alt="" style={{ marginTop: "-6px" }} />
-												IOS
-											</a>
+										<div className="or">
+											ou
 										</div>
-										<a href="https://www.app.gestaoboa.com.br" className="focused">
-											Desktop
+
+										<a href="https://www.app.gestaoboa.com.br" className="unfocused">
+											<img src="/mage_playstore.svg" alt="" style={{ marginTop: "-6px" }} />
+											IOS
 										</a>
 									</div>
-								</div>
-
-								<div className="player" id="demonstration">
-									<ReactPlayer
-										className="buying"
-										url="/demonstracao.mp4"
-										width="fit-content"
-										height="85vh"
-										controls={true}
-										loop={true}
-										playing={true}
-										muted
-									/>
+									<a href="https://www.app.gestaoboa.com.br" className="focused">
+										Desktop
+									</a>
 								</div>
 							</div>
+
+							<div className="player" id="demonstration">
+								<ReactPlayer
+									className="buying"
+									url="/demonstracao.mp4"
+									width="fit-content"
+									height="85vh"
+									controls={true}
+									loop={true}
+									playing={true}
+									muted
+								/>
+							</div>
+						</div>
 					</Solutions>
 
 					<Team id="team">
