@@ -17,7 +17,11 @@ export default function Footer ({}: props) {
                 <a href="/terms">Termos de uso</a>
                 <a href="/privacy">Politica de privacidade</a>
             </div>
-            <div className="copyright">Gestão Boa@ todos direitos reservados</div>
+            <div className="copyright">
+                <div>Razão Social: BEASIER INOVA SIMPLES (I.S.)</div>
+                <div>CNPJ: 53.909.852/0001-62</div>
+                <div>Gestão Boa@ todos direitos reservados</div>
+            </div>
         </Container>
     )
 }

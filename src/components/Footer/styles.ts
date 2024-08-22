@@ -41,9 +41,11 @@ export const Container = styled.div`
 
     .copyright {
         display: flex;
-        justify-content: end;
+        flex-direction: column;
+        align-items: flex-end;
         font-weight: lighter;
         font-size: 16px;
+        gap: 12px;
     }
 
     @media (max-width: 800px){
