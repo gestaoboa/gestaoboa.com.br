@@ -262,7 +262,7 @@ const Home: FunctionComponent = () => {
 							<img src="/instagram-1@2x.png" alt="" />
 							@gestaoboa
 							</a>
-							<a href="https://wa.me/5553999461551?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+Gestao+Boa%21">
+							<a href="https://wa.me/5553999461550?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+Gestao+Boa%21">
 							<img src="/whatsapp-1@2x.png" alt="" />
 							(53) 99946-1550
 							</a>
