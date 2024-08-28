@@ -22,6 +22,7 @@ import {
 	Solutions,
 	Team,
 } from "./styles";
+import { Helmet } from "react-helmet-async";
 
 const Home: FunctionComponent = () => {
 	const formRef = useRef<FormHandles>(null);
@@ -83,6 +84,11 @@ const Home: FunctionComponent = () => {
   	return (
 		<ScrollSpy>
 			<Container>
+				<Helmet>
+					<title>Gestão Boa</title>
+					<meta name="description" content="Com o app Gestão Boa para serviços, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!" />
+					<link rel="canonical" href="/" />
+				</Helmet>
 				<Grid>
 					<Header />
 
@@ -181,7 +187,7 @@ const Home: FunctionComponent = () => {
 							</div>
 						</div>
 
-						<div className="tutorial">
+						<div className="tutorial" id="demonstration">
 							<div className="callout">
 								<div className="title">
 									Gestão financeira e vendas <span>na palma da sua mão</span>
@@ -213,7 +219,7 @@ const Home: FunctionComponent = () => {
 								</div>
 							</div>
 
-							<div className="player" id="demonstration">
+							<div className="player">
 								<ReactPlayer
 									className="buying"
 									url="/demonstracao.mp4"
