@@ -1,0 +1,47 @@
+/* Estilos do formulário */
+.scheduling-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.form-input {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-label {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.confirm-button {
+  background-color: #03045e;
+  color: #fff;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.confirm-button:hover {
+  background-color: #023e8a;
+}
+
+textarea {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
