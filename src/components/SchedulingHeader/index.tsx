@@ -56,11 +56,11 @@ export default function SchedulingHeader() {
               src={enterpriseInfo.image}
               alt={`Logo de ${enterpriseInfo.name}`}
             />
+            <ProfileImage
+              src={enterpriseInfo.owner_image}
+              alt={`Imagem do dono ${enterpriseInfo.owner_name}`}
+            />
           </LogoEnterpriseWrapper>
-          <ProfileImage
-            src={enterpriseInfo.owner_image}
-            alt={`Imagem do dono ${enterpriseInfo.owner_name}`}
-          />
         </>
       ) : (
         <p>Carregando...</p>

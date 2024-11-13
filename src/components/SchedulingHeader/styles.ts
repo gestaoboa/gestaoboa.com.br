@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #060776;
-  padding: 20px;
 `;
 
 export const Logo = styled.div`
@@ -36,19 +35,18 @@ export const LogoEnterpriseWrapper = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  overflow: hidden;
+  width: 200px;
 `;
 
 export const LogoEnterprise = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 100%;
 `;
 
 export const ProfileImage = styled.img`
-  position: absolute;
-  bottom: 350px;
-  right: 45%;
+  position: absolute; 
   transform: translateX(50%);
   width: 90px;
   height: 90px;
@@ -56,6 +54,8 @@ export const ProfileImage = styled.img`
   border: 3px solid #ffffff;
   z-index: 10;
   object-fit: cover;
+  right: 40px;
+  bottom: -5px;
 `;
 
 export const NameEnterprise = styled.div`
