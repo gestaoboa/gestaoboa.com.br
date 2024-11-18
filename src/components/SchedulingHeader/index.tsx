@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Container,
   Logo,
@@ -23,12 +23,13 @@ export default function SchedulingHeader() {
     null
   );
   const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchEnterpriseInfo = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/enterprises/info/1"
+          `http://localhost:8080/enterprises/info/${id}`
         );
         if (!response.ok) {
           throw new Error("Erro ao buscar informações da empresa");
@@ -41,7 +42,7 @@ export default function SchedulingHeader() {
     };
 
     fetchEnterpriseInfo();
-  }, []);
+  }, [id]);
 
   return (
     <Container>

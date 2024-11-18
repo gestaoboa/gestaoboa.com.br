@@ -12,7 +12,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/terms" element={<Terms />} />
 				<Route path="/privacy" element={<Privacy />} />
-				<Route path="/scheduling" element={<Scheduling />} />
+				<Route path="/scheduling/enterprise/:id" element={<Scheduling />} />
 				<Route path="/confirm" element={<ConfirmScheduling />} />
 
 				<Route path="*" element={<Navigate to="/" replace />} />

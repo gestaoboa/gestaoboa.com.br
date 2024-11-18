@@ -5,9 +5,14 @@ import SchedulingHeader from "../../components/SchedulingHeader";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./styles.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface Service {
+  id: number;
+  name: string;
+}
+
+interface Employee{
   id: number;
   name: string;
 }
@@ -16,12 +21,14 @@ interface Service {
 const Scheduling: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [services, setServices] = useState<Service[]>([]);
+  const [employee, setEmployee] = useState<Employee[]>([]);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch('http://localhost:8080/enterprises/services/1');
+        const response = await fetch(`http://localhost:8080/enterprises/services/${id}`);
         if (!response.ok) {
           throw new Error('Erro ao buscar os serviços');
         }
@@ -33,7 +40,7 @@ const Scheduling: React.FC = () => {
     };
 
     fetchServices();
-  }, []);
+  }, [id]);
 
   return (
     <Container>
@@ -78,6 +85,13 @@ const Scheduling: React.FC = () => {
         </select>
 
         <textarea name="" id=""  rows={7}>Fale um pouco mais sobre o que você deseja</textarea>
+
+        <select className="form-input">
+          <option>Qual profissional gostaria de contratar?*</option>
+          <option value="joao">João</option>
+          <option value="joao">Maria</option>
+          <option value="joao">Lucas</option>
+        </select>
 
         <select className="form-input">
           <option>Qual a forma de pagamento?*</option>
