@@ -1,0 +1,354 @@
+.beasier-1-1-13 {
+  width: 59px;
+  height: 37px;
+  object-fit: cover;
+}
+
+.beasier-1-1-13,
+.beasier3 {
+  position: relative;
+}
+
+.frame-div {
+  position: absolute;
+  top: 27px;
+  left: 107px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 17px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #03045e;
+  font-family: Montserrat;
+}
+
+.estes-so-as,
+.poltica-de-privacidade1 {
+  position: absolute;
+  top: 139px;
+  left: 107px;
+  font-size: 51px;
+  display: inline-block;
+  width: 1706px;
+}
+
+.estes-so-as {
+  top: 408px;
+  font-size: 30px;
+}
+
+.o-site-beasier {
+  margin: 0;
+}
+
+.o-site-beasier-container,
+.quando-voc-visita {
+  position: absolute;
+  top: 237px;
+  left: 107px;
+  font-weight: 500;
+  display: inline-block;
+  width: 1706px;
+  height: 137px;
+}
+
+.quando-voc-visita {
+  top: 480px;
+  height: 114px;
+}
+
+.por-que-fazemos {
+  top: 628px;
+  font-size: 30px;
+}
+
+.nossa-maior-prioridade-container,
+.por-que-fazemos,
+.seus-direitos {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+  width: 1706px;
+}
+
+.nossa-maior-prioridade-container {
+  top: 700px;
+  font-weight: 500;
+  height: 216px;
+}
+
+.seus-direitos {
+  top: 950px;
+  font-size: 30px;
+}
+
+.o-direito-de {
+  margin-bottom: 0;
+}
+
+.o-direito-de-ser-informado-o {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 24px;
+}
+
+.se-voc-morar-container {
+  top: 1022px;
+  font-weight: 500;
+  height: 321px;
+}
+
+.links-para-outros,
+.nosso-site-pode-container,
+.se-voc-morar-container {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+  width: 1706px;
+}
+
+.links-para-outros {
+  top: 1377px;
+  font-size: 30px;
+}
+
+.nosso-site-pode-container {
+  top: 1449px;
+  font-weight: 500;
+  height: 68px;
+}
+
+.segurana-das-informaes {
+  top: 1551px;
+  font-size: 30px;
+}
+
+.declarao-legal,
+.ns-garantimos-que,
+.segurana-das-informaes {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+  width: 1706px;
+}
+
+.ns-garantimos-que {
+  top: 1623px;
+  font-weight: 500;
+  height: 68px;
+}
+
+.declarao-legal {
+  top: 1725px;
+  font-size: 30px;
+}
+
+.ns-vamos-divulgar-container {
+  top: 1797px;
+  font-weight: 500;
+  height: 68px;
+}
+
+.informaes-de-contato,
+.ns-vamos-divulgar-container,
+.se-voc-quiser-container {
+  position: absolute;
+  left: 107px;
+  display: inline-block;
+  width: 1706px;
+}
+
+.informaes-de-contato {
+  top: 1899px;
+  font-size: 30px;
+}
+
+.se-voc-quiser-container {
+  top: 1971px;
+  font-weight: 500;
+  height: 68px;
+}
+
+.desktop-4 {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 2115px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 18px;
+  color: #000;
+  font-family: Mulish;
+}
+
+.plans {
+  padding: 40px 20px;
+  padding-top: 100px;
+  background-color: #f0f4f8;
+}
+
+.plans-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #03045e;
+  margin-bottom: 30px;
+}
+
+.plan-type-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.plan-type-button {
+  padding: 12px 24px;
+  background-color: #fff;
+  border: 2px solid #03045e;
+  border-radius: 8px;
+  margin: 0 10px;
+  color: #03045e;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.plan-type-button.active,
+.plan-type-button:hover {
+  background-color: #03045e;
+  color: #fff;
+}
+
+.plan-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.plan-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 320px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #03045e;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 40px;
+  color: #03045e;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.price span {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.sign-button {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #03045e;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.sign-button:hover {
+  background-color: #0230a2;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.benefits-list li {
+  font-size: 16px;
+  color: #343a40;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.benefits-list li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.not-included {
+  color: #adb5bd;
+  text-decoration: line-through;
+}
+
+.support-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.support-section p {
+  font-size: 20px;
+  color: #6c757d;
+}
+
+.support-button {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #03045e;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  width: 260px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+  background-color: #0230a2;
+}
+
+.check-icon {
+  color: #28a745;
+  margin-right: 10px;
+}
+
+.x-icon {
+  color: red;
+  margin-right: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .plan-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card {
+    width: 90%;
+  }
+}
