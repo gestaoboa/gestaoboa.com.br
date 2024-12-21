@@ -12,6 +12,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { UnformErrors } from "../../interfaces/interfaces";
 
+import { Helmet } from "react-helmet-async";
 import ReactPlayer from "react-player";
 import {
 	Awards,
@@ -22,7 +23,6 @@ import {
 	Solutions,
 	Team,
 } from "./styles";
-import { Helmet } from "react-helmet-async";
 
 const Home: FunctionComponent = () => {
 	const formRef = useRef<FormHandles>(null);
@@ -30,58 +30,58 @@ const Home: FunctionComponent = () => {
 	const handleSubmit: SubmitHandler<FormData> = async (data) => {
 		formRef.current?.setErrors({});
 		try {
-		const schemaLogin = yup
-			.object()
-			.shape({
-			name: yup.string().required("Informe o seu nome"),
-			email: yup
-				.string()
-				.email("Email inválido")
-				.required("Informe o seu email"),
-			phone: yup.string().required("Informe o seu número de celular"),
-			message: yup.string(),
-			})
-			.required();
+			const schemaLogin = yup
+				.object()
+				.shape({
+					name: yup.string().required("Informe o seu nome"),
+					email: yup
+						.string()
+						.email("Email inválido")
+						.required("Informe o seu email"),
+					phone: yup.string().required("Informe o seu número de celular"),
+					message: yup.string(),
+				})
+				.required();
 
-		await schemaLogin.validate(data, { abortEarly: false });
+			await schemaLogin.validate(data, { abortEarly: false });
 
-		console.log("Passou tudo");
+			console.log("Passou tudo");
 
-		const emailBody = {
-			from_name: formRef.current?.getFieldValue("name"),
-			email: formRef.current?.getFieldValue("email"),
-			phone: formRef.current?.getFieldValue("phone"),
-			message: formRef.current?.getFieldValue("message"),
-		};
+			const emailBody = {
+				from_name: formRef.current?.getFieldValue("name"),
+				email: formRef.current?.getFieldValue("email"),
+				phone: formRef.current?.getFieldValue("phone"),
+				message: formRef.current?.getFieldValue("message"),
+			};
 
-		emailjs
-			.send(
-			import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-			import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
-			emailBody,
-			import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
-			)
-			.then((res) => {
-				if (res && res.status == 200) {
-					formRef.current?.clearField("name");
-					formRef.current?.clearField("email");
-					formRef.current?.clearField("phone");
-					formRef.current?.clearField("message");
-				}
-			});
+			emailjs
+				.send(
+					import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+					import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+					emailBody,
+					import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+				)
+				.then((res) => {
+					if (res && res.status == 200) {
+						formRef.current?.clearField("name");
+						formRef.current?.clearField("email");
+						formRef.current?.clearField("phone");
+						formRef.current?.clearField("message");
+					}
+				});
 		} catch (err) {
-		const validationErrors: UnformErrors = {};
-		if (err instanceof yup.ValidationError) {
-			err.inner.forEach((error) => {
-			if (error.path) validationErrors[error.path] = error.message;
-			});
-			formRef.current?.setErrors(validationErrors);
-			console.log("validationErrors ", validationErrors);
-		}
+			const validationErrors: UnformErrors = {};
+			if (err instanceof yup.ValidationError) {
+				err.inner.forEach((error) => {
+					if (error.path) validationErrors[error.path] = error.message;
+				});
+				formRef.current?.setErrors(validationErrors);
+				console.log("validationErrors ", validationErrors);
+			}
 		}
 	};
 
-  	return (
+	return (
 		<ScrollSpy>
 			<Container>
 				<Helmet>
@@ -103,16 +103,16 @@ const Home: FunctionComponent = () => {
 
 							<div className="buttons">
 								<a
-								className="button"
-								href="#demonstration"
-								style={{ textDecoration: "none" }}
+									className="button"
+									href="#demonstration"
+									style={{ textDecoration: "none" }}
 								>
-								<Button
-									width="100%"
-									text="COMEÇAR AGORA!"
-									method={() => {}}
-									type={"focused"}
-								/>
+									<Button
+										width="100%"
+										text="COMEÇAR AGORA!"
+										method={() => { }}
+										type={"focused"}
+									/>
 								</a>
 							</div>
 						</div>
@@ -237,89 +237,89 @@ const Home: FunctionComponent = () => {
 					<Team id="team">
 						<div className="title">Conheça o nosso time!</div>
 						<div className="items">
-						<div className="member">
-							<img src="/bruno.png" alt="" />
-							<div className="name">Bruno Nascimento</div>
-							<div className="subtitle">Desenvolvedor back-end</div>
-						</div>
-						<div className="member">
-							<img src="/silvio.png" alt="" />
-							<div className="name">Silvio Quintana</div>
-							<div className="subtitle">CEO/COO</div>
-						</div>
-						<div className="member">
-							<img src="/karine.png" alt="" />
-							<div className="name">Karine Quintana</div>
-							<div className="subtitle">CMO/CFO</div>
-						</div>
-						<div className="member">
-							<img src="/victor.png" alt="" />
-							<div className="name">Victor Amaral</div>
-							<div className="subtitle">CTO</div>
-						</div>
+							<div className="member">
+								<img src="/bruno.png" alt="" />
+								<div className="name">Bruno Nascimento</div>
+								<div className="subtitle">Desenvolvedor back-end</div>
+							</div>
+							<div className="member">
+								<img src="/silvio.png" alt="" />
+								<div className="name">Silvio Quintana</div>
+								<div className="subtitle">CEO/COO</div>
+							</div>
+							<div className="member">
+								<img src="/karine.png" alt="" />
+								<div className="name">Karine Quintana</div>
+								<div className="subtitle">CMO/CFO</div>
+							</div>
+							<div className="member">
+								<img src="/victor.png" alt="" />
+								<div className="name">Victor Amaral</div>
+								<div className="subtitle">CTO</div>
+							</div>
 						</div>
 					</Team>
 
 					<Contact id="contact">
 						<div className="info">
-						<div className="title">Entre em contato conosco!</div>
-						<div className="links">
-							<a href="https://www.instagram.com/gestaoboa/">
-							<img src="/instagram-1@2x.png" alt="" />
-							@gestaoboa
-							</a>
-							<a href="https://wa.me/5553999461550?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+Gestao+Boa%21">
-							<img src="/whatsapp-1@2x.png" alt="" />
-							(53) 99946-1550
-							</a>
-							<a href="BEasier.IG@gmail.com">
-							<img src="/envelope-1@2x.png" alt="" />
-							BEasier.IG@gmail.com
-							</a>
-						</div>
+							<div className="title">Entre em contato conosco!</div>
+							<div className="links">
+								<a href="https://www.instagram.com/gestaoboa/">
+									<img src="/instagram-1@2x.png" alt="" />
+									@gestaoboa
+								</a>
+								<a href="https://wa.me/5553999461550?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+Gestao+Boa%21">
+									<img src="/whatsapp-1@2x.png" alt="" />
+									(53) 99946-1550
+								</a>
+								<a href="BEasier.IG@gmail.com">
+									<img src="/envelope-1@2x.png" alt="" />
+									BEasier.IG@gmail.com
+								</a>
+							</div>
 						</div>
 
 						<div className="space"></div>
 
 						<div className="form">
-						<Form ref={formRef} onSubmit={handleSubmit}>
-							<div className="input-wrapper double">
-							<div className="label">Nome completo</div>
-							<CustomInput width="100%" name="name" placeholder="Nome" />
+							<Form ref={formRef} onSubmit={handleSubmit}>
+								<div className="input-wrapper double">
+									<div className="label">Nome completo</div>
+									<CustomInput width="100%" name="name" placeholder="Nome" />
+								</div>
+								<div className="input-wrapper">
+									<div className="label">Email</div>
+									<CustomInput
+										width="100%"
+										name="email"
+										placeholder="seumelhoremail@mail.com"
+									/>
+								</div>
+								<div className="input-wrapper">
+									<div className="label">Telefone</div>
+									<CustomInput
+										width="100%"
+										name="phone"
+										placeholder="(00) 00000-0000"
+									/>
+								</div>
+								<div className="textarea">
+									<div className="label">Mensagem</div>
+									<CustomTextarea
+										width="100%"
+										name="message"
+										placeholder="Olá, tudo bem?"
+									/>
+								</div>
+							</Form>
+							<div className="button">
+								<Button
+									width={"100%"}
+									text="Enviar"
+									method={() => formRef.current?.submitForm()}
+									type="focused"
+								/>
 							</div>
-							<div className="input-wrapper">
-							<div className="label">Email</div>
-							<CustomInput
-								width="100%"
-								name="email"
-								placeholder="seumelhoremail@mail.com"
-							/>
-							</div>
-							<div className="input-wrapper">
-							<div className="label">Telefone</div>
-							<CustomInput
-								width="100%"
-								name="phone"
-								placeholder="(00) 00000-0000"
-							/>
-							</div>
-							<div className="textarea">
-							<div className="label">Mensagem</div>
-							<CustomTextarea
-								width="100%"
-								name="message"
-								placeholder="Olá, tudo bem?"
-							/>
-							</div>
-						</Form>
-						<div className="button">
-							<Button
-							width={"100%"}
-							text="Enviar"
-							method={() => formRef.current?.submitForm()}
-							type="focused"
-							/>
-						</div>
 						</div>
 					</Contact>
 
@@ -327,7 +327,7 @@ const Home: FunctionComponent = () => {
 				</Grid>
 			</Container>
 		</ScrollSpy>
-  	);
+	);
 };
 
 export default Home;
