@@ -81,6 +81,18 @@ const Home: FunctionComponent = () => {
 		}
 	};
 
+	const scrollTeam = (direction: 'left' | 'right') => {
+		const container = document.querySelector('.items');
+		if (container) {
+			const scrollAmount = container.clientWidth;
+			if (direction === 'left') {
+				container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+			} else {
+				container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+			}
+		}
+	};
+
 	return (
 		<ScrollSpy>
 			<Container>
@@ -235,28 +247,92 @@ const Home: FunctionComponent = () => {
 					</Solutions>
 
 					<Team id="team">
-						<div className="title">Conheça o nosso time!</div>
-						<div className="items">
-							<div className="member">
-								<img src="/bruno.png" alt="" />
-								<div className="name">Bruno Nascimento</div>
-								<div className="subtitle">Desenvolvedor back-end</div>
+						<div className="title">Nossa Equipe Extraordinária</div>
+						<div className="subtitle">
+							Conheça os profissionais apaixonados que fazem a Gestão Boa acontecer todos os dias,
+							transformando a maneira como os negócios são gerenciados.
+						</div>
+						<div className="scroll-container">
+							<button className="scroll-button left" onClick={() => scrollTeam('left')}>
+								←
+							</button>
+							<div className="items">
+								<div className="member">
+									<img src="/silvio.png" alt="Silvio Quintana" />
+									<div className="name">Silvio Quintana</div>
+									<div className="subtitle">CEO/COO</div>
+									<div className="role-description">
+										Líder visionário que coordena nossas estratégias e crescimento
+									</div>
+								</div>
+								<div className="member">
+									<img src="/karine.png" alt="Karine Quintana" />
+									<div className="name">Karine Quintana</div>
+									<div className="subtitle">CMO/CFO</div>
+									<div className="role-description">
+										Responsável por nossas estratégias de marketing e finanças
+									</div>
+								</div>
+								<div className="member">
+									<img src="/victor.png" alt="Victor Amaral" />
+									<div className="name">Victor Amaral</div>
+									<div className="subtitle">CTO</div>
+									<div className="role-description">
+										Lidera nossa inovação tecnológica e desenvolvimento de produtos
+									</div>
+								</div>
+								<div className="member">
+									<img src="/bruno.png" alt="Bruno Nascimento" />
+									<div className="name">Bruno Nascimento</div>
+									<div className="subtitle">Desenvolvedor back-end</div>
+									<div className="role-description">
+										Especialista em desenvolvimento de APIs e infraestrutura
+									</div>
+								</div>
+								<div className="member">
+									<img src="/jonathan.png" alt="Jonathan Lima" />
+									<div className="name">Jonathan Lima</div>
+									<div className="subtitle">Tech Lead</div>
+									<div className="role-description">
+										Coordena nossa equipe técnica e arquitetura de software
+									</div>
+								</div>
+								<div className="member">
+									<img src="/Bruno W.jpg" alt="Bruno Wellar" />
+									<div className="name">Bruno Wellar</div>
+									<div className="subtitle">Desenvolvedor mobile</div>
+									<div className="role-description">
+										Especialista em desenvolvimento de aplicativos móveis
+									</div>
+								</div>
+								<div className="member">
+									<img src="/eduardo.jpg" alt="Eduardo Gonçalves" />
+									<div className="name">Eduardo Gonçalves</div>
+									<div className="subtitle">Desenvolvedor mobile</div>
+									<div className="role-description">
+										Desenvolvedor de interfaces e experiência mobile
+									</div>
+								</div>
+								<div className="member">
+									<img src="/Py.jpg" alt="Gustavo Py" />
+									<div className="name">Gustavo Py</div>
+									<div className="subtitle">Desenvolvedor Backend</div>
+									<div className="role-description">
+										Especialista em desenvolvimento de serviços backend
+									</div>
+								</div>
+								<div className="member">
+									<img src="/gustavo.png" alt="Gustavo Souza" />
+									<div className="name">Gustavo Souza</div>
+									<div className="subtitle">Desenvolvedor backend</div>
+									<div className="role-description">
+										Desenvolvedor de APIs e serviços backend
+									</div>
+								</div>
 							</div>
-							<div className="member">
-								<img src="/silvio.png" alt="" />
-								<div className="name">Silvio Quintana</div>
-								<div className="subtitle">CEO/COO</div>
-							</div>
-							<div className="member">
-								<img src="/karine.png" alt="" />
-								<div className="name">Karine Quintana</div>
-								<div className="subtitle">CMO/CFO</div>
-							</div>
-							<div className="member">
-								<img src="/victor.png" alt="" />
-								<div className="name">Victor Amaral</div>
-								<div className="subtitle">CTO</div>
-							</div>
+							<button className="scroll-button right" onClick={() => scrollTeam('right')}>
+								→
+							</button>
 						</div>
 					</Team>
 
