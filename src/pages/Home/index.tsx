@@ -110,7 +110,7 @@ const Home: FunctionComponent = () => {
 								Gestão inteligente para o seu negócio
 							</div>
 							<div className="subtitle">
-								Com o app <span>Gestão Boa para serviços</span>, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
+								Com o app <span>Gestão Boa</span>, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
 							</div>
 
 							<div className="buttons">
@@ -154,33 +154,45 @@ const Home: FunctionComponent = () => {
 						<div className="benefits">
 							<div className="benefit">
 								<img src="/check-list.png" alt="" />
-								<div className="title">Mais fácil que papel e a caneta</div>
-								<div className="subtitle">No nosso app você pode registrar facilmente cada serviço concluído. Além disso, é possível ver cada venda e estatísticas mensais e diárias!</div>
+								<div className="info">
+									<div className="title">Agenda Simplificada</div>
+									<div className="subtitle">Mantenha seus compromissos sempre à mão.</div>
+								</div>
 							</div>
 							<div className="benefit">
 								<img src="calendar (1) 1 (1).svg" alt="" />
-								<div className="title">Fique por dentro da sua agenda</div>
-								<div className="subtitle">Contamos com uma agenda integrada para você marcar seus serviços e com facilidade registrar a venda.</div>
+								<div className="info">
+									<div className="title">Organização Otimizada</div>
+									<div className="subtitle">Tudo em um só lugar para facilitar a gestão.</div>
+								</div>
 							</div>
 							<div className="benefit">
 								<img src="calendar (1) 1.svg" alt="" />
-								<div className="title">Anote os custos do seu negócio</div>
-								<div className="subtitle">Lidar com contas para pagar é uma tarefa complicada. No nosso app você pode já registrar quanto e quando vai pagar seus boletos.</div>
+								<div className="info">
+									<div className="title">Marketing Integrado</div>
+									<div className="subtitle">Conecte-se com seus clientes e promova seu negócio.</div>
+								</div>
 							</div>
 							<div className="benefit">
 								<img src="calendar (1) 2.svg" alt="" />
-								<div className="title">Saiba quanto entrou e saiu da carteira</div>
-								<div className="subtitle">É possível ver quanto faturou em dinheiro, pix e cartão de crédito. Isso ajuda muito caso você use a conta pessoal como a conta de recebimentos do seu negócio.</div>
+								<div className="info">
+									<div className="title">Pagamentos Fáceis</div>
+									<div className="subtitle">Gerencie pagamentos e registre receitas sem complicações.</div>
+								</div>
 							</div>
 							<div className="benefit">
 								<img src="calendar (1) 3.svg" alt="" />
-								<div className="title">Balanço geral e melhores clientes</div>
-								<div className="subtitle">Além de todos os outros benefícios, você poderá ver quais clientes são mais recorrentes e qual é o seu balanço diário/mensal.</div>
+								<div className="info">
+									<div className="title">Análises Detalhadas</div>
+									<div className="subtitle">Visualize resultados e tome decisões baseadas em dados.</div>
+								</div>
 							</div>
 							<div className="benefit">
 								<img src="calendar (1) 3 (1).svg" alt="" />
-								<div className="title">Melhore a conexão com seus clientes</div>
-								<div className="subtitle">Além de cadastrar os seus clientes, você poderá enviar mensagens automáticas para eles, aumentando a chance de retê-lo.</div>
+								<div className="info">
+									<div className="title">Fidelização do Cliente</div>
+									<div className="subtitle">Automatize mensagens e crie relacionamentos duradouros.</div>
+								</div>
 							</div>
 						</div>
 
@@ -343,14 +355,6 @@ const Home: FunctionComponent = () => {
 								<a href="https://www.instagram.com/gestaoboa/">
 									<img src="/instagram-1@2x.png" alt="" />
 									@gestaoboa
-								</a>
-								<a href="https://wa.me/5553999461550?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+Gestao+Boa%21">
-									<img src="/whatsapp-1@2x.png" alt="" />
-									(53) 99946-1550
-								</a>
-								<a href="BEasier.IG@gmail.com">
-									<img src="/envelope-1@2x.png" alt="" />
-									BEasier.IG@gmail.com
 								</a>
 							</div>
 						</div>

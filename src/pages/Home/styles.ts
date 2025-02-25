@@ -309,37 +309,50 @@ export const Solutions = styled.div`
 	}
 
 	.benefits {
-		padding: 100px;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-row-gap: 100px;
-		align-items: center;
-		width: calc(100% - 200px);
-	}
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		padding: 2rem;
+		
+		.benefit {
+			background: #ffffff;
+			border-radius: 8px;
+			padding: 1.5rem;
+			text-align: center;
+			transition: transform 0.2s;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
-	.benefits .benefit {
-		display: flex;
-		flex-direction: column;
-		gap: 24px;
-		align-items: center;
-		height: 517px;
-	}
+			&:hover {
+				transform: translateY(-5px);
+			}
 
-	.benefits .benefit img {
-		width: 295px;
-		height: 295px;
-	}
+			img {
+				width: 96px;
+				height: 96px;
+				margin-bottom: 1rem;
+			}
 
-	.benefits .benefit .title {
-		width: 295px;
-		font-weight: bold;
-		font-size: 32px;
-	}
+			.title {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+				color: #333;
+			}
 
-	.benefits .benefit .subtitle {
-		width: 295px;
-		font-weight: lighter;
-		font-size: 18px;
+			.subtitle {
+				font-size: 0.9rem;
+				color: #666;
+				line-height: 1.4;
+			}
+		}
+
+		@media (max-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 480px) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.tutorial {

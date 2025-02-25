@@ -13,6 +13,22 @@ export const Container = styled.div`
     z-index: 200;
     background-color: #ffff;
 
+    nav {
+        .pricing {
+            color: #03045E;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #90e0ef;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #caf0f8;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
     @media (max-width: 800px){
         position: relative;
         width: calc(100% - 100px);
@@ -25,6 +41,16 @@ export const Container = styled.div`
         justify-content: center;
         padding-left: 0px;
         padding-right: 0px;
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            .pricing {
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
     }
 `
 

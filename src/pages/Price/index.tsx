@@ -15,8 +15,8 @@ const Price = () => {
 			Premium: { original: { vista: 1200, parcelas: '109,90' } },
 		},
 		Mensal: {
-			Basico: { original: 80 },
-			Premium: { original: 120 },
+			Basico: { original: 79, parcelas: '79,90' },
+			Premium: { original: 119, parcelas: '119,90' },
 		},
 	};
 
@@ -47,7 +47,7 @@ const Price = () => {
 						<h2>Básico</h2>
 						<p>Perfeito para quem está começando</p>
 						<div className="price">
-							{planType === 'Mensal' ? `R$ ${prices.Mensal.Basico.original},00` : `R$ ${prices[planType].Basico.original.parcelas}`}
+							{planType === 'Mensal' ? `R$ ${prices.Mensal.Basico.original},90` : `R$ ${prices[planType].Basico.original.parcelas}`}
 							<span>/ mês</span>
 						</div>
 						<button
@@ -94,7 +94,7 @@ const Price = () => {
 						<h2>Premium</h2>
 						<p>Perfeito para quem já tem funcionários</p>
 						<div className="price">
-							{planType === 'Mensal' ? `R$ ${prices.Mensal.Premium.original},00` : `R$ ${prices[planType].Premium.original.parcelas}`}
+							{planType === 'Mensal' ? `R$ ${prices.Mensal.Premium.original},90` : `R$ ${prices[planType].Premium.original.parcelas}`}
 							<span>/ mês</span>
 						</div>
 						<button
