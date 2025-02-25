@@ -12,7 +12,7 @@ export default function Header () {
                 <Title>Gestão Boa</Title>
             </Logo>
 
-            <Links className={isMenuOpen ? 'active' : ''}>
+            <Links >
                 <LinkItem href="/#start" data-to-scrollspy-id="start">INÍCIO</LinkItem>
                 <LinkItem href="/solution" data-to-scrollspy-id="solution">SOLUÇÃO</LinkItem>
                 <LinkItem href="/preco" className="pricing">PLANOS</LinkItem>
