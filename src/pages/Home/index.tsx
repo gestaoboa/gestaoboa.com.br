@@ -107,10 +107,10 @@ const Home: FunctionComponent = () => {
 					<Banner id="start">
 						<div className="content">
 							<div className="title">
-								Gestão inteligente para o seu negócio
+								Agendamento inteligente, crescimento financeiro
 							</div>
 							<div className="subtitle">
-								Com o app <span>Gestão Boa</span>, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!
+								Simplifique suas marcações e organize comissões com facilidade. Gerencie tudo em um único app e veja sua receita decolar!
 							</div>
 
 							<div className="buttons">
@@ -147,7 +147,7 @@ const Home: FunctionComponent = () => {
 						<div className="solutionBanner">
 							<div className="vignette"></div>
 							<div className="title">
-								Como a Gestão Boa pode te ajudar?
+								Como a Gestão Boa pode turbinar o seu negócio?
 							</div>
 						</div>
 
@@ -169,15 +169,15 @@ const Home: FunctionComponent = () => {
 							<div className="benefit">
 								<img src="calendar (1) 1.svg" alt="" />
 								<div className="info">
-									<div className="title">Marketing Integrado</div>
-									<div className="subtitle">Conecte-se com seus clientes e promova seu negócio.</div>
+									<div className="title">Controle de Custos</div>
+									<div className="subtitle">Lidar com contas para pagar é uma tarefa complicada. No nosso app você pode já registrar quanto e quando vai pagar seus boletos.</div>
 								</div>
 							</div>
 							<div className="benefit">
 								<img src="calendar (1) 2.svg" alt="" />
 								<div className="info">
-									<div className="title">Pagamentos Fáceis</div>
-									<div className="subtitle">Gerencie pagamentos e registre receitas sem complicações.</div>
+								<div className="title">Gestão Financeira</div>
+								<div className="subtitle">Acompanhe entradas e saídas por método de pagamento.</div>
 								</div>
 							</div>
 							<div className="benefit">
@@ -198,7 +198,7 @@ const Home: FunctionComponent = () => {
 
 						<div className="testimonies">
 							<div className="heading">
-								Conheça algumas pessoas que já estão desfrutando da nossa solução!
+								Empreendedores de sucesso já contam com nossa solução: organize, cresça e fidelize seus clientes!
 							</div>
 
 							<div className="card">
@@ -217,9 +217,8 @@ const Home: FunctionComponent = () => {
 									Gestão financeira e vendas <span>na palma da sua mão</span>
 								</div>
 								<div className="description">
-									Veja nossa demonstração, onde mostramos o passo a passo para adicionar serviço, registrar vendas e custos, agendar serviços, adicionar clientes. Além de ver relatórios que te ajudam a entender seus lucros, melhores clientes e gráficos de vendas.
+								Veja nossa demonstração, onde mostramos o passo a passo para adicionar serviço, registrar vendas e custos, agendar serviços, adicionar clientes. Além de ver relatórios que te ajudam a entender seus lucros, melhores clientes e gráficos de vendas.
 								</div>
-								<span>Controle seu negócio a qualquer hora e lugar!</span>
 
 								<div className="buttons">
 									<div className="top">
@@ -350,7 +349,7 @@ const Home: FunctionComponent = () => {
 
 					<Contact id="contact">
 						<div className="info">
-							<div className="title">Entre em contato conosco!</div>
+							<div className="title">Entre em contato e acelere seu crescimento!</div>
 							<div className="links">
 								<a href="https://www.instagram.com/gestaoboa/">
 									<img src="/instagram-1@2x.png" alt="" />
