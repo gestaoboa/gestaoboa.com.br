@@ -1,11 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../Button";
 import { Container, LinkItem, Links, Logo, LogoImg, TestNow, Title } from "./styles";
-// import { useState } from "react";
 
 export default function Header () {
     const navigate = useNavigate()
-    // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <Container>
@@ -28,14 +26,6 @@ export default function Header () {
                 </a>
             </TestNow>
 
-            {/* <button
-                className={`menu ${isMenuOpen ? 'active' : ''}`}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button> */}
         </Container>
     )
 }
