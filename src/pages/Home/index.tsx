@@ -129,7 +129,7 @@ const Home: FunctionComponent = () => {
 							</div>
 						</div>
 						<div className="images">
-							<img className="cellphone" src="/WhatsApp Image 2024-06-19 at 20.41.51 2.png" alt="" />
+							<img className="cellphone" src="/cellphone.png" alt="" />
 							<img className="elipse" src="/Ellipse.svg" alt="" />
 						</div>
 					</Banner>
