@@ -107,7 +107,7 @@ const Home: FunctionComponent = () => {
 					<Banner id="start">
 						<div className="content">
 							<div className="title">
-								Agendamento inteligente, crescimento financeiro
+							Gestão inteligente para o seu negócio
 							</div>
 							<div className="subtitle">
 								Simplifique suas marcações e organize comissões com facilidade. Gerencie tudo em um único app e veja sua receita decolar!
