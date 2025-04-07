@@ -271,7 +271,7 @@ const Home: FunctionComponent = () => {
 								<div className="member">
 									<img src="/silvio.png" alt="Silvio Quintana" />
 									<div className="name">Silvio Quintana</div>
-									<div className="subtitle">CEO/COO</div>
+									<div className="subtitle">CEO</div>
 									<div className="role-description">
 										Líder visionário que coordena nossas estratégias e crescimento
 									</div>
@@ -279,7 +279,7 @@ const Home: FunctionComponent = () => {
 								<div className="member">
 									<img src="/karine.png" alt="Karine Quintana" />
 									<div className="name">Karine Quintana</div>
-									<div className="subtitle">CMO/CFO</div>
+									<div className="subtitle">CFO</div>
 									<div className="role-description">
 										Responsável por nossas estratégias de marketing e finanças
 									</div>

@@ -16,7 +16,7 @@ export default function Header () {
                 <LinkItem href="/#start" data-to-scrollspy-id="start">INÍCIO</LinkItem>
                 <LinkItem href="/solution" data-to-scrollspy-id="solution">SOLUÇÃO</LinkItem>
                 <LinkItem href="/preco" className="pricing">PLANOS</LinkItem>
-                {/* <LinkItem href="/#team" data-to-scrollspy-id="team">TIME</LinkItem> */}
+                <LinkItem href="/about" data-to-scrollspy-id="team">SOBRE NÓS</LinkItem>
                 <LinkItem href="/#contact" data-to-scrollspy-id="contact">CONTATO</LinkItem>
             </Links>
 
