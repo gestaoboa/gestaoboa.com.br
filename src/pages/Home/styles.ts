@@ -4,12 +4,12 @@ export const Container = styled.div`
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-`
+`;
 
 export const Grid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-`
+`;
 
 export const Banner = styled.div`
 	display: grid;
@@ -241,38 +241,43 @@ export const Banner = styled.div`
 export const Awards = styled.div`
 	display: flex;
 	grid-column: span 12;
-	justify-content: center;
-	padding-top: 59px;
-	padding-bottom: 59px;
+	justify-content: space-around;
+	width: '100%';
+	padding-top: 40px;
+	padding-bottom: 40px;
 	background-color: #03045E;
 
 	.item {
 		display: flex;
 		align-items: center;
-		gap: 20px;
+		flex-wrap: wrap;
+		gap: 15px;
 		color: #fff;
+		padding: 0 20px;
 	}
 
 	.item .number {
 		font-weight: bold;
-		font-size: 64px;
+		font-size: 48px;
 	}
 
 	.item .text {
-		font-size: 24px;
+		font-size: 18px;
 		max-width: 313px;
+		line-height: 1.4;
+		margin-bottom: 15px;
 	}
 
 	@media (max-width: 600px){
 		.item .number {
-			font-size: 32px;
+			font-size: 28px;
 		}
 
 		.item .text {
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
-`
+`;
 
 export const Solutions = styled.div`
 	display: flex;
@@ -413,6 +418,10 @@ export const Solutions = styled.div`
 		gap: 10px;
 	}
 
+	.tutorial .callout .buttons img.ios-icon {
+		margin-top: -6px;
+	}
+
 	a.unfocused {
 		border: 1px solid #03045E;
 		color: #03045E;
@@ -453,7 +462,7 @@ export const Solutions = styled.div`
 		background-color: #fff;
 	}
 
-	.testimonies .card img {
+	.testimonies .card img, .testimonies .card video {
 		width: 450px;
 		object-fit: cover;
 		border-radius: 20px 0px 0px 20px;
@@ -493,7 +502,7 @@ export const Solutions = styled.div`
 			width: calc(100% - 200px);
 		}
 
-		.testimonies .card img {
+		.testimonies .card img, .testimonies .card video {
 			width: 400px;
 		}
 
@@ -531,7 +540,7 @@ export const Solutions = styled.div`
 			width: 90%;
 		}
 
-		.testimonies .card img {
+		.testimonies .card img, .testimonies .card video {
 			width: 400px;
 		}
 
@@ -577,7 +586,7 @@ export const Solutions = styled.div`
 			flex-direction: column;
 		}
 
-		.testimonies .card img {
+		.testimonies .card img, .testimonies .card video {
 			width: 100%;
 			border-radius: 20px 20px 0px 0px;
 		}
@@ -714,7 +723,7 @@ export const Solutions = styled.div`
 			gap: 30px;
 		}
 	}
-`
+`;
 
 export const Team = styled.div`
   display: flex;
@@ -731,6 +740,7 @@ export const Team = styled.div`
     font-weight: 800;
     font-size: 64px;
     background: linear-gradient(90deg, #fff 0%, #caf0f8 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
@@ -1190,4 +1200,4 @@ export const Contact = styled.div`
 			width: 100%;
 		}
 	}
-	`;
+`;

@@ -117,7 +117,7 @@ const Home: FunctionComponent = () => {
 								<a
 									className="button"
 									href="#demonstration"
-									style={{ textDecoration: "none" }}
+									title="Começar agora"
 								>
 									<Button
 										width="100%"
@@ -139,6 +139,10 @@ const Home: FunctionComponent = () => {
 							<div className="number">1°</div>
 							<div className="text">
 								Colocada na pré-incubação de Rio Grande (2023)
+							</div>
+							<div className="number">2°</div>
+							<div className="text">
+								Acelerada no 5° ciclo do startup in lab Fecormécio-RS (2023)
 							</div>
 						</div>
 					</Awards>
@@ -209,8 +213,19 @@ const Home: FunctionComponent = () => {
 									<div className="person">-  Janaina Christello, Psicóloga</div>
 								</div>
 							</div>
-						</div>
 
+							<div className="card">
+								<video controls>
+									<source src="/depoimentoLeandro.mp4" type="video/mp4" />
+									Seu navegador não suporta vídeos.
+								</video>
+								<div className="texts">
+									<div className="title">Muito fácil de operar</div>
+									<div className="desc">Fiquei muito feliz com uma coisa que eu não sabia: o barbeiro consegue lançar no caixa a comanda pelo celular dele. Muito prático!</div>
+									<div className="person">-  Leandro Figueiredo, Proprietário de Barbearia</div>
+								</div>
+							</div>
+						</div>
 						<div className="tutorial" id="demonstration">
 							<div className="callout">
 								<div className="title">
@@ -232,7 +247,7 @@ const Home: FunctionComponent = () => {
 										</div>
 
 										<a href="https://www.app.gestaoboa.com.br" className="unfocused">
-											<img src="/mage_playstore.svg" alt="" style={{ marginTop: "-6px" }} />
+											<img src="/mage_playstore.svg" alt="Ícone da App Store" className="ios-icon" />
 											IOS
 										</a>
 									</div>
@@ -330,14 +345,6 @@ const Home: FunctionComponent = () => {
 									<div className="subtitle">Desenvolvedor Backend</div>
 									<div className="role-description">
 										Especialista em desenvolvimento de serviços backend
-									</div>
-								</div>
-								<div className="member">
-									<img src="/gustavo.png" alt="Gustavo Souza" />
-									<div className="name">Gustavo Souza</div>
-									<div className="subtitle">Desenvolvedor backend</div>
-									<div className="role-description">
-										Desenvolvedor de APIs e serviços backend
 									</div>
 								</div>
 							</div>

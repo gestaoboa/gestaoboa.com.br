@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import "./styles.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const About = () => {
     useEffect(() => {
@@ -20,6 +20,13 @@ const About = () => {
         return () => observer.disconnect();
     }, []);
 
+    const handleDemoClick = () => {
+        window.open('https://wa.me/5553999461550', '_blank');
+    };
+
+    const [activeFounder, setActiveFounder] = useState("silvio");
+    const [hoveredFounder, setHoveredFounder] = useState("");
+
     return (
         <>
             <Header />
@@ -31,8 +38,8 @@ const About = () => {
                         <h1 className="hero-title">Tecnologia que <span className="highlight">transforma</span> sonhos em negócios de sucesso</h1>
                         <p className="hero-subtitle">Ajudando empreendedores brasileiros a organizarem seus negócios.</p>
                         <div className="hero-buttons">
-                            <button className="primary-button">Nossa solução</button>
-                            <button className="secondary-button">Agendar demo</button>
+                            <button className="primary-button" onClick={() => window.open('https://app.gestaoboa.com.br', '_blank')}>Nossa solução</button>
+                            <button className="secondary-button" onClick={handleDemoClick}>Agendar demo</button>
                         </div>
                     </div>
                     <div className="hero-pattern"></div>
@@ -114,32 +121,7 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Enhanced Achievements Section */}
-                {/* <section className="achievements-section">
-                    <div className="section-header">
-                        <span className="section-badge">Nosso Impacto</span>
-                        <h2>Transformando números em histórias de sucesso</h2>
-                    </div>
-                    <div className="achievement-items">
-                        <div className="achievement-item fade-in">
-                            <span className="achievement-number">1000+</span>
-                            <p>Empreendedores Transformados</p>
-                            <span className="achievement-detail">Negócios que aumentaram sua produtividade</span>
-                        </div>
-                        <div className="achievement-item fade-in">
-                            <span className="achievement-number">5+</span>
-                            <p>Reconhecimentos de Inovação</p>
-                            <span className="achievement-detail">Premiações que validam nossa abordagem</span>
-                        </div>
-                        <div className="achievement-item fade-in">
-                            <span className="achievement-number">24/7</span>
-                            <p>Suporte Excepcional</p>
-                            <span className="achievement-detail">Sempre prontos para ajudar você</span>
-                        </div>
-                    </div>
-                </section> */}
-
-                {/* Updated Team Section */}
+                {/* Updated Team Section with Interactive Hover */}
                 <section className="content-section team-section">
                     <div className="floating-element left"></div>
                     <div className="floating-element right"></div>
@@ -150,99 +132,128 @@ const About = () => {
                         <p className="section-subtitle">Uma equipe apaixonada por resolver problemas reais</p>
                     </div>
 
-                    <div className="team-container">
-                        <img src="/time.png" alt="Time Gestão Boa" className="team-image fade-in" />
-                        <h3 className="team-category-title">Liderança Visionária</h3>
-                        <div className="team-cards">
-                        <div className="team-card fade-in">
-                                <div className="card-header">
-                                    <h3>Victor</h3>
-                                    <span className="role">CTO</span>
+                    <div className="interactive-team-container">
+                        <div className="team-image-container fade-in">
+                            <div className={`team-image-wrapper ${hoveredFounder ? 'has-hover' : ''}`}>
+                                <img 
+                                    src="/time.png" 
+                                    alt="Time Gestão Boa" 
+                                    className="team-image" 
+                                    useMap="#founders-map"
+                                />
+                                <div className={`founder-overlay victor ${hoveredFounder === 'victor' ? 'active' : ''}`}></div>
+                                <div className={`founder-overlay karine ${hoveredFounder === 'karine' ? 'active' : ''}`}></div>
+                                <div className={`founder-overlay silvio ${hoveredFounder === 'silvio' ? 'active' : ''}`}></div>
+                            </div>
+                            <map name="founders-map">
+                                <area 
+                                    shape="rect" 
+                                    coords="0,0,180,400" 
+                                    alt="Victor" 
+                                    onMouseEnter={() => {
+                                        setActiveFounder("victor");
+                                        setHoveredFounder("victor");
+                                    }}
+                                    onMouseLeave={() => setHoveredFounder("")}
+                                />
+                                <area 
+                                    shape="rect" 
+                                    coords="181,0,350,400" 
+                                    alt="Karine" 
+                                    onMouseEnter={() => {
+                                        setActiveFounder("karine");
+                                        setHoveredFounder("karine");
+                                    }}
+                                    onMouseLeave={() => setHoveredFounder("")}
+                                />
+                                <area 
+                                    shape="rect" 
+                                    coords="351,0,550,400" 
+                                    alt="Sílvio" 
+                                    onMouseEnter={() => {
+                                        setActiveFounder("silvio");
+                                        setHoveredFounder("silvio");
+                                    }}
+                                    onMouseLeave={() => setHoveredFounder("")}
+                                />
+                            </map>
+                            
+                            <div className="founder-indicators">
+                                <div 
+                                    className={`indicator ${activeFounder === "victor" ? "active" : ""}`}
+                                    onClick={() => setActiveFounder("victor")}
+                                    onMouseEnter={() => setHoveredFounder("victor")}
+                                    onMouseLeave={() => setHoveredFounder("")}
+                                >
+                                    <span>Victor</span>
                                 </div>
-                                <div className="card-body">
-                                    <p>
-                                        Maestro tecnológico que orquestra nossas equipes de desenvolvimento e 
-                                        projetos. Sua visão técnica combinada com habilidades em gestão de pessoas 
-                                        impulsiona nossa capacidade de inovação contínua.
-                                    </p>
+                                <div 
+                                    className={`indicator ${activeFounder === "karine" ? "active" : ""}`}
+                                    onClick={() => setActiveFounder("karine")}
+                                    onMouseEnter={() => setHoveredFounder("karine")}
+                                    onMouseLeave={() => setHoveredFounder("")}
+                                >
+                                    <span>Karine</span>
+                                </div>
+                                <div 
+                                    className={`indicator ${activeFounder === "silvio" ? "active" : ""}`}
+                                    onClick={() => setActiveFounder("silvio")}
+                                    onMouseEnter={() => setHoveredFounder("silvio")}
+                                    onMouseLeave={() => setHoveredFounder("")}
+                                >
+                                    <span>Sílvio</span>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div className="team-cards-container">
+                            <h3 className="team-category-title">Liderança Visionária</h3>
+                            <div className="team-cards">
+                                <div className={`team-card fade-in ${activeFounder === "victor" ? "active" : ""}`}>
+                                    <div className="card-header">
+                                        <h3 style={{color:'white'}}>Victor</h3>
+                                        <span className="role">CTO</span>
+                                    </div>
+                                    <div className="card-body">
+                                        <p>
+                                            Maestro tecnológico que orquestra nossas equipes de desenvolvimento e 
+                                            projetos. Sua visão técnica combinada com habilidades em gestão de pessoas 
+                                            impulsiona nossa capacidade de inovação contínua.
+                                        </p>
+                                    </div>
+                                </div>
 
-                            <div className="team-card fade-in">
-                                <div className="card-header">
-                                    <h3>Karine</h3>
-                                    <span className="role">CFO</span>
+                                <div className={`team-card fade-in ${activeFounder === "karine" ? "active" : ""}`}>
+                                    <div className="card-header">
+                                        <h3 style={{color:'white'}}>Karine</h3>
+                                        <span className="role">CFO</span>
+                                    </div>
+                                    <div className="card-body">
+                                        <p>
+                                            Mente estratégica por trás das finanças e do crescimento. Representa a 
+                                            Gestão Boa em eventos de inovação e lidera nossas iniciativas de marketing 
+                                            digital, elevando constantemente nossa presença no mercado.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="card-body">
-                                    <p>
-                                        Mente estratégica por trás das finanças e do crescimento. Representa a 
-                                        Gestão Boa em eventos de inovação e lidera nossas iniciativas de marketing 
-                                        digital, elevando constantemente nossa presença no mercado.
-                                    </p>
+                                
+                                <div className={`team-card fade-in ${activeFounder === "silvio" ? "active" : ""}`}>
+                                    <div className="card-header">
+                                        <h3 style={{color:'white'}}>Sílvio</h3>
+                                        <span className="role">CEO</span>
+                                    </div>
+                                    <div className="card-body">
+                                        <p>
+                                            Arquiteto de ideias que dá vida e direção à Gestão Boa. Navega com maestria entre 
+                                            desenvolvimento tecnológico, vendas e estratégia, sempre vislumbrando o próximo 
+                                            passo inovador que transformará o mercado.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="team-card fade-in">
-                                <div className="card-header">
-                                    <h3>Sílvio</h3>
-                                    <span className="role">CEO</span>
-                                </div>
-                                <div className="card-body">
-                                    <p>
-                                        Arquiteto de ideias que dá vida e direção à Gestão Boa. Navega com maestria entre 
-                                        desenvolvimento tecnológico, vendas e estratégia, sempre vislumbrando o próximo 
-                                        passo inovador que transformará o mercado.
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </section>
-
-                {/* Updated Products Section */}
-                {/* <section className="content-section products-section">
-                    <div className="section-header">
-                        <span className="section-badge">Nossas Soluções</span>
-                        <h2>Ferramentas que impulsionam seu crescimento</h2>
-                        <p className="section-subtitle">Tecnologia pensada para facilitar sua jornada empreendedora</p>
-                    </div>
-
-                    <div className="products-container">
-                        <div className="product-card featured fade-in">
-                            <div className="product-icon">
-                                <i className="fas fa-mobile-alt"></i>
-                            </div>
-                            <span className="product-label">Destaque</span>
-                            <h3>Aplicativo Gestão Boa</h3>
-                            <p>Transforme a administração do seu negócio com nossa solução completa e intuitiva</p>
-                            <a href="#" className="product-link">Saiba mais</a>
-                        </div>
-
-                        <div className="product-card fade-in">
-                            <div className="product-icon">
-                                <i className="fas fa-code"></i>
-                            </div>
-                            <h3>Desenvolvimento de APIs</h3>
-                            <p>Integrações poderosas para expandir possibilidades</p>
-                        </div>
-
-                        <div className="product-card fade-in">
-                            <div className="product-icon">
-                                <i className="fas fa-laptop-code"></i>
-                            </div>
-                            <h3>Aplicativos Mobile</h3>
-                            <p>Experiências móveis intuitivas e funcionais</p>
-                        </div>
-
-                        <div className="product-card fade-in">
-                            <div className="product-icon">
-                                <i className="fas fa-robot"></i>
-                            </div>
-                            <h3>Automações com IA</h3>
-                            <p>Tecnologia inteligente para processos mais eficientes</p>
-                        </div>
-                    </div>
-                </section> */}
 
                 {/* Updated Culture Section */}
                 <section className="content-section culture-section">
@@ -287,8 +298,8 @@ const About = () => {
                     <h2>Pronto para transformar seu negócio?</h2>
                     <p>Junte-se aos milhares de empreendedores que já descobriram como a gestão eficiente pode impulsionar resultados</p>
                     <div className="cta-buttons">
-                        <button className="cta-button primary">Começar agora</button>
-                        <button className="cta-button secondary">Falar com especialista</button>
+                        <button className="cta-button primary" onClick={() => window.open('https://app.gestaoboa.com.br', '_blank')}>Começar agora</button>
+                        <button className="cta-button secondary" onClick={handleDemoClick}>Falar com especialista</button>
                     </div>
                 </section>
 
@@ -302,19 +313,20 @@ const About = () => {
                     <div className="testimonials-container">
                         <div className="testimonial fade-in">
                             <div className="quote-mark">"</div>
-                            <p className="testimonial-text">A Gestão Boa revolucionou a forma como gerencio meu salão. Economizo 5 horas por semana em tarefas administrativas!</p>
+                            <p className="testimonial-text">“Agora consigo me organizar e entender quais são os lucros e despesas de forma muito clara e objetiva. 
+                            Antes usava o Google Agenda e o Excel. Mas hoje utilizo tudo em um só App.”!</p>
                             <div className="testimonial-author">
-                                <p className="author-name">Amanda Silva</p>
-                                <p className="author-business">Studio de Beleza Amanda</p>
+                                <p className="author-name">Janaína Christello</p>
+                                <p className="author-business">Psicóloga</p>
                             </div>
                         </div>
                         
                         <div className="testimonial fade-in">
                             <div className="quote-mark">"</div>
-                            <p className="testimonial-text">Finalmente um sistema que realmente entende as necessidades do meu negócio. Interface intuitiva e suporte excepcional.</p>
+                            <p className="testimonial-text">“Muito fácil de operar, fiquei feliz com uma coisa que eu não sabia o barbeiro consegue lançar no caixa a comanda pelo celular dele muito prático”</p>
                             <div className="testimonial-author">
-                                <p className="author-name">Carlos Mendes</p>
-                                <p className="author-business">Barbearia Vintage</p>
+                                <p className="author-name">Leandro Figueiredo</p>
+                                <p className="author-business">Barbearia Duque - Pelotas RS</p>
                             </div>
                         </div>
                     </div>

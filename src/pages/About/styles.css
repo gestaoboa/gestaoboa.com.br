@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #0066cc;
+    --accent-color: #4cddff;
+}
+
 .about-container {
     margin-top: 400px;
     max-width: 1200px;
@@ -858,6 +863,128 @@
     color: #666;
     font-size: 0.9rem;
     margin: 0;
+}
+
+/* Interactive Team Section Styles */
+.interactive-team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.team-image-container {
+    flex: 0 0 40%;
+    position: relative;
+}
+
+.team-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.founder-indicators {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.indicator {
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.indicator:hover:not(.active) {
+    border-color: var(--primary-color);
+}
+
+.team-cards-container {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.team-cards {
+    position: relative;
+}
+
+.team-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.team-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    position: relative;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.card-header .role {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-body p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 900px) {
+    .interactive-team-container {
+        flex-direction: column;
+    }
+    
+    .team-image-container,
+    .team-cards-container {
+        flex: 0 0 100%;
+    }
+    
+    .team-cards-container {
+        margin-top: 30px;
+    }
 }
 
 /* Responsive Styles */

@@ -6,24 +6,17 @@ import { Container } from "../Terms/styles";
 import "./styles.css";
 
 const Price = () => {
-	const [planType, setPlanType] = useState<'Anual' | 'Semestral' | 'Mensal'>('Anual');
+	const [planType, setPlanType] = useState<'Anual' | 'Mensal'>('Anual');
 
 	// Price data
 	const prices = {
 		Anual: {
-			Basico: { parcelas: '54,90' },      // 69,90 - 20%
-			Avancado: { parcelas: '69,90' },    // 89,90 - 20%
-			Premium: { parcelas: '109,90' },    // Changed to fixed 109,90
-		},
-		Semestral: {
-			Basico: { parcelas: '64,90' },      // 69,90 - 10%
-			Avancado: { parcelas: '79,90' },    // 89,90 - 10%
-			Premium: { parcelas: '119,90' },    // Changed - between annual and monthly
+			Basico: { original: { vista: 900, parcelas: '69,90' } },
+			Premium: { original: { vista: 1200, parcelas: '109,90' } },
 		},
 		Mensal: {
-			Basico: '69,90',                    // Base price
-			Avancado: '89,90',                  // Base price
-			Premium: '129,90',                  // Base price
+			Basico: { original: 79, parcelas: '79,90' },
+			Premium: { original: 119, parcelas: '119,90' },
 		},
 	};
 
@@ -38,11 +31,11 @@ const Price = () => {
 			<div className="plans">
 				<h1 className="plans-title">Assine agora!</h1>
 				<div className="plan-type-selector">
-					{['Anual', 'Semestral', 'Mensal'].map((type) => (
+					{['Anual', 'Mensal'].map((type) => (
 						<button
 							key={type}
 							className={`plan-type-button ${planType === type ? 'active' : ''}`}
-							onClick={() => setPlanType(type as 'Anual' | 'Semestral' | 'Mensal')}
+							onClick={() => setPlanType(type as 'Anual' | 'Mensal')}
 						>
 							{type}
 						</button>
@@ -51,12 +44,10 @@ const Price = () => {
 				<div className="plan-cards">
 					{/* Plano Básico */}
 					<div className="plan-card">
-						<h2>Start</h2>
-						<p>O primeiro passo para a organização</p>
+						<h2>Básico</h2>
+						<p>Perfeito para quem está começando</p>
 						<div className="price">
-							{planType === 'Mensal' 
-								? `R$ ${prices.Mensal.Basico}` 
-								: `R$ ${prices[planType].Basico.parcelas}`}
+							{planType === 'Mensal' ? `R$ ${prices.Mensal.Basico.original},90` : `R$ ${prices[planType].Basico.original.parcelas}`}
 							<span>/ mês</span>
 						</div>
 						<button
@@ -74,23 +65,19 @@ const Price = () => {
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Controle de caixa
+								Finanças
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Relatórios
+								Gráficos
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Atendimento individulizado
+								Suporte via WhatsApp
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
 								Gestão de clientes
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Instalação e configuração
 							</li>
 							<li>
 								<span className="x-icon">✖</span>
@@ -102,69 +89,12 @@ const Price = () => {
 							</li>
 						</ul>
 					</div>
-
-					{/* Plano Avançado */}
-					<div className="plan-card">
-						<h2>Growth</h2>
-						<p>Para negócios que estão começando a expandir</p>
-						<div className="price">
-							{planType === 'Mensal' 
-								? `R$ ${prices.Mensal.Avancado}` 
-								: `R$ ${prices[planType].Avancado.parcelas}`}
-							<span>/ mês</span>
-						</div>
-						<button
-							className="sign-button"
-							onClick={() => {
-								window.open('https://wa.me/5553999461550?text=Quero%20assinar%20o%20plano%20avançado!');
-							}}
-						>
-							ASSINE AGORA!
-						</button>
-						<ul className="benefits-list">
-							<li>
-								<span className="check-icon">✔</span>
-								Agendamentos
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Controle de caixa
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Relatórios
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Atendimento individulizado
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Gestão de clientes
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Instalação e configuração
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Gestão de equipes (até 2 usuários)
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Comissões automáticas
-							</li>
-						</ul>
-					</div>
-
 					{/* Plano Premium */}
 					<div className="plan-card">
-						<h2>Elite</h2>
-						<p>Gestão completa para grandes equipes</p>
+						<h2>Premium</h2>
+						<p>Perfeito para quem já tem funcionários</p>
 						<div className="price">
-							{planType === 'Mensal' 
-								? `R$ ${prices.Mensal.Premium}` 
-								: `R$ ${prices[planType].Premium.parcelas}`}
+							{planType === 'Mensal' ? `R$ ${prices.Mensal.Premium.original},90` : `R$ ${prices[planType].Premium.original.parcelas}`}
 							<span>/ mês</span>
 						</div>
 						<button
@@ -182,15 +112,15 @@ const Price = () => {
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Controle de caixa
+								Finanças
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Relatórios
+								Gráficos
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Atendimento individulizado
+								Suporte via WhatsApp
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
@@ -198,11 +128,7 @@ const Price = () => {
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
-								Instalação e configuração
-							</li>
-							<li>
-								<span className="check-icon">✔</span>
-								Gestão de equipes (usuários ilimitados)
+								Gestão de equipes
 							</li>
 							<li>
 								<span className="check-icon">✔</span>
