@@ -136,13 +136,17 @@ const Home: FunctionComponent = () => {
 
 					<Awards>
 						<div className="item">
-							<div className="number">1°</div>
-							<div className="text">
-								Colocada na pré-incubação de Rio Grande (2023)
+							<div className="award-pair">
+								<div className="number">1°</div>
+								<div className="text">
+									Colocada na pré-incubação de Rio Grande (2023)
+								</div>
 							</div>
-							<div className="number">2°</div>
-							<div className="text">
-								Acelerada no 5° ciclo do startup in lab Fecormécio-RS (2023)
+							<div className="award-pair">
+								<div className="number">2°</div>
+								<div className="text">
+									Acelerada no 5° ciclo do startup in lab Fecormécio-RS (2024)
+								</div>
 							</div>
 						</div>
 					</Awards>

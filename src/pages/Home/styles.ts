@@ -254,6 +254,14 @@ export const Awards = styled.div`
 		gap: 15px;
 		color: #fff;
 		padding: 0 20px;
+		justify-content: center;
+	}
+
+	.award-pair {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		margin: 0 15px;
 	}
 
 	.item .number {
@@ -268,7 +276,29 @@ export const Awards = styled.div`
 		margin-bottom: 15px;
 	}
 
-	@media (max-width: 600px){
+	@media (max-width: 768px) {
+		.item {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.award-pair {
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+		
+		.item .number {
+			font-size: 36px;
+		}
+
+		.item .text {
+			font-size: 16px;
+			max-width: 100%;
+			padding: 0 10px;
+		}
+	}
+
+	@media (max-width: 600px) {
 		.item .number {
 			font-size: 28px;
 		}
