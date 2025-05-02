@@ -170,8 +170,8 @@ const Home: FunctionComponent = () => {
 							<div className="benefit">
 								<img src="calendar (1) 1 (1).svg" alt="" />
 								<div className="info">
-									<div className="title">Organização Otimizada</div>
-									<div className="subtitle">Tudo em um só lugar para facilitar a gestão.</div>
+									<div className="title">Gerenciamento e vendas de produtos</div>
+									<div className="subtitle">Controle seu estoque, e tenha uma análise completa sobre as vendas dos seus produtos.</div>
 								</div>
 							</div>
 							<div className="benefit">
