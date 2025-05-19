@@ -190,6 +190,120 @@
   background-color: #f0f4f8;
 }
 
+.top-countdown-container {
+  position: relative;
+  background: linear-gradient(135deg, #0230a2, #03045e);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: pulse 2s infinite;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+.top-countdown-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+}
+
+@keyframes shine {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.top-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.top-countdown-number {
+  background: rgba(255, 255, 255, 0.95);
+  color: #03045e;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 12px;
+  min-width: 240px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+
+.top-countdown span {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.top-countdown-title {
+  color: #fff;
+}
+
+
+.top-countdown-text {
+  color: #fff;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+.top-countdown-button {
+  background-color: #FD1D1D;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  margin-top: 25px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.top-countdown-button:hover {
+  background-color: #ff4d4d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 .plans-title {
   font-size: 36px;
   font-weight: bold;
@@ -202,24 +316,52 @@
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .plan-type-button {
-  padding: 12px 24px;
+  padding: 12px 20px;
   background-color: #fff;
   border: 2px solid #03045e;
   border-radius: 8px;
-  margin: 0 10px;
+  margin: 5px;
   color: #03045e;
   cursor: pointer;
   font-size: 18px;
   transition: all 0.3s ease;
+  min-width: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
-.plan-type-button.active,
-.plan-type-button:hover {
-  background-color: #03045e;
+.plan-type-button span {
+  display: block;
+}
+
+.plan-type-discount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FD1D1D;
+  background-color: rgba(253, 29, 29, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.plan-type-button.active .plan-type-discount {
   color: #fff;
+  background-color: #FD1D1D;
+}
+
+.plan-type-button:hover .plan-type-discount {
+  background-color: rgba(253, 29, 29, 0.2);
+}
+
+.plan-type-button.active:hover .plan-type-discount {
+  background-color: #ff4d4d;
 }
 
 .plan-cards {
@@ -235,6 +377,21 @@
   padding: 30px;
   width: 320px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-discount-badge {
+  position: absolute;
+  top: 16px;
+  right: -28px;
+  background-color: #FD1D1D;
+  color: white;
+  padding: 6px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .plan-card h2 {
@@ -248,6 +405,27 @@
   font-size: 16px;
   color: #6c757d;
   margin-bottom: 20px;
+}
+
+.original-price {
+  font-size: 24px;
+  color: #6c757d;
+  text-decoration: line-through;
+  margin-bottom: 8px;
+  margin-top: -10px;
+  opacity: 0.7;
+}
+
+.discounted-price {
+  font-size: 40px;
+  color: #03045e;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.discounted-price span {
+  font-size: 18px;
+  margin-left: 5px;
 }
 
 .price {
@@ -341,6 +519,61 @@
   margin-right: 10px;
 }
 
+.instagram-button {
+  border-radius: 8px;
+  padding: 12px;
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.instagram-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.countdown-banner {
+  background-color: #FD1D1D;
+  border-radius: 8px;
+  padding: 6px 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 130px;
+}
+
+.countdown-text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.countdown-days {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.countdown-subtext {
+  color: #fff;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
 /* Responsividade */
 @media screen and (max-width: 768px) {
   .plan-cards {
@@ -351,4 +584,126 @@
   .plan-card {
     width: 90%;
   }
+
+  .top-countdown-number {
+    font-size: 36px;
+    min-width: 200px;
+    padding: 12px 20px;
+  }
+
+  .top-countdown-title {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .top-countdown-text {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .top-countdown-button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+}
+
+.comparison-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%);
+  margin-top: 2rem;
+}
+
+.comparison-section h2 {
+  text-align: center;
+  color: #1a237e;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.comparison-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0ff;
+}
+
+.comparison-table th {
+  background: #1a237e;
+  color: white;
+  font-weight: 600;
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.comparison-table td:first-child {
+  text-align: left;
+  padding-left: 2rem;
+  font-weight: 500;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table .gestao-boa-col {
+  background-color: rgba(25, 118, 210, 0.05);
+}
+
+.comparison-table .check-icon {
+  color: #4caf50;
+  font-size: 1.2rem;
+}
+
+.comparison-table .x-icon {
+  color: #f44336;
+  font-size: 1.2rem;
+}
+
+.price-row {
+  background-color: #f8f9ff;
+  font-weight: 600;
+}
+
+.price-row td {
+  padding: 1.5rem 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-table {
+    font-size: 0.9rem;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem;
+  }
+  
+  .comparison-section {
+    padding: 2rem 1rem;
+  }
+  
+  .comparison-section h2 {
+    font-size: 2rem;
+  }
+}
+
+.comparison-section .container {
+  overflow-x: auto;
+  padding: 1rem;
+  margin: -1rem;
 }
