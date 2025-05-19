@@ -137,6 +137,10 @@ export const Content = styled.main`
     }
   }
 
+  .text-center {
+    text-align: center;
+  }
+
   @media (max-width: 768px) {
     .hero {
       padding: 60px 20px;
@@ -200,6 +204,53 @@ export const Content = styled.main`
         a {
           width: 100%;
           text-align: center;
+        }
+      }
+    }
+  }
+  
+  .faq {
+    padding: 5rem 2rem;
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      .faq-item {
+        margin-bottom: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+
+        summary {
+          padding: 1.2rem;
+          position: relative;
+          cursor: pointer;
+          font-weight: 600;
+          list-style: none;
+
+          &::-webkit-details-marker {
+            display: none;
+          }
+
+          &::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #4285f4;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        &[open] summary::after {
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        p {
+          padding: 0 1.2rem 1.2rem;
+          margin: 0;
+          color: #666;
         }
       }
     }

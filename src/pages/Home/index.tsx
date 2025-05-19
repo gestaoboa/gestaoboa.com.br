@@ -117,7 +117,7 @@ const Home: FunctionComponent = () => {
 								<a
 									className="button"
 									href="#demonstration"
-									style={{ textDecoration: "none" }}
+									title="Começar agora"
 								>
 									<Button
 										width="100%"
@@ -129,16 +129,24 @@ const Home: FunctionComponent = () => {
 							</div>
 						</div>
 						<div className="images">
-							<img className="cellphone" src="/WhatsApp Image 2024-06-19 at 20.41.51 2.png" alt="" />
+							<img className="cellphone" src="/cellphone.png" alt="" />
 							<img className="elipse" src="/Ellipse.svg" alt="" />
 						</div>
 					</Banner>
 
 					<Awards>
 						<div className="item">
-							<div className="number">1°</div>
-							<div className="text">
-								Colocada na pré-incubação de Rio Grande (2023)
+							<div className="award-pair">
+								<div className="number">1°</div>
+								<div className="text">
+									Colocada na pré-incubação de Rio Grande (2023)
+								</div>
+							</div>
+							<div className="award-pair">
+								<div className="number">2°</div>
+								<div className="text">
+									Acelerada no 5° ciclo do startup in lab Fecormécio-RS (2024)
+								</div>
 							</div>
 						</div>
 					</Awards>
@@ -162,8 +170,8 @@ const Home: FunctionComponent = () => {
 							<div className="benefit">
 								<img src="calendar (1) 1 (1).svg" alt="" />
 								<div className="info">
-									<div className="title">Organização Otimizada</div>
-									<div className="subtitle">Tudo em um só lugar para facilitar a gestão.</div>
+									<div className="title">Gerenciamento e vendas de produtos</div>
+									<div className="subtitle">Controle seu estoque, e tenha uma análise completa sobre as vendas dos seus produtos.</div>
 								</div>
 							</div>
 							<div className="benefit">
@@ -209,8 +217,19 @@ const Home: FunctionComponent = () => {
 									<div className="person">-  Janaina Christello, Psicóloga</div>
 								</div>
 							</div>
-						</div>
 
+							<div className="card">
+								<video controls>
+									<source src="/depoimentoLeandro.mp4" type="video/mp4" />
+									Seu navegador não suporta vídeos.
+								</video>
+								<div className="texts">
+									<div className="title">Muito fácil de operar</div>
+									<div className="desc">Fiquei muito feliz com uma coisa que eu não sabia: o barbeiro consegue lançar no caixa a comanda pelo celular dele. Muito prático!</div>
+									<div className="person">-  Leandro Figueiredo, Proprietário de Barbearia</div>
+								</div>
+							</div>
+						</div>
 						<div className="tutorial" id="demonstration">
 							<div className="callout">
 								<div className="title">
@@ -232,7 +251,7 @@ const Home: FunctionComponent = () => {
 										</div>
 
 										<a href="https://www.app.gestaoboa.com.br" className="unfocused">
-											<img src="/mage_playstore.svg" alt="" style={{ marginTop: "-6px" }} />
+											<img src="/mage_playstore.svg" alt="Ícone da App Store" className="ios-icon" />
 											IOS
 										</a>
 									</div>
@@ -271,7 +290,7 @@ const Home: FunctionComponent = () => {
 								<div className="member">
 									<img src="/silvio.png" alt="Silvio Quintana" />
 									<div className="name">Silvio Quintana</div>
-									<div className="subtitle">CEO/COO</div>
+									<div className="subtitle">CEO</div>
 									<div className="role-description">
 										Líder visionário que coordena nossas estratégias e crescimento
 									</div>
@@ -279,7 +298,7 @@ const Home: FunctionComponent = () => {
 								<div className="member">
 									<img src="/karine.png" alt="Karine Quintana" />
 									<div className="name">Karine Quintana</div>
-									<div className="subtitle">CMO/CFO</div>
+									<div className="subtitle">CFO</div>
 									<div className="role-description">
 										Responsável por nossas estratégias de marketing e finanças
 									</div>
@@ -330,14 +349,6 @@ const Home: FunctionComponent = () => {
 									<div className="subtitle">Desenvolvedor Backend</div>
 									<div className="role-description">
 										Especialista em desenvolvimento de serviços backend
-									</div>
-								</div>
-								<div className="member">
-									<img src="/gustavo.png" alt="Gustavo Souza" />
-									<div className="name">Gustavo Souza</div>
-									<div className="subtitle">Desenvolvedor backend</div>
-									<div className="role-description">
-										Desenvolvedor de APIs e serviços backend
 									</div>
 								</div>
 							</div>

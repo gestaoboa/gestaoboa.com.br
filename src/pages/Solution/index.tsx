@@ -48,7 +48,7 @@ const Solution = () => {
           </div>
 
           <div className="feature-item">
-            <img src="/Clientes.png" alt="Clientes" />
+            <img src="/Clientes.jpeg" alt="Clientes" />
             <div className="feature-content">
               <h2>Gestão de Clientes</h2>
               <p>Fortaleça seu relacionamento com clientes:</p>
@@ -62,7 +62,20 @@ const Solution = () => {
           </div>
 
           <div className="feature-item reverse">
-            <img src="/comissões.png" alt="Equipe" />
+            <img src="/produtos.jpeg" alt="Produtos" />
+            <div className="feature-content">
+              <h2>Gestão de Produtos</h2>
+              <p>Controle seu estoque com precisão:</p>
+              <ul>
+                <li>Cadastro completo de produtos</li>
+                <li>Controle de estoque em tempo real</li>
+                <li>Relatórios de vendas por produto</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="feature-item">
+            <img src="/comissões.jpeg" alt="Equipe" />
             <div className="feature-content">
               <h2>Gestão de Equipe</h2>
               <p>Organize sua equipe com eficiência:</p>
@@ -84,7 +97,28 @@ const Solution = () => {
             <a href="https://wa.me/5553999461550" className="secondary-button">Falar com Consultor</a>
           </div>
         </section>
+      
+        <section id="faq" className="faq">
+          <h2 className="section-title text-center">Perguntas Frequentes</h2>
+          <div className="faq-container">
+            <details className="faq-item">
+              <summary>Quanto tempo leva para implementar o sistema?</summary>
+              <p>A implementação básica pode ser feita em apenas 24 horas. Para configurações mais personalizadas, podemos levar até 3 dias úteis.</p>
+            </details>
+            
+            <details className="faq-item">
+              <summary>É possível migrar dados de outro sistema?</summary>
+              <p>Sim, oferecemos serviço de migração de dados de praticamente qualquer sistema existente para a Gestão Boa.</p>
+            </details>
+            
+            <details className="faq-item">
+              <summary>O sistema funciona em dispositivos móveis?</summary>
+              <p>Sim! A Gestão Boa é totalmente responsiva e funciona perfeitamente em smartphones e tablets, além de contar com aplicativos nativos para iOS e Android.</p>
+            </details>
+          </div>
+        </section>
       </Content>
+      
       <Footer />
     </Container>
   );
