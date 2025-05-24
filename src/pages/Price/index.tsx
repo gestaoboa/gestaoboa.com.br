@@ -67,16 +67,19 @@ const Price = () => {
   // Price data
   const prices = {
     Anual: {
-      Basico: { original: { vista: 900, parcelas: "89,90" } }, // usando valor mensal
+      Basico: { original: { vista: 900, parcelas: "69,90" } }, // usando valor mensal
+      Standard: { original: { vista: 1080, parcelas: "89,90" } }, // usando valor mensal
       Premium: { original: { vista: 1200, parcelas: "129,90" } }, // usando valor mensal
     },
     Semestral: {
       Basico: { original: { vista: 450, parcelas: "89,90" } }, // usando valor mensal
+      Standard: { original: { vista: 540, parcelas: "89,90" } }, // usando valor mensal
       Premium: { original: { vista: 650, parcelas: "129,90" } }, // usando valor mensal
     },
     Mensal: {
-      Basico: { original: 89, parcelas: "89,90" },
-      Premium: { original: 129, parcelas: "129,90" },
+      Basico: { original: 64.89, parcelas: "69,90" },
+      Standard: { original: 90.9, parcelas: "89,90" },
+      Premium: { original: 129.91, parcelas: "129,90" },
     },
   };
 
@@ -133,7 +136,7 @@ const Price = () => {
               )}
             </button>
           ))}
-        </div>
+        </div>{" "}
         <div className="plan-cards">
           {/* Plano Básico */}
           <div className="plan-card">
@@ -146,7 +149,7 @@ const Price = () => {
             <p>Perfeito para quem está começando</p>{" "}
             {planType !== "Mensal" && (
               <div className="original-price">
-                R$ 89,90
+                R$ {prices.Mensal.Basico.parcelas}
                 <span>/ mês</span>
               </div>
             )}
@@ -155,7 +158,10 @@ const Price = () => {
             >
               {planType === "Mensal"
                 ? `R$ ${prices.Mensal.Basico.parcelas}`
-                : `R$ ${calculateDiscountedPrice(89.9, planType)
+                : `R$ ${calculateDiscountedPrice(
+                    prices.Mensal.Basico.original,
+                    planType
+                  )
                     .toFixed(2)
                     .replace(".", ",")}`}
               <span>/ mês</span>
@@ -192,8 +198,78 @@ const Price = () => {
               <li>
                 <span className="x-icon">✖</span> Comissões automáticas
               </li>
+              <li>
+                <span className="check-icon">✔</span> Limite de 1 usuário
+              </li>
             </ul>
           </div>
+
+          {/* Plano Standard */}
+          <div className="plan-card">
+            {(planType === "Anual" || planType === "Semestral") && (
+              <div className="plan-discount-badge">
+                {planType === "Anual" ? "24% OFF" : "10% OFF"}
+              </div>
+            )}
+            <h2>Crescimento</h2>
+            <p>Para pequenos negócios</p>{" "}
+            {planType !== "Mensal" && (
+              <div className="original-price">
+                R$ {prices.Mensal.Standard.parcelas}
+                <span>/ mês</span>
+              </div>
+            )}
+            <div
+              className={planType !== "Mensal" ? "discounted-price" : "price"}
+            >
+              {planType === "Mensal"
+                ? `R$ ${prices.Mensal.Standard.parcelas}`
+                : `R$ ${calculateDiscountedPrice(
+                    prices.Mensal.Standard.original,
+                    planType
+                  )
+                    .toFixed(2)
+                    .replace(".", ",")}`}
+              <span>/ mês</span>
+            </div>
+            <button
+              className="sign-button"
+              onClick={() => {
+                window.open(
+                  "https://wa.me/5553999461550?text=Quero%20assinar%20o%20plano%20standard!"
+                );
+              }}
+            >
+              ASSINE AGORA!
+            </button>{" "}
+            <ul className="benefits-list">
+              <li>
+                <span className="check-icon">✔</span> Agendamentos
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Finanças
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Gráficos
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Suporte via WhatsApp
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Gestão de clientes
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Gestão de equipes
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Comissões automáticas
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Limite de 2 usuários
+              </li>
+            </ul>
+          </div>
+
           {/* Plano Premium */}
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
@@ -201,11 +277,11 @@ const Price = () => {
                 {planType === "Anual" ? "24% OFF" : "10% OFF"}
               </div>
             )}
-            <h2>Premium</h2>
+            <h2>Empresarial</h2>
             <p>Perfeito para quem já tem funcionários</p>{" "}
             {planType !== "Mensal" && (
               <div className="original-price">
-                R$ 129,90
+                R$ {prices.Mensal.Premium.parcelas}
                 <span>/ mês</span>
               </div>
             )}
@@ -214,7 +290,10 @@ const Price = () => {
             >
               {planType === "Mensal"
                 ? `R$ ${prices.Mensal.Premium.parcelas}`
-                : `R$ ${calculateDiscountedPrice(129.9, planType)
+                : `R$ ${calculateDiscountedPrice(
+                    prices.Mensal.Premium.original,
+                    planType
+                  )
                     .toFixed(2)
                     .replace(".", ",")}`}
               <span>/ mês</span>
@@ -250,6 +329,9 @@ const Price = () => {
               </li>
               <li>
                 <span className="check-icon">✔</span> Comissões automáticas
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Usuários ilimitados
               </li>
               <li>
                 <span className="check-icon">✔</span> 30 minutos de Mentoria com
