@@ -2,7 +2,7 @@
 import emailjs from "@emailjs/browser";
 import { FormHandles, SubmitHandler } from "@unform/core";
 import { Form } from "@unform/web";
-import { FunctionComponent, useRef } from "react";
+import { FunctionComponent, useRef, useEffect } from "react";
 import ScrollSpy from "react-ui-scrollspy";
 import * as yup from "yup";
 import Button from "../../components/Button";
@@ -11,6 +11,7 @@ import CustomTextarea from "../../components/CustomTextArea";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { UnformErrors } from "../../interfaces/interfaces";
+import { FB_PIXEL } from "../../utils/pixel";
 
 import { Helmet } from "react-helmet-async";
 import ReactPlayer from "react-player";
@@ -26,6 +27,46 @@ import {
 
 const Home: FunctionComponent = () => {
 	const formRef = useRef<FormHandles>(null);
+	const viewedSections = useRef(new Set<string>());
+
+	// Rastreia visualização da página quando o componente é montado
+	useEffect(() => {
+		FB_PIXEL.pageView();
+		
+		// Rastrear visualização de conteúdo importante quando a página carrega
+		FB_PIXEL.trackCustomEvent('ViewHomePage', {
+			page_type: 'home',
+			content_category: 'landing_page'
+		});
+		
+		// Configurar rastreamento de scrolls para seções importantes
+		const handleScroll = () => {
+			const sections = ['solution', 'team', 'contact', 'demonstration'];
+			sections.forEach(section => {
+				const element = document.getElementById(section);
+				if (element && isElementInViewport(element) && !viewedSections.current.has(section)) {
+					viewedSections.current.add(section);
+					FB_PIXEL.trackCustomEvent('ViewSection', {
+						section_name: section,
+						page: 'home'
+					});
+				}
+			});
+		};
+		
+		const isElementInViewport = (el: Element) => {
+			const rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		};
+		
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	const handleSubmit: SubmitHandler<FormData> = async (data) => {
 		formRef.current?.setErrors({});
@@ -63,6 +104,13 @@ const Home: FunctionComponent = () => {
 				)
 				.then((res) => {
 					if (res && res.status == 200) {
+						// Rastreie o evento de lead após o envio bem-sucedido do formulário
+						FB_PIXEL.trackLead({
+							content_name: 'Formulário de Contato',
+							content_category: 'contato',
+							value: 1
+						});
+						
 						formRef.current?.clearField("name");
 						formRef.current?.clearField("email");
 						formRef.current?.clearField("phone");
@@ -91,6 +139,18 @@ const Home: FunctionComponent = () => {
 				container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 			}
 		}
+	};
+
+	// Funções para rastreamento de eventos do Facebook Pixel
+	const trackAppDownload = (platform: string) => {
+		FB_PIXEL.trackCustomEvent('AppDownloadClick', { platform });
+	};
+
+	const trackDemonstrationClick = () => {
+		FB_PIXEL.trackStartTrial({
+			content_name: 'Demonstração',
+			content_category: 'demonstração'
+		});
 	};
 
 	return (
@@ -216,10 +276,12 @@ const Home: FunctionComponent = () => {
 									<div className="desc">O aplicativo ajudou muito a organizar os meus recebimentos e entender quais são os lucros e despesas de forma muito clara e objetiva. Além de conseguir abranger vários objetivos em um só APP como organizar agendamentos que antes usava o Google agenda e também organizar os recebimentos que antes usava o Excel. Assim se torna muito mais prático e organizado as minhas finanças.</div>
 									<div className="person">-  Janaina Christello, Psicóloga</div>
 								</div>
-							</div>
-
-							<div className="card">
-								<video controls>
+							</div>							<div className="card">
+								<video 
+									controls 
+									onPlay={() => FB_PIXEL.trackCustomEvent('VideoPlay', { video: 'depoimentoLeandro', type: 'testimonial' })}
+									onPause={() => FB_PIXEL.trackCustomEvent('VideoPause', { video: 'depoimentoLeandro', type: 'testimonial' })}
+								>
 									<source src="/depoimentoLeandro.mp4" type="video/mp4" />
 									Seu navegador não suporta vídeos.
 								</video>
@@ -241,7 +303,7 @@ const Home: FunctionComponent = () => {
 
 								<div className="buttons">
 									<div className="top">
-										<a href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" className="unfocused">
+										<a href="https://play.google.com/store/apps/details?id=com.beasier&pcampaignid=web_share" className="unfocused" onClick={() => trackAppDownload('Android')}>
 											<img src="/Vector.svg" alt="" />
 											ANDROID
 										</a>
@@ -250,18 +312,16 @@ const Home: FunctionComponent = () => {
 											ou
 										</div>
 
-										<a href="https://www.app.gestaoboa.com.br" className="unfocused">
+										<a href="https://www.app.gestaoboa.com.br" className="unfocused" onClick={() => trackAppDownload('iOS')}>
 											<img src="/mage_playstore.svg" alt="Ícone da App Store" className="ios-icon" />
 											IOS
 										</a>
 									</div>
-									<a href="https://www.app.gestaoboa.com.br" className="focused">
+									<a href="https://www.app.gestaoboa.com.br" className="focused" onClick={trackDemonstrationClick}>
 										Desktop
 									</a>
 								</div>
-							</div>
-
-							<div className="player">
+							</div>							<div className="player">
 								<ReactPlayer
 									className="buying"
 									url="/demonstracao.mp4"
@@ -271,6 +331,18 @@ const Home: FunctionComponent = () => {
 									loop={true}
 									playing={true}
 									muted
+									onStart={() => FB_PIXEL.trackCustomEvent('DemoVideoStart', { video: 'demonstracao', section: 'demonstration' })}
+									onPlay={() => FB_PIXEL.trackCustomEvent('DemoVideoPlay', { video: 'demonstracao', section: 'demonstration' })}
+									onPause={() => FB_PIXEL.trackCustomEvent('DemoVideoPause', { video: 'demonstracao', section: 'demonstration' })}
+									onProgress={(state) => {
+										const progress = Math.floor(state.played * 100);
+										if (progress === 25 || progress === 50 || progress === 75) {
+											FB_PIXEL.trackCustomEvent('DemoVideoProgress', { 
+												video: 'demonstracao', 
+												progress: `${progress}%`
+											});
+										}
+									}}
 								/>
 							</div>
 						</div>
