@@ -430,41 +430,34 @@
   margin-left: 5px;
 }
 
-.daily-price {
+.monthly-price-large {
   font-size: 48px;
   color: #0230a2;
   font-weight: 900;
   margin-bottom: 10px;
   line-height: 1;
-  background: linear-gradient(90deg, #0230a2, #03045e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-  position: relative;
-  animation: pulsatePrice 2s ease-in-out infinite;
 }
 
-@keyframes pulsatePrice {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.daily-price span {
+.monthly-price-large span {
   font-size: 22px;
   font-weight: 600;
   margin-left: 3px;
-  background: linear-gradient(90deg, #0230a2, #03045e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+.daily-price-small {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+/* Classes originais mantidas para compatibilidade */
+.daily-price {
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .monthly-price {
@@ -478,12 +471,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px 0;
+  margin-bottom: 25px;
   position: relative;
   background-color: rgba(3, 4, 94, 0.03);
   border-radius: 10px;
-  padding: 20px 10px;
+  padding: 20px 15px;
 }
 
 .price-container::after {
@@ -492,9 +484,9 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 60%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(3, 4, 94, 0.3), transparent);
+  background-color: rgba(3, 4, 94, 0.1);
 }
 
 .price-tag-header {
@@ -505,22 +497,20 @@
 .investment-label {
   font-size: 16px;
   font-weight: 500;
-  color: #6c757d;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: #03045e;
+  margin-bottom: 5px;
 }
 
 .savings-badge {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: -10px;
+  right: -5px;
   background-color: #FD1D1D;
   color: white;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   padding: 5px 10px;
-  border-radius: 12px;
-  transform: rotate(5deg);
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }

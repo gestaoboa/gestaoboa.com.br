@@ -24,6 +24,11 @@ const PriceTag: React.FC<PriceTagProps> = ({
     const monthlySavings = originalPriceNum - currentPriceNum;
     const yearlySavings = monthlySavings * 12;
 
+    // Exemplo para verificação:
+    // Se o plano original é R$ 69,90 e com desconto fica R$ 53,75
+    // Economia mensal: R$ 16,15
+    // Economia anual: R$ 193,80
+
     return yearlySavings.toFixed(0);
   };
 
@@ -34,23 +39,17 @@ const PriceTag: React.FC<PriceTagProps> = ({
       {savings && (
         <div className="savings-badge">Economize R${savings}/ano</div>
       )}
-
-      <div className="price-tag-header">
-        <span className="investment-label">Investimento diário de apenas</span>
-      </div>
-
-      {/* Preço diário em destaque */}
-      <div className="daily-price">
-        R$ {dailyPrice.toFixed(2).replace(".", ",")}
-        <span>/dia</span>
-      </div>
-
-      {/* Preço mensal em tamanho menor */}
-      <div className="monthly-price">
+      {/* Preço mensal em destaque */}
+      <div className="monthly-price-large">
         {showDiscount && originalPrice && (
-          <span className="original-price">De R$ {originalPrice}/mês por</span>
+          <span className="original-price">De R$ {originalPrice}/mês por </span>
         )}
-        R$ {monthlyPrice}/mês
+        R$ {monthlyPrice}
+        <span>/mês</span>
+      </div>
+      {/* Preço diário em tamanho menor */}
+      <div className="daily-price-small">
+        (equivalente a R$ {dailyPrice.toFixed(2).replace(".", ",")} por dia)
       </div>
     </div>
   );
