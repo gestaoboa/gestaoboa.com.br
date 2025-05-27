@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Container } from "../Terms/styles";
+import PriceTag from "./components/PriceTag";
 import "./styles.css";
 
 type PlanType = "Anual" | "Semestral" | "Mensal";
@@ -138,6 +139,7 @@ const Price = () => {
           ))}
         </div>{" "}
         <div className="plan-cards">
+          {" "}
           {/* Plano Básico */}
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
@@ -147,25 +149,35 @@ const Price = () => {
             )}
             <h2>Básico</h2>
             <p>Perfeito para quem está começando</p>{" "}
-            {planType !== "Mensal" && (
-              <div className="original-price">
-                R$ {prices.Mensal.Basico.parcelas}
-                <span>/ mês</span>
-              </div>
-            )}
-            <div
-              className={planType !== "Mensal" ? "discounted-price" : "price"}
-            >
-              {planType === "Mensal"
-                ? `R$ ${prices.Mensal.Basico.parcelas}`
-                : `R$ ${calculateDiscountedPrice(
-                    prices.Mensal.Basico.original,
-                    planType
-                  )
-                    .toFixed(2)
-                    .replace(".", ",")}`}
-              <span>/ mês</span>
-            </div>
+            <PriceTag
+              dailyPrice={
+                planType === "Mensal"
+                  ? parseFloat(
+                      prices.Mensal.Basico.parcelas.replace(",", ".")
+                    ) / 30
+                  : calculateDiscountedPrice(
+                      prices.Mensal.Basico.original,
+                      planType
+                    ) / 30
+              }
+              monthlyPrice={
+                planType === "Mensal"
+                  ? prices.Mensal.Basico.parcelas
+                  : calculateDiscountedPrice(
+                      prices.Mensal.Basico.original,
+                      planType
+                    )
+                      .toFixed(2)
+                      .replace(".", ",")
+              }
+              originalPrice={
+                planType !== "Mensal"
+                  ? prices.Mensal.Basico.parcelas
+                  : undefined
+              }
+              showDiscount={planType !== "Mensal"}
+              planType={planType}
+            />
             <button
               className="sign-button"
               onClick={() => {
@@ -202,8 +214,7 @@ const Price = () => {
                 <span className="check-icon">✔</span> Limite de 1 usuário
               </li>
             </ul>
-          </div>
-
+          </div>{" "}
           {/* Plano Standard */}
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
@@ -213,25 +224,35 @@ const Price = () => {
             )}
             <h2>Crescimento</h2>
             <p>Para pequenos negócios</p>{" "}
-            {planType !== "Mensal" && (
-              <div className="original-price">
-                R$ {prices.Mensal.Standard.parcelas}
-                <span>/ mês</span>
-              </div>
-            )}
-            <div
-              className={planType !== "Mensal" ? "discounted-price" : "price"}
-            >
-              {planType === "Mensal"
-                ? `R$ ${prices.Mensal.Standard.parcelas}`
-                : `R$ ${calculateDiscountedPrice(
-                    prices.Mensal.Standard.original,
-                    planType
-                  )
-                    .toFixed(2)
-                    .replace(".", ",")}`}
-              <span>/ mês</span>
-            </div>
+            <PriceTag
+              dailyPrice={
+                planType === "Mensal"
+                  ? parseFloat(
+                      prices.Mensal.Standard.parcelas.replace(",", ".")
+                    ) / 30
+                  : calculateDiscountedPrice(
+                      prices.Mensal.Standard.original,
+                      planType
+                    ) / 30
+              }
+              monthlyPrice={
+                planType === "Mensal"
+                  ? prices.Mensal.Standard.parcelas
+                  : calculateDiscountedPrice(
+                      prices.Mensal.Standard.original,
+                      planType
+                    )
+                      .toFixed(2)
+                      .replace(".", ",")
+              }
+              originalPrice={
+                planType !== "Mensal"
+                  ? prices.Mensal.Standard.parcelas
+                  : undefined
+              }
+              showDiscount={planType !== "Mensal"}
+              planType={planType}
+            />
             <button
               className="sign-button"
               onClick={() => {
@@ -268,8 +289,7 @@ const Price = () => {
                 <span className="check-icon">✔</span> Limite de 2 usuários
               </li>
             </ul>
-          </div>
-
+          </div>{" "}
           {/* Plano Premium */}
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
@@ -279,25 +299,35 @@ const Price = () => {
             )}
             <h2>Empresarial</h2>
             <p>Perfeito para quem já tem funcionários</p>{" "}
-            {planType !== "Mensal" && (
-              <div className="original-price">
-                R$ {prices.Mensal.Premium.parcelas}
-                <span>/ mês</span>
-              </div>
-            )}
-            <div
-              className={planType !== "Mensal" ? "discounted-price" : "price"}
-            >
-              {planType === "Mensal"
-                ? `R$ ${prices.Mensal.Premium.parcelas}`
-                : `R$ ${calculateDiscountedPrice(
-                    prices.Mensal.Premium.original,
-                    planType
-                  )
-                    .toFixed(2)
-                    .replace(".", ",")}`}
-              <span>/ mês</span>
-            </div>
+            <PriceTag
+              dailyPrice={
+                planType === "Mensal"
+                  ? parseFloat(
+                      prices.Mensal.Premium.parcelas.replace(",", ".")
+                    ) / 30
+                  : calculateDiscountedPrice(
+                      prices.Mensal.Premium.original,
+                      planType
+                    ) / 30
+              }
+              monthlyPrice={
+                planType === "Mensal"
+                  ? prices.Mensal.Premium.parcelas
+                  : calculateDiscountedPrice(
+                      prices.Mensal.Premium.original,
+                      planType
+                    )
+                      .toFixed(2)
+                      .replace(".", ",")
+              }
+              originalPrice={
+                planType !== "Mensal"
+                  ? prices.Mensal.Premium.parcelas
+                  : undefined
+              }
+              showDiscount={planType !== "Mensal"}
+              planType={planType}
+            />
             <button
               className="sign-button"
               onClick={() => {
