@@ -3,7 +3,9 @@ import { Helmet } from "react-helmet-async";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Container } from "../Terms/styles";
+import PaymentForm from "./components/PaymentForm";
 import PriceTag from "./components/PriceTag";
+import UserRegistrationForm from "./components/UserRegistrationForm";
 import "./styles.css";
 
 type PlanType = "Anual" | "Semestral" | "Mensal";
@@ -31,6 +33,12 @@ const Price = () => {
     minutes: 0,
     seconds: 0,
   });
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{
+    name: string;
+    price: string;
+  } | null>(null);
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -177,16 +185,26 @@ const Price = () => {
               }
               showDiscount={planType !== "Mensal"}
               planType={planType}
-            />
+            />{" "}
             <button
               className="sign-button"
               onClick={() => {
-                window.open(
-                  "https://wa.me/5553999461550?text=Quero%20assinar%20o%20plano%20básico!"
-                );
+                setSelectedPlan({
+                  name: "Básico",
+                  price:
+                    planType === "Mensal"
+                      ? prices.Mensal.Basico.parcelas
+                      : calculateDiscountedPrice(
+                          prices.Mensal.Basico.original,
+                          planType
+                        )
+                          .toFixed(2)
+                          .replace(".", ","),
+                });
+                setShowRegistrationForm(true);
               }}
             >
-              ASSINE AGORA!
+              TESTE GRÁTIS POR 21 DIAS!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -252,16 +270,26 @@ const Price = () => {
               }
               showDiscount={planType !== "Mensal"}
               planType={planType}
-            />
+            />{" "}
             <button
               className="sign-button"
               onClick={() => {
-                window.open(
-                  "https://wa.me/5553999461550?text=Quero%20assinar%20o%20plano%20standard!"
-                );
+                setSelectedPlan({
+                  name: "Crescimento",
+                  price:
+                    planType === "Mensal"
+                      ? prices.Mensal.Standard.parcelas
+                      : calculateDiscountedPrice(
+                          prices.Mensal.Standard.original,
+                          planType
+                        )
+                          .toFixed(2)
+                          .replace(".", ","),
+                });
+                setShowRegistrationForm(true);
               }}
             >
-              ASSINE AGORA!
+              TESTE GRÁTIS POR 21 DIAS!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -327,16 +355,26 @@ const Price = () => {
               }
               showDiscount={planType !== "Mensal"}
               planType={planType}
-            />
+            />{" "}
             <button
               className="sign-button"
               onClick={() => {
-                window.open(
-                  "https://wa.me/5553999461550?text=Quero%20assinar%20o%20plano%20premium!"
-                );
+                setSelectedPlan({
+                  name: "Empresarial",
+                  price:
+                    planType === "Mensal"
+                      ? prices.Mensal.Premium.parcelas
+                      : calculateDiscountedPrice(
+                          prices.Mensal.Premium.original,
+                          planType
+                        )
+                          .toFixed(2)
+                          .replace(".", ","),
+                });
+                setShowRegistrationForm(true);
               }}
             >
-              ASSINE AGORA!
+              TESTE GRÁTIS POR 21 DIAS!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -518,8 +556,28 @@ const Price = () => {
             FALAR COM SUPORTE
           </button>
         </div>
-      </div>
-      <Footer />
+      </div>{" "}
+      <Footer /> {/* Formulário de pagamento */}
+      {showPaymentForm && selectedPlan && (
+        <PaymentForm
+          planName={selectedPlan.name}
+          planPrice={selectedPlan.price}
+          onClose={() => {
+            setShowPaymentForm(false);
+            setSelectedPlan(null);
+          }}
+        />
+      )}
+      {/* Formulário de registro para teste grátis */}
+      {showRegistrationForm && selectedPlan && (
+        <UserRegistrationForm
+          planName={selectedPlan.name}
+          onClose={() => {
+            setShowRegistrationForm(false);
+            setSelectedPlan(null);
+          }}
+        />
+      )}
     </Container>
   );
 };
