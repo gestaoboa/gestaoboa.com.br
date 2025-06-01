@@ -312,12 +312,12 @@ const Home: FunctionComponent = () => {
 											ou
 										</div>
 
-										<a href="https://www.app.gestaoboa.com.br" className="unfocused" onClick={() => trackAppDownload('iOS')}>
+										<a href="https://beasier.vercel.app" className="unfocused" onClick={() => trackAppDownload('iOS')}>
 											<img src="/mage_playstore.svg" alt="Ícone da App Store" className="ios-icon" />
 											IOS
 										</a>
 									</div>
-									<a href="https://www.app.gestaoboa.com.br" className="focused" onClick={trackDemonstrationClick}>
+									<a href="https://beasier.vercel.app" className="focused" onClick={trackDemonstrationClick}>
 										Desktop
 									</a>
 								</div>
