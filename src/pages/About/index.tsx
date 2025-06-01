@@ -38,7 +38,7 @@ const About = () => {
                         <h1 className="hero-title">Tecnologia que <span className="highlight">transforma</span> sonhos em negócios de sucesso</h1>
                         <p className="hero-subtitle">Ajudando empreendedores brasileiros a organizarem seus negócios.</p>
                         <div className="hero-buttons">
-                            <button className="primary-button" onClick={() => window.open('https://app.gestaoboa.com.br', '_blank')}>Nossa solução</button>
+                            <button className="primary-button" onClick={() => window.open('https://beasier.vercel.app', '_blank')}>Nossa solução</button>
                             <button className="secondary-button" onClick={handleDemoClick}>Agendar demo</button>
                         </div>
                     </div>
@@ -298,7 +298,7 @@ const About = () => {
                     <h2>Pronto para transformar seu negócio?</h2>
                     <p>Junte-se aos milhares de empreendedores que já descobriram como a gestão eficiente pode impulsionar resultados</p>
                     <div className="cta-buttons">
-                        <button className="cta-button primary" onClick={() => window.open('https://app.gestaoboa.com.br', '_blank')}>Começar agora</button>
+                        <button className="cta-button primary" onClick={() => window.open('https://beasier.vercel.app', '_blank')}>Começar agora</button>
                         <button className="cta-button secondary" onClick={handleDemoClick}>Falar com especialista</button>
                     </div>
                 </section>

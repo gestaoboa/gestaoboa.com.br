@@ -51,7 +51,7 @@ export default function Header() {
                 <LinkItem href="/preco" title="Ver nossos planos" className="pricing" onClick={() => trackNavigation('Planos')}>PLANOS</LinkItem>
                 <LinkItem href="/about" title="Conheça nossa equipe" onClick={() => trackNavigation('sobre')}>SOBRE NÓS</LinkItem>
                 <LinkItem href="/#contact" title="Entre em contato" onClick={() => trackNavigation('contato')}>CONTATO</LinkItem>                <ButtonLink 
-                    href="https://app.gestaoboa.com.br" 
+                    href="https://beasier.vercel.app" 
                     title="Testar o Gestão Boa agora" 
                     onClick={() => {
                         FB_PIXEL.trackCustomEvent('TestNowClick', { location: 'mobile_menu' });
@@ -62,7 +62,7 @@ export default function Header() {
                 </ButtonLink>
             </MobileLinks>            <TestNow>
                 <ButtonLink 
-                    href="https://app.gestaoboa.com.br" 
+                    href="https://beasier.vercel.app" 
                     title="Testar o Gestão Boa agora" 
                     onClick={() => FB_PIXEL.trackCustomEvent('TestNowClick', { location: 'header' })}
                 >
