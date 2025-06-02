@@ -43,8 +43,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onClose, onLoginSuccess }) => {
         throw new Error(loginResult.error.message ?? "Erro ao fazer login");
       }
 
-      // Login successful, pass token to parent
-      onLoginSuccess(loginResult.token, formData.email, ""); // Assuming document is not returned by login, pass empty string for now
+      // Extrair documento do usuário se disponível nos dados do usuário
+      const userDocument = loginResult.userData?.document || "";
+
+      // Login successful, pass token, email e documento to parent
+      onLoginSuccess(loginResult.token, formData.email, userDocument);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao fazer login");
     } finally {

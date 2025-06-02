@@ -248,6 +248,60 @@ input:focus {
   font-weight: bold;
 }
 
+.payment-not-ready {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.payment-not-ready h3 {
+  color: #ff6b35;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.payment-not-ready p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.payment-not-ready-button {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.payment-not-ready-button:hover {
+  background: linear-gradient(135deg, #22c55e, #16a085);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.payment-not-ready-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
+}
+
+.payment-not-ready-button::before {
+  content: "📱";
+  font-size: 18px;
+}
+
 /* Responsividade */
 @media (max-width: 576px) {
   .payment-form-container {

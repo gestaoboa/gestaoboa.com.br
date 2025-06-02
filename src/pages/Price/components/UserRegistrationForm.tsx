@@ -256,15 +256,19 @@ const UserRegistrationForm: React.FC<UserRegistrationFormProps> = ({
     window.open("https://app.gestaoboa.com.br", "_blank");
     onClose();
   };
-  const handleLoginSuccess = (token: string) => {
+  const handleLoginSuccess = (
+    token: string,
+    email: string,
+    document: string
+  ) => {
     setUserToken(token);
     setShowLoginForm(false);
     // Pass user data to PaymentForm
     setFormData((prev) => ({
       ...prev,
-      email: formData.email,
-      document: formData.document,
-    })); // Assuming formData still holds the login email/document
+      email: email,
+      document: document,
+    }));
     setStep("payment");
   };
 
@@ -279,7 +283,6 @@ const UserRegistrationForm: React.FC<UserRegistrationFormProps> = ({
   const handleCloseLogin = () => {
     setShowLoginForm(false);
   };
-
   // Se estamos no passo de pagamento, renderizar apenas o PaymentForm
   if (step === "payment" && userToken) {
     return (
@@ -288,6 +291,9 @@ const UserRegistrationForm: React.FC<UserRegistrationFormProps> = ({
         planPrice="97,00"
         onClose={onClose}
         onPaymentSuccess={handlePaymentSuccess}
+        userEmail={formData.email}
+        userDocument={formData.document}
+        token={userToken}
       />
     );
   }

@@ -1,5 +1,21 @@
+declare global {
+  interface Window {
+    MercadoPago: any;
+    mercadoPagoInstance: any;
+  }
+}
+
 import React, { useEffect, useState } from "react";
 import { MercadoPagoConfig } from "../../../services/mercadoPagoConfig";
+import {
+  createCardToken,
+  identifyCardBrand,
+} from "../../../services/paymentApi";
+import {
+  processPaymentBackend,
+  getPlanIdByName,
+  getCurrentUserId,
+} from "../../../services/paymentService";
 import "./PaymentForm.css";
 
 interface PaymentFormProps {
@@ -31,6 +47,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [sdkLoaded, setSdkLoaded] = useState(false);
+  const [naotapronto, setNaotapronto] = useState(true);
   // Carregar o SDK do Mercado Pago
   useEffect(() => {
     const script = document.createElement("script");
@@ -118,67 +135,61 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         throw new Error("Instância do Mercado Pago não inicializada");
       }
 
-      // Em um cenário real, seguiríamos estes passos:
+      // Validações básicas
+      if (!formData.cardNumber || !formData.expiryDate || !formData.cvv) {
+        throw new Error("Por favor, preencha todos os campos do cartão");
+      }
+
+      if (!formData.email || !formData.documentNumber) {
+        throw new Error("Por favor, preencha email e CPF");
+      }
 
       // 1. Criar o token do cartão usando o SDK do Mercado Pago
-      /*
-      const cardTokenResult = await window.mercadoPagoInstance.createCardToken({
-        cardNumber: formData.cardNumber.replace(/\s/g, ''),
+      const cardToken = await createCardToken({
+        cardNumber: formData.cardNumber.replace(/\s/g, ""),
         cardholderName: formData.cardholderName,
-        cardExpirationMonth: formData.expiryDate.split('/')[0],
-        cardExpirationYear: `20${formData.expiryDate.split('/')[1]}`,
+        cardExpirationMonth: formData.expiryDate.split("/")[0],
+        cardExpirationYear: `20${formData.expiryDate.split("/")[1]}`,
         securityCode: formData.cvv,
-        identificationType: 'CPF',
-        identificationNumber: formData.documentNumber.replace(/\D/g, '')
+        identificationType: "CPF",
+        identificationNumber: formData.documentNumber.replace(/\D/g, ""),
       });
-      
-      if (cardTokenResult.error) {
-        throw new Error(cardTokenResult.error);
+
+      // Obter dados necessários para o pagamento
+      const userId = getCurrentUserId();
+      const planId = getPlanIdByName(planName);
+      const amount = parseFloat(
+        planPrice.replace(/[^\d,]/g, "").replace(",", ".")
+      );
+
+      if (!userId) {
+        throw new Error("Usuário não autenticado. Faça login para continuar.");
       }
-      
-      const cardToken = cardTokenResult.id;
-      
-      // 2. Enviar o token para seu backend processar o pagamento
-      const response = await fetch('https://api.seudominio.com/api/payments', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          token: cardToken,
-          email: formData.email,
-          planName,
-          planPrice,
-          description: `Assinatura Plano ${planName} - BEasier`,
-          installments: 1, // Número de parcelas
-          paymentMethodId: 'visa', // Ou outra bandeira detectada
-        }),
+
+      // 2. Enviar o token para o backend processar o pagamento
+      const paymentResponse = await processPaymentBackend({
+        user_id: userId,
+        plan_id: planId,
+        amount: amount,
+        email: formData.email,
+        card_token: cardToken,
       });
-      
-      const result = await response.json();
-      
-      if (result.error) {
-        throw new Error(result.error);
+
+      if (paymentResponse.error) {
+        throw new Error(paymentResponse.error || "Erro ao processar pagamento");
       }
-      */
 
-      // Para fins de demonstração, simulamos o sucesso da transação
+      setLoading(false);
+      setSuccess(true);
 
+      // Mostrar mensagem de sucesso e depois prosseguir
       setTimeout(() => {
-        setLoading(false);
-        setSuccess(true);
-
-        // Mostrar mensagem de sucesso e depois prosseguir
-        setTimeout(() => {
-          if (onPaymentSuccess) {
-            onPaymentSuccess();
-          } else {
-            onClose();
-          }
-          // Aqui você pode redirecionar para uma página de obrigado
-          // window.location.href = '/obrigado';
-        }, 3000);
-      }, 2000);
+        if (onPaymentSuccess) {
+          onPaymentSuccess();
+        } else {
+          onClose();
+        }
+      }, 3000);
     } catch (err) {
       setLoading(false);
       setError(
@@ -187,23 +198,8 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
       console.error("Erro no processamento do pagamento:", err);
     }
   };
-
   const getCardBrand = (number: string) => {
-    const cleanedNumber = number.replace(/\D/g, "");
-
-    if (cleanedNumber.startsWith("4")) {
-      return "visa";
-    } else if (
-      cleanedNumber.startsWith("51") ||
-      cleanedNumber.startsWith("52") ||
-      cleanedNumber.startsWith("53") ||
-      cleanedNumber.startsWith("54") ||
-      cleanedNumber.startsWith("55")
-    ) {
-      return "mastercard";
-    }
-
-    return "unknown";
+    return identifyCardBrand(number) || "unknown";
   };
 
   return (
@@ -224,6 +220,25 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
               Obrigado pela sua assinatura. Você receberá um email em breve com
               mais instruções.
             </p>
+          </div>
+        ) : naotapronto ? (
+          <div className="payment-not-ready">
+            <h3>Pagamento não disponível</h3>
+            <p>
+              O pagamento automático ainda não está pronto. Por favor, chame
+              nosso whatsApp.
+            </p>
+            <button
+              className="payment-not-ready-button"
+              onClick={() =>
+                window.open(
+                  "https://api.whatsapp.com/send?phone=5553999461550",
+                  "_blank"
+                )
+              }
+            >
+              Entrar em contato via WhatsApp
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
@@ -326,10 +341,13 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
 
         {/* Visualização do Cartão */}
         <div className="credit-card-mockup">
-          <div className="card-chip"></div>
+          <div className="card-chip"></div>{" "}
           <div className="card-logo">
             {getCardBrand(formData.cardNumber) === "visa" && "VISA"}
-            {getCardBrand(formData.cardNumber) === "mastercard" && "MC"}
+            {getCardBrand(formData.cardNumber) === "master" && "MC"}
+            {getCardBrand(formData.cardNumber) === "amex" && "AMEX"}
+            {getCardBrand(formData.cardNumber) === "elo" && "ELO"}
+            {getCardBrand(formData.cardNumber) === "hipercard" && "HIPERCARD"}
           </div>
           <div className="card-number">
             {formData.cardNumber || "#### #### #### ####"}

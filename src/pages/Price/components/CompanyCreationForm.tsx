@@ -85,11 +85,13 @@ const CompanyCreationForm: React.FC<CompanyCreationFormProps> = ({
 
     try {
       const companyData = {
-        name: companyName,
-        scale: selectedScale.id,
-        category: selectedCategory!.id,
+        name: companyName.trim(),
+        id_scale: Number(selectedScale.id),
+        branches: [Number(selectedCategory!.id)],
         image: "",
       };
+
+      console.log("Sending company data:", companyData); // Para debug
 
       const result = await createCompany(userToken, companyData);
       if (result.error) {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Use the same base URL as the app
-const BASE_URL = "https://escalefacil.shop";
+const BASE_URL = "https://api.gestaoboa.com.br";
 // ||
 // process.env.BASE_URL
 
@@ -69,6 +69,7 @@ export async function loginUser(email: string, password: string) {
       password: password,
     });
     console.log("Resposta do login:", response.data);
+
     return response.data;
   } catch (error: unknown) {
     const axiosError = error as any;
@@ -118,34 +119,38 @@ export async function getEnterpriseBranches(): Promise<EnterpriseBranch[]> {
   }
 }
 
-export async function createCompany(
-  token: string,
-  companyData: CompanyCreationData
-) {
-  const formData = new FormData();
-  formData.append("name", companyData.name);
-  formData.append("scala", companyData.scale.toString());
-  formData.append("category", companyData.category.toString());
-  formData.append("image", companyData.image);
-
-  const requestConfig = {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "multipart/form-data",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  try {
-    const response = await axios.post(
-      `${BASE_URL}/enterprises/`,
-      formData,
-      requestConfig
-    );
-    return response.data;
-  } catch (error: unknown) {
-    const axiosError = error as any;
-    console.log(axiosError.response?.data ?? axiosError);
-    return { error: axiosError.response?.data ?? axiosError.message };
-  }
+interface CreateCompanyData {
+  name: string;
+  id_scale: number;
+  branches: Array< number >;
+  image: string;
 }
+
+export const createCompany = async (
+  token: string,
+  companyData: CreateCompanyData
+) => {
+  try {
+    const response = await fetch(`${BASE_URL}/enterprises/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(companyData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        result.error || result.message || "Erro ao criar empresa"
+      );
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Erro na criação da empresa:", error);
+    throw error;
+  }
+};
