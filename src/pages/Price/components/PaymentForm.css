@@ -302,6 +302,108 @@ input:focus {
   font-size: 18px;
 }
 
+/* Payment Provider Selection Styles */
+.payment-provider-selection {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.payment-provider-selection h3 {
+  margin: 0 0 32px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.payment-providers {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.payment-provider-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.payment-provider-btn:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-provider-btn.active {
+  border-color: #0f172a;
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.provider-icon {
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.payment-provider-btn.active .provider-icon {
+  background: #0f172a;
+  color: white;
+}
+
+.provider-info {
+  flex: 1;
+}
+
+.provider-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.provider-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.payment-continue-btn {
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 250px;
+}
+
+.payment-continue-btn:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+.payment-continue-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* Responsividade */
 @media (max-width: 576px) {
   .payment-form-container {
@@ -311,5 +413,41 @@ input:focus {
   .form-row {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .payment-provider-selection {
+    padding: 24px 0;
+  }
+  
+  .payment-provider-selection h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .payment-provider-btn {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .provider-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .provider-info h4 {
+    font-size: 16px;
+  }
+  
+  .provider-info p {
+    font-size: 13px;
+  }
+  
+  .payment-continue-btn {
+    padding: 14px 24px;
+    font-size: 15px;
+    min-width: 200px;
   }
 }

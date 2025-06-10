@@ -12,15 +12,17 @@ import {
   identifyCardBrand,
 } from "../../../services/paymentApi";
 import {
-  processPaymentBackend,
-  getPlanIdByName,
   getCurrentUserId,
+  getPlanIdByName,
+  processPaymentBackend,
 } from "../../../services/paymentService";
 import "./PaymentForm.css";
+import StripePaymentForm from "./StripePaymentForm";
 
 interface PaymentFormProps {
   planName: string;
   planPrice: string;
+  planPriceId?: string; // Stripe Price ID
   onClose: () => void;
   onPaymentSuccess?: () => void;
   userEmail?: string; // Adicionado email do usuário
@@ -30,6 +32,7 @@ interface PaymentFormProps {
 const PaymentForm: React.FC<PaymentFormProps> = ({
   planName,
   planPrice,
+  planPriceId,
   onClose,
   onPaymentSuccess,
   userEmail, // Recebendo email
@@ -47,7 +50,12 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [sdkLoaded, setSdkLoaded] = useState(false);
-  const [naotapronto, setNaotapronto] = useState(true);
+  const [naotapronto, setNaotapronto] = useState(false); // Mudando para false para mostrar as opções
+  const [showStripeForm, setShowStripeForm] = useState(false);
+  const [paymentProvider, setPaymentProvider] = useState<
+    "mercadopago" | "stripe" | "selection"
+  >("selection");
+
   // Carregar o SDK do Mercado Pago
   useEffect(() => {
     const script = document.createElement("script");
@@ -201,7 +209,6 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
   const getCardBrand = (number: string) => {
     return identifyCardBrand(number) || "unknown";
   };
-
   return (
     <div className="payment-form-overlay">
       <div className="payment-form-container">
@@ -238,6 +245,61 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
               }
             >
               Entrar em contato via WhatsApp
+            </button>
+          </div>
+        ) : showStripeForm ? (
+          <StripePaymentForm
+            planName={planName}
+            planPrice={planPrice}
+            planPriceId={planPriceId || ""}
+            userEmail={formData.email}
+            userName={formData.cardholderName}
+            onClose={onClose}
+            onPaymentSuccess={onPaymentSuccess}
+          />
+        ) : paymentProvider === "selection" ? (
+          <div className="payment-provider-selection">
+            <h3>Escolha seu método de pagamento</h3>
+            <div className="payment-providers">
+              <button
+                className={`payment-provider-btn ${
+                  paymentProvider === "stripe" ? "active" : ""
+                }`}
+                onClick={() => setPaymentProvider("stripe")}
+              >
+                <div className="provider-icon">💳</div>
+                <div className="provider-info">
+                  <h4>Stripe</h4>
+                  <p>Cartão de crédito internacional</p>
+                </div>
+              </button>
+
+              <button
+                className={`payment-provider-btn ${
+                  paymentProvider === "mercadopago" ? "active" : ""
+                }`}
+                onClick={() => setPaymentProvider("mercadopago")}
+              >
+                <div className="provider-icon">🏦</div>
+                <div className="provider-info">
+                  <h4>Mercado Pago</h4>
+                  <p>PIX, Cartão e Boleto</p>
+                </div>
+              </button>
+            </div>
+
+            <button
+              className="payment-continue-btn"
+              onClick={() => {
+                if (paymentProvider === "stripe") {
+                  setShowStripeForm(true);
+                } else {
+                  setPaymentProvider("mercadopago");
+                }
+              }}
+            >
+              Continuar com{" "}
+              {paymentProvider === "stripe" ? "Stripe" : "Mercado Pago"}
             </button>
           </div>
         ) : (
@@ -339,26 +401,29 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
           </form>
         )}
 
-        {/* Visualização do Cartão */}
-        <div className="credit-card-mockup">
-          <div className="card-chip"></div>{" "}
-          <div className="card-logo">
-            {getCardBrand(formData.cardNumber) === "visa" && "VISA"}
-            {getCardBrand(formData.cardNumber) === "master" && "MC"}
-            {getCardBrand(formData.cardNumber) === "amex" && "AMEX"}
-            {getCardBrand(formData.cardNumber) === "elo" && "ELO"}
-            {getCardBrand(formData.cardNumber) === "hipercard" && "HIPERCARD"}
-          </div>
-          <div className="card-number">
-            {formData.cardNumber || "#### #### #### ####"}
-          </div>
-          <div className="card-footer">
-            <div className="card-holder-name">
-              {formData.cardholderName || "NOME DO TITULAR"}
+        {!showStripeForm && (
+          <div className="credit-card-mockup">
+            <div className="card-chip"></div>
+            <div className="card-logo">
+              {getCardBrand(formData.cardNumber) === "visa" && "VISA"}
+              {getCardBrand(formData.cardNumber) === "master" && "MC"}
+              {getCardBrand(formData.cardNumber) === "amex" && "AMEX"}
+              {getCardBrand(formData.cardNumber) === "elo" && "ELO"}
+              {getCardBrand(formData.cardNumber) === "hipercard" && "HIPERCARD"}
             </div>
-            <div className="card-expiry">{formData.expiryDate || "MM/AA"}</div>
+            <div className="card-number">
+              {formData.cardNumber || "#### #### #### ####"}
+            </div>
+            <div className="card-footer">
+              <div className="card-holder-name">
+                {formData.cardholderName || "NOME DO TITULAR"}
+              </div>
+              <div className="card-expiry">
+                {formData.expiryDate || "MM/AA"}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
