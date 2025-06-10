@@ -62,10 +62,10 @@ const Terms: FunctionComponent = () => {
 					<p><b>3.7 Cadastros sem planos ativos ou expirados por mais de 1 ano, poderão ser excluídos sem aviso prévio pela licenciadora.</b></p>
 
 					<h3>CLÁUSULA QUARTA – DOS CADASTROS</h3>
-					<p>4.1. A EMPRESA, para usufruir das funcionalidades, deverá criar conta corporativa no site da licenciadora, seguindo todos os passos especificados no formulário de cadastro para utilização no URL https://app.gestaoboa.com.br.</p>
+					<p>4.1. A EMPRESA, para usufruir das funcionalidades, deverá criar conta corporativa no site da licenciadora, seguindo todos os passos especificados no formulário de cadastro para utilização no URL https://beasier.vercel.app.</p>
 					<p>4.2 As informações inseridas no formulário de cadastro pela EMPRESA poderão ser verificadas, inclusive com etapa de avaliação de crédito.</p>
 					<p>4.3 Após as verificações necessárias, automática ou manualmente realizadas, a EMPRESA receberá o e-mail de boas-vindas no endereço fornecido pelo respectivo gestor dentro da plataforma ou indicado pela EMPRESA, com o seu respectivo usuário e senha.</p>
-					<p>4.4 Após o recebimento do referido e-mail, a EMPRESA estará devidamente cadastrada em sua conta corporativa e poderá fazer uso do Sistema “GESTÃO BOA” em sua Plataforma Web, através do URL https://app.gestaoboa.com.br.</p>
+					<p>4.4 Após o recebimento do referido e-mail, a EMPRESA estará devidamente cadastrada em sua conta corporativa e poderá fazer uso do Sistema “GESTÃO BOA” em sua Plataforma Web, através do URL https://beasier.vercel.app.</p>
 					<p>4.5 O cadastro da EMPRESA e a seleção de um plano de assinatura [licenciamento] são condições indispensáveis para a utilização do Sistema e suas funcionalidades disponibilizadas e inclusas no plano selecionado.</p>
 					<p>4.6 O cadastro de operadores internos, simplesmente denominado operadores, será feito exclusivamente por meio da plataforma e pelo gestor da EMPRESA.</p>
 					<p>4.7 Os dados de acesso ao sistema [login/senha] criados para os operadores são pessoais e intransferíveis.</p>
@@ -73,7 +73,7 @@ const Terms: FunctionComponent = () => {
 					<p>4.9 O disposto no item 4.8 se aplica, também, para os operadores e a comunicação da suspensão será feita ao e-mail do gestor cadastrado para a EMPRESA.</p>
 
 					<h3>CLÁUSULA QUINTA – DAS OBRIGAÇÕES</h3>
-					<p>5.1 A licenciadora se obriga, por este contrato e por outros contratos eventualmente firmados para o mesmo objeto, disponibilizar por meio de download o sistema “GESTÃO BOA” nas plataformas Play Store e futuramente na App Store ou, na dashboard administrativa por meio do URL https://app.gestaoboa.com.br.</p>
+					<p>5.1 A licenciadora se obriga, por este contrato e por outros contratos eventualmente firmados para o mesmo objeto, disponibilizar por meio de download o sistema “GESTÃO BOA” nas plataformas Play Store e futuramente na App Store ou, na dashboard administrativa por meio do URL https://beasier.vercel.app.</p>
 					<p>5.2 O licenciamento do sistema “GESTÃO BOA”, integral ou parcial, será obrigação da licenciadora logo após cadastro da EMPRESA e ativação, desde que selecionado um plano de assinatura.</p>
 					<p>5.3 A licenciadora deve enviar à EMPRESA, junto às notas, os recibos dos serviços utilizados e um relatório por meio do Sistema quando disponíveis e/ou contratados, preferencialmente por meio digital</p>
 					<p>5.3.1 Os custos do fornecimento físico de documentos fiscais será da EMPRESA licenciada.</p>
