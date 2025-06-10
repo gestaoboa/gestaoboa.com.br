@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 // --- Constantes de Configuração ---
-const TOTAL_DURATION = 61000;
+const TOTAL_DURATION = 81000; // Aumentado para incluir a nova seção (20s a mais)
 
 // --- Componentes de Cena ---
 const LogoBenefitsScene = () => (
@@ -120,6 +120,35 @@ const AdScene = () => (
   </div>
 );
 
+const TilinhoLanchesScene = () => (
+  <div id="tilinho-section" className="animation-section tilinho-section">
+    <div className="tilinho-content">
+      <div className="tilinho-header">
+        <h2 className="tilinho-title">TILINHO LANCHES</h2>
+        <p className="tilinho-subtitle">Restaurante Familiar - Cassino</p>
+      </div>
+      <div className="tilinho-menu">
+        <div className="menu-item">
+          <span className="menu-emoji">🍖</span>
+          <span className="menu-text">Bauros Artesanais</span>
+        </div>
+        <div className="menu-item">
+          <span className="menu-emoji">🧀</span>
+          <span className="menu-text">Xis Tradicionais</span>
+        </div>
+        <div className="menu-item">
+          <span className="menu-emoji">🍽️</span>
+          <span className="menu-text">Ala-Minuta</span>
+        </div>
+      </div>
+      <div className="tilinho-location">
+        <p className="location-text">📍 Cassino - Rio Grande</p>
+        <p className="location-slogan">Sabor e tradição em família!</p>
+      </div>
+    </div>
+  </div>
+);
+
 // --- Componente Principal ---
 
 export default function Anuncios() {
@@ -144,7 +173,6 @@ export default function Anuncios() {
       clearInterval(loopInterval);
     };
   }, []);
-
   return (
     <div className={`video-container ${isPlaying ? "is-playing" : ""}`}>
       <LogoBenefitsScene />
@@ -152,6 +180,7 @@ export default function Anuncios() {
       <TestimonialScene />
       <CtaScene />
       <AdScene />
+      {/* <TilinhoLanchesScene /> */}
     </div>
   );
 }
