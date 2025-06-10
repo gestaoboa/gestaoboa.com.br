@@ -6,6 +6,7 @@ import Terms from './pages/Terms'
 import Solution from './pages/Solution'
 import About from './pages/About'
 import Sales from './pages/Sales'
+import Anuncios from './pages/Propaganda'
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 				<Route path="/preco" element={<Price />} />
 				<Route path="/solution" element={<Solution />} />
 				<Route path="/vendas" element={<Sales />} />
+				<Route path="/anuncios" element={<Anuncios />} />				
 				<Route path="*" element={<Navigate to="/" replace />} />
 			</Routes>
 		</BrowserRouter>
