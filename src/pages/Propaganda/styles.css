@@ -22,7 +22,6 @@
 }
 
 .video-container.restarting {
-  animation: restartPulse 1s ease-in-out;
 }
 
 .animation-section {
@@ -81,7 +80,7 @@
 }
 
 .feature-list-item {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.8rem, 3vw, 1.8rem);
   font-weight: 600;
   margin-bottom: 15px;
   display: flex;
@@ -263,7 +262,7 @@
 }
 
 .is-playing #ad-section { 
-  animation: fadeIn 1.5s ease-in-out 40s forwards, fadeOut 2s ease-in-out 68s forwards; 
+  animation: fadeIn 1.5s ease-in-out 40s forwards, fadeOut 1s ease-in-out 59s forwards; 
 }
 
 .features-list li::before { 
@@ -271,5 +270,5 @@
   color: #5CADFF; 
   font-weight: 700; 
   margin-right: 15px; 
-  font-size: 1.2em; 
+  font-size: 1.5em; 
 }

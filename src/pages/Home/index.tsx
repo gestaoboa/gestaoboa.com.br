@@ -487,14 +487,14 @@ const Home: FunctionComponent = () => {
                     Especialista em desenvolvimento de APIs e infraestrutura
                   </div>
                 </div>
-                <div className="member">
+                {/* <div className="member">
                   <img src="/jonathan.png" alt="Jonathan Lima" />
                   <div className="name">Jonathan Lima</div>
                   <div className="subtitle">Tech Lead</div>
                   <div className="role-description">
                     Coordena nossa equipe técnica e arquitetura de software
                   </div>
-                </div>
+                </div> */}
                 <div className="member">
                   <img src="/Bruno W.jpg" alt="Bruno Wellar" />
                   <div className="name">Bruno Wellar</div>
