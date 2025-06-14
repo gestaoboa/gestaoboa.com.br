@@ -150,7 +150,7 @@
   margin: 0;
 }
 
-/* Seção 5: Anúncio */
+/* Seção 5: Anúncio Bronze */
 .ad-section {
   background-color: #000;
 }
@@ -193,7 +193,190 @@
   color: #5CADFF;
 }
 
-/* Seção 6: Tilinho Lanches */
+/* Seção 6: Anúncio Prata */
+.ad-section-silver {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #FFFFFF;
+}
+
+.ad-section-silver .ad-info-headline {
+  color: #C0C0C0;
+}
+
+.ad-section-silver .ad-info-price {
+  color: #C0C0C0;
+}
+
+.ad-section-silver .ad-logo-image {
+  border: 3px solid #C0C0C0;
+}
+
+/* Seção 7: Anúncio Ouro */
+.ad-section-gold {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: #FFFFFF;
+}
+
+.ad-section-gold .ad-info-headline {
+  color: #FFD700;
+}
+
+.ad-section-gold .ad-info-price {
+  color: #FFD700;
+}
+
+.ad-section-gold .ad-logo-image {
+  border: 3px solid #FFD700;
+}
+
+/* Seção 8: João de Barro Studio */
+.joao-barro-section {
+  background: linear-gradient(135deg, #8B4513, #A0522D, #CD853F);
+  color: #FFFFFF;
+  position: relative;
+}
+
+.joao-barro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+  opacity: 0.3;
+}
+
+.joao-barro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.studio-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.studio-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #DAA520;
+  box-shadow: 0 0 20px rgba(218, 165, 32, 0.5);
+}
+
+.studio-title-container {
+  text-align: center;
+}
+
+.studio-title {
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+  letter-spacing: 1px;
+  color: #DAA520;
+}
+
+.studio-subtitle {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin: 10px 0 0 0;
+  color: #F5DEB3;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.studio-services {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  border: 2px solid rgba(218, 165, 32, 0.4);
+  min-width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
+}
+
+.service-icon {
+  font-size: clamp(3rem, 5vw, 4rem);
+}
+
+.service-text {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.studio-welcome {
+  margin-top: 1rem;
+  max-width: 900px;
+}
+
+.welcome-text {
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  margin: 0 0 2rem 0;
+  font-style: italic;
+  line-height: 1.5;
+  color: #F5DEB3;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.studio-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact-info {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  margin: 0;
+  color: #DAA520;
+  font-weight: 600;
+}
+
+.studio-slogan {
+  font-size: clamp(2.5rem, 4.5vw, 3.2rem);
+  margin: 15px 0 0 0;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  border-top: 2px solid #DAA520;
+  padding-top: 15px;
+}
+
+/* Seção 9: Tilinho Lanches */
 .tilinho-section {
   background: linear-gradient(135deg, #e74c3c, #c0392b);
   color: #FFFFFF;
@@ -356,8 +539,20 @@
   animation: fadeIn 1.5s ease-in-out 40s forwards, fadeOut 1s ease-in-out 59s forwards; 
 }
 
-.is-playing #tilinho-section { 
+.is-playing #ad-section-2 { 
   animation: fadeIn 1.5s ease-in-out 60s forwards, fadeOut 1s ease-in-out 79s forwards; 
+}
+
+.is-playing #ad-section-3 { 
+  animation: fadeIn 1.5s ease-in-out 80s forwards, fadeOut 1s ease-in-out 99s forwards; 
+}
+
+.is-playing #joao-barro-section { 
+  animation: fadeIn 1.5s ease-in-out 100s forwards, fadeOut 1s ease-in-out 119s forwards; 
+}
+
+.is-playing #tilinho-section { 
+  animation: fadeIn 1.5s ease-in-out 120s forwards, fadeOut 1s ease-in-out 159s forwards; 
 }
 
 .features-list li::before { 

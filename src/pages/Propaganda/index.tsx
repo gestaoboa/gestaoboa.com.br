@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 // --- Constantes de Configuração ---
-const TOTAL_DURATION = 81000; // Aumentado para incluir a nova seção (20s a mais)
+const TOTAL_DURATION = 161000; // Aumentado para incluir a seção João de Barro Studio (20s a mais)
 
 // --- Componentes de Cena ---
 const LogoBenefitsScene = () => (
@@ -67,10 +67,10 @@ const TestimonialScene = () => (
       />
       <blockquote className="testimonial-text">
         "Hoje tenho clareza total dos números, consigo tomar decisões mais
-        inteligentes e garantir a saúde financeira da barbearia."
+        inteligentes e garantir a saúde financeira da minha empresa."
       </blockquote>
       <cite className="testimonial-author">
-        Leandro Figueiredo, Barbearia Duque
+        Leandro Figueiredo
       </cite>
     </div>
   </div>
@@ -109,12 +109,116 @@ const AdScene = () => (
           target.onerror = null;
           target.src = "https://placehold.co/180x180/FFFFFF/000000?text=LOGO";
         }}
-      />
+      />      
       <div className="ad-info">
-        <h3 className="ad-info-headline">Anuncie sua empresa aqui</h3>
-        <p className="ad-info-p">✓ Tempo de tela: 30s</p>
-        <p className="ad-info-p">✓ Anúncio personalizado</p>
+        <h3 className="ad-info-headline">Plano Bronze - Anuncie Aqui</h3>
+        <p className="ad-info-p">✓ Tempo de tela: 20s</p>
+        <p className="ad-info-p">✓ Exposição compartilhada</p>
+        <p className="ad-info-p">✓ Logo marca e informações essenciais</p>
         <p className="ad-info-p ad-info-price">R$ 100,00 / mês</p>
+        <p className="ad-info-p">+ Anúncio personalizado: R$ 50,00</p>
+      </div>
+    </div>
+  </div>
+);
+
+const AdScene2 = () => (
+  <div id="ad-section-2" className="animation-section ad-section-silver">
+    <div className="ad-content">
+      <img
+        src="joao.png"
+        alt="João de Barro Studio"
+        className="ad-logo-image"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://placehold.co/180x180/C0C0C0/000000?text=LOGO";
+        }}
+      />      
+      <div className="ad-info">
+        <h3 className="ad-info-headline">Plano Prata - Destaque Premium</h3>
+        <p className="ad-info-p">✓ Tempo de tela: 30s</p>
+        <p className="ad-info-p">✓ Exposição compartilhada</p>
+        <p className="ad-info-p">✓ Animações personalizadas</p>
+        <p className="ad-info-p">✓ Call-to-action destacado</p>
+        <p className="ad-info-p ad-info-price">R$ 150,00 / mês</p>
+        <p className="ad-info-p">+ Anúncio personalizado: R$ 70,00</p>
+      </div>
+    </div>
+  </div>
+);
+
+const AdScene3 = () => (
+  <div id="ad-section-3" className="animation-section ad-section-gold">
+    <div className="ad-content">
+      <img
+        src="joao.png"
+        alt="João de Barro Studio"
+        className="ad-logo-image"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://placehold.co/180x180/FFD700/000000?text=LOGO";
+        }}
+      />      
+      <div className="ad-info">
+        <h3 className="ad-info-headline">Plano Ouro - Máxima Visibilidade</h3>
+        <p className="ad-info-p">✓ Tempo de tela: 45s</p>
+        <p className="ad-info-p">✓ Exposição exclusiva (sem concorrência)</p>
+        <p className="ad-info-p">✓ Conteúdo totalmente personalizado</p>
+        <p className="ad-info-p">✓ Informação completa, QRCode e contato</p>
+        <p className="ad-info-p ad-info-price">R$ 225,00 / mês</p>
+        <p className="ad-info-p">+ Anúncio personalizado: R$ 100,00!</p>
+      </div>
+    </div>
+  </div>
+);
+
+const JoaoDeBarroStudioScene = () => (
+  <div id="joao-barro-section" className="animation-section joao-barro-section">
+    <div className="joao-barro-content">
+      <div className="studio-header">
+        <img
+          src="joao.png"
+          alt="João de Barro Studio"
+          className="studio-logo"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = "https://placehold.co/200x200/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
+          }}
+        />
+        <div className="studio-title-container">
+          <h2 className="studio-title">JOÃO DE BARRO STUDIO</h2>
+          <p className="studio-subtitle">Barbearia Premium</p>
+        </div>
+      </div>
+      
+      <div className="studio-services">
+        <div className="service-item">
+          <span className="service-icon">✂️</span>
+          <span className="service-text">Cortes Modernos</span>
+        </div>
+        <div className="service-item">
+          <span className="service-icon">🧔</span>
+          <span className="service-text">Barba & Bigode</span>
+        </div>
+        <div className="service-item">
+          <span className="service-icon">💆‍♂️</span>
+          <span className="service-text">Tratamentos</span>
+        </div>
+      </div>
+
+      <div className="studio-welcome">
+        <p className="welcome-text">
+          "Transformamos seu visual com cuidado e profissionalismo. 
+          Aqui você encontra o ambiente perfeito para relaxar e sair renovado!"
+        </p>
+        <div className="studio-contact">
+          {/* <p className="contact-info">📍 Endereço da Barbearia</p> */}
+          <p className="contact-info">📞 53 99204-9016</p>
+          <p className="studio-slogan">Sua confiança, nosso compromisso!</p>
+        </div>
       </div>
     </div>
   </div>
@@ -172,15 +276,17 @@ export default function Anuncios() {
     return () => {
       clearInterval(loopInterval);
     };
-  }, []);
-  return (
+  }, []);  return (
     <div className={`video-container ${isPlaying ? "is-playing" : ""}`}>
       <LogoBenefitsScene />
       <FeaturesScene />
       <TestimonialScene />
       <CtaScene />
+      <JoaoDeBarroStudioScene />
       <AdScene />
-      {/* <TilinhoLanchesScene /> */}
+      <AdScene2 />
+      <AdScene3 />
+      <TilinhoLanchesScene />
     </div>
   );
 }
