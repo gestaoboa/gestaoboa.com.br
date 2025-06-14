@@ -69,9 +69,7 @@ const TestimonialScene = () => (
         "Hoje tenho clareza total dos números, consigo tomar decisões mais
         inteligentes e garantir a saúde financeira da minha empresa."
       </blockquote>
-      <cite className="testimonial-author">
-        Leandro Figueiredo
-      </cite>
+      <cite className="testimonial-author">Leandro Figueiredo</cite>
     </div>
   </div>
 );
@@ -80,13 +78,13 @@ const CtaScene = () => (
   <div id="cta-section" className="animation-section">
     <div className="cta-container">
       <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gestaoboa.com.br&bgcolor=0B1B34&color=FFFFFF&qzone=1"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://gestaoboa.com.br&bgcolor=0B1B34&color=FFFFFF&qzone=1"
         alt="QR Code para começar"
         className="qr-code"
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.onerror = null;
-          target.src = "https://placehold.co/200x200/ffffff/0B1B34?text=QRCode";
+          target.src = "https://placehold.co/600x600/ffffff/0B1B34?text=QRCode";
         }}
       />
       <h2 className="cta-headline">Comece Agora!</h2>
@@ -109,7 +107,7 @@ const AdScene = () => (
           target.onerror = null;
           target.src = "https://placehold.co/180x180/FFFFFF/000000?text=LOGO";
         }}
-      />      
+      />
       <div className="ad-info">
         <h3 className="ad-info-headline">Plano Bronze - Anuncie Aqui</h3>
         <p className="ad-info-p">✓ Tempo de tela: 20s</p>
@@ -134,7 +132,7 @@ const AdScene2 = () => (
           target.onerror = null;
           target.src = "https://placehold.co/180x180/C0C0C0/000000?text=LOGO";
         }}
-      />      
+      />
       <div className="ad-info">
         <h3 className="ad-info-headline">Plano Prata - Destaque Premium</h3>
         <p className="ad-info-p">✓ Tempo de tela: 30s</p>
@@ -160,7 +158,7 @@ const AdScene3 = () => (
           target.onerror = null;
           target.src = "https://placehold.co/180x180/FFD700/000000?text=LOGO";
         }}
-      />      
+      />
       <div className="ad-info">
         <h3 className="ad-info-headline">Plano Ouro - Máxima Visibilidade</h3>
         <p className="ad-info-p">✓ Tempo de tela: 45s</p>
@@ -185,7 +183,8 @@ const JoaoDeBarroStudioScene = () => (
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
-            target.src = "https://placehold.co/200x200/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
+            target.src =
+              "https://placehold.co/600x600/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
           }}
         />
         <div className="studio-title-container">
@@ -193,7 +192,7 @@ const JoaoDeBarroStudioScene = () => (
           <p className="studio-subtitle">Barbearia Premium</p>
         </div>
       </div>
-      
+
       <div className="studio-services">
         <div className="service-item">
           <span className="service-icon">✂️</span>
@@ -211,43 +210,14 @@ const JoaoDeBarroStudioScene = () => (
 
       <div className="studio-welcome">
         <p className="welcome-text">
-          "Transformamos seu visual com cuidado e profissionalismo. 
-          Aqui você encontra o ambiente perfeito para relaxar e sair renovado!"
+          "Transformamos seu visual com cuidado e profissionalismo. Aqui você
+          encontra o ambiente perfeito para relaxar e sair renovado!"
         </p>
         <div className="studio-contact">
           {/* <p className="contact-info">📍 Endereço da Barbearia</p> */}
           <p className="contact-info">📞 53 99204-9016</p>
           <p className="studio-slogan">Sua confiança, nosso compromisso!</p>
         </div>
-      </div>
-    </div>
-  </div>
-);
-
-const TilinhoLanchesScene = () => (
-  <div id="tilinho-section" className="animation-section tilinho-section">
-    <div className="tilinho-content">
-      <div className="tilinho-header">
-        <h2 className="tilinho-title">TILINHO LANCHES</h2>
-        <p className="tilinho-subtitle">Restaurante Familiar - Cassino</p>
-      </div>
-      <div className="tilinho-menu">
-        <div className="menu-item">
-          <span className="menu-emoji">🍖</span>
-          <span className="menu-text">Bauros Artesanais</span>
-        </div>
-        <div className="menu-item">
-          <span className="menu-emoji">🧀</span>
-          <span className="menu-text">Xis Tradicionais</span>
-        </div>
-        <div className="menu-item">
-          <span className="menu-emoji">🍽️</span>
-          <span className="menu-text">Ala-Minuta</span>
-        </div>
-      </div>
-      <div className="tilinho-location">
-        <p className="location-text">📍 Cassino - Rio Grande</p>
-        <p className="location-slogan">Sabor e tradição em família!</p>
       </div>
     </div>
   </div>
@@ -276,7 +246,8 @@ export default function Anuncios() {
     return () => {
       clearInterval(loopInterval);
     };
-  }, []);  return (
+  }, []);
+  return (
     <div className={`video-container ${isPlaying ? "is-playing" : ""}`}>
       <LogoBenefitsScene />
       <FeaturesScene />
@@ -286,7 +257,7 @@ export default function Anuncios() {
       <AdScene />
       <AdScene2 />
       <AdScene3 />
-      <TilinhoLanchesScene />
+      {/* <TilinhoLanchesScene /> */}
     </div>
   );
 }
