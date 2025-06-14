@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 // --- Constantes de Configuração ---
-const TOTAL_DURATION = 161000; // Aumentado para incluir a seção João de Barro Studio (20s a mais)
+const TOTAL_DURATION = 101000; // Aumentado para incluir a seção João de Barro Studio (20s a mais)
 
 // --- Componentes de Cena ---
 const LogoBenefitsScene = () => (
@@ -253,10 +253,10 @@ export default function Anuncios() {
       <FeaturesScene />
       <TestimonialScene />
       <CtaScene />
-      <JoaoDeBarroStudioScene />
       <AdScene />
       <AdScene2 />
       <AdScene3 />
+      {/* <JoaoDeBarroStudioScene /> */}
       {/* <TilinhoLanchesScene /> */}
     </div>
   );
