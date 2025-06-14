@@ -464,14 +464,14 @@ const UserRegistrationForm: React.FC<UserRegistrationFormProps> = ({
               >
                 {loading ? "Processando..." : "Criar Conta"}
               </button>
-              <button
+              {/* <button
                 type="button"
                 className="login-button"
                 onClick={handleShowLogin}
                 disabled={loading}
               >
                 Já possuo conta
-              </button>
+              </button> */}
             </form>
           </>
         ) : (

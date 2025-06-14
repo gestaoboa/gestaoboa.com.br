@@ -13,9 +13,9 @@ type PlanType = "Anual" | "Semestral" | "Mensal";
 const getDiscount = (type: PlanType) => {
   switch (type) {
     case "Anual":
-      return 0.231; // 24% off
+      return 0.35; // 35% off
     case "Semestral":
-      return 0.1; // 10% off
+      return 0.24; // 24% off
     default:
       return 0;
   }
@@ -105,9 +105,7 @@ const Price = () => {
       <Header />{" "}
       <div className="plans">
         <div className="top-countdown-container">
-          <h2 className="top-countdown-title">
-            OFERTA ESPECIAL POR TEMPO LIMITADO!
-          </h2>
+          <h2 className="top-countdown-title">PREÇO ESPECIAL DO WORKSHOP!</h2>
           <div className="top-countdown">
             <div className="top-countdown-number">
               {`${String(timeLeft.hours).padStart(2, "0")}:${String(
@@ -118,7 +116,7 @@ const Price = () => {
           </div>
           <p className="top-countdown-text">
             Assine agora para não ficar de fora dessa oportunidade! Economize
-            até 24% nos planos anuais.
+            até 35% nos planos anuais.
           </p>
         </div>
         <h1 className="plans-title" id="plans-section">
@@ -126,8 +124,14 @@ const Price = () => {
         </h1>
         <div className="plan-type-selector">
           {[
-            { type: "Anual", discount: "24% off" },
-            { type: "Semestral", discount: "10% off" },
+            {
+              type: "Anual",
+              discount: "35% off",
+            },
+            {
+              type: "Semestral",
+              discount: "24% off",
+            },
             { type: "Mensal" },
           ].map((plan) => (
             <button
@@ -152,7 +156,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "24% OFF" : "10% OFF"}
+                {planType === "Anual" ? "35% OFF" : "24% OFF"}
               </div>
             )}
             <h2>Básico</h2>
@@ -204,7 +208,7 @@ const Price = () => {
                 setShowRegistrationForm(true);
               }}
             >
-              TESTE GRÁTIS POR 21 DIAS!
+              COMECE AGORA!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -237,7 +241,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "24% OFF" : "10% OFF"}
+                {planType === "Anual" ? "35% OFF" : "24% OFF"}
               </div>
             )}
             <h2>Crescimento</h2>
@@ -289,7 +293,7 @@ const Price = () => {
                 setShowRegistrationForm(true);
               }}
             >
-              TESTE GRÁTIS POR 21 DIAS!
+              COMECE AGORA!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -322,7 +326,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "24% OFF" : "10% OFF"}
+                {planType === "Anual" ? "35% OFF" : "24% OFF"}
               </div>
             )}
             <h2>Empresarial</h2>
@@ -374,7 +378,7 @@ const Price = () => {
                 setShowRegistrationForm(true);
               }}
             >
-              TESTE GRÁTIS POR 21 DIAS!
+              COMECE AGORA!
             </button>{" "}
             <ul className="benefits-list">
               <li>

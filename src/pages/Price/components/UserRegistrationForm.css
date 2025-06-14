@@ -126,11 +126,13 @@
 
 .form-group {
   margin-bottom: 20px;
+  margin-right: 5px;
+  width: 95%;
 }
 
 .form-row {
   display: flex;
-  gap: 15px;
+  gap: 5%;
 }
 
 .form-group.half {
