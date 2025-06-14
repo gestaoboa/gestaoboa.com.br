@@ -179,7 +179,7 @@ export default function Anuncios() {
       <FeaturesScene />
       <TestimonialScene />
       <CtaScene />
-      <AdScene />
+      {/* <AdScene /> */}
       {/* <TilinhoLanchesScene /> */}
     </div>
   );
