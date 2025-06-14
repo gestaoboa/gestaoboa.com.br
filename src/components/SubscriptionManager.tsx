@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  cancelSubscription,
-  getSubscriptionStatus,
-} from "../../../services/stripeService";
 import "./SubscriptionManager.css";
+import { cancelSubscription, getSubscriptionStatus } from "../services/stripeService";
 
 interface SubscriptionData {
   id: string;
@@ -33,7 +30,6 @@ interface SubscriptionManagerProps {
 const SubscriptionManager: React.FC<SubscriptionManagerProps> = ({
   subscriptionId,
   onSubscriptionCancelled,
-  onPaymentMethodUpdated,
 }) => {
   const [subscription, setSubscription] = useState<SubscriptionData | null>(
     null

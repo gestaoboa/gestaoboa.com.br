@@ -125,7 +125,6 @@ const StripeCheckoutForm: React.FC<StripeCheckoutFormProps> = ({
       // Criar assinatura no backend
       const {
         success,
-        subscription_id,
         client_secret,
         error: apiError,
       } = await createSubscription({

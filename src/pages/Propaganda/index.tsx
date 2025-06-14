@@ -172,6 +172,7 @@ const AdScene3 = () => (
   </div>
 );
 
+// @ts-ignore
 const JoaoDeBarroStudioScene = () => (
   <div id="joao-barro-section" className="animation-section joao-barro-section">
     <div className="joao-barro-content">

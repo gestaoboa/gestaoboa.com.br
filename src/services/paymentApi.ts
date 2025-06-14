@@ -2,6 +2,7 @@ import axios from "axios";
 
 declare global {
   interface Window {
+    // @ts-ignore
     mercadoPagoInstance?: any;
   }
 }

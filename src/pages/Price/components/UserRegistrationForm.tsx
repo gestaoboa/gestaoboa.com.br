@@ -276,10 +276,6 @@ const UserRegistrationForm: React.FC<UserRegistrationFormProps> = ({
     setStep("company");
   };
 
-  const handleShowLogin = () => {
-    setShowLoginForm(true);
-  };
-
   const handleCloseLogin = () => {
     setShowLoginForm(false);
   };
@@ -293,7 +289,6 @@ const UserRegistrationForm: React.FC<UserRegistrationFormProps> = ({
         onPaymentSuccess={handlePaymentSuccess}
         userEmail={formData.email}
         userDocument={formData.document}
-        token={userToken}
       />
     );
   }
