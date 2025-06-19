@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     MercadoPago: any;
+    // @ts-ignore
     mercadoPagoInstance: any;
   }
 }
@@ -50,7 +51,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [sdkLoaded, setSdkLoaded] = useState(false);
-  const [naotapronto, setNaotapronto] = useState(false); // Mudando para false para mostrar as opções
+  const naotapronto = false
   const [showStripeForm, setShowStripeForm] = useState(false);
   const [paymentProvider, setPaymentProvider] = useState<
     "mercadopago" | "stripe" | "selection"
@@ -257,7 +258,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
             onClose={onClose}
             onPaymentSuccess={onPaymentSuccess}
           />
-        ) : paymentProvider === "selection" ? (
+        ) : paymentProvider ? (
           <div className="payment-provider-selection">
             <h3>Escolha seu método de pagamento</h3>
             <div className="payment-providers">
