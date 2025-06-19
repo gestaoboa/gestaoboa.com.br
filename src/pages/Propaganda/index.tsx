@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 // --- Constantes de Configuração ---
-const TOTAL_DURATION = 101000; // Aumentado para incluir a seção João de Barro Studio (20s a mais)
+const TOTAL_DURATION = 131000; // Gestão Boa (40s) + Tilinho (30s) + Ads (3 * 20s)
 
 // --- Componentes de Cena ---
 const LogoBenefitsScene = () => (
@@ -223,6 +223,118 @@ const JoaoDeBarroStudioScene = () => (
   </div>
 );
 
+const TilinhoImage1Scene = () => (
+  <div
+    id="tilinho-image1-section"
+    className="animation-section tilinho-image-scene"
+  >
+    <img
+      src="xis.png"
+      alt="Xis do Tilinho Lanches"
+      className="tilinho-food-image"
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        target.onerror = null;
+        target.src = "https://placehold.co/1200x800/c0392b/FFFFFF?text=XIS";
+      }}
+    />
+  </div>
+);
+
+const TilinhoImage2Scene = () => (
+  <div
+    id="tilinho-image2-section"
+    className="animation-section tilinho-image-scene"
+  >
+    <img
+      src="ala-minuta.png"
+      alt="Ala Minuta do Tilinho Lanches"
+      className="tilinho-food-image"
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        target.onerror = null;
+        target.src =
+          "https://placehold.co/1200x800/c0392b/FFFFFF?text=ALA+MINUTA";
+      }}
+    />
+  </div>
+);
+
+const TilinhoImage3Scene = () => (
+  <div
+    id="tilinho-image3-section"
+    className="animation-section tilinho-image-scene"
+  >
+    <img
+      src="xis2.png"
+      alt="Outro Xis do Tilinho Lanches"
+      className="tilinho-food-image"
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        target.onerror = null;
+        target.src = "https://placehold.co/1200x800/c0392b/FFFFFF?text=XIS+2";
+      }}
+    />
+  </div>
+);
+
+const TilinhoHungryScene = () => (
+  <div
+    id="tilinho-hungry-section"
+    className="animation-section tilinho-hungry-section"
+  >
+    <h2 className="tilinho-hungry-text">Bateu aquela fome?</h2>
+  </div>
+);
+
+const TilinhoFinalScene = () => (
+  <div
+    id="tilinho-final-section"
+    className="animation-section tilinho-final-section"
+  >
+    <div className="tilinho-final-logo-container">
+      <img
+        src="tilinho_Xis.png"
+        alt="Logo Tilinho Lanches"
+        className="tilinho-final-logo"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src =
+            "https://placehold.co/400x400/FFFFFF/000000?text=TILINHO";
+        }}
+      />
+    </div>
+    <div className="tilinho-final-details-container">
+      <div className="tilinho-final-detail">
+        <div className="tilinho-info-icon clock-icon" />
+        <div className="tilinho-info-text">
+          <h3>Horário de Funcionamento:</h3>
+          <p>Diariamente</p>
+          <p>11:00 às 14:30</p>
+          <p>18:00 às 23:59</p>
+        </div>
+      </div>
+      <div className="tilinho-final-detail">
+        <div className="tilinho-info-icon phone-icon" />
+        <div className="tilinho-info-text">
+          <h3>Telefones:</h3>
+          <p>(53)99973-4386</p>
+          <p>3236-5401</p>
+          <p>3236-4428</p>
+        </div>
+      </div>
+      <div className="tilinho-final-detail">
+        <div className="tilinho-info-icon location-icon" />
+        <div className="tilinho-info-text">
+          <h3>Localização:</h3>
+          <p>Lisboa, 424 - Cassino.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 // --- Componente Principal ---
 
 export default function Anuncios() {
@@ -253,11 +365,15 @@ export default function Anuncios() {
       <FeaturesScene />
       <TestimonialScene />
       <CtaScene />
+      <TilinhoImage1Scene />
+      <TilinhoImage2Scene />
+      <TilinhoImage3Scene />
+      <TilinhoHungryScene />
+      <TilinhoFinalScene />
       <AdScene />
       <AdScene2 />
       <AdScene3 />
       {/* <JoaoDeBarroStudioScene /> */}
-      {/* <TilinhoLanchesScene /> */}
     </div>
   );
 }
