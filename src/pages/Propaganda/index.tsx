@@ -172,57 +172,57 @@ const AdScene3 = () => (
   </div>
 );
 
-// @ts-ignore
-const JoaoDeBarroStudioScene = () => (
-  <div id="joao-barro-section" className="animation-section joao-barro-section">
-    <div className="joao-barro-content">
-      <div className="studio-header">
-        <img
-          src="joao.png"
-          alt="João de Barro Studio"
-          className="studio-logo"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.onerror = null;
-            target.src =
-              "https://placehold.co/600x600/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
-          }}
-        />
-        <div className="studio-title-container">
-          <h2 className="studio-title">JOÃO DE BARRO STUDIO</h2>
-          <p className="studio-subtitle">Barbearia Premium</p>
-        </div>
-      </div>
+// // @ts-ignore
+// const JoaoDeBarroStudioScene = () => (
+//   <div id="joao-barro-section" className="animation-section joao-barro-section">
+//     <div className="joao-barro-content">
+//       <div className="studio-header">
+//         <img
+//           src="joao.png"
+//           alt="João de Barro Studio"
+//           className="studio-logo"
+//           onError={(e) => {
+//             const target = e.target as HTMLImageElement;
+//             target.onerror = null;
+//             target.src =
+//               "https://placehold.co/600x600/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
+//           }}
+//         />
+//         <div className="studio-title-container">
+//           <h2 className="studio-title">JOÃO DE BARRO STUDIO</h2>
+//           <p className="studio-subtitle">Barbearia Premium</p>
+//         </div>
+//       </div>
 
-      <div className="studio-services">
-        <div className="service-item">
-          <span className="service-icon">✂️</span>
-          <span className="service-text">Cortes Modernos</span>
-        </div>
-        <div className="service-item">
-          <span className="service-icon">🧔</span>
-          <span className="service-text">Barba & Bigode</span>
-        </div>
-        <div className="service-item">
-          <span className="service-icon">💆‍♂️</span>
-          <span className="service-text">Tratamentos</span>
-        </div>
-      </div>
+//       <div className="studio-services">
+//         <div className="service-item">
+//           <span className="service-icon">✂️</span>
+//           <span className="service-text">Cortes Modernos</span>
+//         </div>
+//         <div className="service-item">
+//           <span className="service-icon">🧔</span>
+//           <span className="service-text">Barba & Bigode</span>
+//         </div>
+//         <div className="service-item">
+//           <span className="service-icon">💆‍♂️</span>
+//           <span className="service-text">Tratamentos</span>
+//         </div>
+//       </div>
 
-      <div className="studio-welcome">
-        <p className="welcome-text">
-          "Transformamos seu visual com cuidado e profissionalismo. Aqui você
-          encontra o ambiente perfeito para relaxar e sair renovado!"
-        </p>
-        <div className="studio-contact">
-          {/* <p className="contact-info">📍 Endereço da Barbearia</p> */}
-          <p className="contact-info">📞 53 99204-9016</p>
-          <p className="studio-slogan">Sua confiança, nosso compromisso!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+//       <div className="studio-welcome">
+//         <p className="welcome-text">
+//           "Transformamos seu visual com cuidado e profissionalismo. Aqui você
+//           encontra o ambiente perfeito para relaxar e sair renovado!"
+//         </p>
+//         <div className="studio-contact">
+//           {/* <p className="contact-info">📍 Endereço da Barbearia</p> */}
+//           <p className="contact-info">📞 53 99204-9016</p>
+//           <p className="studio-slogan">Sua confiança, nosso compromisso!</p>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// );
 
 const TilinhoImage1Scene = () => (
   <div
