@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 // --- Constantes de Configuração ---
-const TOTAL_DURATION = 131000; // Gestão Boa (40s) + Tilinho (30s) + Ads (3 * 20s)
+const TOTAL_DURATION = 141000; // Gestão Boa (40s) + Tilinho (40s) + Ads (3 * 20s)
 
 // --- Componentes de Cena ---
 const LogoBenefitsScene = () => (
@@ -78,7 +78,7 @@ const CtaScene = () => (
   <div id="cta-section" className="animation-section">
     <div className="cta-container">
       <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://gestaoboa.com.br&bgcolor=0B1B34&color=FFFFFF&qzone=1"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://gestaoboa.com.br&bgcolor=0B1B34&color=FFFFFF&qzone=1"
         alt="QR Code para começar"
         className="qr-code"
         onError={(e) => {
@@ -336,6 +336,28 @@ const TilinhoFinalScene = () => (
   </div>
 );
 
+const TilinhoQRCodeScene = () => (
+  <div
+    id="tilinho-qr-section"
+    className="animation-section tilinho-qr-section"
+  >
+    <div className="tilinho-qr-content">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://pedido.anota.ai/loja/tilinho-lanches?f=ms%26fbclid=PAZXh0bgNhZW0CMTEAAaeyp7cqz4XksF9onMuTq-RlkLq7k_gmeXXLI6PV-LTGaVqolFeZ7AEvemtP3A_aem_uKVcmzhgjb6bdAqtJS3xbw&bgcolor=e74c3c&color=ffffff&qzone=2"
+        alt="QR Code Cardápio Tilinho Lanches"
+        className="tilinho-qr-code"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://placehold.co/300x300/e74c3c/ffffff?text=QR+CODE";
+        }}
+      />
+      <h2 className="tilinho-qr-title">Cardápio Digital</h2>
+      <p className="tilinho-qr-message">Peça agora mesmo!</p>
+    </div>
+  </div>
+);
+
 // --- Componente Principal ---
 
 export default function Anuncios() {
@@ -369,8 +391,8 @@ export default function Anuncios() {
       <TilinhoImage1Scene />
       <TilinhoImage2Scene />
       <TilinhoImage3Scene />
-      <TilinhoHungryScene />
-      <TilinhoFinalScene />
+      <TilinhoHungryScene />      <TilinhoFinalScene />
+      <TilinhoQRCodeScene />
       <AdScene />
       <AdScene2 />
       <AdScene3 />

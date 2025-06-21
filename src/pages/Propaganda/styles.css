@@ -385,9 +385,9 @@
 }
 
 .tilinho-food-image {
-  width: 100%;
+  width: 60vw;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* "Bateu aquela fome?" scene */
@@ -484,6 +484,61 @@
   font-weight: 400;
 }
 
+/* Seção QR Code Tilinho */
+.tilinho-qr-section {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.tilinho-qr-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.tilinho-qr-code {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.tilinho-qr-code:hover {
+  transform: scale(1.05);
+}
+
+.tilinho-qr-title {
+  font-size: clamp(3.5rem, 7vw, 5rem);
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  color: #ffeb3b;
+}
+
+.tilinho-qr-message {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 /* Animações */
 @keyframes fadeIn { 
   0% { opacity: 0; } 
@@ -553,15 +608,15 @@
 }
 
 .is-playing #ad-section { 
-  animation: fadeIn 1.5s ease-in-out 70s forwards, fadeOut 1s ease-in-out 89s forwards; /* Duração: 20s */
+  animation: fadeIn 1.5s ease-in-out 80s forwards, fadeOut 1s ease-in-out 99s forwards; /* Duração: 20s */
 }
 
 .is-playing #ad-section-2 { 
-  animation: fadeIn 1.5s ease-in-out 90s forwards, fadeOut 1s ease-in-out 109s forwards; /* Duração: 20s */
+  animation: fadeIn 1.5s ease-in-out 100s forwards, fadeOut 1s ease-in-out 119s forwards; /* Duração: 20s */
 }
 
 .is-playing #ad-section-3 { 
-  animation: fadeIn 1.5s ease-in-out 110s forwards, fadeOut 1s ease-in-out 129s forwards; /* Duração: 20s */
+  animation: fadeIn 1.5s ease-in-out 120s forwards, fadeOut 1s ease-in-out 139s forwards; /* Duração: 20s */
 }
 
 .is-playing #joao-barro-section { 
@@ -583,6 +638,9 @@
 }
 .is-playing #tilinho-final-section {
   animation: fadeIn 1s ease-in-out 60s forwards, fadeOut 1s ease-in-out 69s forwards; /* 10s duration */
+}
+.is-playing #tilinho-qr-section {
+  animation: fadeIn 1s ease-in-out 70s forwards, fadeOut 1s ease-in-out 79s forwards; /* 10s duration */
 }
 
 .features-list li::before { 
