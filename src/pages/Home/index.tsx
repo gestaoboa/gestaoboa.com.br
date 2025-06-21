@@ -545,7 +545,7 @@ const Home: FunctionComponent = () => {
             <div className="space"></div>
 
             <div className="form">
-              <Form ref={formRef} onSubmit={handleSubmit}>
+              <Form ref={formRef} onSubmit={handleSubmit} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 <div className="input-wrapper double">
                   <div className="label">Nome completo</div>
                   <CustomInput width="100%" name="name" placeholder="Nome" />
