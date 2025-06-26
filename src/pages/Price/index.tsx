@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -13,9 +13,9 @@ type PlanType = "Anual" | "Semestral" | "Mensal";
 const getDiscount = (type: PlanType) => {
   switch (type) {
     case "Anual":
-      return 0.35; // 35% off
-    case "Semestral":
       return 0.24; // 24% off
+    case "Semestral":
+      return 0.12; // 12% off
     default:
       return 0;
   }
@@ -28,50 +28,12 @@ const calculateDiscountedPrice = (price: number, type: PlanType) => {
 
 const Price = () => {
   const [planType, setPlanType] = useState<PlanType>("Anual");
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 24,
-    minutes: 0,
-    seconds: 0,
-  });
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<{
     name: string;
     price: string;
   } | null>(null);
-
-  useEffect(() => {
-    const updateCountdown = () => {
-      setTimeLeft((prev) => {
-        let hours = prev.hours;
-        let minutes = prev.minutes;
-        let seconds = prev.seconds;
-
-        if (seconds > 0) {
-          seconds--;
-        } else {
-          seconds = 59;
-          if (minutes > 0) {
-            minutes--;
-          } else {
-            minutes = 59;
-            if (hours > 0) {
-              hours--;
-            }
-          }
-        }
-
-        if (hours === 0 && minutes === 0 && seconds === 0) {
-          return prev; // Mantém em zero quando chegar ao fim
-        }
-
-        return { hours, minutes, seconds };
-      });
-    };
-
-    const interval = setInterval(updateCountdown, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Price data
   const prices = {
@@ -104,21 +66,6 @@ const Price = () => {
       </Helmet>{" "}
       <Header />{" "}
       <div className="plans">
-        <div className="top-countdown-container">
-          <h2 className="top-countdown-title">PREÇO ESPECIAL DO WORKSHOP!</h2>
-          <div className="top-countdown">
-            <div className="top-countdown-number">
-              {`${String(timeLeft.hours).padStart(2, "0")}:${String(
-                timeLeft.minutes
-              ).padStart(2, "0")}:${String(timeLeft.seconds).padStart(2, "0")}`}
-            </div>
-            <span>até o final da promoção</span>
-          </div>
-          <p className="top-countdown-text">
-            Assine agora para não ficar de fora dessa oportunidade! Economize
-            até 35% nos planos anuais.
-          </p>
-        </div>
         <h1 className="plans-title" id="plans-section">
           Assine agora!
         </h1>
@@ -126,11 +73,11 @@ const Price = () => {
           {[
             {
               type: "Anual",
-              discount: "35% off",
+              discount: "24% off",
             },
             {
               type: "Semestral",
-              discount: "24% off",
+              discount: "12% off",
             },
             { type: "Mensal" },
           ].map((plan) => (
@@ -156,7 +103,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "35% OFF" : "24% OFF"}
+                {planType === "Anual" ? "24% OFF" : "12% OFF"}
               </div>
             )}
             <h2>Básico</h2>
@@ -241,7 +188,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "35% OFF" : "24% OFF"}
+                {planType === "Anual" ? "24% OFF" : "12% OFF"}
               </div>
             )}
             <h2>Crescimento</h2>
@@ -326,7 +273,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "35% OFF" : "24% OFF"}
+                {planType === "Anual" ? "24% OFF" : "12% OFF"}
               </div>
             )}
             <h2>Empresarial</h2>
@@ -561,7 +508,8 @@ const Price = () => {
           </button>
         </div>
       </div>{" "}
-      <Footer /> {/* Formulário de pagamento */}
+      <Footer />
+      {/* Formulário de pagamento */}
       {showPaymentForm && selectedPlan && (
         <PaymentForm
           planName={selectedPlan.name}
