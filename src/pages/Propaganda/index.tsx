@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 // --- Constantes de Configuração ---
-const TOTAL_DURATION = 141000; // Gestão Boa (40s) + Tilinho (40s) + Ads (3 * 20s)
+const TOTAL_DURATION = 226000; // Gestão Boa (40s) + Vip Veículos (30s) + Tilinho (40s) + Ana Rose (30s) + João de Barro (20s) + Ads (3 * 20s) + Gestão Boa (36s)
 
 // --- Componentes de Cena ---
 const LogoBenefitsScene = () => (
@@ -172,67 +172,15 @@ const AdScene3 = () => (
   </div>
 );
 
-// // @ts-ignore
-// const JoaoDeBarroStudioScene = () => (
-//   <div id="joao-barro-section" className="animation-section joao-barro-section">
-//     <div className="joao-barro-content">
-//       <div className="studio-header">
-//         <img
-//           src="joao.png"
-//           alt="João de Barro Studio"
-//           className="studio-logo"
-//           onError={(e) => {
-//             const target = e.target as HTMLImageElement;
-//             target.onerror = null;
-//             target.src =
-//               "https://placehold.co/600x600/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
-//           }}
-//         />
-//         <div className="studio-title-container">
-//           <h2 className="studio-title">JOÃO DE BARRO STUDIO</h2>
-//           <p className="studio-subtitle">Barbearia Premium</p>
-//         </div>
-//       </div>
-
-//       <div className="studio-services">
-//         <div className="service-item">
-//           <span className="service-icon">✂️</span>
-//           <span className="service-text">Cortes Modernos</span>
-//         </div>
-//         <div className="service-item">
-//           <span className="service-icon">🧔</span>
-//           <span className="service-text">Barba & Bigode</span>
-//         </div>
-//         <div className="service-item">
-//           <span className="service-icon">💆‍♂️</span>
-//           <span className="service-text">Tratamentos</span>
-//         </div>
-//       </div>
-
-//       <div className="studio-welcome">
-//         <p className="welcome-text">
-//           "Transformamos seu visual com cuidado e profissionalismo. Aqui você
-//           encontra o ambiente perfeito para relaxar e sair renovado!"
-//         </p>
-//         <div className="studio-contact">
-//           {/* <p className="contact-info">📍 Endereço da Barbearia</p> */}
-//           <p className="contact-info">📞 53 99204-9016</p>
-//           <p className="studio-slogan">Sua confiança, nosso compromisso!</p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// );
-
 const TilinhoImage1Scene = () => (
   <div
     id="tilinho-image1-section"
     className="animation-section tilinho-image-scene"
   >
     <img
-      src="xis.png"
+      src="Xis_tilinho.jpeg"
       alt="Xis do Tilinho Lanches"
-      className="tilinho-food-image"
+      className="tilinho-food-image2"
       onError={(e) => {
         const target = e.target as HTMLImageElement;
         target.onerror = null;
@@ -242,40 +190,34 @@ const TilinhoImage1Scene = () => (
   </div>
 );
 
-const TilinhoImage2Scene = () => (
+const TilinhoImage2And3Scene = () => (
   <div
-    id="tilinho-image2-section"
-    className="animation-section tilinho-image-scene"
+    id="tilinho-image2and3-section"
+    className="animation-section tilinho-combined-scene"
   >
-    <img
-      src="ala-minuta.png"
-      alt="Ala Minuta do Tilinho Lanches"
-      className="tilinho-food-image"
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        target.onerror = null;
-        target.src =
-          "https://placehold.co/1200x800/c0392b/FFFFFF?text=ALA+MINUTA";
-      }}
-    />
-  </div>
-);
-
-const TilinhoImage3Scene = () => (
-  <div
-    id="tilinho-image3-section"
-    className="animation-section tilinho-image-scene"
-  >
-    <img
-      src="xis2.png"
-      alt="Outro Xis do Tilinho Lanches"
-      className="tilinho-food-image"
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        target.onerror = null;
-        target.src = "https://placehold.co/1200x800/c0392b/FFFFFF?text=XIS+2";
-      }}
-    />
+    <div className="tilinho-combined-container">
+      <img
+        src="ala-minuta.png"
+        alt="Ala Minuta do Tilinho Lanches"
+        className="tilinho-food-image-left"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src =
+            "https://placehold.co/1200x800/c0392b/FFFFFF?text=ALA+MINUTA";
+        }}
+      />
+      <img
+        src="Batatinha Tilinho.jpeg"
+        alt="Batatinha do Tilinho Lanches"
+        className="tilinho-food-image-right"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://placehold.co/1200x800/c0392b/FFFFFF?text=BATATINHA";
+        }}
+      />
+    </div>
   </div>
 );
 
@@ -358,6 +300,342 @@ const TilinhoQRCodeScene = () => (
   </div>
 );
 
+// --- Componentes do Anúncio Ana Rose Esmalteria ---
+const AnaRoseIntroScene = () => (
+  <div
+    id="ana-rose-intro-section"
+    className="animation-section ana-rose-intro-section"
+  >
+    <h1 className="ana-rose-title">Unhas Perfeitas em Qualquer Ocasião</h1>
+    <div className="ana-rose-logo-container">
+      <img
+        src="Rosa.jpeg"
+        alt="Ana Rose Esmalteria"
+        className="ana-rose-logo"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://placehold.co/400x400/f06292/ffffff?text=ANA+ROSE";
+        }}
+      />
+    </div>
+    <h2 className="ana-rose-subtitle">Especialista em Manicure e Nail Designer</h2>
+  </div>
+);
+
+const AnaRoseShowcaseScene = () => (
+  <div
+    id="ana-rose-showcase-section"
+    className="animation-section ana-rose-showcase-section"
+  >
+    <div className="ana-rose-work-container">
+      <div className="ana-rose-work-image-container">
+        <img
+          src="unhas.png"
+          alt="Design de Unhas Ana Rose"
+          className="ana-rose-work-image"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = "https://placehold.co/600x400/f06292/ffffff?text=DESIGN+DE+UNHAS";
+          }}
+        />
+        <div className="ana-rose-image-overlay">
+          <span>Nail Art Premium</span>
+        </div>
+      </div>
+
+      <div className="ana-rose-work-image-container">
+        <img
+          src="unhas2.png"
+          alt="Unhas Decoradas Ana Rose"
+          className="ana-rose-work-image"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = "https://placehold.co/600x400/f06292/ffffff?text=UNHAS+DECORADAS";
+          }}
+        />
+        <div className="ana-rose-image-overlay">
+          <span>Designs Exclusivos</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="ana-rose-features">
+      <div className="ana-rose-feature">
+        <div className="ana-rose-feature-icon">💅</div>
+        <div className="ana-rose-feature-text">Alongamentos</div>
+      </div>
+      <div className="ana-rose-feature">
+        <div className="ana-rose-feature-icon">✨</div>
+        <div className="ana-rose-feature-text">Nail Art</div>
+      </div>
+      <div className="ana-rose-feature">
+        <div className="ana-rose-feature-icon">💎</div>
+        <div className="ana-rose-feature-text">Esmaltação em Gel</div>
+      </div>
+    </div>
+  </div>
+);
+
+const AnaRoseCtaScene = () => (
+  <div
+    id="ana-rose-cta-section"
+    className="animation-section ana-rose-cta-section"
+  >
+    <h2 className="ana-rose-cta-headline">Agende seu Horário</h2>
+    <p className="ana-rose-cta-text">Transforme suas mãos em uma obra de arte!</p>
+
+    <div className="ana-rose-contact">
+      <div className="ana-rose-contact-item">
+        <div className="ana-rose-contact-icon">📱</div>
+        <div className="ana-rose-contact-text">(53) 99109-5009</div>
+      </div>
+      <div className="ana-rose-contact-item">
+        <div className="ana-rose-contact-icon">📍</div>
+        <div className="ana-rose-contact-text">Rua Avenida Rio Grande 595 - Cassino</div>
+      </div>
+      <div className="ana-rose-contact-item">
+        <div className="ana-rose-contact-icon">📸</div>
+        <div className="ana-rose-contact-text">@anarosaesmalteria_naildesigner</div>
+      </div>
+    </div>
+
+    <div className="ana-rose-cta-button-container">
+      <div className="ana-rose-cta-button">AGENDE AGORA</div>
+    </div>
+  </div>
+);
+
+const JoaoDeBarroStudioPriceScene = () => (
+  <div id="joao-barro-price-section" className="animation-section joao-barro-section">
+    <div className="joao-barro-content">
+      <div className="studio-header">
+        <img
+          src="joao.png"
+          alt="João de Barro Studio"
+          className="studio-logo"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src =
+              "https://placehold.co/600x600/8B4513/FFFFFF?text=JOÃO+DE+BARRO";
+          }}
+        />
+        <div className="studio-title-container">
+          <h2 className="studio-title">JOÃO DE BARRO STUDIO</h2>
+          <p className="studio-subtitle">TABELA DE PREÇOS</p>
+        </div>
+      </div>
+
+      <div className="price-table-container">
+        <div className="price-category">
+          <h3 className="price-category-title">BEBIDAS</h3>
+          <div className="price-items">
+            <div className="price-item">
+              <span className="price-service">Budweiser</span>
+              <span className="price-value">R$ 8,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Eisenbahn</span>
+              <span className="price-value">R$ 8,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Heineken e Stella</span>
+              <span className="price-value">R$ 9,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Corona</span>
+              <span className="price-value">R$ 10,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Refrigerantes</span>
+              <span className="price-value">R$ 5,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Água</span>
+              <span className="price-value">R$ 4,00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="price-category">
+          <h3 className="price-category-title">CORTES</h3>
+          <div className="price-items">
+            <div className="price-item">
+              <span className="price-service">Navalhado</span>
+              <span className="price-value">R$ 40,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Tesoura</span>
+              <span className="price-value">R$ 40,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Normal</span>
+              <span className="price-value">R$ 35,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Básico</span>
+              <span className="price-value">R$ 30,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Corte Infantil</span>
+              <span className="price-value">R$ 45,00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="price-category">
+          <h3 className="price-category-title">OUTROS</h3>
+          <div className="price-items">
+            <div className="price-item">
+              <span className="price-service">Barba</span>
+              <span className="price-value">R$ 30,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Pézinho</span>
+              <span className="price-value">R$ 15,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Sobrancelha</span>
+              <span className="price-value">R$ 15,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Relaxamento capilar</span>
+              <span className="price-value">R$ 60,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Ajuste de barba</span>
+              <span className="price-value">R$ 20,00</span>
+            </div>
+            <div className="price-item">
+              <span className="price-service">Luzes</span>
+              <span className="price-value">R$ 100,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="studio-contact">
+        <p className="contact-info">📞 99204-9016</p>
+        <p className="contact-info">📱 @joaodebarrobarber</p>
+      </div>
+    </div>
+  </div>
+);
+
+// --- Componentes do Anúncio Vip Veículos ---
+const VipVeiculosIntroScene = () => (
+  <div
+    id="vip-veiculos-intro-section"
+    className="animation-section vip-veiculos-intro-section"
+  >
+    <h1 className="vip-veiculos-title">Seu Carro Novo Está Aqui</h1>
+    <div className="vip-veiculos-logo-container">
+      <img
+        src="Vip.jpeg"
+        alt="Vip Veículos"
+        className="vip-veiculos-logo"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://placehold.co/400x400/0a4b78/ffffff?text=VIP+VEÍCULOS";
+        }}
+      />
+    </div>
+    <h2 className="vip-veiculos-subtitle">15 anos de excelência em Rio Grande</h2>
+  </div>
+);
+
+const VipVeiculosShowcaseScene = () => (
+  <div
+    id="vip-veiculos-showcase-section"
+    className="animation-section vip-veiculos-showcase-section"
+  >
+    <h2 className="vip-veiculos-showcase-title">Te ajudamos a tomar a melhor decisão para sua família</h2>
+    <div className="vip-veiculos-testimonials">
+      <div className="vip-veiculos-testimonial">
+        <img
+          src="Cliente1.jpg" 
+          alt="Cliente Satisfeito Vip Veículos"
+          className="vip-veiculos-client-image"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = "https://placehold.co/600x400/0a4b78/ffffff?text=CLIENTE+SATISFEITO";
+          }}
+        />
+        <div className="vip-veiculos-testimonial-overlay">
+          <span>"Ambiente familiar e aconchegante!"</span>
+        </div>
+      </div>
+      <div className="vip-veiculos-testimonial">
+        <img
+          src="Cliente2.jpg"
+          alt="Cliente Satisfeito Vip Veículos"
+          className="vip-veiculos-client-image"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = "https://placehold.co/600x400/0a4b78/ffffff?text=CLIENTE+SATISFEITO";
+          }}
+        />
+        <div className="vip-veiculos-testimonial-overlay">
+          <span>"Atendimento nota 10!"</span>
+        </div>
+      </div>
+    </div>
+    <div className="vip-veiculos-slogan-container">
+      <p className="vip-veiculos-slogan">"A certeza de uma ótima compra"</p>
+    </div>
+  </div>
+);
+
+const VipVeiculosCtaScene = () => (
+  <div
+    id="vip-veiculos-cta-section"
+    className="animation-section vip-veiculos-cta-section"
+  >
+    <h2 className="vip-veiculos-cta-headline">Está na Hora de Trocar de Carro?</h2>
+    <p className="vip-veiculos-cta-text">Condições especiais de financiamento e avaliação do seu usado!</p>
+    
+    <div className="vip-veiculos-benefits">
+      <div className="vip-veiculos-benefit">
+        <div className="vip-veiculos-benefit-icon">✓</div>
+        <div className="vip-veiculos-benefit-text">Carros de qualidade</div>
+      </div>
+      <div className="vip-veiculos-benefit">
+        <div className="vip-veiculos-benefit-icon">✓</div>
+        <div className="vip-veiculos-benefit-text">Respeito e seriedade</div>
+      </div>
+      <div className="vip-veiculos-benefit">
+        <div className="vip-veiculos-benefit-icon">✓</div>
+        <div className="vip-veiculos-benefit-text">Desde 2008 no mercado</div>
+      </div>
+    </div>
+
+    <div className="vip-veiculos-contact">
+      <div className="vip-veiculos-contact-item">
+        <div className="vip-veiculos-contact-icon">📱</div>
+        <div className="vip-veiculos-contact-text">(53) 99104-3340</div>
+      </div>
+      <div className="vip-veiculos-contact-item">
+        <div className="vip-veiculos-contact-icon">📍</div>
+        <div className="vip-veiculos-contact-text">Av. Santos Dumont, 80 - Vila Juncao</div>
+      </div>
+      <div className="vip-veiculos-contact-item">
+        <div className="vip-veiculos-contact-icon">📸</div>
+        <div className="vip-veiculos-contact-text">@vipveiculos_</div>
+      </div>
+    </div>
+
+    <div className="vip-veiculos-cta-button-container">
+      <div className="vip-veiculos-cta-button">VISITE NOSSA LOJA</div>
+    </div>
+  </div>
+);
+
 // --- Componente Principal ---
 
 export default function Anuncios() {
@@ -375,28 +653,35 @@ export default function Anuncios() {
       // Reset after a brief pause for smooth transition
       setTimeout(() => {
         setIsPlaying(true);
-      }, 500); // Increased to 1 second for smoother transition
+      }, 500); // Increased to 0.5 second for smoother transition
     }, TOTAL_DURATION);
 
     return () => {
       clearInterval(loopInterval);
     };
   }, []);
+
   return (
     <div className={`video-container ${isPlaying ? "is-playing" : ""}`}>
+      <VipVeiculosIntroScene />
+      <VipVeiculosShowcaseScene />
+      <VipVeiculosCtaScene />
+      <TilinhoImage1Scene />
+      <TilinhoImage2And3Scene />
+      <TilinhoHungryScene />      
+      <TilinhoFinalScene />
+      <TilinhoQRCodeScene />
+      <AnaRoseIntroScene />
+      <AnaRoseShowcaseScene />
+      <AnaRoseCtaScene />
+      <JoaoDeBarroStudioPriceScene />
+      <AdScene />
+      <AdScene2 />
+      <AdScene3 />
       <LogoBenefitsScene />
       <FeaturesScene />
       <TestimonialScene />
       <CtaScene />
-      <TilinhoImage1Scene />
-      <TilinhoImage2Scene />
-      <TilinhoImage3Scene />
-      <TilinhoHungryScene />      <TilinhoFinalScene />
-      <TilinhoQRCodeScene />
-      <AdScene />
-      <AdScene2 />
-      <AdScene3 />
-      {/* <JoaoDeBarroStudioScene /> */}
     </div>
   );
 }
