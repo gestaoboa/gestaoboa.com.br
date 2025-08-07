@@ -452,7 +452,7 @@ const Home: FunctionComponent = () => {
 
                   <div className="card carousel-card">
                     <img
-                      src="/PedroArthur.png"
+                      src="/PedroArthur.jpg"
                       alt="Pedro Arthur"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -481,83 +481,6 @@ const Home: FunctionComponent = () => {
                   </div>
 
                   {/* Duplicate cards for infinite scroll effect */}
-                  <div className="card carousel-card">
-                    <img
-                      src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg"
-                      alt="Janaina Christello"
-                    />
-                    <div className="texts">
-                      <div className="title">
-                        Ficou mais fácil organizar minhas finanças
-                      </div>
-                      <div className="desc">
-                        O aplicativo ajudou muito a organizar os meus
-                        recebimentos e entender quais são os lucros e despesas
-                        de forma muito clara e objetiva. Além de conseguir
-                        abranger vários objetivos em um só APP como organizar
-                        agendamentos que antes usava o Google agenda e também
-                        organizar os recebimentos que antes usava o Excel. Assim
-                        se torna muito mais prático e organizado as minhas
-                        finanças.
-                      </div>
-                      <div className="person">
-                        - Janaina Christello, Psicóloga
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="card carousel-card">
-                    <img
-                      src="/pedroCirilo.png"
-                      alt="Pedro Cirilo"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src =
-                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PC";
-                      }}
-                    />
-                    <div className="texts">
-                      <div className="title">Grandes parceiros</div>
-                      <div className="desc">
-                        A equipe é extremamente profissional. Entendem muito bem
-                        as demandas e estão sempre atualizados. Já trabalhei com
-                        eles na construção de outras plataformas e sites e foram
-                        impecáveis! Tenho como grandes parceiros!
-                      </div>
-                      <div className="person">- Pedro Cirilo, Designer</div>
-                    </div>
-                  </div>
-
-                  <div className="card carousel-card">
-                    <img
-                      src="/PedroArthur.jpg"
-                      alt="Pedro Arthur"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src =
-                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PA";
-                      }}
-                    />
-                    <div className="texts">
-                      <div className="title">Controle total do negócio</div>
-                      <div className="desc">
-                        O app da gestão boa vem me ajudando muito desde o
-                        primeiro dia, consigo saber com exatidão quantos
-                        clientes eu tenho e atendo, faturamento, venda de
-                        produtos, etc. Comecei a ter controle não só dos cortes,
-                        mas das vendas dos produtos e dos custos. E hoje eu
-                        tenho controle do quanto custa cada corte, isso é muito
-                        importante, até para precificar os serviços. A atenção
-                        do suporte também é um ponto importante de citar, sempre
-                        tiram as dúvidas e resolvem o que precisa com rapidez.
-                      </div>
-                      <div className="person">
-                        - Pedro Arthur, Proprietário da Prime Barbershop
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -656,11 +579,17 @@ const Home: FunctionComponent = () => {
             <h2 className="section-title text-center">Perguntas Frequentes</h2>
             <div className="faq-container">
               <details className="faq-item">
-                <summary>Quanto tempo leva para implementar o sistema?</summary>
+                <summary>
+                  O que é a Gestão boa e como ela pode me ajudar?
+                </summary>
                 <p>
-                  A implementação básica pode ser feita em apenas 24 horas. Para
-                  configurações mais personalizadas, podemos levar até 3 dias
-                  úteis.
+                  A Gestão boa é uma plataforma completa de gestão para o seu
+                  negócio. Nós centralizamos tudo o que você precisa em um só
+                  lugar: agendamentos online, controle de fluxo de caixa, gestão
+                  de clientes (CRM), pagamento de comissões, controle de estoque
+                  e muito mais. Nosso objetivo é que você tenha mais tempo e
+                  possa tomar decisões inteligentes e fazer sua empresa crescer
+                  com segurança e tecnologia.
                 </p>
               </details>
 
@@ -678,6 +607,48 @@ const Home: FunctionComponent = () => {
                   Sim! A Gestão Boa é totalmente responsiva e funciona
                   perfeitamente em smartphones e tablets, além de contar com
                   aplicativos nativos para iOS e Android.
+                </p>
+              </details>
+
+              <details className="faq-item">
+                <summary>
+                  {" "}
+                  Quais são os planos? Existe um período de teste?
+                </summary>
+                <p>
+                  Temos planos flexíveis que se adaptam ao tamanho e à
+                  necessidade do seu negócio, começando em R$ 49,90 e indo até
+                  R$ 99,90 por mês. Todos os planos incluem as funcionalidades
+                  essenciais para uma gestão de ponta. E você pode experimentar
+                  gratuitamente por 20 dias, sem necessidade de cartão de
+                  crédito!
+                </p>
+              </details>
+
+              <details className="faq-item">
+                <summary>
+                  Preciso ter conhecimento técnico para usar o sistema? Como
+                  funciona a implantação?
+                </summary>
+                <p>
+                  Não! Nossa plataforma é 100% intuitiva e foi pensada para o
+                  dia a dia do empreendedor, não para especialistas em
+                  tecnologia. A implantação é simples e nossa equipe está pronta
+                  para te auxiliar nos primeiros passos, garantindo que você e
+                  seus funcionários consigam usar todas as ferramentas desde o
+                  primeiro dia.
+                </p>
+              </details>
+
+              <details className="faq-item">
+                <summary>
+                  O sistema é seguro? Meus dados ficam protegidos?
+                </summary>
+                <p>
+                  Sim! Utilizamos criptografia de ponta a ponta, servidores
+                  seguros com certificação SSL e backup automático diário. Seus
+                  dados são protegidos por protocolos de segurança bancária e
+                  nunca são compartilhados com terceiros.
                 </p>
               </details>
             </div>

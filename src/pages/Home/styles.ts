@@ -503,14 +503,18 @@ export const Solutions = styled.div`
 
   .testimonies .card {
     display: flex;
-    width: 80%;
+    width: 85%;
     border-radius: 20px;
     box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
   }
 
-  .testimonies .card img,
+  .testimonies .card img {
+    object-fit: cover;
+    border-radius: 20px 0px 0px 20px;
+  }
   .testimonies .card video {
+    height: 700px;
     width: 450px;
     object-fit: cover;
     border-radius: 20px 0px 0px 20px;

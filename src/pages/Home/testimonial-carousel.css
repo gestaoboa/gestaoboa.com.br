@@ -17,14 +17,14 @@
 .testimonials-track {
   display: flex;
   animation: scrollTestimonials 15s linear infinite;
-  gap: 2rem;
+  gap: 7rem;
   width: calc(200% + 4rem); /* Double width for seamless loop */
 }
 
 /* Individual carousel cards */
 .carousel-card {
-  flex: 0 0 calc(33.333% - 1.33rem); /* Show 3 cards at a time */
-  min-width: 350px;
+  flex: 0 0 calc(29%); /* Show 3 cards at a time */
+  min-width: 300px;
   box-sizing: border-box;
   height: 350px;
 }
