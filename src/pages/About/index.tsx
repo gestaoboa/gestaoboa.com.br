@@ -49,13 +49,13 @@ const About = () => {
               <button
                 className="primary-button"
                 onClick={() =>
-                  window.open("https://beasier.vercel.app", "_blank")
+                  window.open("https://app.gestaoboa.com.br", "_blank")
                 }
               >
-                Nossa solução
+                Testar grátis
               </button>
               <button className="secondary-button" onClick={handleDemoClick}>
-                Agendar demo
+                Falar com suporte
               </button>
             </div>
           </div>
@@ -69,6 +69,24 @@ const About = () => {
               "Nossa missão é democratizar o acesso à tecnologia de gestão,
               tornando simples o que antes era complexo."
             </p>
+          </div>
+        </section>
+
+        {/* Awards Section */}
+        <section className="awards-section">
+          <div className="awards-container">
+            <div className="award-pair">
+              <div className="award-number">1°</div>
+              <div className="award-text">
+                Colocada na pré-incubação de Rio Grande (2023)
+              </div>
+            </div>
+            <div className="award-pair">
+              <div className="award-number">2°</div>
+              <div className="award-text">
+                Acelerada no 5° ciclo do startup in lab Fecormécio-RS (2024)
+              </div>
+            </div>
           </div>
         </section>
 
@@ -321,6 +339,69 @@ const About = () => {
           </div>
         </section>
 
+        {/* Team Members Scroll Section */}
+        <section className="content-section team-members-section">
+          <div className="section-header">
+            <span className="section-badge">Nossa Equipe</span>
+            <h2>Equipe de alta performance</h2>
+            <p className="section-subtitle">
+              Conheça os talentos que fazem a Gestão Boa acontecer todos os dias
+            </p>
+          </div>
+
+          <div className="team-scroll-container fade-in">
+            <div className="team-scroll-track">
+              <div className="team-member-card">
+                <img src="/bruno.png" alt="Bruno Nascimento" />
+                <div className="member-info">
+                  <h3 className="member-name">Bruno Nascimento</h3>
+                  <span className="member-role">Tech Lead</span>
+                </div>
+              </div>
+
+              <div className="team-member-card">
+                <img src="/Bruno W.jpg" alt="Bruno Wellar" />
+                <div className="member-info">
+                  <h3 className="member-name">Bruno Wellar</h3>
+                  <span className="member-role">Desenvolvedor Mobile</span>
+                </div>
+              </div>
+
+              <div className="team-member-card">
+                <img src="/kaiane.jpeg" alt="Kaiane Bittencourt" />
+                <div className="member-info">
+                  <h3 className="member-name">Kaiane Bittencourt</h3>
+                  <span className="member-role">Gestora de Marketing</span>
+                </div>
+              </div>
+
+              <div className="team-member-card">
+                <img src="/eduardo.jpg" alt="Eduardo Gonçalves" />
+                <div className="member-info">
+                  <h3 className="member-name">Eduardo Gonçalves</h3>
+                  <span className="member-role">Desenvolvedor Mobile</span>
+                </div>
+              </div>
+
+              <div className="team-member-card">
+                <img src="/Py.jpg" alt="Gustavo Py" />
+                <div className="member-info">
+                  <h3 className="member-name">Gustavo Py</h3>
+                  <span className="member-role">Desenvolvedor Backend</span>
+                </div>
+              </div>
+
+              <div className="team-member-card">
+                <img src="/Fernando.jpeg" alt="Fernando Glaeser" />
+                <div className="member-info">
+                  <h3 className="member-name">Fernando Glaeser</h3>
+                  <span className="member-role">Desenvolvedor backend</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Updated Culture Section */}
         <section className="content-section culture-section">
           <div className="section-header">
@@ -382,7 +463,7 @@ const About = () => {
                 window.open("https://beasier.vercel.app", "_blank")
               }
             >
-              Começar agora
+              Teste Grátis
             </button>
             <button className="cta-button secondary" onClick={handleDemoClick}>
               Falar com especialista

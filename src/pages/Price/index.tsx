@@ -155,7 +155,7 @@ const Price = () => {
                 setShowRegistrationForm(true);
               }}
             >
-              COMECE AGORA!
+              TESTE GRATIS POR 20 DIAS!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -165,7 +165,10 @@ const Price = () => {
                 <span className="check-icon">✔</span> Finanças
               </li>
               <li>
-                <span className="check-icon">✔</span> Gráficos
+                <span className="check-icon">✔</span> Gestão de estoque
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Relatórios
               </li>
               <li>
                 <span className="check-icon">✔</span> Suporte via WhatsApp
@@ -240,7 +243,7 @@ const Price = () => {
                 setShowRegistrationForm(true);
               }}
             >
-              COMECE AGORA!
+              TESTE GRATIS POR 20 DIAS!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -250,7 +253,10 @@ const Price = () => {
                 <span className="check-icon">✔</span> Finanças
               </li>
               <li>
-                <span className="check-icon">✔</span> Gráficos
+                <span className="check-icon">✔</span> Gestão de estoque
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Relatórios
               </li>
               <li>
                 <span className="check-icon">✔</span> Suporte via WhatsApp
@@ -325,7 +331,7 @@ const Price = () => {
                 setShowRegistrationForm(true);
               }}
             >
-              COMECE AGORA!
+              TESTE GRATIS POR 20 DIAS!
             </button>{" "}
             <ul className="benefits-list">
               <li>
@@ -335,7 +341,10 @@ const Price = () => {
                 <span className="check-icon">✔</span> Finanças
               </li>
               <li>
-                <span className="check-icon">✔</span> Gráficos
+                <span className="check-icon">✔</span> Gestão de estoque
+              </li>
+              <li>
+                <span className="check-icon">✔</span> Relatórios
               </li>
               <li>
                 <span className="check-icon">✔</span> Suporte via WhatsApp

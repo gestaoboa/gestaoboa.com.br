@@ -15,15 +15,10 @@ import { FB_PIXEL } from "../../utils/pixel";
 
 import { Helmet } from "react-helmet-async";
 import ReactPlayer from "react-player";
-import {
-  Awards,
-  Banner,
-  Contact,
-  Container,
-  Grid,
-  Solutions,
-  Team,
-} from "./styles";
+import { Banner, Contact, Container, FAQ, Grid, Solutions } from "./styles";
+
+// Import the carousel styles
+import "./testimonial-carousel.css";
 
 const Home: FunctionComponent = () => {
   const formRef = useRef<FormHandles>(null);
@@ -41,7 +36,7 @@ const Home: FunctionComponent = () => {
 
     // Configurar rastreamento de scrolls para seções importantes
     const handleScroll = () => {
-      const sections = ["solution", "team", "contact", "demonstration"];
+      const sections = ["solution", "contact", "demonstration"];
       sections.forEach((section) => {
         const element = document.getElementById(section);
         if (
@@ -135,18 +130,6 @@ const Home: FunctionComponent = () => {
     }
   };
 
-  const scrollTeam = (direction: "left" | "right") => {
-    const container = document.querySelector(".items");
-    if (container) {
-      const scrollAmount = container.clientWidth;
-      if (direction === "left") {
-        container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      } else {
-        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
-    }
-  };
-
   // Funções para rastreamento de eventos do Facebook Pixel
   const trackAppDownload = (platform: string) => {
     FB_PIXEL.trackCustomEvent("AppDownloadClick", { platform });
@@ -184,14 +167,28 @@ const Home: FunctionComponent = () => {
               <div className="buttons">
                 <a
                   className="button"
-                  href="#demonstration"
-                  title="Começar agora"
+                  style={{ textDecoration: "none" }}
+                  href="/preco"
+                  title="TESTAR GRÁTIS"
                 >
                   <Button
                     width="100%"
-                    text="COMEÇAR AGORA!"
+                    text="TESTAR GRÁTIS!"
                     method={() => {}}
                     type={"focused"}
+                  />
+                </a>
+                <a
+                  className="button"
+                  style={{ textDecoration: "none" }}
+                  href="/solution"
+                  title="SAIBA MAIS"
+                >
+                  <Button
+                    width="100%"
+                    text="SAIBA MAIS"
+                    method={() => {}}
+                    type={"unfocused"}
                   />
                 </a>
               </div>
@@ -201,27 +198,6 @@ const Home: FunctionComponent = () => {
               <img className="elipse" src="/Ellipse.svg" alt="" />
             </div>
           </Banner>
-
-          <Awards>
-            <div className="item">
-              <div className="award-pair">
-                <div className="number">1°</div>
-                <div className="text">
-                  Colocada na pré-incubação de Rio Grande (2023)
-                </div>
-              </div>
-              <div className="award-pair">
-                <div className="number">2°</div>
-                <div className="text">
-                  Acelerada no 5° ciclo do startup in lab Fecormécio-RS (2024)
-                </div>
-              </div>
-              <div className="award-pair">
-                <div className="number">+3000</div>
-                <div className="text">Comandas registradas no app</div>
-              </div>
-            </div>
-          </Awards>
 
           <Solutions id="solution">
             <div className="solutionBanner">
@@ -239,6 +215,18 @@ const Home: FunctionComponent = () => {
                   <div className="subtitle">
                     Mantenha seus compromissos sempre à mão.
                   </div>
+                  <a
+                    href="/solution#agenda"
+                    className="benefit-button"
+                    title="Saiba mais sobre Agenda Simplificada"
+                  >
+                    <Button
+                      width="120px"
+                      text="Saiba mais"
+                      method={() => {}}
+                      type={"unfocused"}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="benefit">
@@ -251,6 +239,18 @@ const Home: FunctionComponent = () => {
                     Controle seu estoque, e tenha uma análise completa sobre as
                     vendas dos seus produtos.
                   </div>
+                  <a
+                    href="/solution#produtos"
+                    className="benefit-button"
+                    title="Saiba mais sobre Gerenciamento e vendas de produtos"
+                  >
+                    <Button
+                      width="120px"
+                      text="Saiba mais"
+                      method={() => {}}
+                      type={"unfocused"}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="benefit">
@@ -262,6 +262,18 @@ const Home: FunctionComponent = () => {
                     nosso app você pode já registrar quanto e quando vai pagar
                     seus boletos.
                   </div>
+                  <a
+                    href="/solution#financeiro"
+                    className="benefit-button"
+                    title="Saiba mais sobre Controle de Custos"
+                  >
+                    <Button
+                      width="120px"
+                      text="Saiba mais"
+                      method={() => {}}
+                      type={"unfocused"}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="benefit">
@@ -271,6 +283,18 @@ const Home: FunctionComponent = () => {
                   <div className="subtitle">
                     Acompanhe entradas e saídas por método de pagamento.
                   </div>
+                  <a
+                    href="/solution#financeiro"
+                    className="benefit-button"
+                    title="Saiba mais sobre Gestão Financeira"
+                  >
+                    <Button
+                      width="120px"
+                      text="Saiba mais"
+                      method={() => {}}
+                      type={"unfocused"}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="benefit">
@@ -280,6 +304,18 @@ const Home: FunctionComponent = () => {
                   <div className="subtitle">
                     Visualize resultados e tome decisões baseadas em dados.
                   </div>
+                  <a
+                    href="/solution#analytics"
+                    className="benefit-button"
+                    title="Saiba mais sobre Análises Detalhadas"
+                  >
+                    <Button
+                      width="120px"
+                      text="Saiba mais"
+                      method={() => {}}
+                      type={"unfocused"}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="benefit">
@@ -289,8 +325,36 @@ const Home: FunctionComponent = () => {
                   <div className="subtitle">
                     Automatize mensagens e crie relacionamentos duradouros.
                   </div>
+                  <a
+                    href="/solution#clientes"
+                    className="benefit-button"
+                    title="Saiba mais sobre Fidelização do Cliente"
+                  >
+                    <Button
+                      width="120px"
+                      text="Saiba mais"
+                      method={() => {}}
+                      type={"unfocused"}
+                    />
+                  </a>
                 </div>
               </div>
+            </div>
+
+            {/* Botão Experimente gratuitamente */}
+            <div className="try-free-button-container">
+              <a
+                className="try-free-button"
+                href="/preco"
+                title="EXPERIMENTE GRATUITAMENTE"
+              >
+                <Button
+                  width="100%"
+                  text="EXPERIMENTE GRATUITAMENTE"
+                  method={() => {}}
+                  type={"focused"}
+                />
+              </a>
             </div>
 
             <div className="testimonies">
@@ -298,25 +362,9 @@ const Home: FunctionComponent = () => {
                 Empreendedores de sucesso já contam com nossa solução: organize,
                 cresça e fidelize seus clientes!
               </div>
-              <div className="card">
-                <img src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg" alt="" />
-                <div className="texts">
-                  <div className="title">
-                    Ficou mais fácil organizar minhas finanças
-                  </div>
-                  <div className="desc">
-                    O aplicativo ajudou muito a organizar os meus recebimentos e
-                    entender quais são os lucros e despesas de forma muito clara
-                    e objetiva. Além de conseguir abranger vários objetivos em
-                    um só APP como organizar agendamentos que antes usava o
-                    Google agenda e também organizar os recebimentos que antes
-                    usava o Excel. Assim se torna muito mais prático e
-                    organizado as minhas finanças.
-                  </div>
-                  <div className="person">- Janaina Christello, Psicóloga</div>
-                </div>
-              </div>{" "}
-              <div className="card">
+
+              {/* Leandro's testimonial - fixed */}
+              <div className="card featured-testimonial">
                 <video
                   controls
                   onPlay={() =>
@@ -336,14 +384,179 @@ const Home: FunctionComponent = () => {
                   Seu navegador não suporta vídeos.
                 </video>
                 <div className="texts">
-                  <div className="title">Muito fácil de operar</div>
+                  <div className="title">Uso e recomendo</div>
                   <div className="desc">
-                    Fiquei muito feliz com uma coisa que eu não sabia: o
-                    barbeiro consegue lançar no caixa a comanda pelo celular
-                    dele. Muito prático!
+                    Se tem uma coisa que mudou o jogo aqui na minha barbearia
+                    foi começar a usar o Gestão Boa. Antes era tudo no papel, na
+                    cabeça ou em planilhas. Hoje eu tenho clareza total dos
+                    números, consigo tomar decisões mais inteligentes e garantir
+                    a saúde financeira da barbearia. Eu uso e indico para
+                    qualquer barbearia que queira crescer com gestão.
                   </div>
                   <div className="person">
-                    - Leandro Figueiredo, Proprietário de Barbearia
+                    - Leandro Figueiredo, Proprietário da Barbearia Duque
+                  </div>
+                </div>
+              </div>
+
+              {/* Other testimonials carousel */}
+              <div className="testimonials-carousel">
+                <div className="testimonials-track">
+                  <div className="card carousel-card">
+                    <img
+                      src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg"
+                      alt="Janaina Christello"
+                    />
+                    <div className="texts">
+                      <div className="title">
+                        Ficou mais fácil organizar minhas finanças
+                      </div>
+                      <div className="desc">
+                        O aplicativo ajudou muito a organizar os meus
+                        recebimentos e entender quais são os lucros e despesas
+                        de forma muito clara e objetiva. Além de conseguir
+                        abranger vários objetivos em um só APP como organizar
+                        agendamentos que antes usava o Google agenda e também
+                        organizar os recebimentos que antes usava o Excel. Assim
+                        se torna muito mais prático e organizado as minhas
+                        finanças.
+                      </div>
+                      <div className="person">
+                        - Janaina Christello, Psicóloga
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="card carousel-card">
+                    <img
+                      src="/pedroCirilo.png"
+                      alt="Pedro Cirilo"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src =
+                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PC";
+                      }}
+                    />
+                    <div className="texts">
+                      <div className="title">Grandes parceiros</div>
+                      <div className="desc">
+                        A equipe é extremamente profissional. Entendem muito bem
+                        as demandas e estão sempre atualizados. Já trabalhei com
+                        eles na construção de outras plataformas e sites e foram
+                        impecáveis! Tenho como grandes parceiros!
+                      </div>
+                      <div className="person">- Pedro Cirilo, Designer</div>
+                    </div>
+                  </div>
+
+                  <div className="card carousel-card">
+                    <img
+                      src="/PedroArthur.png"
+                      alt="Pedro Arthur"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src =
+                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PA";
+                      }}
+                    />
+                    <div className="texts">
+                      <div className="title">Controle total do negócio</div>
+                      <div className="desc">
+                        O app da gestão boa vem me ajudando muito desde o
+                        primeiro dia, consigo saber com exatidão quantos
+                        clientes eu tenho e atendo, faturamento, venda de
+                        produtos, etc. Comecei a ter controle não só dos cortes,
+                        mas das vendas dos produtos e dos custos. E hoje eu
+                        tenho controle do quanto custa cada corte, isso é muito
+                        importante, até para precificar os serviços. A atenção
+                        do suporte também é um ponto importante de citar, sempre
+                        tiram as dúvidas e resolvem o que precisa com rapidez.
+                      </div>
+                      <div className="person">
+                        - Pedro Arthur, Proprietário da Prime Barbershop
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Duplicate cards for infinite scroll effect */}
+                  <div className="card carousel-card">
+                    <img
+                      src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg"
+                      alt="Janaina Christello"
+                    />
+                    <div className="texts">
+                      <div className="title">
+                        Ficou mais fácil organizar minhas finanças
+                      </div>
+                      <div className="desc">
+                        O aplicativo ajudou muito a organizar os meus
+                        recebimentos e entender quais são os lucros e despesas
+                        de forma muito clara e objetiva. Além de conseguir
+                        abranger vários objetivos em um só APP como organizar
+                        agendamentos que antes usava o Google agenda e também
+                        organizar os recebimentos que antes usava o Excel. Assim
+                        se torna muito mais prático e organizado as minhas
+                        finanças.
+                      </div>
+                      <div className="person">
+                        - Janaina Christello, Psicóloga
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="card carousel-card">
+                    <img
+                      src="/pedroCirilo.png"
+                      alt="Pedro Cirilo"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src =
+                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PC";
+                      }}
+                    />
+                    <div className="texts">
+                      <div className="title">Grandes parceiros</div>
+                      <div className="desc">
+                        A equipe é extremamente profissional. Entendem muito bem
+                        as demandas e estão sempre atualizados. Já trabalhei com
+                        eles na construção de outras plataformas e sites e foram
+                        impecáveis! Tenho como grandes parceiros!
+                      </div>
+                      <div className="person">- Pedro Cirilo, Designer</div>
+                    </div>
+                  </div>
+
+                  <div className="card carousel-card">
+                    <img
+                      src="/PedroArthur.jpg"
+                      alt="Pedro Arthur"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src =
+                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PA";
+                      }}
+                    />
+                    <div className="texts">
+                      <div className="title">Controle total do negócio</div>
+                      <div className="desc">
+                        O app da gestão boa vem me ajudando muito desde o
+                        primeiro dia, consigo saber com exatidão quantos
+                        clientes eu tenho e atendo, faturamento, venda de
+                        produtos, etc. Comecei a ter controle não só dos cortes,
+                        mas das vendas dos produtos e dos custos. E hoje eu
+                        tenho controle do quanto custa cada corte, isso é muito
+                        importante, até para precificar os serviços. A atenção
+                        do suporte também é um ponto importante de citar, sempre
+                        tiram as dúvidas e resolvem o que precisa com rapidez.
+                      </div>
+                      <div className="person">
+                        - Pedro Arthur, Proprietário da Prime Barbershop
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -375,7 +588,7 @@ const Home: FunctionComponent = () => {
                     <div className="or">ou</div>
 
                     <a
-                      href="https://beasier.vercel.app"
+                      href="https://app.gestaoboa.com.br"
                       className="unfocused"
                       onClick={() => trackAppDownload("iOS")}
                     >
@@ -388,7 +601,7 @@ const Home: FunctionComponent = () => {
                     </a>
                   </div>
                   <a
-                    href="https://beasier.vercel.app"
+                    href="https://app.gestaoboa.com.br"
                     className="focused"
                     onClick={trackDemonstrationClick}
                   >
@@ -438,98 +651,40 @@ const Home: FunctionComponent = () => {
             </div>
           </Solutions>
 
-          <Team id="team">
-            <div className="title">Nossa Equipe Extraordinária</div>
-            <div className="subtitle">
-              Conheça os profissionais apaixonados que fazem a Gestão Boa
-              acontecer todos os dias, transformando a maneira como os negócios
-              são gerenciados.
+          {/* FAQ Section */}
+          <FAQ id="faq">
+            <h2 className="section-title text-center">Perguntas Frequentes</h2>
+            <div className="faq-container">
+              <details className="faq-item">
+                <summary>Quanto tempo leva para implementar o sistema?</summary>
+                <p>
+                  A implementação básica pode ser feita em apenas 24 horas. Para
+                  configurações mais personalizadas, podemos levar até 3 dias
+                  úteis.
+                </p>
+              </details>
+
+              <details className="faq-item">
+                <summary>É possível migrar dados de outro sistema?</summary>
+                <p>
+                  Sim, oferecemos serviço de migração de dados de praticamente
+                  qualquer sistema existente para a Gestão Boa.
+                </p>
+              </details>
+
+              <details className="faq-item">
+                <summary>O sistema funciona em dispositivos móveis?</summary>
+                <p>
+                  Sim! A Gestão Boa é totalmente responsiva e funciona
+                  perfeitamente em smartphones e tablets, além de contar com
+                  aplicativos nativos para iOS e Android.
+                </p>
+              </details>
             </div>
-            <div className="scroll-container">
-              <button
-                className="scroll-button left"
-                onClick={() => scrollTeam("left")}
-              >
-                ←
-              </button>
-              <div className="items">
-                <div className="member">
-                  <img src="/silvio.png" alt="Silvio Quintana" />
-                  <div className="name">Silvio Quintana</div>
-                  <div className="subtitle">CEO</div>
-                  <div className="role-description">
-                    Líder visionário que coordena nossas estratégias e
-                    crescimento
-                  </div>
-                </div>
-                <div className="member">
-                  <img src="/karine.png" alt="Karine Quintana" />
-                  <div className="name">Karine Quintana</div>
-                  <div className="subtitle">CFO</div>
-                  <div className="role-description">
-                    Responsável por nossas estratégias de marketing e finanças
-                  </div>
-                </div>
-                <div className="member">
-                  <img src="/victor.png" alt="Victor Amaral" />
-                  <div className="name">Victor Amaral</div>
-                  <div className="subtitle">CTO</div>
-                  <div className="role-description">
-                    Lidera nossa inovação tecnológica e desenvolvimento de
-                    produtos
-                  </div>
-                </div>
-                <div className="member">
-                  <img src="/bruno.png" alt="Bruno Nascimento" />
-                  <div className="name">Bruno Nascimento</div>
-                  <div className="subtitle">Desenvolvedor back-end</div>
-                  <div className="role-description">
-                    Especialista em desenvolvimento de APIs e infraestrutura
-                  </div>
-                </div>
-                {/* <div className="member">
-                  <img src="/jonathan.png" alt="Jonathan Lima" />
-                  <div className="name">Jonathan Lima</div>
-                  <div className="subtitle">Tech Lead</div>
-                  <div className="role-description">
-                    Coordena nossa equipe técnica e arquitetura de software
-                  </div>
-                </div> */}
-                <div className="member">
-                  <img src="/Bruno W.jpg" alt="Bruno Wellar" />
-                  <div className="name">Bruno Wellar</div>
-                  <div className="subtitle">Desenvolvedor mobile</div>
-                  <div className="role-description">
-                    Especialista em desenvolvimento de aplicativos móveis
-                  </div>
-                </div>
-                <div className="member">
-                  <img src="/eduardo.jpg" alt="Eduardo Gonçalves" />
-                  <div className="name">Eduardo Gonçalves</div>
-                  <div className="subtitle">Desenvolvedor mobile</div>
-                  <div className="role-description">
-                    Desenvolvedor de interfaces e experiência mobile
-                  </div>
-                </div>
-                <div className="member">
-                  <img src="/Py.jpg" alt="Gustavo Py" />
-                  <div className="name">Gustavo Py</div>
-                  <div className="subtitle">Desenvolvedor Backend</div>
-                  <div className="role-description">
-                    Especialista em desenvolvimento de serviços backend
-                  </div>
-                </div>
-              </div>
-              <button
-                className="scroll-button right"
-                onClick={() => scrollTeam("right")}
-              >
-                →
-              </button>
-            </div>
-          </Team>
+          </FAQ>
 
           <Contact id="contact">
+            {/* */}
             <div className="info">
               <div className="title">
                 Entre em contato e acelere seu crescimento!
@@ -545,7 +700,13 @@ const Home: FunctionComponent = () => {
             <div className="space"></div>
 
             <div className="form">
-              <Form ref={formRef} onSubmit={handleSubmit} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              <Form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+              >
                 <div className="input-wrapper double">
                   <div className="label">Nome completo</div>
                   <CustomInput width="100%" name="name" placeholder="Nome" />
@@ -553,7 +714,7 @@ const Home: FunctionComponent = () => {
                 <div className="input-wrapper">
                   <div className="label">Email</div>
                   <CustomInput
-                    width="100%"
+                    width="98%"
                     name="email"
                     placeholder="seumelhoremail@mail.com"
                   />
@@ -561,7 +722,7 @@ const Home: FunctionComponent = () => {
                 <div className="input-wrapper">
                   <div className="label">Telefone</div>
                   <CustomInput
-                    width="100%"
+                    width="98%"
                     name="phone"
                     placeholder="(00) 00000-0000"
                   />

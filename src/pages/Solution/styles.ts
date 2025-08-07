@@ -14,12 +14,12 @@ export const Content = styled.main`
     color: white;
     text-align: center;
     padding: 100px 20px;
-    
+
     h1 {
       font-size: 48px;
       margin-bottom: 20px;
     }
-    
+
     p {
       font-size: 20px;
       opacity: 0.9;
@@ -36,9 +36,24 @@ export const Content = styled.main`
       align-items: center;
       gap: 40px;
       margin-bottom: 80px;
-      
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      scroll-margin-top: 120px; /* Ajuste para header fixo */
+
       &.reverse {
         flex-direction: row-reverse;
+      }
+
+      &.highlighted {
+        background: linear-gradient(
+          135deg,
+          rgba(3, 4, 94, 0.05) 0%,
+          rgba(2, 62, 138, 0.05) 100%
+        );
+        border: 2px solid rgba(3, 4, 94, 0.2);
+        transform: scale(1.02);
+        box-shadow: 0 12px 32px rgba(3, 4, 94, 0.15);
       }
 
       img {
@@ -91,7 +106,7 @@ export const Content = styled.main`
     background: #f8f9fa;
     text-align: center;
     padding: 80px 20px;
-    
+
     h2 {
       color: #03045e;
       font-size: 36px;
@@ -144,11 +159,11 @@ export const Content = styled.main`
   @media (max-width: 768px) {
     .hero {
       padding: 60px 20px;
-      
+
       h1 {
         font-size: 36px;
       }
-      
+
       p {
         font-size: 18px;
       }
@@ -159,9 +174,16 @@ export const Content = styled.main`
         flex-direction: column;
         gap: 20px;
         margin-bottom: 40px;
-        
+        padding: 15px;
+        scroll-margin-top: 100px; /* Ajuste para mobile */
+
         &.reverse {
           flex-direction: column;
+        }
+
+        &.highlighted {
+          transform: scale(1.01); /* Menos escala no mobile */
+          padding: 20px;
         }
 
         img {
@@ -193,14 +215,14 @@ export const Content = styled.main`
 
     .cta {
       padding: 60px 20px;
-      
+
       h2 {
         font-size: 28px;
       }
 
       .buttons {
         flex-direction: column;
-        
+
         a {
           width: 100%;
           text-align: center;
@@ -208,7 +230,7 @@ export const Content = styled.main`
       }
     }
   }
-  
+
   .faq {
     padding: 5rem 2rem;
     .faq-container {
@@ -232,7 +254,7 @@ export const Content = styled.main`
           }
 
           &::after {
-            content: '+';
+            content: "+";
             position: absolute;
             right: 1.2rem;
             top: 50%;

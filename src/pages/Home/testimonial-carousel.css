@@ -1,0 +1,101 @@
+/* Featured testimonial (Leandro) */
+.featured-testimonial {
+  margin-bottom: 3rem !important;
+  border: 2px solid #007BFF;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+}
+
+/* Testimonials carousel container */
+.testimonials-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem;
+}
+
+/* Testimonials track for sliding */
+.testimonials-track {
+  display: flex;
+  animation: scrollTestimonials 15s linear infinite;
+  gap: 2rem;
+  width: calc(200% + 4rem); /* Double width for seamless loop */
+}
+
+/* Individual carousel cards */
+.carousel-card {
+  flex: 0 0 calc(33.333% - 1.33rem); /* Show 3 cards at a time */
+  min-width: 350px;
+  box-sizing: border-box;
+  height: 350px;
+}
+
+/* Infinite scroll animation */
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.testimonials-carousel:hover .testimonials-track {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .carousel-card {
+    flex: 0 0 calc(50% - 1rem); /* Show 2 cards on tablets */
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-card {
+    flex: 0 0 calc(100% - 2rem); /* Show 1 card on mobile */
+    min-width: 280px;
+  }
+  
+  .testimonials-track {
+    gap: 1rem;
+    width: calc(200% + 2rem);
+  }
+  
+  @keyframes scrollTestimonials {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Smooth transition for better visual effect */
+.testimonials-track {
+  transition: transform 0.3s ease;
+}
+
+/* Add gradient fade effect on sides */
+.testimonials-carousel::before,
+.testimonials-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonials-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.testimonials-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
