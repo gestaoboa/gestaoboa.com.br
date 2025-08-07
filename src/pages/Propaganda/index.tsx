@@ -214,7 +214,8 @@ const TilinhoImage2And3Scene = () => (
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.onerror = null;
-          target.src = "https://placehold.co/1200x800/c0392b/FFFFFF?text=BATATINHA";
+          target.src =
+            "https://placehold.co/1200x800/c0392b/FFFFFF?text=BATATINHA";
         }}
       />
     </div>
@@ -279,10 +280,7 @@ const TilinhoFinalScene = () => (
 );
 
 const TilinhoQRCodeScene = () => (
-  <div
-    id="tilinho-qr-section"
-    className="animation-section tilinho-qr-section"
-  >
+  <div id="tilinho-qr-section" className="animation-section tilinho-qr-section">
     <div className="tilinho-qr-content">
       <img
         src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://pedido.anota.ai/loja/tilinho-lanches?f=ms%26fbclid=PAZXh0bgNhZW0CMTEAAaeyp7cqz4XksF9onMuTq-RlkLq7k_gmeXXLI6PV-LTGaVqolFeZ7AEvemtP3A_aem_uKVcmzhgjb6bdAqtJS3xbw&bgcolor=e74c3c&color=ffffff&qzone=2"
@@ -291,7 +289,8 @@ const TilinhoQRCodeScene = () => (
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.onerror = null;
-          target.src = "https://placehold.co/300x300/e74c3c/ffffff?text=QR+CODE";
+          target.src =
+            "https://placehold.co/300x300/e74c3c/ffffff?text=QR+CODE";
         }}
       />
       <h2 className="tilinho-qr-title">Cardápio Digital</h2>
@@ -315,11 +314,14 @@ const AnaRoseIntroScene = () => (
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.onerror = null;
-          target.src = "https://placehold.co/400x400/f06292/ffffff?text=ANA+ROSE";
+          target.src =
+            "https://placehold.co/400x400/f06292/ffffff?text=ANA+ROSE";
         }}
       />
     </div>
-    <h2 className="ana-rose-subtitle">Especialista em Manicure e Nail Designer</h2>
+    <h2 className="ana-rose-subtitle">
+      Especialista em Manicure e Nail Designer
+    </h2>
   </div>
 );
 
@@ -337,7 +339,8 @@ const AnaRoseShowcaseScene = () => (
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
-            target.src = "https://placehold.co/600x400/f06292/ffffff?text=DESIGN+DE+UNHAS";
+            target.src =
+              "https://placehold.co/600x400/f06292/ffffff?text=DESIGN+DE+UNHAS";
           }}
         />
         <div className="ana-rose-image-overlay">
@@ -353,7 +356,8 @@ const AnaRoseShowcaseScene = () => (
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
-            target.src = "https://placehold.co/600x400/f06292/ffffff?text=UNHAS+DECORADAS";
+            target.src =
+              "https://placehold.co/600x400/f06292/ffffff?text=UNHAS+DECORADAS";
           }}
         />
         <div className="ana-rose-image-overlay">
@@ -385,7 +389,9 @@ const AnaRoseCtaScene = () => (
     className="animation-section ana-rose-cta-section"
   >
     <h2 className="ana-rose-cta-headline">Agende seu Horário</h2>
-    <p className="ana-rose-cta-text">Transforme suas mãos em uma obra de arte!</p>
+    <p className="ana-rose-cta-text">
+      Transforme suas mãos em uma obra de arte!
+    </p>
 
     <div className="ana-rose-contact">
       <div className="ana-rose-contact-item">
@@ -394,11 +400,15 @@ const AnaRoseCtaScene = () => (
       </div>
       <div className="ana-rose-contact-item">
         <div className="ana-rose-contact-icon">📍</div>
-        <div className="ana-rose-contact-text">Rua Avenida Rio Grande 595 - Cassino</div>
+        <div className="ana-rose-contact-text">
+          Rua Avenida Rio Grande 595 - Cassino
+        </div>
       </div>
       <div className="ana-rose-contact-item">
         <div className="ana-rose-contact-icon">📸</div>
-        <div className="ana-rose-contact-text">@anarosaesmalteria_naildesigner</div>
+        <div className="ana-rose-contact-text">
+          @anarosaesmalteria_naildesigner
+        </div>
       </div>
     </div>
 
@@ -409,7 +419,10 @@ const AnaRoseCtaScene = () => (
 );
 
 const JoaoDeBarroStudioPriceScene = () => (
-  <div id="joao-barro-price-section" className="animation-section joao-barro-section">
+  <div
+    id="joao-barro-price-section"
+    className="animation-section joao-barro-section"
+  >
     <div className="joao-barro-content">
       <div className="studio-header">
         <img
@@ -459,7 +472,7 @@ const JoaoDeBarroStudioPriceScene = () => (
             </div>
           </div>
         </div>
-        
+
         <div className="price-category">
           <h3 className="price-category-title">CORTES</h3>
           <div className="price-items">
@@ -485,7 +498,7 @@ const JoaoDeBarroStudioPriceScene = () => (
             </div>
           </div>
         </div>
-        
+
         <div className="price-category">
           <h3 className="price-category-title">OUTROS</h3>
           <div className="price-items">
@@ -540,11 +553,14 @@ const VipVeiculosIntroScene = () => (
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.onerror = null;
-          target.src = "https://placehold.co/400x400/0a4b78/ffffff?text=VIP+VEÍCULOS";
+          target.src =
+            "https://placehold.co/400x400/0a4b78/ffffff?text=VIP+VEÍCULOS";
         }}
       />
     </div>
-    <h2 className="vip-veiculos-subtitle">15 anos de excelência em Rio Grande</h2>
+    <h2 className="vip-veiculos-subtitle">
+      15 anos de excelência em Rio Grande
+    </h2>
   </div>
 );
 
@@ -553,17 +569,20 @@ const VipVeiculosShowcaseScene = () => (
     id="vip-veiculos-showcase-section"
     className="animation-section vip-veiculos-showcase-section"
   >
-    <h2 className="vip-veiculos-showcase-title">Te ajudamos a tomar a melhor decisão para sua família</h2>
+    <h2 className="vip-veiculos-showcase-title">
+      Te ajudamos a tomar a melhor decisão para sua família
+    </h2>
     <div className="vip-veiculos-testimonials">
       <div className="vip-veiculos-testimonial">
         <img
-          src="Cliente1.jpg" 
+          src="Cliente1.jpg"
           alt="Cliente Satisfeito Vip Veículos"
           className="vip-veiculos-client-image"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
-            target.src = "https://placehold.co/600x400/0a4b78/ffffff?text=CLIENTE+SATISFEITO";
+            target.src =
+              "https://placehold.co/600x400/0a4b78/ffffff?text=CLIENTE+SATISFEITO";
           }}
         />
         <div className="vip-veiculos-testimonial-overlay">
@@ -578,7 +597,8 @@ const VipVeiculosShowcaseScene = () => (
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
-            target.src = "https://placehold.co/600x400/0a4b78/ffffff?text=CLIENTE+SATISFEITO";
+            target.src =
+              "https://placehold.co/600x400/0a4b78/ffffff?text=CLIENTE+SATISFEITO";
           }}
         />
         <div className="vip-veiculos-testimonial-overlay">
@@ -597,9 +617,13 @@ const VipVeiculosCtaScene = () => (
     id="vip-veiculos-cta-section"
     className="animation-section vip-veiculos-cta-section"
   >
-    <h2 className="vip-veiculos-cta-headline">Está na Hora de Trocar de Carro?</h2>
-    <p className="vip-veiculos-cta-text">Condições especiais de financiamento e avaliação do seu usado!</p>
-    
+    <h2 className="vip-veiculos-cta-headline">
+      Está na Hora de Trocar de Carro?
+    </h2>
+    <p className="vip-veiculos-cta-text">
+      Condições especiais de financiamento e avaliação do seu usado!
+    </p>
+
     <div className="vip-veiculos-benefits">
       <div className="vip-veiculos-benefit">
         <div className="vip-veiculos-benefit-icon">✓</div>
@@ -622,7 +646,9 @@ const VipVeiculosCtaScene = () => (
       </div>
       <div className="vip-veiculos-contact-item">
         <div className="vip-veiculos-contact-icon">📍</div>
-        <div className="vip-veiculos-contact-text">Av. Santos Dumont, 80 - Vila Juncao</div>
+        <div className="vip-veiculos-contact-text">
+          Av. Santos Dumont, 80 - Vila Juncao
+        </div>
       </div>
       <div className="vip-veiculos-contact-item">
         <div className="vip-veiculos-contact-icon">📸</div>
@@ -668,7 +694,7 @@ export default function Anuncios() {
       <VipVeiculosCtaScene />
       <TilinhoImage1Scene />
       <TilinhoImage2And3Scene />
-      <TilinhoHungryScene />      
+      <TilinhoHungryScene />
       <TilinhoFinalScene />
       <TilinhoQRCodeScene />
       <AnaRoseIntroScene />

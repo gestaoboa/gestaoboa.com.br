@@ -16,17 +16,34 @@
 /* Testimonials track for sliding */
 .testimonials-track {
   display: flex;
-  animation: scrollTestimonials 15s linear infinite;
-  gap: 7rem;
-  width: calc(200% + 4rem); /* Double width for seamless loop */
+  animation: scrollTestimonials 20s linear infinite;
+  gap: 3rem;
+  width: calc(200% + 6rem); /* Double width for seamless loop */
 }
 
 /* Individual carousel cards */
 .carousel-card {
-  flex: 0 0 calc(29%); /* Show 3 cards at a time */
-  min-width: 300px;
+  flex: 0 0 calc(33.333% - 2rem); /* Show 3 cards at a time */
+  min-width: 320px;
   box-sizing: border-box;
+  height: auto;
+  min-height: 350px;
+}
+
+/* Testimonial images sizing */
+.carousel-card img {
+  width: 200px;
   height: 350px;
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
+}
+
+/* Featured testimonial image sizing */
+.featured-testimonial img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
 }
 
 /* Infinite scroll animation */
@@ -47,22 +64,72 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .carousel-card {
-    flex: 0 0 calc(50% - 1rem); /* Show 2 cards on tablets */
-    min-width: 300px;
+    flex: 0 0 calc(45% - 1rem); /* Narrower cards on tablets */
+    min-width: 250px;
+    max-width: 300px;
+  }
+  
+  .testimonials-track {
+    gap: 2rem;
+    animation-duration: 18s;
+  }
+
+  /* Smaller images on tablets */
+  .carousel-card img {
+    width: 150px;
+    height: 160px;
+  }
+
+  .featured-testimonial img {
+    width: 200px;
+    height: 240px;
   }
 }
 
 @media (max-width: 768px) {
   .carousel-card {
-    flex: 0 0 calc(100% - 2rem); /* Show 1 card on mobile */
-    min-width: 280px;
+    flex: 0 0 calc(80% - 1rem); /* Narrower cards on mobile */
+    min-width: 240px;
+    max-width: 280px;
+    height: auto;
+    min-height: 350px;
   }
   
   .testimonials-track {
-    gap: 1rem;
-    width: calc(200% + 2rem);
+    gap: 1.5rem;
+    width: calc(200% + 3rem);
+    animation-duration: 15s;
+  }
+
+  /* Mobile image sizes */
+  .carousel-card img {
+    width: 120px;
+    height: 130px;
+  }
+
+  .featured-testimonial img {
+    width: 160px;
+    height: 190px;
+  }
+
+  /* Mobile font sizes */
+  .carousel-card .texts .title,
+  .featured-testimonial .texts .title {
+    font-size: 20px !important;
+  }
+
+  .carousel-card .texts .desc,
+  .featured-testimonial .texts .desc {
+    font-size: 14px !important;
+    line-height: 1.4;
+  }
+
+  .carousel-card .texts .person,
+  .featured-testimonial .texts .person {
+    font-size: 13px !important;
   }
   
+  /* Slower animation for better mobile viewing */
   @keyframes scrollTestimonials {
     0% {
       transform: translateX(0);
@@ -70,6 +137,55 @@
     100% {
       transform: translateX(-50%);
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-card {
+    flex: 0 0 calc(85% - 0.5rem); /* Compact cards on small phones */
+    min-width: 220px;
+    max-width: 260px;
+    min-height: 320px;
+  }
+  
+  .testimonials-track {
+    gap: 1rem;
+    width: calc(200% + 2rem);
+    animation-duration: 12s;
+  }
+
+  /* Small phone image sizes */
+  .carousel-card img {
+    width: 100px;
+    height: 110px;
+  }
+
+  .featured-testimonial img {
+    width: 130px;
+    height: 150px;
+  }
+
+  /* Small phone font sizes */
+  .carousel-card .texts .title,
+  .featured-testimonial .texts .title {
+    font-size: 18px !important;
+  }
+
+  .carousel-card .texts .desc,
+  .featured-testimonial .texts .desc {
+    font-size: 13px !important;
+    line-height: 1.3;
+  }
+
+  .carousel-card .texts .person,
+  .featured-testimonial .texts .person {
+    font-size: 12px !important;
+  }
+  
+  /* Add touch-friendly indicators */
+  .testimonials-carousel::before,
+  .testimonials-carousel::after {
+    width: 20px;
   }
 }
 
@@ -98,4 +214,12 @@
 .testimonials-carousel::after {
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Mobile touch optimization */
+@media (max-width: 768px) {
+  /* Add visual indicator for mobile scrolling */
+  .testimonials-carousel::after {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  }
 }
