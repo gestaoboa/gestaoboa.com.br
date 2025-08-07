@@ -68,12 +68,12 @@ export const Content = styled.main`
 
         h2 {
           color: #03045e;
-          font-size: 28px;
+          font-size: 36px;
           margin-bottom: 15px;
         }
 
         p {
-          font-size: 16px;
+          font-size: 28px;
           margin-bottom: 15px;
           color: #333;
         }
@@ -87,7 +87,7 @@ export const Content = styled.main`
             padding-left: 25px;
             position: relative;
             color: #666;
-            font-size: 15px;
+            font-size: 24px;
 
             &:before {
               content: "✓";
