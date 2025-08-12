@@ -9,6 +9,13 @@ export const Container = styled.div`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  .seo-navigation {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+  }
 `;
 
 export const Banner = styled.div`
@@ -60,6 +67,10 @@ export const Banner = styled.div`
 
   .content .buttons .button {
     width: 308px;
+  }
+
+  .content .buttons .button-link {
+    text-decoration: none;
   }
 
   .images {

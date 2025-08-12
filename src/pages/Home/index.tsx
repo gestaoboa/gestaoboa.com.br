@@ -147,16 +147,15 @@ const Home: FunctionComponent = () => {
       <Container>
         <Helmet>
           <title>
-            Gestão Boa - Sistema de Gestão Empresarial Completo | Aumente suas
-            Vendas
+            Gestão Boa - Sistema de Gestão completo | Aumente suas Vendas
           </title>
           <meta
             name="description"
-            content="Sistema de gestão empresarial completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
+            content="Sistema de Gestão completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
           />
           <meta
             name="keywords"
-            content="sistema de gestão empresarial, software de gestão, CRM, controle financeiro, agendamento online, gestão de estoque, comissões, gestão de clientes, ERP, sistema para pequenas e micros empresas"
+            content="sistema de gestão, software de gestão, CRM, controle financeiro, agendamento online, gestão de estoque, comissões, gestão de clientes, ERP, sistema para pequenas e micros empresas"
           />
           <meta name="author" content="Gestão Boa" />
           <meta name="robots" content="index, follow" />
@@ -166,11 +165,11 @@ const Home: FunctionComponent = () => {
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="Gestão Boa - Sistema de Gestão Empresarial Completo"
+            content="Gestão Boa - Sistema de Gestão completo"
           />
           <meta
             property="og:description"
-            content="Sistema de gestão empresarial completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
+            content="Sistema de Gestão completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
           />
           <meta property="og:url" content="https://gestaoboa.com.br/" />
           <meta property="og:site_name" content="Gestão Boa" />
@@ -180,30 +179,24 @@ const Home: FunctionComponent = () => {
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta
-            property="og:image:alt"
-            content="Gestão Boa - App de gestão empresarial"
-          />
+          <meta property="og:image:alt" content="Gestão Boa - App de gestão" />
           <meta property="og:locale" content="pt_BR" />
 
           {/* Twitter Card Meta Tags */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content="Gestão Boa - Sistema de Gestão Empresarial Completo"
+            content="Gestão Boa - Sistema de Gestão completo"
           />
           <meta
             name="twitter:description"
-            content="Sistema de gestão empresarial completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
+            content="Sistema de Gestão completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
           />
           <meta
             name="twitter:image"
             content="https://gestaoboa.com.br/cellphone.png"
           />
-          <meta
-            name="twitter:image:alt"
-            content="Gestão Boa - App de gestão empresarial"
-          />
+          <meta name="twitter:image:alt" content="Gestão Boa - App de gestão" />
 
           {/* Additional SEO Meta Tags */}
           <meta name="theme-color" content="#007BFF" />
@@ -223,7 +216,7 @@ const Home: FunctionComponent = () => {
               "@type": "SoftwareApplication",
               name: "Gestão Boa",
               description:
-                "Sistema de gestão empresarial completo com agendamentos, controle financeiro, CRM, estoque e comissões",
+                "Sistema de Gestão completo com agendamentos, controle financeiro, CRM, estoque e comissões",
               url: "https://gestaoboa.com.br",
               applicationCategory: "BusinessApplication",
               operatingSystem: "Web, iOS, Android",
@@ -246,9 +239,184 @@ const Home: FunctionComponent = () => {
               },
             })}
           </script>
+
+          {/* Sitelinks Search Box Schema */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Gestão Boa",
+              url: "https://gestaoboa.com.br",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate:
+                    "https://gestaoboa.com.br/search?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+              mainEntity: {
+                "@type": "Organization",
+                name: "Gestão Boa",
+                url: "https://gestaoboa.com.br",
+                sameAs: ["https://www.instagram.com/gestaoboa/"],
+              },
+            })}
+          </script>
+
+          {/* Organization Schema with Navigation */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Gestão Boa",
+              url: "https://gestaoboa.com.br",
+              logo: "https://gestaoboa.com.br/beasier-1-1-1@2x.png",
+              description:
+                "Sistema completo de gestão para pequenos e médios negócios",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+55-53-999461550",
+                contactType: "customer service",
+                availableLanguage: "Portuguese",
+              },
+              sameAs: ["https://www.instagram.com/gestaoboa/"],
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": "https://gestaoboa.com.br",
+              },
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Serviços Gestão Boa",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Soluções de Gestão",
+                      description:
+                        "Conheça todas as funcionalidades: agenda, finanças, CRM e relatórios",
+                      url: "https://gestaoboa.com.br/solucao",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Conheça a Gestão Boa",
+                      description:
+                        "Saiba mais sobre nossa empresa, história e equipe",
+                      url: "https://gestaoboa.com.br/sobre",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Teste Gratuito",
+                      description:
+                        "Experimente grátis por 20 dias todos os recursos da Gestão Boa",
+                      url: "https://gestaoboa.com.br/preco",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Fale com Especialista",
+                      description:
+                        "Entre em contato com nossa equipe especializada",
+                      url: "https://gestaoboa.com.br/sobre",
+                    },
+                  },
+                ],
+              },
+            })}
+          </script>
+
+          {/* Breadcrumb List for Sitelinks */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Gestão Boa - Home",
+                  item: "https://gestaoboa.com.br",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Teste Gratuito",
+                  item: "https://gestaoboa.com.br/preco",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Soluções",
+                  item: "https://gestaoboa.com.br/solucao",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  name: "Sobre Nós",
+                  item: "https://gestaoboa.com.br/sobre",
+                },
+              ],
+            })}
+          </script>
         </Helmet>
         <Grid>
           <Header />
+
+          {/* Hidden navigation links for Google sitelinks */}
+          <nav className="seo-navigation" aria-label="Navegação principal">
+            <ul>
+              <li>
+                <a
+                  href="https://gestaoboa.com.br/"
+                  title="Cresça com a gestão boa"
+                >
+                  Home - Cresça com a Gestão Boa
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://gestaoboa.com.br/preco"
+                  title="Teste gratuito por 20 dias"
+                >
+                  Teste Gratuito
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://gestaoboa.com.br/sobre"
+                  title="Fale com especialista"
+                >
+                  Fale com Especialista
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://gestaoboa.com.br/sobre"
+                  title="Conheça nossa empresa e equipe"
+                >
+                  Conheça a Gestão Boa
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://gestaoboa.com.br/solucao"
+                  title="Funcionalidades e recursos completos"
+                >
+                  Soluções
+                </a>
+              </li>
+            </ul>
+          </nav>
 
           <Banner id="start">
             <div className="content">
@@ -260,8 +428,7 @@ const Home: FunctionComponent = () => {
 
               <div className="buttons">
                 <a
-                  className="button"
-                  style={{ textDecoration: "none" }}
+                  className="button button-link"
                   href="/preco"
                   title="TESTAR GRÁTIS"
                 >
@@ -273,8 +440,7 @@ const Home: FunctionComponent = () => {
                   />
                 </a>
                 <a
-                  className="button"
-                  style={{ textDecoration: "none" }}
+                  className="button button-link"
                   href="/solution"
                   title="SAIBA MAIS"
                 >
@@ -291,7 +457,7 @@ const Home: FunctionComponent = () => {
               <img
                 className="cellphone"
                 src="/cellphone.png"
-                alt="Aplicativo Gestão Boa em smartphone mostrando interface de gestão empresarial"
+                alt="Aplicativo Gestão Boa em smartphone mostrando interface de gestão"
               />
               <img
                 className="elipse"

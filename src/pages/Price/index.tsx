@@ -63,11 +63,11 @@ const Price = () => {
         </title>
         <meta
           name="description"
-          content="Planos de sistema de gestão empresarial da Gestão Boa a partir de R$ 49,90/mês. Teste grátis por 20 dias! Agendamentos, finanças, estoque e muito mais. Compare preços e funcionalidades."
+          content="Planos de sistema de gestão da Gestão Boa a partir de R$ 49,90/mês. Teste grátis por 20 dias! Agendamentos, finanças, estoque e muito mais. Compare preços e funcionalidades."
         />
         <meta
           name="keywords"
-          content="preços gestão boa, planos sistema gestão, valores software empresarial, assinatura gestão empresarial, teste grátis sistema gestão, preço ERP, planos CRM"
+          content="preços gestão boa, planos sistema gestão, valores software empresarial, assinatura gestão, teste grátis sistema gestão, preço ERP, planos CRM"
         />
         <meta name="author" content="Gestão Boa" />
         <meta name="robots" content="index, follow" />
@@ -81,7 +81,7 @@ const Price = () => {
         />
         <meta
           property="og:description"
-          content="Planos de sistema de gestão empresarial da Gestão Boa a partir de R$ 49,90/mês. Teste grátis por 20 dias! Agendamentos, finanças, estoque e muito mais."
+          content="Planos de sistema de gestão da Gestão Boa a partir de R$ 49,90/mês. Teste grátis por 20 dias! Agendamentos, finanças, estoque e muito mais."
         />
         <meta property="og:url" content="https://gestaoboa.com.br/preco" />
         <meta property="og:site_name" content="Gestão Boa" />
@@ -93,7 +93,7 @@ const Price = () => {
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Planos de preços da Gestão Boa - Sistema de gestão empresarial"
+          content="Planos de preços da Gestão Boa - Sistema de gestão"
         />
         <meta property="og:locale" content="pt_BR" />
 
@@ -105,7 +105,7 @@ const Price = () => {
         />
         <meta
           name="twitter:description"
-          content="Planos de sistema de gestão empresarial da Gestão Boa a partir de R$ 49,90/mês. Teste grátis por 20 dias!"
+          content="Planos de sistema de gestão da Gestão Boa a partir de R$ 49,90/mês. Teste grátis por 20 dias!"
         />
         <meta
           name="twitter:image"
@@ -127,7 +127,7 @@ const Price = () => {
             "@type": "WebPage",
             name: "Planos e Preços - Gestão Boa",
             description:
-              "Planos de sistema de gestão empresarial da Gestão Boa com preços acessíveis e teste grátis por 20 dias",
+              "Planos de sistema de gestão da Gestão Boa com preços acessíveis e teste grátis por 20 dias",
             url: "https://gestaoboa.com.br/preco",
             provider: {
               "@type": "Organization",
@@ -237,7 +237,7 @@ const Price = () => {
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web, iOS, Android",
             description:
-              "Sistema completo de gestão empresarial com agendamentos, finanças, estoque e muito mais",
+              "Sistema completo de gestão com agendamentos, finanças, estoque e muito mais",
             offers: {
               "@type": "AggregateOffer",
               lowPrice: "49.90",
@@ -668,7 +668,7 @@ const Price = () => {
             <table className="comparison-table">
               <caption>
                 Comparação detalhada entre Gestão Boa e sistemas concorrentes de
-                gestão empresarial
+                gestão
               </caption>
               <thead>
                 <tr>
@@ -792,65 +792,6 @@ const Price = () => {
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-        {/* FAQ Section for SEO */}
-        <div className="faq-section">
-          <h2>Perguntas Frequentes sobre Preços</h2>
-          <div className="faq-container">
-            <details className="faq-item">
-              <summary>
-                <h3>Qual é o valor dos planos da Gestão Boa?</h3>
-              </summary>
-              <p>
-                Nossos planos começam em R$ 49,90/mês (plano Básico). Temos o
-                plano Crescimento por R$ 68,90/mês e o plano Empresarial por R$
-                99,90/mês. Todos os planos incluem teste grátis por 20 dias.
-              </p>
-            </details>
-
-            <details className="faq-item">
-              <summary>
-                <h3>Existe desconto para pagamento anual?</h3>
-              </summary>
-              <p>
-                Sim! Oferecemos 24% de desconto para pagamento anual e 12% de
-                desconto para pagamento semestral em todos os planos.
-              </p>
-            </details>
-
-            <details className="faq-item">
-              <summary>
-                <h3>Como funciona o teste grátis de 20 dias?</h3>
-              </summary>
-              <p>
-                Você pode testar todas as funcionalidades do seu plano escolhido
-                por 20 dias sem compromisso. Não é necessário cartão de crédito
-                para iniciar o teste.
-              </p>
-            </details>
-
-            <details className="faq-item">
-              <summary>
-                <h3>Posso trocar de plano depois?</h3>
-              </summary>
-              <p>
-                Sim, você pode fazer upgrade ou downgrade do seu plano a
-                qualquer momento. Entre em contato com nosso suporte para
-                realizar a alteração.
-              </p>
-            </details>
-
-            <details className="faq-item">
-              <summary>
-                <h3>O que está incluído no suporte?</h3>
-              </summary>
-              <p>
-                Todos os planos incluem suporte via WhatsApp. O plano
-                Empresarial ainda inclui 30 minutos de mentoria gratuita com
-                Leandro Figueiredo.
-              </p>
-            </details>
           </div>
         </div>
         <div className="support-section">

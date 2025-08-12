@@ -77,7 +77,7 @@ export default function Header() {
           PLANOS
         </LinkItem>
         <LinkItem
-          href="/about"
+          href="/sobre"
           title="Conheça nossa equipe"
           data-to-scrollspy-id="team"
           onClick={() => trackNavigation("sobre")}
@@ -126,7 +126,7 @@ export default function Header() {
           PLANOS
         </LinkItem>
         <LinkItem
-          href="/about"
+          href="/sobre"
           title="Conheça nossa equipe"
           onClick={() => trackNavigation("sobre")}
         >

@@ -40,7 +40,7 @@ const About = () => {
         </title>
         <meta
           name="description"
-          content="Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores que revolucionam a gestão empresarial."
+          content="Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores que revolucionam a gestão."
         />
         <meta
           name="keywords"
@@ -48,7 +48,7 @@ const About = () => {
         />
         <meta name="author" content="Gestão Boa" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://gestaoboa.com.br/about" />
+        <link rel="canonical" href="https://gestaoboa.com.br/sobre" />
 
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
@@ -60,7 +60,7 @@ const About = () => {
           property="og:description"
           content="Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores."
         />
-        <meta property="og:url" content="https://gestaoboa.com.br/about" />
+        <meta property="og:url" content="https://gestaoboa.com.br/sobre" />
         <meta property="og:site_name" content="Gestão Boa" />
         <meta property="og:image" content="https://gestaoboa.com.br/time.png" />
         <meta property="og:image:width" content="1200" />
@@ -101,7 +101,7 @@ const About = () => {
             "@type": "Organization",
             name: "Gestão Boa",
             description:
-              "Sistema de gestão empresarial completo que transforma a administração de pequenos e médios negócios",
+              "Sistema de gestão completo que transforma a administração de pequenos e médios negócios",
             url: "https://gestaoboa.com.br",
             logo: "https://gestaoboa.com.br/beasier-1-1-1@2x.png",
             foundingDate: "2023",
@@ -157,7 +157,7 @@ const About = () => {
                 "@type": "ListItem",
                 position: 2,
                 name: "Sobre",
-                item: "https://gestaoboa.com.br/about",
+                item: "https://gestaoboa.com.br/sobre",
               },
             ],
           })}
@@ -169,7 +169,7 @@ const About = () => {
             name: "Sobre a Gestão Boa",
             description:
               "Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores.",
-            url: "https://gestaoboa.com.br/about",
+            url: "https://gestaoboa.com.br/sobre",
             mainEntity: {
               "@type": "Organization",
               name: "Gestão Boa",
@@ -187,7 +187,7 @@ const About = () => {
                   "@type": "ListItem",
                   position: 2,
                   name: "Sobre",
-                  item: "https://gestaoboa.com.br/about",
+                  item: "https://gestaoboa.com.br/sobre",
                 },
               ],
             },
@@ -350,7 +350,7 @@ const About = () => {
               >
                 <img
                   src="/time.png"
-                  alt="Equipe da Gestão Boa - Fundadores Sílvio, Karine e Victor desenvolvendo sistema de gestão empresarial"
+                  alt="Equipe da Gestão Boa - Fundadores Sílvio, Karine e Victor desenvolvendo sistema de gestão"
                   className="team-image"
                   useMap="#founders-map"
                 />
@@ -446,7 +446,7 @@ const About = () => {
                   }`}
                 >
                   <div className="card-header">
-                    <h4>Victor Oliveira</h4>
+                    <h4>Victor Amaral</h4>
                     <span className="role">CTO</span>
                   </div>
                   <div className="card-body">
@@ -465,7 +465,7 @@ const About = () => {
                   }`}
                 >
                   <div className="card-header">
-                    <h4>Karine Santos</h4>
+                    <h4>Karine Quintana</h4>
                     <span className="role">CFO</span>
                   </div>
                   <div className="card-body">
@@ -484,7 +484,7 @@ const About = () => {
                   }`}
                 >
                   <div className="card-header">
-                    <h4>Sílvio Machado</h4>
+                    <h4>Sílvio Quintana</h4>
                     <span className="role">CEO</span>
                   </div>
                   <div className="card-body">
