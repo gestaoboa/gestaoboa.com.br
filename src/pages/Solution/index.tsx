@@ -63,7 +63,7 @@ const Solution = () => {
         </title>
         <meta
           name="description"
-          content="🏆 Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Teste grátis 20 dias!"
+          content="Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Teste grátis 20 dias!"
         />
         <meta
           name="keywords"
@@ -81,7 +81,7 @@ const Solution = () => {
         />
         <meta
           property="og:description"
-          content="🏆 Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
+          content="Melhor app de agendamentos e gestão financeira! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
         />
         <meta property="og:url" content="https://gestaoboa.com.br/solucao" />
         <meta property="og:site_name" content="Gestão Boa" />
@@ -105,7 +105,7 @@ const Solution = () => {
         />
         <meta
           name="twitter:description"
-          content="🏆 Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
+          content="Melhor app de agendamentos e gestão financeira! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
         />
         <meta
           name="twitter:image"
@@ -127,7 +127,7 @@ const Solution = () => {
             "@type": "MobileApplication",
             name: "Gestão Boa - App de Agendamentos e Gestão Financeira",
             description:
-              "O melhor app de agendamentos e gestão financeira para pequenos e médios negócios. Controle agenda, finanças, clientes e estoque em um só lugar.",
+              "O melhor app de agendamentos e gestão financeira para pequenos e micro empresas. Controle agenda, finanças, clientes e estoque em um só lugar.",
             applicationCategory: "BusinessApplication",
             operatingSystem: "iOS, Android, Web",
             offers: {
@@ -333,7 +333,7 @@ const Solution = () => {
               alt="App de Agendamentos Inteligente - Interface completa de agendamento online com calendário e notificações automáticas"
             />
             <div className="feature-content">
-              <h2>🗓️ App de Agendamentos Profissional</h2>
+              <h2>App de Agendamentos Profissional</h2>
               <p>O melhor app de agendamentos do mercado para seu negócio:</p>
               <ul>
                 <li>
@@ -366,7 +366,7 @@ const Solution = () => {
               alt="App para Gestão Financeira - Dashboard completo de controle de caixa, vendas e despesas empresariais"
             />
             <div className="feature-content">
-              <h2>💰 App para Gestão Financeira Empresarial</h2>
+              <h2>Gestão Financeira Completa</h2>
               <p>O app de gestão financeira mais completo para seu negócio:</p>
               <ul>
                 <li>
