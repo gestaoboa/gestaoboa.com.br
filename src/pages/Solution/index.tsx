@@ -486,7 +486,7 @@ const Solution = () => {
             Comece a Usar o Melhor App de Agendamentos e Gestão Financeira Hoje!
           </h2>
           <p>
-            Junte-se a mais de 5.000 empresários que já usam nosso app para
+            Junte-se aos diversos empresários que já usam nosso app para
             organizar agendamentos e controlar as finanças. Teste grátis por 20
             dias!
           </p>
