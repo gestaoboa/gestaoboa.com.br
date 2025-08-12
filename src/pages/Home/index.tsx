@@ -259,10 +259,22 @@ const Home: FunctionComponent = () => {
               mainEntity: {
                 "@type": "WebPage",
                 "@id": "https://gestaoboa.com.br/",
-                significantLink: [
-                  "https://gestaoboa.com.br/preco",
-                  "https://gestaoboa.com.br/solucao",
-                  "https://gestaoboa.com.br/sobre",
+                hasPart: [
+                  {
+                    "@type": "WebPage",
+                    name: "Teste Gratuito",
+                    url: "https://gestaoboa.com.br/preco",
+                  },
+                  {
+                    "@type": "WebPage",
+                    name: "Soluções",
+                    url: "https://gestaoboa.com.br/solucao",
+                  },
+                  {
+                    "@type": "WebPage",
+                    name: "Conheça a Gestão Boa",
+                    url: "https://gestaoboa.com.br/sobre",
+                  },
                 ],
               },
             })}
