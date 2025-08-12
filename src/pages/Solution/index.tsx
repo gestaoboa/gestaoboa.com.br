@@ -58,15 +58,16 @@ const Solution = () => {
     <Container>
       <Helmet>
         <title>
-          Soluções de gestão Completa - Gestão Boa | Agenda, Finanças e CRM
+          App de Agendamentos e Gestão Financeira | Gestão Boa - Sistema
+          Completo
         </title>
         <meta
           name="description"
-          content="Descubra nossa solução completa de gestão: agenda inteligente, controle financeiro, CRM, gestão de estoque e relatórios avançados. Transforme seu negócio com a Gestão Boa."
+          content="🏆 Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Teste grátis 20 dias!"
         />
         <meta
           name="keywords"
-          content="solução gestão, sistema completo gestão, agenda empresarial, CRM gestão clientes, controle financeiro, gestão estoque, relatórios empresariais, automação negócios"
+          content="app de agendamentos, app para gestão financeira, aplicativo agendamento, app controle financeiro, sistema agendamento online, app gestão negócio, aplicativo financeiro empresarial, software agendamento, app caixa, gestão financeira app, agenda digital, controle de caixa app"
         />
         <meta name="author" content="Gestão Boa" />
         <meta name="robots" content="index, follow" />
@@ -76,11 +77,11 @@ const Solution = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Soluções de gestão Completa - Gestão Boa"
+          content="App de Agendamentos e Gestão Financeira | Gestão Boa"
         />
         <meta
           property="og:description"
-          content="Descubra nossa solução completa de gestão: agenda inteligente, controle financeiro, CRM, gestão de estoque e relatórios avançados."
+          content="🏆 Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
         />
         <meta property="og:url" content="https://gestaoboa.com.br/solucao" />
         <meta property="og:site_name" content="Gestão Boa" />
@@ -100,11 +101,11 @@ const Solution = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Soluções de gestão Completa - Gestão Boa"
+          content="App de Agendamentos e Gestão Financeira | Gestão Boa"
         />
         <meta
           name="twitter:description"
-          content="Descubra nossa solução completa de gestão: agenda inteligente, controle financeiro, CRM, gestão de estoque e relatórios avançados."
+          content="🏆 Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
         />
         <meta
           name="twitter:image"
@@ -119,77 +120,115 @@ const Solution = () => {
         <meta name="theme-color" content="#007BFF" />
         <meta name="application-name" content="Gestão Boa" />
 
-        {/* Schema.org structured data for Service */}
+        {/* Schema.org structured data for Mobile Application */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Gestão Boa - Sistema de gestão",
+            "@type": "MobileApplication",
+            name: "Gestão Boa - App de Agendamentos e Gestão Financeira",
             description:
-              "Solução completa de gestão com agenda inteligente, controle financeiro, CRM, gestão de estoque e relatórios avançados",
-            provider: {
+              "O melhor app de agendamentos e gestão financeira para pequenos e médios negócios. Controle agenda, finanças, clientes e estoque em um só lugar.",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "iOS, Android, Web",
+            offers: {
+              "@type": "Offer",
+              price: "49.90",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              priceValidUntil: "2025-12-31",
+            },
+            downloadUrl: [
+              "https://play.google.com/store/apps/details?id=com.beasier",
+              "https://app.gestaoboa.com.br",
+            ],
+            screenshot: [
+              "https://gestaoboa.com.br/Agenda.png",
+              "https://gestaoboa.com.br/Caixa.png",
+              "https://gestaoboa.com.br/cellphone.png",
+            ],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.8",
+              reviewCount: "500",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            creator: {
               "@type": "Organization",
               name: "BEasier Tech",
               url: "https://gestaoboa.com.br",
             },
-            serviceType: "Software de gestão",
-            category: "Business Software",
+            keywords: [
+              "app de agendamentos",
+              "app para gestão financeira",
+              "aplicativo agendamento",
+              "app controle financeiro",
+              "sistema agendamento online",
+              "app gestão negócio",
+            ],
+          })}
+        </script>
+
+        {/* Schema.org structured data for Software Application focused on scheduling */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Gestão Boa - App de Agendamentos",
+            description:
+              "App de agendamentos profissional com notificações automáticas, agenda inteligente e integração completa com sistema de vendas e pagamentos.",
+            applicationCategory: "SchedulingApplication",
+            operatingSystem: "Web, iOS, Android",
             offers: {
               "@type": "Offer",
               price: "49.90",
               priceCurrency: "BRL",
               availability: "https://schema.org/InStock",
             },
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Funcionalidades da Gestão Boa",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Agenda Inteligente",
-                    description:
-                      "Gerencie seus compromissos com agendamento simplificado, notificações automáticas e integração com vendas",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Gestão Financeira",
-                    description:
-                      "Controle total das finanças com registro de vendas, relatórios e fluxo de caixa",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "CRM - Gestão de Clientes",
-                    description:
-                      "Sistema completo de relacionamento com clientes, histórico e fidelização",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Gestão de Estoque",
-                    description:
-                      "Controle de produtos e estoque em tempo real com relatórios de vendas",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Análises e Relatórios",
-                    description:
-                      "Relatórios avançados e insights para tomada de decisão baseada em dados",
-                  },
-                },
-              ],
+            featureList: [
+              "Agendamento online automático",
+              "Notificações por WhatsApp",
+              "Sincronização de agenda",
+              "Gestão de horários disponíveis",
+              "Relatórios de agendamentos",
+              "Integração com pagamentos",
+            ],
+            provider: {
+              "@type": "Organization",
+              name: "BEasier Tech",
+              url: "https://gestaoboa.com.br",
+            },
+          })}
+        </script>
+
+        {/* Schema.org structured data for Financial Management Software */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Gestão Boa - App para Gestão Financeira",
+            description:
+              "App para gestão financeira empresarial com controle de caixa, relatórios avançados, gestão de vendas e análise de desempenho financeiro em tempo real.",
+            applicationCategory: "FinanceApplication",
+            operatingSystem: "Web, iOS, Android",
+            offers: {
+              "@type": "Offer",
+              price: "49.90",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+            },
+            featureList: [
+              "Controle de fluxo de caixa",
+              "Relatórios financeiros detalhados",
+              "Gestão de vendas e despesas",
+              "Análise de lucratividade",
+              "Controle de formas de pagamento",
+              "Dashboard financeiro em tempo real",
+            ],
+            provider: {
+              "@type": "Organization",
+              name: "BEasier Tech",
+              url: "https://gestaoboa.com.br",
             },
           })}
         </script>
@@ -224,10 +263,18 @@ const Solution = () => {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Quanto tempo leva para implementar o sistema de gestão?",
+                name: "Por que escolher este app de agendamentos em vez de outros?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "A implementação básica da Gestão Boa pode ser feita em apenas 24 horas. Para configurações mais personalizadas e migração de dados, podemos levar até 3 dias úteis. Nossa equipe oferece suporte completo durante todo o processo.",
+                  text: "Nosso app de agendamentos se destaca por ter notificações automáticas por WhatsApp, sincronização em tempo real, interface super intuitiva e integração completa com gestão financeira. Além disso, oferecemos suporte brasileiro 24/7 e preços acessíveis para pequenos negócios. É o app de agendamentos mais completo do Brasil!",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Como este app para gestão financeira pode melhorar meu negócio?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nosso app para gestão financeira oferece controle total do seu caixa em tempo real, relatórios automáticos de vendas e despesas, análise de lucratividade por produto/serviço e dashboard inteligente. Você vai ter clareza total dos números do seu negócio e poderá tomar decisões mais assertivas para aumentar a lucratividade.",
                 },
               },
               {
@@ -270,12 +317,12 @@ const Solution = () => {
       <Content>
         <section className="hero">
           <h1>
-            Sistema de Gestão completo - Todas as Ferramentas que seu Negócio
-            Precisa
+            Melhor App de Agendamentos e Gestão Financeira para sua empresa
           </h1>
           <p>
-            Descubra como a Gestão Boa pode revolucionar sua forma de trabalhar
-            com soluções integradas de agenda, finanças, CRM e muito mais
+            Descubra o app mais completo para agendamentos online e gestão
+            financeira empresarial. Organize sua agenda, controle seu caixa e
+            faça seu negócio crescer com o melhor sistema de gestão!
           </p>
         </section>
 
@@ -283,27 +330,31 @@ const Solution = () => {
           <div id="agenda" className="feature-item">
             <img
               src="/Agenda.png"
-              alt="Agenda Inteligente da Gestão Boa - Interface de agendamento com calendário e notificações automáticas"
+              alt="App de Agendamentos Inteligente - Interface completa de agendamento online com calendário e notificações automáticas"
             />
             <div className="feature-content">
-              <h2>Agenda Inteligente</h2>
-              <p>Gerencie seus compromissos com eficiência:</p>
+              <h2>🗓️ App de Agendamentos Profissional</h2>
+              <p>O melhor app de agendamentos do mercado para seu negócio:</p>
               <ul>
                 <li>
-                  <strong>Agendamento simplificado de serviços</strong> -
-                  Interface intuitiva para marcação rápida
+                  <strong>Agendamento online automático</strong> - Clientes
+                  marcam direto pelo app
                 </li>
                 <li>
-                  <strong>Notificações automáticas</strong> - Lembre clientes e
-                  funcionários dos compromissos
+                  <strong>Notificações inteligentes por WhatsApp</strong> -
+                  Lembre automaticamente clientes e funcionários
                 </li>
                 <li>
-                  <strong>Visualização diária, semanal e mensal</strong> -
-                  Organize sua agenda de forma flexível
+                  <strong>Agenda sincronizada em tempo real</strong> - Acesse de
+                  qualquer dispositivo
                 </li>
                 <li>
-                  <strong>Integração com vendas e pagamentos</strong> - Conecte
-                  agendamentos com faturamento
+                  <strong>Gestão completa de horários</strong> - Controle
+                  disponibilidade e bloqueios
+                </li>
+                <li>
+                  <strong>Relatórios de agendamentos</strong> - Analise
+                  performance e ocupação
                 </li>
               </ul>
             </div>
@@ -312,27 +363,31 @@ const Solution = () => {
           <div id="financeiro" className="feature-item reverse">
             <img
               src="/Caixa.png"
-              alt="Gestão Financeira da Gestão Boa - Dashboard de controle de caixa, vendas e despesas"
+              alt="App para Gestão Financeira - Dashboard completo de controle de caixa, vendas e despesas empresariais"
             />
             <div className="feature-content">
-              <h2>Gestão Financeira Completa</h2>
-              <p>Controle total das suas finanças:</p>
+              <h2>💰 App para Gestão Financeira Empresarial</h2>
+              <p>O app de gestão financeira mais completo para seu negócio:</p>
               <ul>
                 <li>
-                  <strong>Registro de vendas e despesas</strong> - Controle
-                  completo do fluxo financeiro
+                  <strong>Controle de caixa em tempo real</strong> - Monitore
+                  entradas e saídas instantaneamente
                 </li>
                 <li>
-                  <strong>Relatórios detalhados</strong> - Análises profundas do
-                  desempenho financeiro
+                  <strong>App de controle financeiro avançado</strong> -
+                  Relatórios detalhados e análises profundas
                 </li>
                 <li>
-                  <strong>Controle de fluxo de caixa</strong> - Monitore
-                  entradas e saídas em tempo real
+                  <strong>Gestão de vendas e despesas integrada</strong> - Tudo
+                  conectado em um só lugar
                 </li>
                 <li>
-                  <strong>Gestão de formas de pagamento</strong> - Organize
-                  recebimentos por método de pagamento
+                  <strong>Dashboard financeiro inteligente</strong> - Visualize
+                  a saúde financeira do negócio
+                </li>
+                <li>
+                  <strong>Análise de lucratividade por serviço</strong> -
+                  Descubra quais são mais rentáveis
                 </li>
               </ul>
             </div>
@@ -427,17 +482,20 @@ const Solution = () => {
         </section>
 
         <section className="cta">
-          <h2>Comece a Transformar seu Negócio Hoje Mesmo</h2>
+          <h2>
+            Comece a Usar o Melhor App de Agendamentos e Gestão Financeira Hoje!
+          </h2>
           <p>
-            Experimente a solução mais completa de gestão do mercado - teste
-            grátis por 20 dias
+            Junte-se a mais de 5.000 empresários que já usam nosso app para
+            organizar agendamentos e controlar as finanças. Teste grátis por 20
+            dias!
           </p>
           <div className="buttons">
             <a href="/preco" className="primary-button">
-              Ver Planos
+              Testar App Grátis
             </a>
             <a href="https://wa.me/5553999461550" className="secondary-button">
-              Falar com Consultor
+              Falar com Especialista
             </a>
           </div>
         </section>
@@ -449,13 +507,29 @@ const Solution = () => {
           <div className="faq-container">
             <details className="faq-item">
               <summary>
-                Quanto tempo leva para implementar o sistema de gestão?
+                Por que escolher este app de agendamentos em vez de outros?
               </summary>
               <p>
-                A implementação básica da Gestão Boa pode ser feita em apenas 24
-                horas. Para configurações mais personalizadas e migração de
-                dados, podemos levar até 3 dias úteis. Nossa equipe oferece
-                suporte completo durante todo o processo.
+                Nosso app de agendamentos se destaca por ter notificações
+                automáticas por WhatsApp, sincronização em tempo real, interface
+                super intuitiva e integração completa com gestão financeira.
+                Além disso, oferecemos suporte brasileiro 24/7 e preços
+                acessíveis para pequenos negócios. É o app de agendamentos mais
+                completo do Brasil!
+              </p>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                Como este app para gestão financeira pode melhorar meu negócio?
+              </summary>
+              <p>
+                Nosso app para gestão financeira oferece controle total do seu
+                caixa em tempo real, relatórios automáticos de vendas e
+                despesas, análise de lucratividade por produto/serviço e
+                dashboard inteligente. Você vai ter clareza total dos números do
+                seu negócio e poderá tomar decisões mais assertivas para
+                aumentar a lucratividade.
               </p>
             </details>
 
