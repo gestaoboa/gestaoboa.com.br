@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import "./styles.css";
 
@@ -32,6 +33,167 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Sobre a Gestão Boa - História, Equipe e Missão | Sistema de Gestão
+          Empresarial
+        </title>
+        <meta
+          name="description"
+          content="Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores que revolucionam a gestão empresarial."
+        />
+        <meta
+          name="keywords"
+          content="sobre gestão boa, história da empresa, equipe gestão boa, missão visão valores, fundadores gestão boa, empresa de tecnologia, startup brasileira, sistema de gestão"
+        />
+        <meta name="author" content="Gestão Boa" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://gestaoboa.com.br/about" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Sobre a Gestão Boa - História, Equipe e Missão"
+        />
+        <meta
+          property="og:description"
+          content="Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores."
+        />
+        <meta property="og:url" content="https://gestaoboa.com.br/about" />
+        <meta property="og:site_name" content="Gestão Boa" />
+        <meta property="og:image" content="https://gestaoboa.com.br/time.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Equipe da Gestão Boa - Fundadores e colaboradores"
+        />
+        <meta property="og:locale" content="pt_BR" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Sobre a Gestão Boa - História, Equipe e Missão"
+        />
+        <meta
+          name="twitter:description"
+          content="Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios."
+        />
+        <meta
+          name="twitter:image"
+          content="https://gestaoboa.com.br/time.png"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="Equipe da Gestão Boa - Fundadores e colaboradores"
+        />
+
+        {/* Additional SEO Meta Tags */}
+        <meta name="theme-color" content="#007BFF" />
+        <meta name="application-name" content="Gestão Boa" />
+
+        {/* Schema.org structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Gestão Boa",
+            description:
+              "Sistema de gestão empresarial completo que transforma a administração de pequenos e médios negócios",
+            url: "https://gestaoboa.com.br",
+            logo: "https://gestaoboa.com.br/beasier-1-1-1@2x.png",
+            foundingDate: "2023",
+            founders: [
+              {
+                "@type": "Person",
+                name: "Sílvio Quintana",
+                jobTitle: "CEO",
+                description:
+                  "Arquiteto de ideias que dá vida e direção à Gestão Boa",
+              },
+              {
+                "@type": "Person",
+                name: "Karine Quintana",
+                jobTitle: "CFO",
+                description:
+                  "Mente estratégica por trás das finanças e do crescimento",
+              },
+              {
+                "@type": "Person",
+                name: "Victor Amaral",
+                jobTitle: "CTO",
+                description:
+                  "Maestro tecnológico que orquestra nossas equipes de desenvolvimento",
+              },
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "BR",
+              addressRegion: "RS",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+55-53-999461550",
+              contactType: "customer service",
+              availableLanguage: "Portuguese",
+            },
+            sameAs: ["https://www.instagram.com/gestaoboa/"],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://gestaoboa.com.br",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Sobre",
+                item: "https://gestaoboa.com.br/about",
+              },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Sobre a Gestão Boa",
+            description:
+              "Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores.",
+            url: "https://gestaoboa.com.br/about",
+            mainEntity: {
+              "@type": "Organization",
+              name: "Gestão Boa",
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://gestaoboa.com.br",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Sobre",
+                  item: "https://gestaoboa.com.br/about",
+                },
+              ],
+            },
+          })}
+        </script>
+      </Helmet>
       <Header />
       <div className="about-page">
         {/* Enhanced Hero Section */}
@@ -188,7 +350,7 @@ const About = () => {
               >
                 <img
                   src="/time.png"
-                  alt="Time Gestão Boa"
+                  alt="Equipe da Gestão Boa - Fundadores Sílvio, Karine e Victor desenvolvendo sistema de gestão empresarial"
                   className="team-image"
                   useMap="#founders-map"
                 />
@@ -284,7 +446,7 @@ const About = () => {
                   }`}
                 >
                   <div className="card-header">
-                    <h3 style={{ color: "white" }}>Victor</h3>
+                    <h4>Victor Oliveira</h4>
                     <span className="role">CTO</span>
                   </div>
                   <div className="card-body">
@@ -303,7 +465,7 @@ const About = () => {
                   }`}
                 >
                   <div className="card-header">
-                    <h3 style={{ color: "white" }}>Karine</h3>
+                    <h4>Karine Santos</h4>
                     <span className="role">CFO</span>
                   </div>
                   <div className="card-body">
@@ -322,7 +484,7 @@ const About = () => {
                   }`}
                 >
                   <div className="card-header">
-                    <h3 style={{ color: "white" }}>Sílvio</h3>
+                    <h4>Sílvio Machado</h4>
                     <span className="role">CEO</span>
                   </div>
                   <div className="card-body">
@@ -352,7 +514,10 @@ const About = () => {
           <div className="team-scroll-container fade-in">
             <div className="team-scroll-track">
               <div className="team-member-card">
-                <img src="/bruno.png" alt="Bruno Nascimento" />
+                <img
+                  src="/bruno.png"
+                  alt="Bruno Nascimento - Tech Lead da Gestão Boa, especialista em desenvolvimento de software"
+                />
                 <div className="member-info">
                   <h3 className="member-name">Bruno Nascimento</h3>
                   <span className="member-role">Tech Lead</span>
@@ -360,7 +525,10 @@ const About = () => {
               </div>
 
               <div className="team-member-card">
-                <img src="/Bruno W.jpg" alt="Bruno Wellar" />
+                <img
+                  src="/Bruno W.jpg"
+                  alt="Bruno Wellar - Desenvolvedor Mobile da Gestão Boa, especialista em aplicativos móveis"
+                />
                 <div className="member-info">
                   <h3 className="member-name">Bruno Wellar</h3>
                   <span className="member-role">Desenvolvedor Mobile</span>
@@ -368,7 +536,10 @@ const About = () => {
               </div>
 
               <div className="team-member-card">
-                <img src="/kaiane.jpeg" alt="Kaiane Bittencourt" />
+                <img
+                  src="/kaiane.jpeg"
+                  alt="Kaiane Bittencourt - Gestora de Marketing da Gestão Boa, especialista em marketing digital"
+                />
                 <div className="member-info">
                   <h3 className="member-name">Kaiane Bittencourt</h3>
                   <span className="member-role">Gestora de Marketing</span>
@@ -376,7 +547,10 @@ const About = () => {
               </div>
 
               <div className="team-member-card">
-                <img src="/eduardo.jpg" alt="Eduardo Gonçalves" />
+                <img
+                  src="/eduardo.jpg"
+                  alt="Eduardo Gonçalves - Desenvolvedor Mobile da Gestão Boa, especialista em desenvolvimento iOS e Android"
+                />
                 <div className="member-info">
                   <h3 className="member-name">Eduardo Gonçalves</h3>
                   <span className="member-role">Desenvolvedor Mobile</span>
@@ -384,7 +558,10 @@ const About = () => {
               </div>
 
               <div className="team-member-card">
-                <img src="/Py.jpg" alt="Gustavo Py" />
+                <img
+                  src="/Py.jpg"
+                  alt="Gustavo Py - Desenvolvedor Backend da Gestão Boa, especialista em arquitetura de sistemas"
+                />
                 <div className="member-info">
                   <h3 className="member-name">Gustavo Py</h3>
                   <span className="member-role">Desenvolvedor Backend</span>
@@ -392,7 +569,10 @@ const About = () => {
               </div>
 
               <div className="team-member-card">
-                <img src="/Fernando.jpeg" alt="Fernando Glaeser" />
+                <img
+                  src="/Fernando.jpeg"
+                  alt="Fernando Glaeser - Desenvolvedor Backend da Gestão Boa, especialista em desenvolvimento de APIs"
+                />
                 <div className="member-info">
                   <h3 className="member-name">Fernando Glaeser</h3>
                   <span className="member-role">Desenvolvedor backend</span>

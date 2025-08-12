@@ -161,15 +161,14 @@ export const Banner = styled.div`
     }
 
     .images .cellphone {
-      height: 450px;
+      height: 400px;
     }
   }
 
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    padding: 30px 30px;
-    gap: 50px;
+    padding: 15px 15px;
 
     .content .title {
       font-size: 32px;
@@ -189,7 +188,7 @@ export const Banner = styled.div`
     }
     .content .buttons {
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
       width: 100%;
     }
 
@@ -200,19 +199,10 @@ export const Banner = styled.div`
 
   @media (max-width: 600px) {
     .images {
-      display: flex !important;
-      height: fit-content;
-      width: 100%;
-      height: fit-content;
-      align-self: center;
-      justify-content: center;
-      align-items: center;
     }
 
     .images .cellphone {
-      height: unset;
-      width: 90%;
-      position: unset !important;
+      display: none;
     }
 
     .images .elipse {
@@ -655,6 +645,12 @@ export const Solutions = styled.div`
       display: flex;
       flex-direction: column;
       gap: 30px;
+    }
+
+    .solutionBanner .title {
+      font-size: 48px;
+      justify-content: center;
+      text-align: center;
     }
 
     .tutorial .callout .buttons .or {

@@ -146,19 +146,113 @@ const Home: FunctionComponent = () => {
     <ScrollSpy>
       <Container>
         <Helmet>
-          <title>Gestão Boa</title>
+          <title>
+            Gestão Boa - Sistema de Gestão Empresarial Completo | Aumente suas
+            Vendas
+          </title>
           <meta
             name="description"
-            content="Com o app Gestão Boa para serviços, a gestão é simplificada. Registre os seus serviços, agende vendas e cadastre seus clientes, tudo isso na palma da sua mão!"
+            content="Sistema de gestão empresarial completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
           />
-          <link rel="canonical" href="/" />
+          <meta
+            name="keywords"
+            content="sistema de gestão empresarial, software de gestão, CRM, controle financeiro, agendamento online, gestão de estoque, comissões, gestão de clientes, ERP, sistema para pequenas e micros empresas"
+          />
+          <meta name="author" content="Gestão Boa" />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://gestaoboa.com.br/" />
+
+          {/* Open Graph Meta Tags */}
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Gestão Boa - Sistema de Gestão Empresarial Completo"
+          />
+          <meta
+            property="og:description"
+            content="Sistema de gestão empresarial completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
+          />
+          <meta property="og:url" content="https://gestaoboa.com.br/" />
+          <meta property="og:site_name" content="Gestão Boa" />
+          <meta
+            property="og:image"
+            content="https://gestaoboa.com.br/cellphone.png"
+          />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta
+            property="og:image:alt"
+            content="Gestão Boa - App de gestão empresarial"
+          />
+          <meta property="og:locale" content="pt_BR" />
+
+          {/* Twitter Card Meta Tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Gestão Boa - Sistema de Gestão Empresarial Completo"
+          />
+          <meta
+            name="twitter:description"
+            content="Sistema de gestão empresarial completo: agendamentos, controle financeiro, CRM, estoque e comissões. Teste grátis por 20 dias!"
+          />
+          <meta
+            name="twitter:image"
+            content="https://gestaoboa.com.br/cellphone.png"
+          />
+          <meta
+            name="twitter:image:alt"
+            content="Gestão Boa - App de gestão empresarial"
+          />
+
+          {/* Additional SEO Meta Tags */}
+          <meta name="theme-color" content="#007BFF" />
+          <meta name="msapplication-TileColor" content="#007BFF" />
+          <meta name="application-name" content="Gestão Boa" />
+          <meta name="apple-mobile-web-app-title" content="Gestão Boa" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
+
+          {/* Schema.org structured data */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Gestão Boa",
+              description:
+                "Sistema de gestão empresarial completo com agendamentos, controle financeiro, CRM, estoque e comissões",
+              url: "https://gestaoboa.com.br",
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web, iOS, Android",
+              offers: {
+                "@type": "Offer",
+                price: "49.90",
+                priceCurrency: "BRL",
+                priceValidUntil: "2025-12-31",
+                availability: "https://schema.org/InStock",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "500",
+              },
+              provider: {
+                "@type": "Organization",
+                name: "BEasier Tech",
+                url: "https://gestaoboa.com.br",
+              },
+            })}
+          </script>
         </Helmet>
         <Grid>
           <Header />
 
           <Banner id="start">
             <div className="content">
-              <div className="title">Gestão inteligente para o seu negócio</div>
+              <h1 className="title">Gestão inteligente para o seu negócio</h1>
               <div className="subtitle">
                 Simplifique seus agendamentos e organize comissões com
                 facilidade. Gerencie tudo em um app e veja sua receita decolar!
@@ -194,24 +288,35 @@ const Home: FunctionComponent = () => {
               </div>
             </div>
             <div className="images">
-              <img className="cellphone" src="/cellphone.png" alt="" />
-              <img className="elipse" src="/Ellipse.svg" alt="" />
+              <img
+                className="cellphone"
+                src="/cellphone.png"
+                alt="Aplicativo Gestão Boa em smartphone mostrando interface de gestão empresarial"
+              />
+              <img
+                className="elipse"
+                src="/Ellipse.svg"
+                alt="Elemento decorativo"
+              />
             </div>
           </Banner>
 
           <Solutions id="solution">
             <div className="solutionBanner">
               <div className="vignette"></div>
-              <div className="title">
+              <h2 className="title">
                 Como a Gestão Boa pode turbinar o seu negócio?
-              </div>
+              </h2>
             </div>
 
             <div className="benefits">
               <div className="benefit">
-                <img src="/check-list.png" alt="" />
+                <img
+                  src="/check-list.png"
+                  alt="Ícone de agenda simplificada - checklist para organização de compromissos"
+                />
                 <div className="info">
-                  <div className="title">Agenda Simplificada</div>
+                  <h3 className="title">Agenda Simplificada</h3>
                   <div className="subtitle">
                     Mantenha seus compromissos sempre à mão.
                   </div>
@@ -230,11 +335,12 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
               <div className="benefit">
-                <img src="calendar (1) 1 (1).svg" alt="" />
+                <img
+                  src="calendar (1) 1 (1).svg"
+                  alt="Ícone de gerenciamento de produtos - controle de estoque e vendas"
+                />
                 <div className="info">
-                  <div className="title">
-                    Gerenciamento e vendas de produtos
-                  </div>
+                  <h3 className="title">Gerenciamento e vendas de produtos</h3>
                   <div className="subtitle">
                     Controle seu estoque, e tenha uma análise completa sobre as
                     vendas dos seus produtos.
@@ -254,9 +360,12 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
               <div className="benefit">
-                <img src="calendar (1) 1.svg" alt="" />
+                <img
+                  src="calendar (1) 1.svg"
+                  alt="Ícone de controle de custos - gestão financeira de despesas"
+                />
                 <div className="info">
-                  <div className="title">Controle de Custos</div>
+                  <h3 className="title">Controle de Custos</h3>
                   <div className="subtitle">
                     Lidar com contas para pagar é uma tarefa complicada. No
                     nosso app você pode já registrar quanto e quando vai pagar
@@ -277,9 +386,12 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
               <div className="benefit">
-                <img src="calendar (1) 2.svg" alt="" />
+                <img
+                  src="calendar (1) 2.svg"
+                  alt="Ícone de gestão financeira - acompanhamento de entradas e saídas"
+                />
                 <div className="info">
-                  <div className="title">Gestão Financeira</div>
+                  <h3 className="title">Gestão Financeira</h3>
                   <div className="subtitle">
                     Acompanhe entradas e saídas por método de pagamento.
                   </div>
@@ -298,9 +410,12 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
               <div className="benefit">
-                <img src="calendar (1) 3.svg" alt="" />
+                <img
+                  src="calendar (1) 3.svg"
+                  alt="Ícone de análises detalhadas - relatórios e insights de negócio"
+                />
                 <div className="info">
-                  <div className="title">Análises Detalhadas</div>
+                  <h3 className="title">Análises Detalhadas</h3>
                   <div className="subtitle">
                     Visualize resultados e tome decisões baseadas em dados.
                   </div>
@@ -319,7 +434,10 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
               <div className="benefit">
-                <img src="calendar (1) 3 (1).svg" alt="" />
+                <img
+                  src="calendar (1) 3 (1).svg"
+                  alt="Ícone de fidelização do cliente - automação de mensagens e relacionamento"
+                />
                 <div className="info">
                   <div className="title">Fidelização do Cliente</div>
                   <div className="subtitle">
@@ -504,7 +622,10 @@ const Home: FunctionComponent = () => {
                       className="unfocused"
                       onClick={() => trackAppDownload("Android")}
                     >
-                      <img src="/Vector.svg" alt="" />
+                      <img
+                        src="/Vector.svg"
+                        alt="Ícone Android - baixar app para Android"
+                      />
                       ANDROID
                     </a>
 
@@ -662,7 +783,10 @@ const Home: FunctionComponent = () => {
               </div>
               <div className="links">
                 <a href="https://www.instagram.com/gestaoboa/">
-                  <img src="/instagram-1@2x.png" alt="" />
+                  <img
+                    src="/instagram-1@2x.png"
+                    alt="Instagram da Gestão Boa - siga-nos nas redes sociais"
+                  />
                   @gestaoboa
                 </a>
               </div>
