@@ -318,7 +318,7 @@ const Solution = () => {
       <Content>
         <section className="hero">
           <h1>
-            Melhor App de Agendamentos e Gestão Financeira para sua empresa
+            Melhor App de Agendamentos e Gestão Financeira
           </h1>
           <p>
             Descubra o app mais completo para agendamentos online e gestão
