@@ -63,11 +63,11 @@ const Solution = () => {
         </title>
         <meta
           name="description"
-          content="Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Teste grátis 20 dias!"
+          content="Melhor app de agendamentos e gestão financeira do Brasil! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Link personalizado de agendamentos incluído! Teste grátis 20 dias!"
         />
         <meta
           name="keywords"
-          content="app de agendamentos, app para gestão financeira, aplicativo agendamento, app controle financeiro, sistema agendamento online, app gestão negócio, aplicativo financeiro empresarial, software agendamento, app caixa, gestão financeira app, agenda digital, controle de caixa app"
+          content="app de agendamentos, app para gestão financeira, aplicativo agendamento, app controle financeiro, sistema agendamento online, app gestão negócio, aplicativo financeiro empresarial, software agendamento, app caixa, gestão financeira app, agenda digital, controle de caixa app, link personalizado agendamento, agendamento 24h"
         />
         <meta name="author" content="Gestão Boa" />
         <meta name="robots" content="index, follow" />
@@ -81,7 +81,7 @@ const Solution = () => {
         />
         <meta
           property="og:description"
-          content="Melhor app de agendamentos e gestão financeira! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
+          content="Melhor app de agendamentos e gestão financeira! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Link personalizado de agendamentos incluído!"
         />
         <meta property="og:url" content="https://gestaoboa.com.br/solucao" />
         <meta property="og:site_name" content="Gestão Boa" />
@@ -105,7 +105,7 @@ const Solution = () => {
         />
         <meta
           name="twitter:description"
-          content="Melhor app de agendamentos e gestão financeira! Sistema completo para organizar agenda, controlar finanças, CRM e estoque."
+          content="Melhor app de agendamentos e gestão financeira! Sistema completo para organizar agenda, controlar finanças, CRM e estoque. Link personalizado incluído!"
         />
         <meta
           name="twitter:image"
@@ -187,6 +187,7 @@ const Solution = () => {
             },
             featureList: [
               "Agendamento online automático",
+              "Link personalizado de agendamentos",
               "Notificações por WhatsApp",
               "Sincronização de agenda",
               "Gestão de horários disponíveis",
@@ -321,7 +322,7 @@ const Solution = () => {
           </h1>
           <p>
             Descubra o app mais completo para agendamentos online e gestão
-            financeira empresarial. Organize sua agenda, controle seu caixa e
+            financeira empresarial. Organize sua agenda, crie seu link personalizado de agendamentos, controle seu caixa e
             faça seu negócio crescer com o melhor sistema de gestão!
           </p>
         </section>
@@ -357,6 +358,45 @@ const Solution = () => {
                   performance e ocupação
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div id="link-agendamentos" className="feature-item reverse">
+            <div className="video-container">
+              <video
+                controls
+                preload="metadata"
+              >
+                <source src="/agenda online.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeos. 
+              </video>
+            </div>
+            <div className="feature-content">
+              <h2>Link Personalizado de Agendamentos</h2>
+              <p>Permita que seus clientes agendem 24/7 através de um link personalizado:</p>
+              <ul>
+                <li>
+                  <strong>Link personalizado exclusivo</strong> - Ex: agendamento.gestaoboa.com.br/seunegocio
+                </li>
+                <li>
+                  <strong>Agendamento 24 horas por dia</strong> - Clientes agendam mesmo quando você está dormindo
+                </li>
+                <li>
+                  <strong>Reduz ligações desnecessárias</strong> - Menos interrupções no seu dia a dia
+                </li>
+                <li>
+                  <strong>Confirmação automática por WhatsApp</strong> - Cliente recebe confirmação na hora
+                </li>
+                <li>
+                  <strong>Integração total com sua agenda</strong> - Sincroniza automaticamente com seu calendário
+                </li>
+                <li>
+                  <strong>Compartilhe em qualquer lugar</strong> - Instagram, Facebook, cartão de visita digital
+                </li>
+              </ul>
+              <div className="feature-highlight">
+                <p>💡 <strong>Dica:</strong> Coloque seu link personalizado na bio do Instagram e no status do WhatsApp para receber agendamentos automáticos!</p>
+              </div>
             </div>
           </div>
 
@@ -565,6 +605,15 @@ const Solution = () => {
                 funcionários, métricas de clientes e muito mais. Todos os
                 relatórios podem ser exportados e personalizados conforme sua
                 necessidade.
+              </p>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                Como funciona o link personalizado de agendamentos?
+              </summary>
+              <p>
+                O link personalizado permite que seus clientes agendem diretamente através de um endereço exclusivo (ex: agendamento.gestaoboa.com.br/seunegocio). Você pode compartilhar este link no Instagram, WhatsApp Status, cartão de visita digital ou qualquer lugar. Os clientes podem agendar 24 horas por dia e recebem confirmação automática por WhatsApp. O agendamento sincroniza automaticamente com sua agenda no sistema.
               </p>
             </details>
 

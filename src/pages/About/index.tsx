@@ -35,8 +35,7 @@ const About = () => {
     <>
       <Helmet>
         <title>
-          Sobre a Gestão Boa - História, Equipe e Missão | Sistema de Gestão
-          Empresarial
+          Sobre a Gestão Boa - História, Equipe e Missão | Sistema de Gestão Empresarial
         </title>
         <meta
           name="description"

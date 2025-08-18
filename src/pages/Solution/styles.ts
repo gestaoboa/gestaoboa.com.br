@@ -63,6 +63,16 @@ export const Content = styled.main`
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       }
 
+      .video-container {
+        width: 300px;
+        
+        video {
+          width: 100%;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+      }
+
       .feature-content {
         flex: 1;
 
@@ -96,6 +106,20 @@ export const Content = styled.main`
               color: #03045e;
               font-weight: bold;
             }
+          }
+        }
+
+        .feature-highlight {
+          background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+          border-left: 4px solid #03045e;
+          padding: 15px 20px;
+          margin-top: 20px;
+          border-radius: 8px;
+
+          p {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
           }
         }
       }

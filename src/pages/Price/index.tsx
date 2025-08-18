@@ -326,7 +326,7 @@ const Price = () => {
       <Header />
       <div className="plans">
         <h1 className="plans-title" id="plans-section">
-          Planos e Preços do Sistema Gestão Boa - Teste Grátis por 20 Dias
+          Planos do Sistema Gestão Boa
         </h1>
         <div className="plan-type-selector">
           {[
@@ -660,138 +660,6 @@ const Price = () => {
             >
               Saiba mais sobre a mentoria
             </button>
-          </div>
-        </div>
-        <div className="comparison-section">
-          <h2>Comparação de Sistemas de Gestão - Gestão Boa vs Concorrentes</h2>
-          <div className="container">
-            <table className="comparison-table">
-              <caption>
-                Comparação detalhada entre Gestão Boa e sistemas concorrentes de
-                gestão
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Funcionalidade</th>
-                  <th scope="col">Gestão Boa</th>
-                  <th scope="col">Sistema concorrentes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Agendamento online</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="check-icon">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Gestão financeira</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="check-icon">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Controle de estoque</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="check-icon">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Relatórios gerenciais</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="check-icon">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Aplicativo para profissionais</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="check-icon">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Programa de fidelidade</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="check-icon">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Emissão de comanda personalizada</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="x-icon">✖</span>
-                  </td>
-                </tr>
-                {/* <tr>
-                  <td>Chatbot WhatsApp</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="x-icon">✖</span>
-                  </td>
-                </tr> */}
-                <tr>
-                  <td>Personalização</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="x-icon">✖</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Atualizações baseadas em feedback</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="x-icon">✖</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Mentoria gratuita</td>
-                  <td className="gestao-boa-col">
-                    <span className="check-icon">✓</span>
-                  </td>
-                  <td>
-                    <span className="x-icon">✖</span>
-                  </td>
-                </tr>
-                <tr className="price-row">
-                  <td>Plano Mensal</td>
-                  <td className="gestao-boa-col">
-                    R$ 99,90
-                    <br />
-                    Funcionários ilimitados
-                  </td>
-                  <td>
-                    R$ 149,90
-                    <br />
-                    Até 5 funcionários
-                  </td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
         <div className="support-section">
