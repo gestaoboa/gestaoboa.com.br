@@ -352,7 +352,7 @@ const Home: FunctionComponent = () => {
                 </a>
                 <a
                   className="button button-link"
-                  href="/solution"
+                  href="/solucao"
                   title="SAIBA MAIS"
                 >
                   <Button
@@ -398,7 +398,7 @@ const Home: FunctionComponent = () => {
                     Mantenha seus compromissos sempre à mão.
                   </div>
                   <a
-                    href="/solution#agenda"
+                    href="/solucao#agenda"
                     className="benefit-button"
                     title="Saiba mais sobre Agenda Simplificada"
                   >
@@ -423,7 +423,7 @@ const Home: FunctionComponent = () => {
                     vendas dos seus produtos.
                   </div>
                   <a
-                    href="/solution#produtos"
+                    href="/solucao#produtos"
                     className="benefit-button"
                     title="Saiba mais sobre Gerenciamento e vendas de produtos"
                   >
@@ -449,7 +449,7 @@ const Home: FunctionComponent = () => {
                     seus boletos.
                   </div>
                   <a
-                    href="/solution#financeiro"
+                    href="/solucao#financeiro"
                     className="benefit-button"
                     title="Saiba mais sobre Controle de Custos"
                   >
@@ -473,7 +473,7 @@ const Home: FunctionComponent = () => {
                     Acompanhe entradas e saídas por método de pagamento.
                   </div>
                   <a
-                    href="/solution#financeiro"
+                    href="/solucao#financeiro"
                     className="benefit-button"
                     title="Saiba mais sobre Gestão Financeira"
                   >
@@ -497,7 +497,7 @@ const Home: FunctionComponent = () => {
                     Visualize resultados e tome decisões baseadas em dados.
                   </div>
                   <a
-                    href="/solution#analytics"
+                    href="/solucao#analytics"
                     className="benefit-button"
                     title="Saiba mais sobre Análises Detalhadas"
                   >
@@ -521,7 +521,7 @@ const Home: FunctionComponent = () => {
                     Automatize mensagens e crie relacionamentos duradouros.
                   </div>
                   <a
-                    href="/solution#clientes"
+                    href="/solucao#clientes"
                     className="benefit-button"
                     title="Saiba mais sobre Fidelização do Cliente"
                   >
