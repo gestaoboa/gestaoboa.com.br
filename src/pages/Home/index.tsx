@@ -19,6 +19,7 @@ import { Banner, Contact, Container, FAQ, Grid, Solutions } from "./styles";
 
 // Import the carousel styles
 import "./testimonial-carousel.css";
+import "./performance.css";
 
 const Home: FunctionComponent = () => {
   const formRef = useRef<FormHandles>(null);
@@ -209,75 +210,9 @@ const Home: FunctionComponent = () => {
             content="default"
           />
 
-          {/* Schema.org structured data */}
+          {/* Schema.org structured data - Otimizado */}
           <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Gestão Boa",
-              description:
-                "Sistema de Gestão completo com agendamentos, controle financeiro, CRM, estoque e comissões",
-              url: "https://gestaoboa.com.br",
-              applicationCategory: "BusinessApplication",
-              operatingSystem: "Web, iOS, Android",
-              offers: {
-                "@type": "Offer",
-                price: "49.90",
-                priceCurrency: "BRL",
-                priceValidUntil: "2025-12-31",
-                availability: "https://schema.org/InStock",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                reviewCount: "500",
-              },
-              provider: {
-                "@type": "Organization",
-                name: "BEasier Tech",
-                url: "https://gestaoboa.com.br",
-              },
-            })}
-          </script>
-
-          {/* Sitelinks Search Box and Significant Links Schema */}
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Gestão Boa",
-              url: "https://gestaoboa.com.br/",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                  "@type": "EntryPoint",
-                  urlTemplate:
-                    "https://gestaoboa.com.br/search?q={search_term_string}",
-                },
-                "query-input": "required name=search_term_string",
-              },
-              mainEntity: {
-                "@type": "WebPage",
-                "@id": "https://gestaoboa.com.br/",
-                hasPart: [
-                  {
-                    "@type": "WebPage",
-                    name: "Teste Gratuito",
-                    url: "https://gestaoboa.com.br/preco",
-                  },
-                  {
-                    "@type": "WebPage",
-                    name: "Soluções",
-                    url: "https://gestaoboa.com.br/solucao",
-                  },
-                  {
-                    "@type": "WebPage",
-                    name: "Conheça a Gestão Boa",
-                    url: "https://gestaoboa.com.br/sobre",
-                  },
-                ],
-              },
-            })}
+            {`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gestão Boa","description":"Sistema de Gestão completo com agendamentos, controle financeiro, CRM, estoque e comissões","url":"https://gestaoboa.com.br","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"49.90","priceCurrency":"BRL"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"500"}}`}
           </script>
         </Helmet>
         <Grid>
@@ -356,7 +291,7 @@ const Home: FunctionComponent = () => {
                   title="SAIBA MAIS"
                 >
                   <Button
-                    width="100%"
+                    width="99%"
                     text="SAIBA MAIS"
                     method={() => {}}
                     type={"unfocused"}
@@ -369,11 +304,15 @@ const Home: FunctionComponent = () => {
                 className="cellphone"
                 src="/cellphone.png"
                 alt="Aplicativo Gestão Boa em smartphone mostrando interface de gestão"
+                loading="eager"
+                width="300"
+                height="600"
               />
               <img
                 className="elipse"
                 src="/Ellipse.svg"
                 alt="Elemento decorativo"
+                loading="lazy"
               />
             </div>
           </Banner>
@@ -391,6 +330,9 @@ const Home: FunctionComponent = () => {
                 <img
                   src="/check-list.png"
                   alt="Ícone de agenda simplificada - checklist para organização de compromissos"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="info">
                   <h3 className="title">Agenda Simplificada</h3>
@@ -415,6 +357,9 @@ const Home: FunctionComponent = () => {
                 <img
                   src="calendar (1) 1 (1).svg"
                   alt="Ícone de gerenciamento de produtos - controle de estoque e vendas"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="info">
                   <h3 className="title">Gerenciamento e vendas de produtos</h3>
@@ -440,6 +385,9 @@ const Home: FunctionComponent = () => {
                 <img
                   src="calendar (1) 1.svg"
                   alt="Ícone de controle de custos - gestão financeira de despesas"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="info">
                   <h3 className="title">Controle de Custos</h3>
@@ -466,6 +414,9 @@ const Home: FunctionComponent = () => {
                 <img
                   src="calendar (1) 2.svg"
                   alt="Ícone de gestão financeira - acompanhamento de entradas e saídas"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="info">
                   <h3 className="title">Gestão Financeira</h3>
@@ -490,6 +441,9 @@ const Home: FunctionComponent = () => {
                 <img
                   src="calendar (1) 3.svg"
                   alt="Ícone de análises detalhadas - relatórios e insights de negócio"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="info">
                   <h3 className="title">Análises Detalhadas</h3>
@@ -514,6 +468,9 @@ const Home: FunctionComponent = () => {
                 <img
                   src="calendar (1) 3 (1).svg"
                   alt="Ícone de fidelização do cliente - automação de mensagens e relacionamento"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="info">
                   <div className="title">Fidelização do Cliente</div>
@@ -558,10 +515,12 @@ const Home: FunctionComponent = () => {
                 cresça e fidelize seus clientes!
               </div>
 
-              {/* Leandro's testimonial - fixed */}
+              {/* Leandro's testimonial - otimizado com lazy loading */}
               <div className="card featured-testimonial">
                 <video
                   controls
+                  preload="metadata"
+                  poster="/leandro-thumbnail.jpg"
                   onPlay={() =>
                     FB_PIXEL.trackCustomEvent("VideoPlay", {
                       video: "depoimentoLeandro",
@@ -601,6 +560,9 @@ const Home: FunctionComponent = () => {
                     <img
                       src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg"
                       alt="Janaina Christello"
+                      loading="lazy"
+                      width="200"
+                      height="200"
                     />
                     <div className="texts">
                       <div className="title">
@@ -626,6 +588,9 @@ const Home: FunctionComponent = () => {
                     <img
                       src="/pedroCirilo.png"
                       alt="Pedro Cirilo"
+                      loading="lazy"
+                      width="200"
+                      height="200"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
@@ -649,6 +614,9 @@ const Home: FunctionComponent = () => {
                     <img
                       src="/PedroArthur.jpg"
                       alt="Pedro Arthur"
+                      loading="lazy"
+                      width="200"
+                      height="200"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
@@ -702,6 +670,9 @@ const Home: FunctionComponent = () => {
                       <img
                         src="/Vector.svg"
                         alt="Ícone Android - baixar app para Android"
+                        loading="lazy"
+                        width="24"
+                        height="24"
                       />
                       ANDROID
                     </a>
@@ -717,6 +688,9 @@ const Home: FunctionComponent = () => {
                         src="/mage_playstore.svg"
                         alt="Ícone da App Store"
                         className="ios-icon"
+                        loading="lazy"
+                        width="24"
+                        height="24"
                       />
                       IOS
                     </a>
@@ -863,6 +837,9 @@ const Home: FunctionComponent = () => {
                   <img
                     src="/instagram-1@2x.png"
                     alt="Instagram da Gestão Boa - siga-nos nas redes sociais"
+                    loading="lazy"
+                    width="32"
+                    height="32"
                   />
                   @gestaoboa
                 </a>

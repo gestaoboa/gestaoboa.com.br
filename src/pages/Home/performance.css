@@ -1,0 +1,65 @@
+/* Otimizações de Performance */
+
+/* Hidden SEO navigation - invisible mas indexável pelos buscadores */
+.seo-navigation {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Preload crítico */
+.critical-images {
+  position: relative;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"]:not([src]) {
+  opacity: 0;
+}
+
+/* Otimização para vídeos */
+video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Prevent layout shift */
+.testimonials-carousel img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Optimize animations */
+.benefit,
+.card {
+  will-change: transform;
+}
+
+/* Reduce repaints */
+.buttons a,
+.benefit-button {
+  contain: layout style paint;
+}
+
+/* Critical rendering path optimization */
+.cellphone {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 600px;
+}
+
+/* Video optimization */
+video[preload="metadata"] {
+  background-color: #f0f0f0;
+  background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}

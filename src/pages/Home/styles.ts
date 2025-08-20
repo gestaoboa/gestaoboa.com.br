@@ -34,8 +34,8 @@ export const Banner = styled.div`
     display: flex;
     flex-direction: column;
     grid-column: span 7;
-    gap: 57px;
-    justify-self: center;
+    gap: 40px;
+    justify-self: flex-start;
   }
 
   .content .title {
@@ -60,13 +60,12 @@ export const Banner = styled.div`
   .content .buttons {
     display: flex;
     width: 850px;
-    gap: 35px;
-    align-items: center;
-    justify-content: start;
+    gap: 25px;
+    align-items: flex-start;
   }
 
   .content .buttons .button {
-    width: 308px;
+    width: 300px;
   }
 
   .content .buttons .button-link {
