@@ -484,65 +484,6 @@ export const Solutions = styled.div`
     justify-content: center;
   }
 
-  .testimonies {
-    display: flex;
-    flex-direction: column;
-    padding: 100px;
-    width: calc(100% - 200px);
-    gap: 60px;
-    align-items: center;
-  }
-
-  .testimonies .heading {
-    font-size: 48px;
-    width: 80%;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 100px;
-  }
-
-  .testimonies .card {
-    display: flex;
-    width: 85%;
-    border-radius: 20px;
-    box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-
-  .testimonies .card img {
-    object-fit: cover;
-    border-radius: 20px 0px 0px 20px;
-  }
-  .testimonies .card video {
-    height: 700px;
-    width: 450px;
-    object-fit: cover;
-    border-radius: 20px 0px 0px 20px;
-  }
-
-  .testimonies .card .texts {
-    width: calc(100% - 80px);
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 50px;
-  }
-
-  .testimonies .card .texts .title {
-    font-size: 36px;
-    font-weight: bold;
-  }
-
-  .testimonies .card .texts .desc {
-    font-size: 18px;
-  }
-
-  .testimonies .card .texts .person {
-    display: flex;
-    font-style: italic;
-  }
-
   @media (max-width: 1780px) {
     .solutionBanner .title {
       font-size: 64px;
@@ -552,11 +493,6 @@ export const Solutions = styled.div`
     .benefits {
       align-items: center;
       width: calc(100% - 200px);
-    }
-
-    .testimonies .card img,
-    .testimonies .card video {
-      width: 400px;
     }
 
     .tutorial {
@@ -581,23 +517,6 @@ export const Solutions = styled.div`
       grid-template-columns: 1fr 1fr;
     }
 
-    .testimonies {
-      justify-content: center;
-      padding: 0px;
-      padding-bottom: 100px;
-      width: 100%;
-      gap: 10px;
-    }
-
-    .testimonies .card {
-      width: 90%;
-    }
-
-    .testimonies .card img,
-    .testimonies .card video {
-      width: 400px;
-    }
-
     .tutorial {
       display: flex;
       flex-direction: column;
@@ -606,9 +525,6 @@ export const Solutions = styled.div`
   }
 
   @media (max-width: 1024px) {
-    .testimonies .card .texts .title {
-      font-size: 36px;
-    }
   }
 
   @media (max-width: 800px) {
@@ -632,21 +548,6 @@ export const Solutions = styled.div`
 
     .benefits .benefit .subtitle {
       width: 250px;
-    }
-
-    .testimonies .card {
-      width: calc(100% - 200px);
-      flex-direction: column;
-    }
-
-    .testimonies .card img,
-    .testimonies .card video {
-      width: 100%;
-      border-radius: 20px 20px 0px 0px;
-    }
-
-    .testimonies .card .texts {
-      gap: 35px;
     }
   }
 
@@ -720,38 +621,6 @@ export const Solutions = styled.div`
       width: calc(100% - 20px);
       font-weight: normal;
       font-size: 16px;
-    }
-
-    .testimonies {
-      padding: 10px;
-      width: calc(100% - 20px);
-      gap: 60px;
-    }
-
-    .testimonies .heading {
-      font-size: 32px;
-      width: calc(100% - 20px);
-      margin-bottom: 0px;
-    }
-
-    .testimonies .card {
-      width: calc(100% - 20px);
-      flex-direction: column;
-    }
-
-    .testimonies .card .texts .title {
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .testimonies .card .texts {
-      width: calc(100% - 60px);
-      padding: 30px;
-      gap: 30px;
-    }
-
-    .testimonies .card .texts .desc {
-      font-size: 18px;
     }
 
     .tutorial {

@@ -18,7 +18,6 @@ import ReactPlayer from "react-player";
 import { Banner, Contact, Container, FAQ, Grid, Solutions } from "./styles";
 
 // Import the carousel styles
-import "./testimonial-carousel.css";
 import "./performance.css";
 
 const Home: FunctionComponent = () => {
@@ -212,7 +211,7 @@ const Home: FunctionComponent = () => {
 
           {/* Schema.org structured data - Otimizado */}
           <script type="application/ld+json">
-            {`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gestão Boa","description":"Sistema de Gestão completo com agendamentos, controle financeiro, CRM, estoque e comissões","url":"https://gestaoboa.com.br","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"49.90","priceCurrency":"BRL"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"500"}}`}
+            {`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gestão Boa","description":"Sistema de Gestão completo com agendamentos, controle financeiro, CRM, estoque e comissões","url":"https://gestaoboa.com.br","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"49.90","priceCurrency":"BRL"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"500"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Pedro Cirilo","jobTitle":"Designer","image":"https://gestaoboa.com.br/pedroCirilo.png"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"A equipe é extremamente profissional. Entendem muito bem as demandas e estão sempre atualizados. Já trabalhei com eles na construção de outras plataformas e sites e foram impecáveis! Tenho como grandes parceiros!"},{"@type":"Review","author":{"@type":"Person","name":"Pedro Arthur","jobTitle":"Proprietário da Prime Barbershop","image":"https://gestaoboa.com.br/PedroArthur.jpg"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"O app da gestão boa vem me ajudando muito desde o primeiro dia, consigo saber com exatidão quantos clientes eu tenho e atendo, faturamento, venda de produtos, etc."},{"@type":"Review","author":{"@type":"Person","name":"Janaina Christello","jobTitle":"Psicóloga","image":"https://gestaoboa.com.br/WhatsApp Image 2024-07-05 at 10.01.10.jpeg"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"O aplicativo ajudou muito a organizar os meus recebimentos e entender quais são os lucros e despesas de forma muito clara e objetiva."}]}`}
           </script>
         </Helmet>
         <Grid>
@@ -514,8 +513,6 @@ const Home: FunctionComponent = () => {
                 Empreendedores de sucesso já contam com nossa solução: organize,
                 cresça e fidelize seus clientes!
               </div>
-
-              {/* Leandro's testimonial - otimizado com lazy loading */}
               <div className="card featured-testimonial">
                 <video
                   controls
@@ -553,98 +550,142 @@ const Home: FunctionComponent = () => {
                 </div>
               </div>
 
-              {/* Other testimonials carousel */}
-              <div className="testimonials-carousel">
-                <div className="testimonials-track">
-                  <div className="card carousel-card">
+              {/* Outros depoimentos em grid fixo */}
+              <div className="testimonials-grid">
+                
+                {/* Depoimento Janaina */}
+                <div className="testimonial-card-new" itemScope itemType="https://schema.org/Review">
+                  <div className="testimonial-quote">"</div>
+                  <div className="testimonial-header">
                     <img
                       src="/WhatsApp Image 2024-07-05 at 10.01.10.jpeg"
                       alt="Janaina Christello"
+                      className="testimonial-avatar"
+                      itemProp="image"
                       loading="lazy"
-                      width="200"
-                      height="200"
                     />
-                    <div className="texts">
-                      <div className="title">
-                        Ficou mais fácil organizar minhas finanças
-                      </div>
-                      <div className="desc">
-                        O aplicativo ajudou muito a organizar os meus
-                        recebimentos e entender quais são os lucros e despesas
-                        de forma muito clara e objetiva. Além de conseguir
-                        abranger vários objetivos em um só APP como organizar
-                        agendamentos que antes usava o Google agenda e também
-                        organizar os recebimentos que antes usava o Excel. Assim
-                        se torna muito mais prático e organizado as minhas
-                        finanças.
-                      </div>
-                      <div className="person">
-                        - Janaina Christello, Psicóloga
-                      </div>
+                    <div className="testimonial-info">
+                      <h4 itemProp="author" itemScope itemType="https://schema.org/Person">
+                        <span itemProp="name">Janaina Christello</span>
+                      </h4>
+                      <p itemProp="jobTitle">Psicóloga</p>
                     </div>
                   </div>
+                  
+                  <div className="testimonial-rating">
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                  </div>
+                  
+                  <h3 className="testimonial-title" itemProp="name">
+                    Ficou mais fácil organizar minhas finanças
+                  </h3>
+                  
+                  <p className="testimonial-text" itemProp="reviewBody">
+                    O aplicativo ajudou muito a organizar os meus recebimentos e entender quais são os lucros e despesas de forma muito clara e objetiva. Além de conseguir abranger vários objetivos em um só APP como organizar agendamentos que antes usava o Google agenda e também organizar os recebimentos que antes usava o Excel.
+                  </p>
+                  
+                  <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="hidden-rating">
+                    <meta itemProp="ratingValue" content="5" />
+                    <meta itemProp="bestRating" content="5" />
+                  </div>
+                </div>
 
-                  <div className="card carousel-card">
+                {/* Depoimento Pedro Cirilo */}
+                <div className="testimonial-card-new" itemScope itemType="https://schema.org/Review">
+                  <div className="testimonial-quote">"</div>
+                  <div className="testimonial-header">
                     <img
                       src="/pedroCirilo.png"
                       alt="Pedro Cirilo"
+                      className="testimonial-avatar"
+                      itemProp="image"
                       loading="lazy"
-                      width="200"
-                      height="200"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
-                        target.src =
-                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PC";
+                        target.src = "https://placehold.co/64x64/007BFF/FFFFFF?text=PC";
                       }}
                     />
-                    <div className="texts">
-                      <div className="title">Grandes parceiros</div>
-                      <div className="desc">
-                        A equipe é extremamente profissional. Entendem muito bem
-                        as demandas e estão sempre atualizados. Já trabalhei com
-                        eles na construção de outras plataformas e sites e foram
-                        impecáveis! Tenho como grandes parceiros!
-                      </div>
-                      <div className="person">- Pedro Cirilo, Designer</div>
+                    <div className="testimonial-info">
+                      <h4 itemProp="author" itemScope itemType="https://schema.org/Person">
+                        <span itemProp="name">Pedro Cirilo</span>
+                      </h4>
+                      <p itemProp="jobTitle">Designer</p>
                     </div>
                   </div>
+                  
+                  <div className="testimonial-rating">
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                  </div>
+                  
+                  <h3 className="testimonial-title" itemProp="name">
+                    Grandes parceiros
+                  </h3>
+                  
+                  <p className="testimonial-text" itemProp="reviewBody">
+                    A equipe é extremamente profissional. Entendem muito bem as demandas e estão sempre atualizados. Já trabalhei com eles na construção de outras plataformas e sites e foram impecáveis! Tenho como grandes parceiros!
+                  </p>
+                  
+                  <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="hidden-rating">
+                    <meta itemProp="ratingValue" content="5" />
+                    <meta itemProp="bestRating" content="5" />
+                  </div>
+                </div>
 
-                  <div className="card carousel-card">
+                {/* Depoimento Pedro Arthur */}
+                <div className="testimonial-card-new" itemScope itemType="https://schema.org/Review">
+                  <div className="testimonial-quote">"</div>
+                  <div className="testimonial-header">
                     <img
                       src="/PedroArthur.jpg"
                       alt="Pedro Arthur"
+                      className="testimonial-avatar"
+                      itemProp="image"
                       loading="lazy"
-                      width="200"
-                      height="200"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
-                        target.src =
-                          "https://placehold.co/200x200/007BFF/FFFFFF?text=PA";
+                        target.src = "https://placehold.co/64x64/007BFF/FFFFFF?text=PA";
                       }}
                     />
-                    <div className="texts">
-                      <div className="title">Controle total do negócio</div>
-                      <div className="desc">
-                        O app da gestão boa vem me ajudando muito desde o
-                        primeiro dia, consigo saber com exatidão quantos
-                        clientes eu tenho e atendo, faturamento, venda de
-                        produtos, etc. Comecei a ter controle não só dos cortes,
-                        mas das vendas dos produtos e dos custos. E hoje eu
-                        tenho controle do quanto custa cada corte, isso é muito
-                        importante, até para precificar os serviços. A atenção
-                        do suporte também é um ponto importante de citar, sempre
-                        tiram as dúvidas e resolvem o que precisa com rapidez.
-                      </div>
-                      <div className="person">
-                        - Pedro Arthur, Proprietário da Prime Barbershop
-                      </div>
+                    <div className="testimonial-info">
+                      <h4 itemProp="author" itemScope itemType="https://schema.org/Person">
+                        <span itemProp="name">Pedro Arthur</span>
+                      </h4>
+                      <p itemProp="jobTitle">Proprietário da Prime Barbershop</p>
                     </div>
                   </div>
-
-                  {/* Duplicate cards for infinite scroll effect */}
+                  
+                  <div className="testimonial-rating">
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                    <span className="star">★</span>
+                  </div>
+                  
+                  <h3 className="testimonial-title" itemProp="name">
+                    Controle total do negócio
+                  </h3>
+                  
+                  <p className="testimonial-text" itemProp="reviewBody">
+                    O app da gestão boa vem me ajudando muito desde o primeiro dia, consigo saber com exatidão quantos clientes eu tenho e atendo, faturamento, venda de produtos, etc. Comecei a ter controle não só dos cortes, mas das vendas dos produtos e dos custos. A atenção do suporte também é um ponto importante de citar.
+                  </p>
+                  
+                  <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="hidden-rating">
+                    <meta itemProp="ratingValue" content="5" />
+                    <meta itemProp="bestRating" content="5" />
+                  </div>
                 </div>
+
               </div>
             </div>
             <div className="tutorial" id="demonstration">

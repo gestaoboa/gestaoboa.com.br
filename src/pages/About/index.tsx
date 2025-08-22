@@ -49,8 +49,15 @@ const About = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gestaoboa.com.br/sobre" />
 
-        {/* Open Graph Meta Tags */}
-        <meta property="og:type" content="website" />
+        {/* Person-specific meta tags for Silvio Quintana */}
+        <meta name="DC.creator" content="Silvio Quintana" />
+        <meta name="article:author" content="Silvio Quintana" />
+        <meta name="profile:first_name" content="Silvio" />
+        <meta name="profile:last_name" content="Quintana" />
+        <meta name="profile:username" content="Silvio Quintana" />
+
+        {/* Open Graph Meta Tags focused on Silvio Quintana */}
+        <meta property="og:type" content="profile" />
         <meta
           property="og:title"
           content="Sobre a Gestão Boa - História, Equipe e Missão"
@@ -93,7 +100,56 @@ const About = () => {
         <meta name="theme-color" content="#007BFF" />
         <meta name="application-name" content="Gestão Boa" />
 
-        {/* Schema.org structured data */}
+        {/* Schema.org structured data focused on Silvio Quintana */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Silvio Quintana",
+            alternateName: ["Sílvio Quintana", "Silvio Quintana CEO", "Silvio Quintana Gestão Boa"],
+            jobTitle: "CEO e Fundador",
+            description: "Silvio Quintana é CEO e fundador da Gestão Boa, empreendedor visionário que revolucionou a gestão empresarial no Brasil. Líder em inovação tecnológica e sistemas de gestão para pequenas e médias empresas.",
+            worksFor: {
+              "@type": "Organization",
+              name: "Gestão Boa",
+              url: "https://gestaoboa.com.br",
+              description: "Sistema de gestão completo que transforma a administração de pequenos e médios negócios"
+            },
+            foundingDate: "2023",
+            nationality: "Brazilian",
+            knowsAbout: [
+              "Gestão Empresarial",
+              "Sistemas de Gestão", 
+              "Empreendedorismo",
+              "Tecnologia",
+              "Inovação",
+              "Liderança",
+              "Startup",
+              "SaaS"
+            ],
+            colleague: [
+              {
+                "@type": "Person",
+                name: "Karine Quintana",
+                jobTitle: "CFO e Cofundadora"
+              },
+              {
+                "@type": "Person", 
+                name: "Victor Amaral",
+                jobTitle: "CTO e Cofundador"
+              }
+            ],
+            award: "1º lugar na pré-incubação da FURG",
+            alumniOf: "IFRS",
+            url: "https://gestaoboa.com.br/sobre",
+            sameAs: [
+              "https://gestaoboa.com.br/sobre",
+              "https://www.instagram.com/gestaoboa/"
+            ]
+          })}
+        </script>
+
+        {/* Additional Organization schema for context */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -104,41 +160,41 @@ const About = () => {
             url: "https://gestaoboa.com.br",
             logo: "https://gestaoboa.com.br/beasier-1-1-1@2x.png",
             foundingDate: "2023",
-            founders: [
+            founder: {
+              "@type": "Person",
+              name: "Silvio Quintana",
+              jobTitle: "CEO e Fundador",
+              description: "Empreendedor visionário e CEO da Gestão Boa"
+            },
+            employee: [
               {
                 "@type": "Person",
-                name: "Sílvio Quintana",
-                jobTitle: "CEO",
-                description:
-                  "Arquiteto de ideias que dá vida e direção à Gestão Boa",
+                name: "Silvio Quintana", 
+                jobTitle: "CEO e Fundador"
               },
               {
                 "@type": "Person",
                 name: "Karine Quintana",
-                jobTitle: "CFO",
-                description:
-                  "Mente estratégica por trás das finanças e do crescimento",
+                jobTitle: "CFO e Cofundadora"
               },
               {
                 "@type": "Person",
                 name: "Victor Amaral",
-                jobTitle: "CTO",
-                description:
-                  "Maestro tecnológico que orquestra nossas equipes de desenvolvimento",
-              },
+                jobTitle: "CTO e Cofundador"
+              }
             ],
             address: {
               "@type": "PostalAddress",
               addressCountry: "BR",
-              addressRegion: "RS",
+              addressRegion: "RS"
             },
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+55-53-999461550",
               contactType: "customer service",
-              availableLanguage: "Portuguese",
+              availableLanguage: "Portuguese"
             },
-            sameAs: ["https://www.instagram.com/gestaoboa/"],
+            sameAs: ["https://www.instagram.com/gestaoboa/"]
           })}
         </script>
         <script type="application/ld+json">
@@ -169,9 +225,19 @@ const About = () => {
             description:
               "Conheça a história da Gestão Boa: de uma ideia no IFRS ao sistema de gestão que transforma negócios. Nossa equipe, missão e valores.",
             url: "https://gestaoboa.com.br/sobre",
+            about: {
+              "@type": "Person",
+              name: "Silvio Quintana",
+              jobTitle: "CEO e Fundador da Gestão Boa"
+            },
             mainEntity: {
-              "@type": "Organization",
-              name: "Gestão Boa",
+              "@type": "Person",
+              name: "Silvio Quintana",
+              jobTitle: "CEO e Fundador",
+              worksFor: {
+                "@type": "Organization",
+                name: "Gestão Boa"
+              }
             },
             breadcrumb: {
               "@type": "BreadcrumbList",
@@ -180,7 +246,7 @@ const About = () => {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://gestaoboa.com.br",
+                  item: "https://gestaoboa.com.br"
                 },
                 {
                   "@type": "ListItem",
