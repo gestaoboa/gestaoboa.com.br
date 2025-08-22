@@ -4,7 +4,6 @@ import AnuncioGestaoBoa from "./pages/AnuncioGestaoBoa";
 import Home from "./pages/Home";
 import Price from "./pages/Price";
 import Privacy from "./pages/Privacy";
-import Anuncios from "./pages/Propaganda";
 import Sales from "./pages/Sales";
 import Solution from "./pages/Solution";
 import Terms from "./pages/Terms";
@@ -20,7 +19,6 @@ function App() {
         <Route path="/preco" element={<Price />} />
         <Route path="/solucao" element={<Solution />} />
         <Route path="/vendas" element={<Sales />} />
-        <Route path="/anuncios" element={<Anuncios />} />
         <Route path="/anuncio-gestaoboa" element={<AnuncioGestaoBoa />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
