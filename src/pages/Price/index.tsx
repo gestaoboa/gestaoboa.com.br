@@ -15,7 +15,7 @@ const getDiscount = (type: PlanType) => {
     case "Anual":
       return 0.24; // 24% off
     case "Semestral":
-      return 0.12; // 12% off
+      return 0.15; // 15% off
     default:
       return 0;
   }
@@ -36,21 +36,27 @@ const Price = () => {
   } | null>(null);
 
   // Price data
+  const monthlyPrices = {
+    Basico: 64.90,
+    Standard: 89.90,
+    Premium: 129.90,
+  };
+
   const prices = {
     Anual: {
-      Basico: { original: { vista: 900, parcelas: "69,90" } }, // usando valor mensal
-      Standard: { original: { vista: 1080, parcelas: "89,90" } }, // usando valor mensal
-      Premium: { original: { vista: 1200, parcelas: "129,90" } }, // usando valor mensal
+      Basico: { original: { vista: monthlyPrices.Basico * 12, parcelas: "64,90" } },
+      Standard: { original: { vista: monthlyPrices.Standard * 12, parcelas: "89,90" } },
+      Premium: { original: { vista: monthlyPrices.Premium * 12, parcelas: "129,90" } },
     },
     Semestral: {
-      Basico: { original: { vista: 450, parcelas: "89,90" } }, // usando valor mensal
-      Standard: { original: { vista: 540, parcelas: "89,90" } }, // usando valor mensal
-      Premium: { original: { vista: 650, parcelas: "129,90" } }, // usando valor mensal
+      Basico: { original: { vista: monthlyPrices.Basico * 6, parcelas: "64,90" } },
+      Standard: { original: { vista: monthlyPrices.Standard * 6, parcelas: "89,90" } },
+      Premium: { original: { vista: monthlyPrices.Premium * 6, parcelas: "129,90" } },
     },
     Mensal: {
-      Basico: { original: 64.89, parcelas: "69,90" },
-      Standard: { original: 90.9, parcelas: "89,90" },
-      Premium: { original: 129.91, parcelas: "129,90" },
+      Basico: { original: monthlyPrices.Basico, parcelas: "64,90" },
+      Standard: { original: monthlyPrices.Standard, parcelas: "89,90" },
+      Premium: { original: monthlyPrices.Premium, parcelas: "129,90" },
     },
   };
 
@@ -292,7 +298,7 @@ const Price = () => {
                 name: "Existe desconto para pagamento anual?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Sim! Oferecemos 24% de desconto para pagamento anual e 12% de desconto para pagamento semestral em todos os planos.",
+                  text: "Sim! Oferecemos 24% de desconto para pagamento anual e 15% de desconto para pagamento semestral em todos os planos.",
                 },
               },
               {
@@ -336,7 +342,7 @@ const Price = () => {
             },
             {
               type: "Semestral",
-              discount: "12% off",
+              discount: "15% off",
             },
             { type: "Mensal" },
           ].map((plan) => (
@@ -362,7 +368,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "24% OFF" : "12% OFF"}
+                {planType === "Anual" ? "24% OFF" : "15% OFF"}
               </div>
             )}
             <h2>Plano Básico</h2>
@@ -477,7 +483,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "24% OFF" : "12% OFF"}
+                {planType === "Anual" ? "24% OFF" : "15% OFF"}
               </div>
             )}
             <h2>Plano Crescimento</h2>
@@ -565,7 +571,7 @@ const Price = () => {
           <div className="plan-card">
             {(planType === "Anual" || planType === "Semestral") && (
               <div className="plan-discount-badge">
-                {planType === "Anual" ? "24% OFF" : "12% OFF"}
+                {planType === "Anual" ? "24% OFF" : "15% OFF"}
               </div>
             )}
             <h2>Plano Empresarial</h2>
