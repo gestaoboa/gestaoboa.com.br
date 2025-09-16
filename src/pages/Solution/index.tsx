@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Container, Content } from "./styles";
+import "../../styles/feature-animations.css";
 
 const Solution = () => {
   useEffect(() => {
@@ -39,6 +40,24 @@ const Solution = () => {
       }
     };
 
+    // Função para animações de scroll reveal
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observa todos os elementos com classe reveal-element
+    const revealElements = document.querySelectorAll('.reveal-element');
+    revealElements.forEach((el) => observer.observe(el));
+
     // Executa quando a página carrega
     scrollToSection();
 
@@ -52,6 +71,7 @@ const Solution = () => {
     // Cleanup
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
+      observer.disconnect();
     };
   }, []);
   return (
@@ -321,21 +341,57 @@ const Solution = () => {
             Melhor App de Agendamentos e Gestão Financeira
           </h1>
           <p>
-            Descubra o app mais completo para agendamentos online e gestão
-            financeira empresarial. Organize sua agenda, crie seu link personalizado de agendamentos, controle seu caixa e
+            Descubra o app que facilita seus agendamentos online e gestão
+            financeira. Organize sua agenda, crie seu link personalizado de agendamentos, controle seu caixa e
             faça seu negócio crescer com o melhor sistema de gestão!
           </p>
         </section>
 
+        <section className="benefits-grid reveal-element">
+          <div className="benefits-container">
+            <h2>Por que escolher a Gestão Boa?</h2>
+            <p className="subtitle">
+              Descubra os diferenciais que fazem da Gestão Boa a melhor escolha para seu negócio
+            </p>
+            
+            <div className="benefits-list">
+              <div className="benefit-card reveal-element">
+                <div className="benefit-icon">⚡</div>
+                <h3>Setup em 5 Minutos</h3>
+                <p>Configure seu sistema completo em apenas alguns cliques. Sem complicações, sem demora.</p>
+              </div>
+              
+              <div className="benefit-card reveal-element">
+                <div className="benefit-icon">📱</div>
+                <h3>Apps Nativos</h3>
+                <p>Aplicativos para iOS e Android + versão web. Gerencie de qualquer lugar, a qualquer hora.</p>
+              </div>
+              
+              <div className="benefit-card reveal-element">
+                <div className="benefit-icon">🔗</div>
+                <h3>Link Personalizado</h3>
+                <p>Seu próprio link de agendamentos para compartilhar em redes sociais e cartão digital.</p>
+              </div>
+              
+              <div className="benefit-card reveal-element">
+                <div className="benefit-icon">📊</div>
+                <h3>Relatórios Inteligentes</h3>
+                <p>Dashboards e análises automáticas para tomar as melhores decisões do seu negócio.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="features">
-          <div id="agenda" className="feature-item">
+          <div id="agenda" className="feature-item reveal-element modern-hover">
             <img
               src="/Agenda.png"
               alt="App de Agendamentos Inteligente - Interface completa de agendamento online com calendário e notificações automáticas"
+              className="animate-float"
             />
             <div className="feature-content">
               <h2>App de Agendamentos Profissional</h2>
-              <p>O melhor app de agendamentos do mercado para seu negócio:</p>
+              <p>O app de agendamento perfeito para o seu negócio</p>
               <ul>
                 <li>
                   <strong>Agendamento online automático</strong> - Clientes
@@ -361,7 +417,7 @@ const Solution = () => {
             </div>
           </div>
 
-          <div id="link-agendamentos" className="feature-item reverse">
+          <div id="link-agendamentos" className="feature-item reverse reveal-element modern-hover">
             <div className="video-container">
               <video
                 controls
@@ -400,10 +456,11 @@ const Solution = () => {
             </div>
           </div>
 
-          <div id="financeiro" className="feature-item reverse">
+          <div id="financeiro" className="feature-item reverse reveal-element modern-hover">
             <img
               src="/Caixa.png"
               alt="App para Gestão Financeira - Dashboard completo de controle de caixa, vendas e despesas empresariais"
+              className="animate-float"
             />
             <div className="feature-content">
               <h2>Gestão Financeira Completa</h2>
@@ -433,10 +490,11 @@ const Solution = () => {
             </div>
           </div>
 
-          <div id="clientes" className="feature-item">
+          <div id="clientes" className="feature-item reveal-element modern-hover">
             <img
               src="/Clientes.jpeg"
               alt="CRM Gestão de Clientes - Sistema de cadastro e relacionamento com histórico completo"
+              className="animate-float"
             />
             <div className="feature-content">
               <h2>Gestão de Clientes (CRM)</h2>
@@ -462,10 +520,11 @@ const Solution = () => {
             </div>
           </div>
 
-          <div id="produtos" className="feature-item reverse">
+          <div id="produtos" className="feature-item reverse reveal-element modern-hover">
             <img
               src="/produtos.jpeg"
               alt="Gestão de Produtos e Estoque - Controle de inventário em tempo real com relatórios"
+              className="animate-float"
             />
             <div className="feature-content">
               <h2>Gestão de Produtos e Estoque</h2>
@@ -491,10 +550,11 @@ const Solution = () => {
             </div>
           </div>
 
-          <div id="analytics" className="feature-item">
+          <div id="analytics" className="feature-item reveal-element modern-hover">
             <img
               src="/comissões.jpeg"
               alt="Analytics e Relatórios Empresariais - Dashboard com métricas e análises de desempenho"
+              className="animate-float"
             />
             <div className="feature-content">
               <h2>Análises e Relatórios Avançados</h2>
@@ -521,7 +581,7 @@ const Solution = () => {
           </div>
         </section>
 
-        <section className="cta">
+        <section className="cta reveal-element">
           <h2>
             Comece a Usar o Melhor App de Agendamentos e Gestão Financeira Hoje!
           </h2>
@@ -531,10 +591,10 @@ const Solution = () => {
             dias!
           </p>
           <div className="buttons">
-            <a href="/preco" className="primary-button">
+            <a href="/preco" className="primary-button shine-effect">
               Testar App Grátis
             </a>
-            <a href="https://wa.me/5553999461550" className="secondary-button">
+            <a href="https://wa.me/5553999461550" className="secondary-button shine-effect">
               Falar com Especialista
             </a>
           </div>
